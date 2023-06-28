@@ -1,0 +1,37 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+#modal {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    z-index: 10;
+    width: 500px;
+    max-width: 90%;
+    transition: 500ms;
+}
+
+#modal.hide {
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+}
