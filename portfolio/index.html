@@ -3,26 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js" defer></script>
+    <title>Portfolio</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
-    <h1>Teste</h1>
-    <button id="open-modal">abrir</button>
-    <div id="modal" class="hide">
-        <div class="modal-header">
-            Modal
+    <div id="win">
+        <div id="desktop">
+            <div class="desktopIcon" id="trash">
+                <img src="assets/icons/recycle_bin_empty.png" />
+                <br>
+                Trash
+            </div>
         </div>
-        <button id="close-modal">x</button>
-        <div id="modal-body">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, fugit dolorem. Facilis dolorem
-            necessitatibus ex eos consectetur ratione eius, ipsum qui ipsam ab, et, sunt similique laudantium numquam
-            reprehenderit officia.
+        <div id="taskbar">
+            <div id="start">
+                <div id="btnStart" class="startRest">✩ Start</div>
+                <div id="startMenu">
+                    <div id="left"></div>
+                    <div class="menuItem">Find</div>
+                    <div class="menuItem">Help</div>
+                    <div class="menuItem">Run</div>
+                    <div class="divider"></div>
+                    <div class="menuItem" id="shutdown">Sh<span style="text-decoration:underline;">u</span>t Down</div>
+                </div>
+            </div>
+            <!-- <div id="start" class="startRest">✩ Start</div> -->
+
+            <div id="notifications">
+                <div id="clock"></div>
+            </div>
+
         </div>
     </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src="./js/script.js"></script>
+
 </body>
 
 </html>

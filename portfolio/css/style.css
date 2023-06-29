@@ -1,0 +1,142 @@
+body div {
+    font-family: 'MS Reference Sans Serif';
+    color: rgb(0, 0, 0);
+}
+
+#win {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: url('../assets/background/kime-nanami-pastelsky.gif');
+    background-size: cover;
+}
+
+#taskbar {
+    height: 26px;
+    background-color: rgb(187, 180, 185);
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-top: ridge 2px white;
+}
+
+#btnStart {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 12px;
+    width: 55px;
+    height: 21px;
+    cursor: default;
+    margin-right: 1rem;
+}
+
+#startMenu {
+    top: -141px;
+    left: 0;
+    background-color: rgb(189, 181, 181);
+    position: absolute;
+    display: block;
+    border-top: ridge 3px white;
+    border-left: ridge 3px white;
+    border-bottom: ridge 2px black;
+    border-right: ridge 2px grey;
+}
+
+#startMenu #left {
+    width: 28px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: rgb(128, 128, 128);
+    font-family: Arial;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+#startMenu .menuItem {
+    height: 32px;
+    width: 134px;
+    margin-left: 24px;
+    padding-left: 10px;
+    padding-top: 10px;
+    vertical-align: central;
+}
+
+#startMenu .menuItem:hover {
+    background-color: rgb(87, 0, 128);
+    color: white;
+}
+
+
+#startMenu .menuItem:first-letter {
+    text-decoration: underline;
+}
+
+#startMenu #shutdown:first-letter {
+    text-decoration: none;
+}
+
+.startRest {
+    border-top: ridge 2px white;
+    border-left: ridge 2px white;
+    border-bottom: ridge 2px black;
+    border-right: ridge 2px black;
+}
+
+.startClick {
+    border-top: inset 2px black;
+    border-left: inset 2px black;
+    border-bottom: inset 2px white;
+    border-right: inset 2px white;
+}
+
+#notifications {
+    margin-left: auto;
+    border-top: inset 2px grey;
+    border-left: inset 2px grey;
+    border-bottom: inset 2px white;
+    border-right: inset 2px white;
+    padding-top: 17px;
+    width: 52px;
+    height: 21px;
+}
+
+#desktop {
+    height: calc(100% - 26px);
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+}
+
+#clock {
+    margin-top: -13px;
+    font-size: 8px;
+    margin-left: 25%;
+}
+
+.desktopIcon {
+    margin: 2px 7px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    /* vertical-align: bottom; */
+    font-size: 10px;
+    color: white;
+}
+
+#mycomputer {
+    background-color: transparent;
+}
+
+.divider {
+    height: 1px;
+    border-top: ridge 1px white;
+    border-bottom: ridge 1px grey;
+    margin: 2px;
+}
