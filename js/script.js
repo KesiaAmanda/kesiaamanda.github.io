@@ -1,6 +1,12 @@
 let pages = [$("#hello"), $("#about-me")];
 let buttons = [$("#hello-btn"), $("#about-me-btn")];
 
+var elements = document.getElementsByClassName('header');
+for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener('mousedown', filter, false);
+    elements[i].addEventListener('touchstart', filterCellPhone, { passive: false });
+}
+
 $(document).ready(function () {
     startTime();
     $('#startMenu').hide();
@@ -30,9 +36,17 @@ $(document).ready(function () {
         $('#btnStart').removeClass('startClick').addClass('startRest');
     })
 
-    $('#about-me-content').click(function () {
+    $('#about-me-content').click(function (e) {
         swapPage('#about-me', '#about-me-btn');
-        $('#about-me-btn').addClass('startClick');
+
+        if (e.target.id == 'about-me-min') {
+            $('#about-me').addClass('hidden');
+            $('#about-me-btn').removeClass('startClick');
+        } else if (e.target.id == 'about-me-max') {
+            $(this).toggleClass('maximize');
+        } else {
+            $('#about-me-btn').addClass('startClick');
+        }
     })
 
     $('#about-me-menu').click(function () {
@@ -54,11 +68,6 @@ $(document).ready(function () {
         }
     });
 
-    $('#about-me-min').click(function () {
-        $('#about-me').addClass('hidden');
-        $('#about-me-btn').removeClass('startClick');
-    });
-
     $('#aboutMeIcon').dblclick(function () {
         swapPage('#about-me', '#about-me-btn')
         $('#about-me').removeClass('hidden').addClass('index');
@@ -70,9 +79,13 @@ $(document).ready(function () {
         $('#about-me-btn').removeClass('startClick').slideUp(100);
     });
 
-    $('#hello-content').click(function () {
+    $('#hello-content').click(function (e) {
         swapPage('#hello', '#hello-btn');
-        $('#hello-btn').addClass('startClick');
+        if (e.target.id == 'hello-min') {
+            $('#hello-btn').removeClass('startClick');
+        } else {
+            $('#hello-btn').addClass('startClick');
+        }
     })
 
     $('#hello-menu').click(function () {
@@ -96,7 +109,6 @@ $(document).ready(function () {
 
     $('#hello-min').click(function () {
         $('#hello').addClass('hidden');
-        $('#hello-btn').removeClass('startClick');
     });
 
     $('#hello-icon').dblclick(function () {
@@ -127,25 +139,14 @@ function checkTime(i) {
     return i;
 }
 
-var elements = document.getElementsByClassName('header');
-for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('mousedown', filter, false);
-    // elements[i].addEventListener('mouseup', filter, false);
-}
-
 function filter(e) {
     let target = e.target.parentNode.parentNode;
-
-    if (!target.classList.contains("index")) {
-        return;
-    }
 
     $(pages).map(function () {
         if (this.selector != "#" + target.id) {
             $(this).removeClass('index');
         }
     });
-
     target.classList.add('index');
 
     target.moving = true;
@@ -189,3 +190,12 @@ function filter(e) {
     target.onmouseup = endDrag;
     target.ontouchend = endDrag;
 }
+
+function filterCellPhone(e) {
+    if (!e.target.parentNode.parentNode.classList.contains("index")) {
+        return;
+    }
+    filter(e);
+}
+
+document.ontouchstart = filterCellPhone;

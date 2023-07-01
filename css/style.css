@@ -10,9 +10,16 @@
     margin: 0px;
 }
 
-body {
-    overflow: hidden;
+#screen {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: url('../assets/background/kime-nanami-pastelsky.gif');
+    background-size: cover;
 }
+
 
 body div {
     font-family: "Windows 95", sans-serif;
@@ -25,16 +32,6 @@ body div {
 
 .index {
     z-index: 2;
-}
-
-#win {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: url('../assets/background/kime-nanami-pastelsky.gif');
-    background-size: cover;
 }
 
 #taskbar {
@@ -141,6 +138,7 @@ body div {
 }
 
 .header {
+    touch-action: none;
     background-image: linear-gradient(to right, rgb(150, 62, 128), rgb(209, 130, 189));
     max-width: 100%;
     display: flex;
@@ -156,19 +154,34 @@ body div {
     align-self: center;
 }
 
+#about-me-content.maximize,
+#hello-content.maximize {
+    position: fixed;
+    background-color: rgb(189, 181, 181);
+    max-width: 100%;
+    max-height: 100%;
+    height: calc(100% - 26px);
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    transform: none;
+}
+
 #about-me {
     position: fixed;
-    max-width: 90%;
-    max-height: 90%;
-    width: 900px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -100%);
 }
 
 #about-me-content {
+    position: fixed;
     background-color: rgb(189, 181, 181);
-    flex: 1 1 auto;
+    max-width: 90%;
+    max-height: 90%;
+    width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* flex: 1 1 auto; */
 }
 
 #hello {
