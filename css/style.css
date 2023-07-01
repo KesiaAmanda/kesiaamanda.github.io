@@ -172,6 +172,7 @@ body div {
     top: 0px !important;
     left: 0px !important;
     transform: none;
+    border: none;
 }
 
 #about-me {
