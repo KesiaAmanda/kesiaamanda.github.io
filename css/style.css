@@ -1,6 +1,30 @@
+@font-face {
+    font-family: 'Windows 95';
+    src: url('fonts/MS-Sans-Serif-8pt.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    overflow: hidden;
+}
+
 body div {
-    font-family: 'MS Reference Sans Serif';
+    font-family: "Windows 95", sans-serif;
     color: rgb(0, 0, 0);
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.index {
+    z-index: 2;
 }
 
 #win {
@@ -14,7 +38,7 @@ body div {
 }
 
 #taskbar {
-    height: 26px;
+    min-height: 26px;
     background-color: rgb(187, 180, 185);
     position: absolute;
     display: flex;
@@ -24,14 +48,48 @@ body div {
     border-top: ridge 2px white;
 }
 
-#btnStart {
+#btnStart,
+#hello-btn,
+#about-me-btn {
     text-align: center;
-    font-weight: bolder;
     font-size: 12px;
-    width: 55px;
     height: 21px;
     cursor: default;
-    margin-right: 1rem;
+    margin: 0 0.2rem 0 0.2rem;
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+#btnStart {
+    /* margin-right: 1rem; */
+    font-weight: bolder;
+}
+
+#hello-btns,
+#about-me-btns {
+    margin-left: auto;
+    display: flex;
+}
+
+#about-me-min,
+#about-me-max,
+#about-me-cls,
+#hello-min,
+#hello-max,
+#hello-cls {
+    background-color: rgb(187, 180, 185);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+}
+
+#about-me-max,
+#hello-max {
+    color: #808080;
+    text-shadow: white 1px 1px;
+    cursor: default;
 }
 
 #startMenu {
@@ -39,6 +97,7 @@ body div {
     left: 0;
     background-color: rgb(189, 181, 181);
     position: absolute;
+    z-index: 99;
     display: block;
     border-top: ridge 3px white;
     border-left: ridge 3px white;
@@ -81,6 +140,78 @@ body div {
     text-decoration: none;
 }
 
+.header {
+    background-image: linear-gradient(to right, rgb(150, 62, 128), rgb(209, 130, 189));
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 1px;
+    height: 23px;
+    flex: 0 1 auto;
+}
+
+.title {
+    margin: 3px;
+    color: white;
+    align-self: center;
+}
+
+#about-me {
+    position: fixed;
+    max-width: 90%;
+    max-height: 90%;
+    width: 900px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
+}
+
+#about-me-content {
+    background-color: rgb(189, 181, 181);
+    flex: 1 1 auto;
+}
+
+#hello {
+    position: relative;
+    max-height: 90%;
+    max-width: 90%;
+    width: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -120%);
+}
+
+#hello-content {
+    background-color: rgb(189, 181, 181);
+    flex: 1 1 auto;
+}
+
+#hello-body {
+    background-color: rgb(255, 251, 245);
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+#hello-greeting {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    line-height: 1;
+}
+
+.hello-img {
+    margin: 10px;
+    border-radius: 50%;
+    min-width: 100px;
+    max-width: 250px;
+    border: 2px solid #fff;
+    box-shadow: 1px 2px 5px #ccc;
+}
+
 .startRest {
     border-top: ridge 2px white;
     border-left: ridge 2px white;
@@ -114,20 +245,29 @@ body div {
 }
 
 #clock {
-    margin-top: -13px;
-    font-size: 8px;
-    margin-left: 25%;
+    margin: -30% 0 0 20%;
+    font-size: 10px;
+    font-weight: bold;
 }
 
 .desktopIcon {
-    margin: 2px 7px;
+    margin: 7px 7px;
     display: block;
     height: 50px;
     width: 50px;
+    font-size: 12px;
+    text-shadow:
+        -1px -1px 1px black,
+        -1px 1px 1px black,
+        1px -1px 1px black,
+        1px 1px 1px black;
     text-align: center;
-    /* vertical-align: bottom; */
-    font-size: 10px;
     color: white;
+    cursor: pointer;
+}
+
+.icon {
+    filter: grayscale(40%);
 }
 
 #mycomputer {

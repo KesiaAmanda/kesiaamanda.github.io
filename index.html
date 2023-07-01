@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Ubuntu:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="canonical" href="https://themesberg.com/product/ui-kit/windows-95-ui-kit">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
     <link rel="stylesheet" href="./css/style.css">
 
@@ -13,24 +17,109 @@
     <div id="win">
         <div id="desktop">
             <div class="desktopIcon" id="trash">
-                <img src="assets/icons/recycle_bin_empty.png" />
+                <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')"><img
+                        class="icon" src="assets/icons/recycle_bin_empty.png"></a>
+                </a>
                 <br>
-                Trash
+                Lixo
+            </div>
+            <div class="desktopIcon" id="hello-icon">
+                <img class="icon" src="assets/icons/aseprite.png" />
+                <br>
+                Olá
+            </div>
+            <div class="desktopIcon" id="aboutMeIcon">
+                <img class="icon" src="assets/icons/notepad.png" />
+                <br>
+                Sobre mim
+            </div>
+
+            <div id="hello">
+                <div id="hello-content" class="startRest">
+                    <div id="hello-header" class="header">
+                        <div id="hello-header-title" class="title">
+                            ✩ Olá
+                        </div>
+                        <div id="hello-btns">
+                            <div id="hello-min" class="startRest">
+                                🗕
+                            </div>
+                            <div id="hello-max" class="startRest">
+                                🗗
+                            </div>
+                            <div id="hello-cls" class="startRest">
+                                🗙
+                            </div>
+                        </div>
+                    </div>
+                    <div id="hello-body" class="startClick">
+                        <div id="hello-greeting">
+                            <div id="hello-greeting-text">
+                                <p style="font-size: xx-large;">Olá,
+                                    <span style="font-size: x-large;">eu sou a</span>
+                                    <span style="font-size: x-large;">>Kesia Amanda!</span>
+                                </p>
+                                <span style="font-size: small;"><br>Desenvolvedora backend</span>
+                            </div>
+                            <img class="hello-img" src="assets/images/befunky1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about-me">
+                <div id="about-me-content" class="startRest">
+                    <div id="about-me-header" class="header">
+                        <div id="about-me-header-title" class="title">
+                            ✩ Sobre mim
+                        </div>
+                        <div id="about-me-btns">
+                            <div id="about-me-min" class="startRest">
+                                🗕
+                            </div>
+                            <div id="about-me-max" class="startRest">
+                                🗗
+                            </div>
+                            <div id="about-me-cls" class="startRest">
+                                🗙
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, fugit dolorem. Facilis
+                        dolorem
+                        necessitatibus ex eos consectetur ratione eius, ipsum qui ipsam ab, et, sunt similique
+                        laudantium
+                        numquam
+                        reprehenderit officia.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo id, quidem laboriosam
+                        eligendi voluptas ipsam ab libero voluptatibus laudantium voluptate ipsa impedit voluptatem
+                        itaque fuga corporis molestias. Non, facere officiis!
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi excepturi numquam reiciendis
+                        quaerat pariatur vero! Ab voluptatem dicta quasi exercitationem libero molestiae earum aut fuga.
+                        Eaque consequuntur aspernatur reiciendis voluptas.
+                    </div>
+                </div>
             </div>
         </div>
         <div id="taskbar">
-            <div id="start">
-                <div id="btnStart" class="startRest">✩ Start</div>
-                <div id="startMenu">
+            <div>
+                <div id="btnStart" class="startRest">﹛Iniciar﹜</div>
+                <div id="startMenu" hidden>
                     <div id="left"></div>
-                    <div class="menuItem">Find</div>
-                    <div class="menuItem">Help</div>
+                    <div id='hello-menu' class="menuItem">Olá</div>
+                    <div id='about-me-menu' class="menuItem">Sobre mim</div>
                     <div class="menuItem">Run</div>
                     <div class="divider"></div>
                     <div class="menuItem" id="shutdown">Sh<span style="text-decoration:underline;">u</span>t Down</div>
                 </div>
             </div>
-            <!-- <div id="start" class="startRest">✩ Start</div> -->
+
+            <div id="hello-btn" class="startRest">✩ Olá</div>
+            <div id="about-me-btn" class="startRest">✩ Sobre mim</div>
+
+
+
 
             <div id="notifications">
                 <div id="clock"></div>
