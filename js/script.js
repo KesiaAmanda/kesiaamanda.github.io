@@ -4,13 +4,12 @@ let buttons = [$("#hello-btn"), $("#about-me-btn")];
 var elements = document.getElementsByClassName('header');
 for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener('mousedown', filter, false);
-    elements[i].addEventListener('touchstart', filterCellPhone, { passive: false });
+    // elements[i].addEventListener('touchstart', filterCellPhone, { passive: false });
 }
 
 $(document).ready(function () {
     startTime();
     $('#startMenu').hide();
-    $('#hello').addClass('index');
     $('#hello-btn').addClass('startClick');
     $('#about-me').addClass('hidden');
 
@@ -81,11 +80,22 @@ $(document).ready(function () {
 
     $('#hello-content').click(function (e) {
         swapPage('#hello', '#hello-btn');
+
         if (e.target.id == 'hello-min') {
+            $('#hello').addClass('hidden');
             $('#hello-btn').removeClass('startClick');
+        } else if (e.target.id == 'hello-max') {
+            $(this).toggleClass('maximize');
+            $('#hello-btn').addClass('startClick');
         } else {
             $('#hello-btn').addClass('startClick');
         }
+
+        // if (e.target.id == 'hello-min') {
+        //     $('#hello-btn').removeClass('startClick');
+        // } else {
+        //     $('#hello-btn').addClass('startClick');
+        // }
     })
 
     $('#hello-menu').click(function () {
@@ -97,7 +107,7 @@ $(document).ready(function () {
     });
 
     $('#hello-btn').click(function () {
-        swapPage('#hello', '#hello-btn')
+        swapPage('#hello', '#hello-btn');
         if (this.classList.contains('startClick')) {
             $('#hello').addClass('hidden');
             $(this).removeClass('startClick');
@@ -107,9 +117,9 @@ $(document).ready(function () {
         }
     });
 
-    $('#hello-min').click(function () {
-        $('#hello').addClass('hidden');
-    });
+    // $('#hello-min').click(function () {
+    //     $('#hello').addClass('hidden');
+    // });
 
     $('#hello-icon').dblclick(function () {
         swapPage('#hello', '#hello-btn')
@@ -140,14 +150,30 @@ function checkTime(i) {
 }
 
 function filter(e) {
-    let target = e.target.parentNode.parentNode;
+    let target = e.target.parentNode;
+    let father = e.target.parentNode.parentNode;
+
+    if (!target.id.toString().includes('content')) {
+        target = e.target.parentNode.parentNode;
+        father = e.target.parentNode.parentNode.parentNode;
+    }
+
+    if (!target.id.toString().includes('content')) {
+        target = e.target.parentNode.parentNode.parentNode;
+        father = e.target.parentNode.parentNode.parentNode.parentNode;
+    }
+
+    if (target.classList.contains('maximize')) {
+        return;
+    }
 
     $(pages).map(function () {
-        if (this.selector != "#" + target.id) {
+        if (this.selector != "#" + father.id) {
             $(this).removeClass('index');
         }
     });
-    target.classList.add('index');
+
+    father.classList.add('index');
 
     target.moving = true;
 
@@ -191,11 +217,11 @@ function filter(e) {
     target.ontouchend = endDrag;
 }
 
-function filterCellPhone(e) {
-    if (!e.target.parentNode.parentNode.classList.contains("index")) {
-        return;
-    }
-    filter(e);
-}
+// function filterCellPhone(e) {
+//     if (!e.target.parentNode.parentNode.classList.contains("index")) {
+//         return;
+//     }
+//     filter(e);
+// }
 
-document.ontouchstart = filterCellPhone;
+// document.ontouchstart = filterCellPhone;
