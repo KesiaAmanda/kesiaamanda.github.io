@@ -56,7 +56,6 @@ $(document).ready(function () {
         } else if (e.target.id == 'about-me-max') {
             $(this).toggleClass('maximize');
         } else {
-            console.log('oie');
             $('#about-me-btn').addClass('startClick');
         }
     })
