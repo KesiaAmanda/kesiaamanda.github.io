@@ -41,7 +41,8 @@ $(document).ready(function () {
     });
 
     $('#desktop').click(function () {
-        $('#startMenu').slideUp(100);
+        swapButtons();
+        $('#startMenu').addClass('hidden');
         $('#btnStart').removeClass('startClick').addClass('startRest');
     })
 
