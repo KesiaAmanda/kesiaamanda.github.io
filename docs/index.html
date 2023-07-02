@@ -16,19 +16,12 @@
 
 <body id="screen">
     <div id="desktop">
-        <!-- <div class="desktopIcon" id="trash">
-            <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')"><img
-                    class="icon" src="assets/icons/desktop/recycle_bin_empty.png"></a>
-            </a>
-            <br>
-            Lixo
-        </div> -->
-        <div class="desktopIcon" id="hello-icon">
+        <div id="hello-icon" class="desktopIcon">
             <img class="icon" src="assets/icons/desktop/program.png" />
             <br>
             Olá.exe
         </div>
-        <div class="desktopIcon" id="aboutMeIcon">
+        <div id="aboutMeIcon" class="desktopIcon">
             <img class="icon" src="assets/icons/desktop/notepad.png" />
             <br>
             Sobre mim
@@ -42,32 +35,28 @@
                         Olá.exe
                     </div>
                     <div id="hello-btns">
-                        <div id="hello-min" class="startRest">
-                            🗕
-                        </div>
-                        <div id="hello-max" class="startRest">
-                            🗗
-                        </div>
-                        <div id="hello-cls" class="startRest">
-                            🗙
-                        </div>
+                        <div id="hello-min" class="startRest">🗕</div>
+                        <div id="hello-max" class="startRest">🗗</div>
+                        <div id="hello-cls" class="startRest">🗙</div>
                     </div>
                 </div>
                 <div id="hello-body" class="startClick">
                     <div id="hello-greeting">
-                        <div id="hello-greeting-text" class="hello-item hello-greeting-text">
+                        <div class="helloItem helloGreetingText">
                             <h1 id="str-hello">Olá, <span id="str-im">eu sou a</span></h1>
                             <h1 id="str-name">>Kesia Amanda!</h1>
                             <h1 id="str-prof">Desenvolvedora backend</h1>
                             <div id="hello-social">
                                 <a href="https://www.linkedin.com/in/kesiaamanda/" target="_blank">
                                     <img class="icon" height="25px"
-                                        src="assets/icons/social/linkedin_pixel_logo_icon_181925.png"></a>
+                                        src="assets/icons/social/linkedin_pixel_logo_icon_181925.png">
+                                </a>
                                 <a href="https://github.com/KesiaAmanda" target="_blank">
-                                    <img class="icon" height="25px" src="assets/icons/social/github.png"></a>
+                                    <img class="icon" height="25px" src="assets/icons/social/github.png">
+                                </a>
                             </div>
                         </div>
-                        <div class="hello-item hello-item-img">
+                        <div class="helloItem helloItemImg">
                             <img id="hello-img" src="assets/images/befunky1.png">
                         </div>
                     </div>
@@ -82,18 +71,12 @@
                         ✩ Sobre mim
                     </div>
                     <div id="about-me-btns">
-                        <div id="about-me-min" class="startRest">
-                            🗕
-                        </div>
-                        <div id="about-me-max" class="startRest">
-                            🗗
-                        </div>
-                        <div id="about-me-cls" class="startRest">
-                            🗙
-                        </div>
+                        <div id="about-me-min" class="startRest">🗕</div>
+                        <div id="about-me-max" class="startRest">🗗</div>
+                        <div id="about-me-cls" class="startRest">🗙</div>
                     </div>
                 </div>
-                <div id="modal-body">
+                <div>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, fugit dolorem. Facilis
                     dolorem
                     necessitatibus ex eos consectetur ratione eius, ipsum qui ipsam ab, et, sunt similique
@@ -112,29 +95,29 @@
     </div>
     <div id="taskbar">
         <div>
-            <div id="btnStart" class="startRest">Iniciar</div>
-            <div id="startMenu" hidden>
+            <div id="start-btn" class="startRest">Iniciar</div>
+            <div id="start-menu" hidden>
                 <div id="left"></div>
                 <div id='hello-menu' class="menuItem">Olá.exe</div>
                 <div id='about-me-menu' class="menuItem">Sobre mim</div>
                 <div class="menuItem">Run</div>
                 <div class="divider"></div>
-                <div class="menuItem" id="shutdown">Sh<span style="text-decoration:underline;">u</span>t Down</div>
+                <div id="shutdown" class="menuItem">Sh<span style="text-decoration:underline;">u</span>t Down</div>
             </div>
         </div>
 
         <div>
-            <div class="vertical-divider"></div>
+            <div class="verticalDivider"></div>
         </div>
 
-        <div id="hello-btn" class="startRest">>Olá</div>
-        <div id="about-me-btn" class="startRest">>Sobre mim</div>
+        <div id="hello-btn" class="startRest">Olá</div>
+        <div id="about-me-btn" class="startRest">Sobre mim</div>
 
 
 
         <div id="notifications" class="startClick">
-            <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')"><img
-                    class="icon" src="assets/icons/desktop/sounds.png" height="15px"></a>
+            <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')">
+                <img class="icon" src="assets/icons/desktop/sounds.png" height="15px">
             </a>
             <div id="clock" />
 

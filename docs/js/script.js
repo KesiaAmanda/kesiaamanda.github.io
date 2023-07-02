@@ -1,5 +1,5 @@
 let pages = [$("#hello"), $("#about-me")];
-let buttons = [$("#btnStart"), $("#hello-btn"), $("#about-me-btn")];
+let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn")];
 
 var elements = document.getElementsByClassName('header');
 for (let i = 0; i < elements.length; i++) {
@@ -9,7 +9,7 @@ for (let i = 0; i < elements.length; i++) {
 
 $(document).ready(function () {
     startTime();
-    $('#startMenu').addClass('hidden');
+    $('#start-menu').addClass('hidden');
     $('#hello-btn').addClass('startClick');
     $('#about-me').addClass('hidden');
 
@@ -23,7 +23,7 @@ $(document).ready(function () {
                 $(this).removeClass('startClick');
             }
         });
-        $('#startMenu').addClass('hidden');
+        $('#start-menu').addClass('hidden');
     }
 
     function swapButtons(button) {
@@ -34,16 +34,16 @@ $(document).ready(function () {
         });
     }
 
-    $('#btnStart').click(function () {
-        swapButtons('#btnStart');
-        $('#startMenu').toggleClass('hidden');
+    $('#start-btn').click(function () {
+        swapButtons('#start-btn');
+        $('#start-menu').toggleClass('hidden');
         $(this).toggleClass('startClick');
     });
 
     $('#desktop').click(function () {
         swapButtons();
-        $('#startMenu').addClass('hidden');
-        $('#btnStart').removeClass('startClick').addClass('startRest');
+        $('#start-menu').addClass('hidden');
+        $('#start-btn').removeClass('startClick').addClass('startRest');
     })
 
     $('#about-me-content').click(function (e) {
@@ -62,8 +62,8 @@ $(document).ready(function () {
     $('#about-me-menu').click(function () {
         swapPage('#about-me', '#about-me-btn')
         $('#about-me').removeClass('hidden').addClass('index');
-        $('#startMenu').slideUp(100);
-        $('#btnStart').removeClass('startClick').addClass('startRest');
+        $('#start-menu').addClass('hidden');
+        $('#start-btn').removeClass('startClick').addClass('startRest');
         $('#about-me-btn').addClass('startClick').slideDown(100);
     });
 
@@ -112,8 +112,8 @@ $(document).ready(function () {
     $('#hello-menu').click(function () {
         swapPage('#hello', '#hello-btn')
         $('#hello').removeClass('hidden').addClass('index');
-        $('#startMenu').slideUp(100);
-        $('#btnStart').removeClass('startClick');
+        $('#start-menu').addClass('hidden');
+        $('#start-btn').removeClass('startClick');
         $('#hello-btn').addClass('startClick').slideDown(100);
     });
 
