@@ -35,7 +35,7 @@ $(document).ready(function () {
     }
 
     $('#btnStart').click(function () {
-        swapButtons('#about-me-btn');
+        swapButtons('#btnStart');
         $('#startMenu').toggleClass('hidden');
         $(this).toggleClass('startClick');
     });
