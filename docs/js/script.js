@@ -4,7 +4,6 @@ let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn")];
 var elements = document.getElementsByClassName('header');
 for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener('mousedown', filter, false);
-    // elements[i].addEventListener('touchstart', filterCellPhone, { passive: false });
 }
 
 $(document).ready(function () {
@@ -40,11 +39,13 @@ $(document).ready(function () {
         $(this).toggleClass('startClick');
     });
 
-    $('#desktop').click(function () {
-        swapButtons();
+    $('#desktop').click(function (e) {
+        if (e.target.id == 'desktop') {
+            swapButtons();
+        }
         $('#start-menu').addClass('hidden');
         $('#start-btn').removeClass('startClick').addClass('startRest');
-    })
+    });
 
     $('#about-me-content').click(function (e) {
         swapPage('#about-me', '#about-me-btn');
@@ -55,6 +56,7 @@ $(document).ready(function () {
         } else if (e.target.id == 'about-me-max') {
             $(this).toggleClass('maximize');
         } else {
+            console.log('oie');
             $('#about-me-btn').addClass('startClick');
         }
     })
@@ -101,12 +103,6 @@ $(document).ready(function () {
         } else {
             $('#hello-btn').addClass('startClick');
         }
-
-        // if (e.target.id == 'hello-min') {
-        //     $('#hello-btn').removeClass('startClick');
-        // } else {
-        //     $('#hello-btn').addClass('startClick');
-        // }
     })
 
     $('#hello-menu').click(function () {
@@ -127,10 +123,6 @@ $(document).ready(function () {
             $(this).addClass('startClick');
         }
     });
-
-    // $('#hello-min').click(function () {
-    //     $('#hello').addClass('hidden');
-    // });
 
     $('#hello-icon').dblclick(function () {
         swapPage('#hello', '#hello-btn')
@@ -229,6 +221,7 @@ function filter(e) {
 }
 
 // function filterCellPhone(e) {
+//     console.log(e.target);
 //     if (!e.target.parentNode.parentNode.classList.contains("index")) {
 //         return;
 //     }
