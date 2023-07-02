@@ -22,7 +22,7 @@ body {
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background: url('../assets/background/kime-nanami-pastelsky.gif');
+    background: url('../assets/background/kime-nanami-pastelsky.gif') fixed;
     background-size: cover;
 }
 
