@@ -1,5 +1,5 @@
 let pages = [$("#hello"), $("#about-me")];
-let buttons = [$("#hello-btn"), $("#about-me-btn")];
+let buttons = [$("#btnStart"), $("#hello-btn"), $("#about-me-btn")];
 
 var elements = document.getElementsByClassName('header');
 for (let i = 0; i < elements.length; i++) {
@@ -9,7 +9,7 @@ for (let i = 0; i < elements.length; i++) {
 
 $(document).ready(function () {
     startTime();
-    $('#startMenu').hide();
+    $('#startMenu').addClass('hidden');
     $('#hello-btn').addClass('startClick');
     $('#about-me').addClass('hidden');
 
@@ -23,11 +23,21 @@ $(document).ready(function () {
                 $(this).removeClass('startClick');
             }
         });
+        $('#startMenu').addClass('hidden');
+    }
+
+    function swapButtons(button) {
+        $(buttons).map(function () {
+            if (this.selector != button) {
+                $(this).removeClass('startClick');
+            }
+        });
     }
 
     $('#btnStart').click(function () {
-        $('#startMenu').slideToggle(100);
-        $(this).addClass('startClick');
+        swapButtons('#about-me-btn');
+        $('#startMenu').toggleClass('hidden');
+        $(this).toggleClass('startClick');
     });
 
     $('#desktop').click(function () {
