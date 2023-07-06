@@ -23,21 +23,6 @@ body {
     background-size: cover;
 }
 
-.min {
-    background: url('../assets/icons/min.png') center center no-repeat;
-    background-size: 13px 13px;
-}
-
-.max {
-    background: url('../assets/icons/max.png') center center no-repeat;
-    background-size: 13px 13px;
-}
-
-.cls {
-    background: url('../assets/icons/cls.png') center center no-repeat;
-    background-size: 13px 13px;
-}
-
 body div {
     font-family: "Windows 95", sans-serif;
     color: rgb(0, 0, 0);
@@ -116,6 +101,21 @@ span {
     border-left: inset 2px black;
     border-bottom: inset 2px white;
     border-right: inset 2px white;
+}
+
+.min {
+    background: url('../assets/icons/min.png') center center no-repeat;
+    background-size: 13px 13px;
+}
+
+.max {
+    background: url('../assets/icons/max.png') center center no-repeat;
+    background-size: 13px 13px;
+}
+
+.cls {
+    background: url('../assets/icons/cls.png') center center no-repeat;
+    background-size: 13px 13px;
 }
 
 .desktopIcon {
@@ -343,7 +343,7 @@ span {
 
 #hello-img {
     border-radius: 50%;
-    width: 90%;
+    max-width: 80%;
     border: 2px solid #fff;
     box-shadow: 1px 2px 5px #ccc;
 }
