@@ -221,11 +221,8 @@ function filter(e) {
 }
 
 function filterCellPhone(e) {
-    console.log(e.target);
     if (!e.target.parentNode.parentNode.classList.contains("index")) {
         return;
     }
     filter(e);
 }
-
-// document.ontouchstart = filterCellPhone;
