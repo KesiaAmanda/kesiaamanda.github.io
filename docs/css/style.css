@@ -23,6 +23,21 @@ body {
     background-size: cover;
 }
 
+.min {
+    background: url('../assets/icons/min.png') center center no-repeat;
+    background-size: 13px 13px;
+}
+
+.max {
+    background: url('../assets/icons/max.png') center center no-repeat;
+    background-size: 13px 13px;
+}
+
+.cls {
+    background: url('../assets/icons/cls.png') center center no-repeat;
+    background-size: 13px 13px;
+}
+
 body div {
     font-family: "Windows 95", sans-serif;
     color: rgb(0, 0, 0);
@@ -38,6 +53,10 @@ span {
 }
 
 .hidden {
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: 0;
     opacity: 0;
 }
 
@@ -255,6 +274,22 @@ span {
 
 #about-me {
     position: fixed;
+    opacity: 1;
+    max-width: 90%;
+    max-height: 90%;
+    width: 900px;
+    transition-duration: 1000ms;
+    top: 50%;
+    left: 50%;
+}
+
+#about-me.hidden {
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    opacity: 0;
 }
 
 #about-me-content {

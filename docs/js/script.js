@@ -4,6 +4,7 @@ let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn")];
 var elements = document.getElementsByClassName('header');
 for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener('mousedown', filter, false);
+    elements[i].addEventListener('touchstart', filterCellPhone, false);
 }
 
 $(document).ready(function () {
@@ -219,12 +220,12 @@ function filter(e) {
     target.ontouchend = endDrag;
 }
 
-// function filterCellPhone(e) {
-//     console.log(e.target);
-//     if (!e.target.parentNode.parentNode.classList.contains("index")) {
-//         return;
-//     }
-//     filter(e);
-// }
+function filterCellPhone(e) {
+    console.log(e.target);
+    if (!e.target.parentNode.parentNode.classList.contains("index")) {
+        return;
+    }
+    filter(e);
+}
 
 // document.ontouchstart = filterCellPhone;
