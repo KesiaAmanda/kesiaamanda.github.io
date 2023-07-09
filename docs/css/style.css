@@ -302,11 +302,13 @@ span {
 }
 
 #about-me-content.maximize #about-me-body {
+    backface-visibility: hidden;
     min-height: calc(92.5vh);
     min-width: 100%;
 }
 
 #hello-content.maximize #hello-greeting {
+    backface-visibility: hidden;
     min-width: 100%;
     min-height: calc(95vh);
 }
