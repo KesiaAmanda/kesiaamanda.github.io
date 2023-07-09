@@ -44,13 +44,13 @@ span {
     /* display: block; */
 }
 
-.hidden {
+/* .hidden {
     width: 0;
     height: 0;
     bottom: 0;
     left: 0;
     opacity: 0;
-}
+} */
 
 .index {
     z-index: 2;
@@ -170,6 +170,12 @@ span {
     cursor: default;
 }
 
+.resizable {
+    resize: both;
+    min-width: 300px;
+    min-height: 100px;
+}
+
 #taskbar {
     min-height: 26px;
     background-color: var(--backgroud);
@@ -180,11 +186,6 @@ span {
     right: 0px;
     border-top: ridge 2px white;
 }
-
-/* #win-btn {
-    display: flex;
-    justify-content: baseline;
-} */
 
 #start-btn {
     background: url('../assets/icons/social/icons8-pixel-star-16.png') left center no-repeat;
@@ -250,7 +251,7 @@ span {
     left: 0px;
     top: 0px;
     bottom: 0px;
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(151, 132, 151);
     font-family: Arial;
     font-weight: 900;
     text-transform: capitalize;
@@ -290,13 +291,41 @@ span {
     border: none;
 }
 
-#about-me {
+#about-me-content.maximize #about-me-body {
+    min-height: calc(100vh - 70px);
+    min-width: 100%;
+}
+
+#hello-content.maximize #hello-greeting {
+    min-height: calc(100vh - 55px);
+    min-width: 100%;
+}
+
+#about-me,
+#hello {
     position: fixed;
-    opacity: 1;
+}
+
+#hello.hideContent #hello-content,
+#about-me.hideContent #about-me-content {
+    max-height: 0;
+    max-width: 0;
+    border: 0;
+    transition: max-height 0.25s ease-out, max-width 0.25s ease-out;
+    overflow: hidden;
+}
+
+#hello-content,
+#about-me-content {
+    overflow: hidden;
+    max-height: auto;
+    max-width: auto;
+    transition: max-height 0.25s ease-in, max-width 0.25s ease-in;
 }
 
 #about-me-content {
     display: flex;
+    overflow: hidden;
     flex-flow: column;
     position: fixed;
     background-color: var(--backgroud);
@@ -307,23 +336,27 @@ span {
     transform: translate(-50%, -50%);
 }
 
-#about-me-description {
-    margin: 20px;
+#about-me-body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--white);
+    position: relative;
+    max-height: 80vh;
+    width: 600px;
+    padding: 20px;
+    height: auto;
+    resize: both;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
-#about-me-hr {
-    margin: 20px;
+#about-me-body hr {
     border-top: 1px dashed black;
 }
 
-.resizable {
-    resize: both;
-    min-width: 300px;
-    min-height: 100px;
-}
-
-.aboutMeFooter,
-.aboutMeTitle {
+#about-me-title,
+#about-me-footer {
     margin: 20px 20px 20px 20px;
     font-size: 10px;
     font-weight: bold;
@@ -331,60 +364,26 @@ span {
     text-align: center;
 }
 
-.aboutMeTitle {
+#about-me-title {
     white-space: pre;
     font-size: 8px;
-}
-
-#about-me.hidden {
-    width: 0;
-    height: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-}
-
-#about-me-body {
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-#about-me-text {
-    background-color: var(--white);
-    position: relative;
-    max-height: 80vh;
-    width: 600px;
-    height: auto;
-    resize: both;
-    overflow-x: scroll;
-    overflow-y: scroll;
-}
-
-#about-me-content.maximize #about-me-text {
-    min-height: calc(100vh - 78px);
-    min-width: 100%;
 }
 
 #about-me-menu {
     display: flex;
 }
 
-#about-me-menu .menuItem {
+#about-me-menu div {
     padding: 0 5px 0 5px;
 }
 
-#about-me-menu .menuItem:first-letter {
+#about-me-menu div:first-letter {
     text-decoration: underline;
 }
 
-#about-me-menu .menuItem:hover {
+#about-me-menu div:hover {
     background-color: var(--hover);
     color: white;
-}
-
-#hello {
-    position: relative;
 }
 
 #hello-content {
@@ -412,11 +411,6 @@ span {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-#hello-content.maximize #hello-greeting {
-    min-height: calc(100vh - 58px);
-    min-width: 100%;
 }
 
 #hello-greeting>* {

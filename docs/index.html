@@ -28,7 +28,7 @@
             Sobre mim.txt
         </div>
 
-        <div id="hello">
+        <div id="hello" class="visible">
             <div id="hello-content" class="startRest">
                 <div id="hello-header" class="header">
                     <div id="hello-header-title" class="title">
@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div id="about-me">
+        <div id="about-me" class="hideContent">
             <div id="about-me-content" class="startRest">
                 <div id="about-me-header" class="header">
                     <div id="about-me-header-title" class="title">
@@ -79,45 +79,41 @@
                     </div>
                 </div>
                 <div id="about-me-menu">
-                    <div class="menuItem">File</div>
-                    <div class="menuItem">Edit</div>
-                    <div class="menuItem">Search</div>
-                    <div class="menuItem">Help</div>
+                    <div>File</div>
+                    <div>Edit</div>
+                    <div>Search</div>
+                    <div>Help</div>
                 </div>
-                <div id="about-me-body" class="startClick">
-                    <div id="about-me-text" class="resizable">
-                        <div id="about-me-hr"></div>
-                        <p id="about-me-title" class="aboutMeTitle"> </p>
-                        <div id="about-me-hr"></div>
-                        <div id="about-me-description">
-                            <p>Oi! Me chamo Kesia e sou formada em Análise e Desenvolvimento de Sistemas. Sou
-                                apaixonada pelo mundo da programação e atualmente atuo como desenvolvedora
-                                backend.
-                            </p>
-                            <p>Minha experiência profissional gira em torno de linguagens como Java, Python e
-                                frameworks como Spring. Com conhecimento em SQL e React, estou sempre buscando
-                                expandir meu conhecimento e me manter atualizada com as últimas tendências do
-                                mercado.</p>
-                            <p>Além do meu trabalho, tenho alguns hobbies que me ajudam a relaxar e me divertir.
-                                Adoro jogar videogame e me aventurar em diferentes universos virtuais. Também
-                                gosto
-                                de desenvolver pequenos projetos pessoais, onde posso explorar minha
-                                criatividade e
-                                aprender coisas novas.
-                            </p>
-                            <p>Outra paixão minha é a história. Acredito que entender o passado nos ajuda a
-                                compreender melhor o presente e a moldar o futuro.</p>
-                        </div>
-                        <p id="cat" class="aboutMeFooter">
-                            " ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<br> ⠀⠀⠀⠀⠀⠀⠀⣀⣶⣿⣿⣿⣿⣿⣿⣷⣶⣶⣶⣦⣀⡀⠀⢀⣴⣇⠀⠀⠀⠀<br>
-                            ⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀<br> ⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀<br>
-                            ⠀⠀⠀⣴⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀<br> ⠀⠀⣾⣿⣿⣿⣿⣿⣶⣿⣯⣭⣬⣉⣽⣿⣿⣄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀<br>
-                            ⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄<br> ⢸⣿⣿⣿⣿⠟⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⣿⣿⣿⣿⡿⠛⠉⠉⠉⠉⠁<br>
-                            ⠘⠛⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀
+                <div id="about-me-body" class="startClick resizable">
+                    <hr>
+                    <p id="about-me-title" class="aboutMeTitle"> </p>
+                    <hr>
+                    <p>Oi! Me chamo Kesia e sou formada em Análise e Desenvolvimento de Sistemas. Sou
+                        apaixonada pelo mundo da programação e atualmente atuo como desenvolvedora
+                        backend.
+                    </p>
+                    <p>Minha experiência profissional gira em torno de linguagens como Java, Python e
+                        frameworks como Spring. Com conhecimento em SQL e React, estou sempre buscando
+                        expandir meu conhecimento e me manter atualizada com as últimas tendências do
+                        mercado.</p>
+                    <p>Além do meu trabalho, tenho alguns hobbies que me ajudam a relaxar e me divertir.
+                        Adoro jogar videogame e me aventurar em diferentes universos virtuais. Também
+                        gosto
+                        de desenvolver pequenos projetos pessoais, onde posso explorar minha
+                        criatividade e
+                        aprender coisas novas.
+                    </p>
+                    <p>Outra paixão minha é a história. Acredito que entender o passado nos ajuda a
+                        compreender melhor o presente e a moldar o futuro.</p>
+                    <p id="about-me-footer">
+                        " ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<br> ⠀⠀⠀⠀⠀⠀⠀⣀⣶⣿⣿⣿⣿⣿⣿⣷⣶⣶⣶⣦⣀⡀⠀⢀⣴⣇⠀⠀⠀⠀<br>
+                        ⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀<br> ⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀<br>
+                        ⠀⠀⠀⣴⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀<br> ⠀⠀⣾⣿⣿⣿⣿⣿⣶⣿⣯⣭⣬⣉⣽⣿⣿⣄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀<br>
+                        ⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄<br> ⢸⣿⣿⣿⣿⠟⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⣿⣿⣿⣿⡿⠛⠉⠉⠉⠉⠁<br>
+                        ⠘⠛⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀
 
-                        </p>
-                        <div id="about-me-hr"></div>
-                    </div>
+                    </p>
+                    <hr>
                 </div>
             </div>
         </div>
@@ -125,7 +121,7 @@
     <div id="taskbar">
         <div>
             <div id="start-btn" class="startRest">Iniciar</div>
-            <div id="start-menu" hidden>
+            <div id="start-menu" class="hidden">
                 <div id="left"></div>
                 <div id='hello-menu-icon' class="menuItem">Olá.exe</div>
                 <div id='about-me-menu-icon' class="menuItem">Sobre mim.txt</div>

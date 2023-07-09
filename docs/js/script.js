@@ -11,9 +11,7 @@ $(document).ready(function () {
     initText();
     startTime();
     moveCat();
-    $('#start-menu').addClass('hidden');
     $('#hello-btn').addClass('startClick');
-    $('#about-me').addClass('hidden');
 
     function swapPage(page, button) {
         $(pages).map(function () {
@@ -38,7 +36,7 @@ $(document).ready(function () {
 
     $('#start-btn').click(function () {
         swapButtons('#start-btn');
-        $('#start-menu').toggleClass('hidden');
+        $('#start-menu').toggleClass("hidden");
         $(this).toggleClass('startClick');
     });
 
@@ -54,7 +52,7 @@ $(document).ready(function () {
         swapPage('#about-me', '#about-me-btn');
 
         if (e.target.id == 'about-me-min') {
-            $('#about-me').addClass('hidden');
+            $('#about-me').addClass('hideContent');
             $('#about-me-btn').removeClass('startClick');
         } else if (e.target.id == 'about-me-max') {
             $(this).toggleClass('maximize');
@@ -65,7 +63,7 @@ $(document).ready(function () {
 
     $('#about-me-menu-icon').click(function () {
         swapPage('#about-me', '#about-me-btn')
-        $('#about-me').removeClass('hidden').addClass('index');
+        $('#about-me').removeClass('hideContent').addClass('index');
         $('#start-menu').addClass('hidden');
         $('#start-btn').removeClass('startClick').addClass('startRest');
         $('#about-me-btn').addClass('startClick').slideDown(100);
@@ -74,22 +72,22 @@ $(document).ready(function () {
     $('#about-me-btn').click(function () {
         swapPage('#about-me', '#about-me-btn')
         if (this.classList.contains('startClick')) {
-            $('#about-me').addClass('hidden').addClass('index');
+            $('#about-me').addClass('hideContent').addClass('index');
             $(this).removeClass('startClick');
         } else if (!this.classList.contains('startClick')) {
-            $('#about-me').removeClass('hidden');
+            $('#about-me').removeClass('hideContent');
             $(this).addClass('startClick');
         }
     });
 
     $('#aboutMeIcon').dblclick(function () {
         swapPage('#about-me', '#about-me-btn')
-        $('#about-me').removeClass('hidden').addClass('index');
+        $('#about-me').removeClass('hideContent').addClass('index');
         $('#about-me-btn').addClass('startClick').slideDown(100);
     });
 
     $('#about-me-cls').click(function () {
-        $('#about-me').addClass('hidden');
+        $('#about-me').addClass('hideContent');
         $('#about-me-btn').removeClass('startClick').slideUp(100);
     });
 
@@ -97,7 +95,7 @@ $(document).ready(function () {
         swapPage('#hello', '#hello-btn');
 
         if (e.target.id == 'hello-min') {
-            $('#hello').addClass('hidden');
+            $('#hello').addClass('hideContent');
             $('#hello-btn').removeClass('startClick');
         } else if (e.target.id == 'hello-max') {
             $(this).toggleClass('maximize');
@@ -109,7 +107,7 @@ $(document).ready(function () {
 
     $('#hello-menu-icon').click(function () {
         swapPage('#hello', '#hello-btn')
-        $('#hello').removeClass('hidden').addClass('index');
+        $('#hello').removeClass('hideContent').addClass('index');
         $('#start-menu').addClass('hidden');
         $('#start-btn').removeClass('startClick');
         $('#hello-btn').addClass('startClick').slideDown(100);
@@ -118,10 +116,10 @@ $(document).ready(function () {
     $('#hello-btn').click(function () {
         swapPage('#hello', '#hello-btn');
         if (this.classList.contains('startClick')) {
-            $('#hello').addClass('hidden');
+            $('#hello').addClass('hideContent');
             $(this).removeClass('startClick');
         } else {
-            $('#hello').removeClass('hidden').addClass('index');
+            $('#hello').removeClass('hideContent').addClass('index');
             $(this).addClass('startClick');
         }
     });
@@ -129,11 +127,11 @@ $(document).ready(function () {
     $('#hello-icon').dblclick(function () {
         swapPage('#hello', '#hello-btn')
         $('#hello-btn').addClass('startClick').slideDown(100);
-        $('#hello').removeClass('hidden').addClass('index');
+        $('#hello').removeClass('hideContent').addClass('index');
     });
 
     $('#hello-cls').click(function () {
-        $('#hello').addClass('hidden');
+        $('#hello').addClass('hideContent');
         $('#hello-btn').removeClass('startClick').slideUp(100);
     });
 
@@ -149,7 +147,7 @@ function moveCat() {
     var s = today.getSeconds();
     var spr1 = " ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<br>    ⠀⠀⠀⠀⠀⠀⠀⣀⣶⣿⣿⣿⣿⣿⣿⣷⣶⣶⣶⣦⣀⡀⠀⢀⣴⣇⠀⠀⠀⠀<br>    ⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀<br>    ⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀<br>    ⠀⠀⠀⣴⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀<br>    ⠀⠀⣾⣿⣿⣿⣿⣿⣶⣿⣯⣭⣬⣉⣽⣿⣿⣄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀<br>    ⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄<br>    ⢸⣿⣿⣿⣿⠟⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⣿⣿⣿⣿⡿⠛⠉⠉⠉⠉⠁<br>    ⠘⠛⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀";
     var spr2 = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣶⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<br>                        ⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⡀⣠⣾⡇⠀⠀⠀⠀<br>                        ⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀<br>                        ⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⡇⠀⠀⠀⠀<br>                        ⠀⣶⣿⣦⣜⣿⣿⣿⡟⠻⣿⣿⣿⣿⣿⣿⣿⡿⢿⡏⣴⣺⣦⣙⣿⣷⣄⠀⠀⠀<br>                        ⠀⣯⡇⣻⣿⣿⣿⣿⣷⣾⣿⣬⣥⣭⣽⣿⣿⣧⣼⡇⣯⣇⣹⣿⣿⣿⣿⣧⠀⠀<br>                        ⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣷⠀<br><br><br>";
-    $('#cat').html(s % 2 == 0 ? spr1 : spr2);
+    $('#about-me-footer').html(s % 2 == 0 ? spr1 : spr2);
     t = setTimeout(function () { moveCat() }, 500);
 }
 
