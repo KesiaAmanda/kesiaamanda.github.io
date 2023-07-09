@@ -35,6 +35,10 @@ body div {
     color: black;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 h1,
 span {
     width: 100%;
@@ -293,7 +297,7 @@ span {
 #hello-content.maximize {
     position: fixed;
     min-width: 100%;
-    min-height: calc(100% - 26px);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 26px);
     top: 0px !important;
     left: 0px !important;
     transform: none;
@@ -303,14 +307,14 @@ span {
 
 #about-me-content.maximize #about-me-body {
     backface-visibility: hidden;
-    min-height: calc(92.5vh);
     min-width: 100%;
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 26px);
 }
 
 #hello-content.maximize #hello-greeting {
     backface-visibility: hidden;
     min-width: 100%;
-    min-height: calc(95vh);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 26px);
 }
 
 #about-me,

@@ -1,6 +1,9 @@
 let pages = [$("#hello"), $("#about-me")];
 let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn")];
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 var elements = document.getElementsByClassName('header');
 for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener('mousedown', filter, false);
