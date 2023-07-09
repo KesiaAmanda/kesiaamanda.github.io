@@ -98,11 +98,17 @@ span {
     border-right: ridge 2px black;
 }
 
-.startClick {
+.startClick,
+.windowBorder {
     border-top: inset 2px black;
     border-left: inset 2px black;
     border-bottom: inset 2px white;
     border-right: inset 2px white;
+}
+
+.startClick {
+    outline: 1px dotted black;
+    outline-offset: -4px;
 }
 
 .min {
