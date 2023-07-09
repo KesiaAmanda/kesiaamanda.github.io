@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <title>Kesia Amanda</title>
     <link rel="icon" type="image/png" href="./assets/icons/social/happy.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Ubuntu:wght@500&display=swap"
         rel="stylesheet">
     <link rel="canonical" href="https://themesberg.com/product/ui-kit/windows-95-ui-kit">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/webkit.css">
 
 </head>
 
@@ -86,7 +87,7 @@
                 <div id="about-me-body" class="startClick">
                     <div id="about-me-text" class="resizable">
                         <div id="about-me-hr"></div>
-                        <div id="about-me-title" class="aboutMeTitle"> </div>
+                        <p id="about-me-title" class="aboutMeTitle"> </p>
                         <div id="about-me-hr"></div>
                         <div id="about-me-description">
                             <p>Oi! Me chamo Kesia e sou formada em Análise e Desenvolvimento de Sistemas. Sou
@@ -107,14 +108,14 @@
                             <p>Outra paixão minha é a história. Acredito que entender o passado nos ajuda a
                                 compreender melhor o presente e a moldar o futuro.</p>
                         </div>
-                        <div id="cat" class="aboutMeFooter">
+                        <p id="cat" class="aboutMeFooter">
                             " ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<br> ⠀⠀⠀⠀⠀⠀⠀⣀⣶⣿⣿⣿⣿⣿⣿⣷⣶⣶⣶⣦⣀⡀⠀⢀⣴⣇⠀⠀⠀⠀<br>
                             ⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀<br> ⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀<br>
                             ⠀⠀⠀⣴⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀<br> ⠀⠀⣾⣿⣿⣿⣿⣿⣶⣿⣯⣭⣬⣉⣽⣿⣿⣄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀<br>
                             ⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄<br> ⢸⣿⣿⣿⣿⠟⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⣿⣿⣿⣿⡿⠛⠉⠉⠉⠉⠁<br>
                             ⠘⠛⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀
 
-                        </div>
+                        </p>
                         <div id="about-me-hr"></div>
                     </div>
                 </div>
@@ -126,8 +127,8 @@
             <div id="start-btn" class="startRest">Iniciar</div>
             <div id="start-menu" hidden>
                 <div id="left"></div>
-                <div id='hello-menu' class="menuItem">Olá.exe</div>
-                <div id='about-me-menu' class="menuItem">Sobre mim.txt</div>
+                <div id='hello-menu-icon' class="menuItem">Olá.exe</div>
+                <div id='about-me-menu-icon' class="menuItem">Sobre mim.txt</div>
                 <div class="menuItem">Run</div>
                 <div class="divider"></div>
                 <div id="shutdown" class="menuItem">Sh<span style="text-decoration:underline;">u</span>t Down</div>
@@ -144,11 +145,12 @@
 
 
         <div id="notifications" class="startClick">
-            <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')">
-                <img class="icon" src="assets/icons/desktop/sounds.png" height="15px">
-            </a>
-            <div id="clock" />
-
+            <div>
+                <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')">
+                    <img class="icon" src="assets/icons/desktop/sounds.png" height="15px">
+                </a>
+                <span id="clock" />
+            </div>
         </div>
     </div>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>

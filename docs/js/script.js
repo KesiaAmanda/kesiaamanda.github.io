@@ -13,7 +13,7 @@ $(document).ready(function () {
     moveCat();
     $('#start-menu').addClass('hidden');
     $('#hello-btn').addClass('startClick');
-    // $('#about-me').addClass('hidden');
+    $('#about-me').addClass('hidden');
 
     function swapPage(page, button) {
         $(pages).map(function () {
@@ -63,7 +63,7 @@ $(document).ready(function () {
         }
     })
 
-    $('#about-me-menu').click(function () {
+    $('#about-me-menu-icon').click(function () {
         swapPage('#about-me', '#about-me-btn')
         $('#about-me').removeClass('hidden').addClass('index');
         $('#start-menu').addClass('hidden');
@@ -107,7 +107,7 @@ $(document).ready(function () {
         }
     })
 
-    $('#hello-menu').click(function () {
+    $('#hello-menu-icon').click(function () {
         swapPage('#hello', '#hello-btn')
         $('#hello').removeClass('hidden').addClass('index');
         $('#start-menu').addClass('hidden');

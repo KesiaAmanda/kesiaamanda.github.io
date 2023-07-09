@@ -1,0 +1,97 @@
+* {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+}
+
+::-webkit-scrollbar-button {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(189, 181, 181);
+    border-top: ridge 2px white;
+    border-left: ridge 2px white;
+    border-bottom: ridge 2px black;
+    border-right: ridge 2px black;
+}
+
+::-webkit-scrollbar-button {
+    display: block;
+}
+
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement,
+::-webkit-scrollbar-button:horizontal:start:increment,
+::-webkit-scrollbar-button:horizontal:end:decrement {
+    display: none;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-down.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:vertical:disabled:increment {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-down-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-left.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:horizontal:disabled:decrement {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-left-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-right.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:horizontal:disabled:increment {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-right-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-up.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:vertical:disabled:decrement {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-up-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(189, 181, 181);
+    border-top: ridge 2px white;
+    border-left: ridge 2px white;
+    border-bottom: ridge 2px black;
+    border-right: ridge 2px black;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgb(228, 228, 228);
+}
+
+::-webkit-resizer {
+    background: rgb(228, 228, 228);
+    background-image: url('../assets/icons/xlkzJ77UkQYNcEAjporOwabNzhft57cuaZ5DcNal0Bk.png');
+}
