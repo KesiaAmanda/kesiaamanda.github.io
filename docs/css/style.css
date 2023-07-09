@@ -308,7 +308,7 @@ span {
 #about-me-content.maximize #about-me-body {
     backface-visibility: hidden;
     min-width: 100%;
-    min-height: calc(calc(var(--vh, 1vh) * 100) - 26px);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 26px - 20px - 23px);
 }
 
 #hello-content.maximize #hello-greeting {
