@@ -40,17 +40,7 @@ span {
     width: 100%;
     font-size: 100%;
     margin: 0;
-    /* line-height: 0.7; */
-    /* display: block; */
 }
-
-/* .hidden {
-    width: 0;
-    height: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-} */
 
 .index {
     z-index: 2;
@@ -176,15 +166,29 @@ span {
     min-height: 100px;
 }
 
+#screen {
+    display: grid;
+    grid-template-rows: auto 26px;
+}
+
 #taskbar {
-    min-height: 26px;
+    position: relative;
+    height: 100%;
+    width: 100%;
     background-color: var(--backgroud);
-    position: absolute;
     display: flex;
     bottom: 0px;
     left: 0px;
     right: 0px;
     border-top: ridge 2px white;
+}
+
+#desktop {
+    position: relative;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
 }
 
 #start-btn {
@@ -280,6 +284,11 @@ span {
     text-decoration: none;
 }
 
+#about-me,
+#hello {
+    position: relative;
+}
+
 #about-me-content.maximize,
 #hello-content.maximize {
     position: fixed;
@@ -293,13 +302,13 @@ span {
 }
 
 #about-me-content.maximize #about-me-body {
-    min-height: calc(100vh - 70px);
+    min-height: calc(92.5vh);
     min-width: 100%;
 }
 
 #hello-content.maximize #hello-greeting {
-    min-height: calc(100vh - 55px);
     min-width: 100%;
+    min-height: calc(95vh);
 }
 
 #about-me,
@@ -443,13 +452,6 @@ span {
 
 #hello-social {
     margin-top: 20px;
-}
-
-#desktop {
-    height: calc(100% - 26px);
-    background-color: transparent;
-    width: 100%;
-    padding: 10px;
 }
 
 #notifications {
