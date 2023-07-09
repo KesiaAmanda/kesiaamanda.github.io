@@ -1,3 +1,9 @@
+:root {
+    --backgroud: rgb(187, 180, 185);
+    --white: rgb(255, 251, 245);
+    --hover: rgb(136, 24, 112);
+}
+
 @font-face {
     font-family: 'Windows 95';
     src: url('fonts/MS-Sans-Serif-8pt.ttf');
@@ -11,6 +17,11 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 body {
@@ -25,7 +36,7 @@ body {
 
 body div {
     font-family: "Windows 95", sans-serif;
-    color: rgb(0, 0, 0);
+    color: black;
 }
 
 h1,
@@ -67,6 +78,7 @@ span {
     margin: 3px;
     color: white;
     align-self: center;
+    overflow: hidden;
 }
 
 .helloGreetingText {
@@ -152,9 +164,19 @@ span {
     margin: 1px 3px 0px 3px;
 }
 
+.winButtom {
+    background-color: var(--backgroud);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 21px;
+    height: 21px;
+    cursor: default;
+}
+
 #taskbar {
     min-height: 26px;
-    background-color: rgb(187, 180, 185);
+    background-color: var(--backgroud);
     position: absolute;
     display: flex;
     bottom: 0px;
@@ -163,10 +185,10 @@ span {
     border-top: ridge 2px white;
 }
 
-#win-btn {
+/* #win-btn {
     display: flex;
     justify-content: baseline;
-}
+} */
 
 #start-btn,
 #hello-btn,
@@ -195,25 +217,13 @@ span {
     display: flex;
 }
 
-#about-me-min,
-#about-me-max,
-#about-me-cls,
-#hello-min,
-#hello-max,
-#hello-cls {
-    background-color: rgb(187, 180, 185);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 21px;
-    height: 21px;
-    cursor: default;
-}
-
 #start-menu {
+    display: flex;
+    flex-direction: column;
     top: -141px;
     left: 0;
-    background-color: rgb(189, 181, 181);
+    background-color: var(--backgroud);
+    background-size: 100px;
     position: absolute;
     z-index: 99;
     display: block;
@@ -221,6 +231,8 @@ span {
     border-left: ridge 3px white;
     border-bottom: ridge 2px black;
     border-right: ridge 2px grey;
+    max-width: unset;
+    max-height: unset;
 }
 
 #start-menu #left {
@@ -245,7 +257,7 @@ span {
 }
 
 #start-menu .menuItem:hover {
-    background-color: rgb(87, 0, 128);
+    background-color: var(--hover);
     color: white;
 }
 
@@ -261,11 +273,8 @@ span {
 #about-me-content.maximize,
 #hello-content.maximize {
     position: fixed;
-    background-color: rgb(189, 181, 181);
-    max-width: 100%;
-    max-height: calc(100% - 26px);
-    height: calc(100% - 26px);
-    width: 100%;
+    min-width: 100%;
+    min-height: calc(100% - 26px);
     top: 0px !important;
     left: 0px !important;
     transform: none;
@@ -275,12 +284,47 @@ span {
 #about-me {
     position: fixed;
     opacity: 1;
+}
+
+#about-me-content {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    background-color: var(--backgroud);
+    max-width: 900px;
     max-width: 90%;
-    max-height: 90%;
-    width: 900px;
-    transition-duration: 1000ms;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#about-me-description {
+    margin: 20px;
+}
+
+#about-me-hr {
+    margin: 20px;
+    border-top: 1px dashed black;
+}
+
+.resizable {
+    resize: both;
+    min-width: 300px;
+    min-height: 100px;
+}
+
+.aboutMeFooter,
+.aboutMeTitle {
+    margin: 20px 20px 20px 20px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+}
+
+.aboutMeTitle {
+    white-space: pre;
+    font-size: 8px;
 }
 
 #about-me.hidden {
@@ -289,30 +333,56 @@ span {
     bottom: 0;
     left: 0;
     opacity: 0;
-    opacity: 0;
 }
 
-#about-me-content {
-    position: fixed;
-    background-color: rgb(189, 181, 181);
-    max-width: 90%;
-    max-height: 90%;
-    width: 900px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#about-me-body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#about-me-text {
+    background-color: var(--white);
+    position: relative;
+    max-height: 80vh;
+    width: 600px;
+    height: auto;
+    resize: both;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+#about-me-content.maximize #about-me-text {
+    min-height: calc(100vh - 78px);
+    min-width: 100%;
+}
+
+#about-me-menu {
+    display: flex;
+}
+
+#about-me-menu .menuItem {
+    padding: 0 5px 0 5px;
+}
+
+#about-me-menu .menuItem:first-letter {
+    text-decoration: underline;
+}
+
+#about-me-menu .menuItem:hover {
+    background-color: var(--hover);
+    color: white;
 }
 
 #hello {
     position: relative;
-    background-color: rgb(189, 181, 181);
 }
 
 #hello-content {
     position: fixed;
-    background-color: rgb(189, 181, 181);
+    background-color: var(--backgroud);
     max-width: 90%;
-    max-height: 90%;
+    height: auto;
     width: 900px;
     top: 50%;
     left: 50%;
@@ -320,9 +390,7 @@ span {
 }
 
 #hello-body {
-    background-color: rgb(255, 251, 245);
-    height: calc(100% - 27px);
-    width: 100%;
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
 }
@@ -335,6 +403,11 @@ span {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+#hello-content.maximize #hello-greeting {
+    min-height: calc(100vh - 58px);
+    min-width: 100%;
 }
 
 #hello-greeting>* {
@@ -377,4 +450,95 @@ span {
     justify-content: center;
     cursor: default;
     font-size: 11px;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+}
+
+::-webkit-scrollbar-button {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(189, 181, 181);
+    border-top: ridge 2px white;
+    border-left: ridge 2px white;
+    border-bottom: ridge 2px black;
+    border-right: ridge 2px black;
+}
+
+::-webkit-scrollbar-button {
+    display: block;
+}
+
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement,
+::-webkit-scrollbar-button:horizontal:start:increment,
+::-webkit-scrollbar-button:horizontal:end:decrement {
+    display: none;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-down.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:vertical:disabled:increment {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-down-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-left.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:horizontal:disabled:decrement {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-left-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-right.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:horizontal:disabled:increment {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-right-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-up.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:vertical:disabled:decrement {
+    background-position: center;
+    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-up-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(189, 181, 181);
+    border-top: ridge 2px white;
+    border-left: ridge 2px white;
+    border-bottom: ridge 2px black;
+    border-right: ridge 2px black;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgb(228, 228, 228);
+}
+
+::-webkit-resizer {
+    background: rgb(228, 228, 228);
+    background-image: url('../assets/icons/xlkzJ77UkQYNcEAjporOwabNzhft57cuaZ5DcNal0Bk.png');
 }
