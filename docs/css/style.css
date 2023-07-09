@@ -170,6 +170,19 @@ span {
     cursor: default;
 }
 
+.winButtom:active {
+    border-top: inset 2px black;
+    border-left: inset 2px black;
+    border-bottom: inset 2px white;
+    border-right: inset 2px white;
+    outline: 1px dotted black;
+    outline-offset: -4px;
+}
+
+.desktopIcon:active p {
+    outline: 1px dotted black;
+}
+
 .resizable {
     resize: both;
     min-width: 300px;
