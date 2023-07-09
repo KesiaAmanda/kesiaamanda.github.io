@@ -289,6 +289,7 @@ span {
     left: 0px !important;
     transform: none;
     border: none;
+    transition: min-height 0.25s ease-in, min-width 0.25s ease-in;
 }
 
 #about-me-content.maximize #about-me-body {
@@ -312,6 +313,22 @@ span {
     max-width: 0;
     border: 0;
     transition: max-height 0.25s ease-out, max-width 0.25s ease-out;
+    overflow: hidden;
+}
+
+#about-me #about-me-content.maximize,
+#hello #hello-content.maximize {
+    max-height: 0;
+    max-width: 0;
+    transition: min-height 0.25s ease-out, min-width 0.25s ease-out;
+    overflow: hidden;
+}
+
+#about-me.hideContent #about-me-content.maximize,
+#hello.hideContent #hello-content.maximize {
+    min-height: 0;
+    min-width: 0;
+    transition: min-height 0.25s ease-out, min-width 0.25s ease-out;
     overflow: hidden;
 }
 
