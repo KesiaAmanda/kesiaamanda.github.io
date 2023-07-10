@@ -512,13 +512,16 @@ span {
 .wrapper {
     display: flex;
     overflow: hidden;
+    gap: 100px;
 }
 
 .textWrapper {
-    min-width: 300px;
+    max-width: 100px;
+    min-width: 100px;
+    overflow: ellipsis;
     white-space: nowrap;
     padding: 8px 40rem 0 40rem;
-    animation: move-rlt 50000ms linear infinite;
+    animation: move-rlt 30000ms linear infinite;
 }
 
 @keyframes move-rlt {

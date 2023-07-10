@@ -91,8 +91,11 @@ function updateProgressBar() {
 }
 
 function getVideoTitle() {
-    var videoData = player.getVideoData();
+    var videoTitle = player.getVideoData().title;
+    if (videoTitle == undefined) {
+        videoTitle = '...';
+    }
     for (let i = 0; i < videoTitleElement.length; i++) {
-        videoTitleElement[i].innerHTML = videoData.title;
+        videoTitleElement[i].innerHTML = videoTitle;
     }
 }
