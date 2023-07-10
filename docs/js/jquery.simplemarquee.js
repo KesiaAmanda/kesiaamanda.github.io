@@ -9,7 +9,7 @@
     } else {
         factory(root.jQuery);
     }
-} (this, function ($) {
+}(this, function ($) {
 
     'use strict';
 
@@ -32,7 +32,7 @@
             speed: 30,
             direction: 'left',
             cycles: 1,
-            space: 40,
+            space: 200,
             delayBetweenCycles: 2000,
             handleHover: true,
             handleResize: true,
@@ -71,12 +71,12 @@
         if (!this._needsAnimation) {
             this._paused = false;
             this._cycles = 0;
-        // If asked to restart, start from the begining
-        } else  if (restart) {
+            // If asked to restart, start from the begining
+        } else if (restart) {
             this._paused = false;
             this._cycles = -1;
             this._onCycle();
-        // Pause it if the animation was paused
+            // Pause it if the animation was paused
         } else if (this._paused) {
             this._pause();
         }
@@ -137,13 +137,13 @@
     SimpleMarquee.prototype._reset = function () {
         // Reset styles
         this._element
-        .removeClass('has-enough-space')
-        .css({
-            'word-wrap': '',      // Deprecated in favor of overflow wrap
-            'overflow-wrap': '',
-            'white-space': '',
-            'overflow': '',
-        });
+            .removeClass('has-enough-space')
+            .css({
+                'word-wrap': '',      // Deprecated in favor of overflow wrap
+                'overflow-wrap': '',
+                'white-space': '',
+                'overflow': '',
+            });
 
         // Remove created elements
         // Recover contents only if the contents are still there
@@ -228,24 +228,24 @@
             styleStr += '@' + prefix + 'keyframes ' + this._animationName + ' {\n';
 
             switch (this._options.direction) {
-            case 'left':
-                styleStr += '    0%   { ' + prefix + 'transform: translate(0, 0); } \n';
-                styleStr += '    100% { ' + prefix + 'transform: translate(-' + this._size + 'px, 0); }\n';
-                break;
-            case 'right':
-                styleStr += '    0%   { ' + prefix + 'transform: translate(-' + this._size + 'px, 0); }\n';
-                styleStr += '    100% { ' + prefix + 'transform: translate(0, 0); } \n';
-                break;
-            case 'top':
-                styleStr += '    0%   { ' + prefix + 'transform: translate(0, 0); } \n';
-                styleStr += '    100% { ' + prefix + 'transform: translate(0, -' + this._size + 'px); }\n';
-                break;
-            case 'bottom':
-                styleStr += '    0%   { ' + prefix + 'transform: translate(0, -' + this._size + 'px); }\n';
-                styleStr += '    100% { ' + prefix + 'transform: translate(0, 0); } \n';
-                break;
-            default:
-                throw new Error('Invalid direction: ' + this._options.direction);
+                case 'left':
+                    styleStr += '    0%   { ' + prefix + 'transform: translate(0, 0); } \n';
+                    styleStr += '    100% { ' + prefix + 'transform: translate(-' + this._size + 'px, 0); }\n';
+                    break;
+                case 'right':
+                    styleStr += '    0%   { ' + prefix + 'transform: translate(-' + this._size + 'px, 0); }\n';
+                    styleStr += '    100% { ' + prefix + 'transform: translate(0, 0); } \n';
+                    break;
+                case 'top':
+                    styleStr += '    0%   { ' + prefix + 'transform: translate(0, 0); } \n';
+                    styleStr += '    100% { ' + prefix + 'transform: translate(0, -' + this._size + 'px); }\n';
+                    break;
+                case 'bottom':
+                    styleStr += '    0%   { ' + prefix + 'transform: translate(0, -' + this._size + 'px); }\n';
+                    styleStr += '    100% { ' + prefix + 'transform: translate(0, 0); } \n';
+                    break;
+                default:
+                    throw new Error('Invalid direction: ' + this._options.direction);
             }
 
             styleStr += '}\n';
@@ -285,7 +285,7 @@
         if (this._cycles >= this._options.cycles) {
             this.pause();
             this._element.triggerHandler('finish');
-        // Otherwise pause it and schedule the resume
+            // Otherwise pause it and schedule the resume
         } else {
             this._pause();
             this._element.triggerHandler('cycle');
@@ -335,7 +335,7 @@
                 }
 
                 instance[options](arguments[1]);
-            // .simplemarquee({})
+                // .simplemarquee({})
             } else {
                 if (!instance) {
                     instance = new SimpleMarquee(el, options);
