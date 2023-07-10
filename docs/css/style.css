@@ -554,47 +554,43 @@ span {
 }
 
 #volume-image {
-    z-index: 1;
     position: fixed;
-    width: 0;
-    height: 0;
-    border-left: 69px solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 15px inset rgb(88, 88, 88);
-}
-
-
-#volume-image-2 {
-    z-index: 2;
-    position: fixed;
-    margin-top: 1px;
-    margin-left: 2px;
-    width: 0;
-    height: 0;
-    border-left: 67px solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 15px inset var(--backgroud);
-}
-
-.volume-input {
-    -webkit-appearance: none;
+    height: 18px;
+    margin-top: -2px;
+    margin-left: -1px;
+    width: 70px;
+    cursor: pointer;
+    background: linear-gradient(to bottom right,
+            transparent 50%,
+            rgb(88, 88, 88) 50%);
 }
 
 input[type=range] {
-    z-index: 5;
+    -webkit-appearance: none;
     display: block;
     width: 70px;
-    height: 17px;
+    height: 18px;
     background-color: transparent;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
 }
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 18px;
+    margin-top: -1px;
+    width: 70px;
+    cursor: pointer;
+    background: linear-gradient(to bottom right,
+            transparent 50%,
+            var(--backgroud) 50%);
+}
+
 
 .volume-input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 20px;
     width: 10px;
-    margin-top: -8px;
+    margin-top: -1px;
     background-color: var(--backgroud);
     border-top: ridge 1px white;
     border-left: ridge 1px white;
