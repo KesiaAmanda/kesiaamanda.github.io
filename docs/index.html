@@ -151,7 +151,7 @@
                         height="300px">
                     <div class="padding5px">
                         <div id="music-player-title" class="startClick">
-                            <marquee id="video-title"></marquee>
+                            <div id="video-title"></div>
                         </div>
                         <div id="progress-bar-container">
                             <div id="progress-bar"></div>
@@ -170,7 +170,7 @@
 
                             <div id="volume-icon" class="mediumButtomDisabled"></div>
                             <div id="volume">
-                                <div id="volume-image"></div>
+                                <div id="volume-image-shadow"></div>
                                 <input id="volume-input" class="volume-input" name="volume" type="range" value="2"
                                     min="0" max="15" oninput="this.nextElementSibling.value = this.value">
                                 <output id="volume-amount" for="volume-input" hidden>2</output>
@@ -214,7 +214,10 @@
             </div>
         </div>
     </div>
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <!-- <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="lib/jquery.simplemarquee.js"></script>
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="./js/jquery.fittext.js"></script>
@@ -225,6 +228,7 @@
         jQuery("#str-im").fitText(1, { minFontSize: '20px', maxFontSize: '30px' });
         jQuery("#str-name").fitText(1, { minFontSize: '30px', maxFontSize: '50px' });
         jQuery("#str-prof").fitText(1, { minFontSize: '10px', maxFontSize: '15px' });
+        jQuery('#video-title').simplemarquee();
     </script>
 
 </body>

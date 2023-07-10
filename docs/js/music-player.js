@@ -23,6 +23,8 @@ function onPlayerReady(event) {
     progressBar = document.getElementById("progress-bar");
     videoTitleElement = document.getElementById("video-title");
 
+    var close = document.getElementById("music-player-cls");
+
     var playButton = document.getElementById("play-button");
     var pauseButton = document.getElementById("pause-button");
     var stopButton = document.getElementById("stop-button");
@@ -30,6 +32,10 @@ function onPlayerReady(event) {
     var volumeElement = document.getElementById("volume-amount");
 
     getVideoTitle();
+
+    close.addEventListener("click", function () {
+        player.stopVideo();
+    });
 
     playButton.addEventListener("click", function () {
         player.playVideo();

@@ -1,5 +1,5 @@
 let pages = [$("#hello"), $("#about-me"), $("#music-player")];
-let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#music-player-me-btn")];
+let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#music-player-btn")];
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);

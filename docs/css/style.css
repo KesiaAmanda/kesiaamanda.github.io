@@ -2,6 +2,7 @@
     --backgroud: rgb(187, 180, 185);
     --white: rgb(255, 251, 245);
     --hover: rgb(136, 24, 112);
+    --shadow: rgb(172, 172, 172);
 }
 
 @font-face {
@@ -93,14 +94,14 @@ span {
 .startRest {
     border-top: ridge 2px white;
     border-left: ridge 2px white;
-    border-bottom: ridge 2px black;
-    border-right: ridge 2px black;
+    border-bottom: ridge 2px var(--shadow);
+    border-right: ridge 2px var(--shadow);
 }
 
 .startClick,
 .windowBorder {
-    border-top: inset 2px black;
-    border-left: inset 2px black;
+    border-top: inset 2px var(--shadow);
+    border-left: inset 2px var(--shadow);
     border-bottom: inset 2px white;
     border-right: inset 2px white;
 }
@@ -155,13 +156,13 @@ span {
 .divider {
     height: 1px;
     border-top: ridge 1px white;
-    border-bottom: ridge 1px grey;
+    border-bottom: ridge 1px var(--shadow);
     margin: 2px;
 }
 
 .verticalDivider {
     border-left: 1px solid white;
-    border-right: ridge 1px grey;
+    border-right: ridge 1px var(--shadow);
     height: 19px;
     margin: 1px 3px 0px 3px;
 }
@@ -198,7 +199,7 @@ span {
 
 .smallButtom:active,
 .mediumButtom:active {
-    border-top: inset 2px black;
+    border-top: inset 2px var(--shadow);
     border-left: inset 2px black;
     border-bottom: inset 2px white;
     border-right: inset 2px white;
@@ -545,7 +546,7 @@ span {
     background-color: black;
 }
 
-#music-player-title marquee {
+#music-player-title div {
     color: var(--white);
 }
 
@@ -553,7 +554,7 @@ span {
     padding-top: 5px;
 }
 
-#volume-image {
+#volume-image-shadow {
     position: fixed;
     height: 18px;
     margin-top: -2px;
@@ -562,7 +563,7 @@ span {
     cursor: pointer;
     background: linear-gradient(to bottom right,
             transparent 50%,
-            rgb(88, 88, 88) 50%);
+            rgb(143, 143, 143) 50%);
 }
 
 input[type=range] {
@@ -586,7 +587,7 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 
-.volume-input::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 20px;
     width: 10px;
