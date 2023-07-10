@@ -3,6 +3,9 @@ tag.src = 'https://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+var videoList = ['xb0cMDEyMzg', 'IZiGxs9hai8'];
+var selectedVideo = videoList[Math.round(Math.random() * 1)];
+
 var player;
 var progressBar;
 var videoTitleElement;
@@ -11,7 +14,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '315',
         width: '560',
-        videoId: 'xb0cMDEyMzg',
+        videoId: selectedVideo,
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -21,7 +24,7 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
     progressBar = document.getElementById("progress-bar");
-    videoTitleElement = document.getElementById("video-title");
+    videoTitleElement = document.getElementsByClassName("videoTitle");
 
     var close = document.getElementById("music-player-cls");
 
@@ -69,5 +72,8 @@ function updateProgressBar() {
 
 function getVideoTitle() {
     var videoData = player.getVideoData();
-    videoTitleElement.innerHTML = videoData.title;
+    for (let i = 0; i < videoTitleElement.length; i++) {
+        videoTitleElement[i].innerHTML = videoData.title;
+    }
+    // videoTitleElement.innerHTML = videoData.title;
 }

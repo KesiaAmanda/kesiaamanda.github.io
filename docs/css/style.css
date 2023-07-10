@@ -69,6 +69,7 @@ span {
     color: white;
     align-self: center;
     overflow: hidden;
+    max-width: 100%;
 }
 
 .helloGreetingText {
@@ -160,11 +161,17 @@ span {
     margin: 2px;
 }
 
-.verticalDivider {
+.taskBarDivider {
     border-left: 1px solid white;
     border-right: ridge 1px var(--shadow);
     height: 19px;
     margin: 1px 3px 0px 3px;
+}
+
+.windowDivider {
+    border-left: 1px solid white;
+    border-right: ridge 1px grey;
+    height: 30px;
 }
 
 .smallButtom {
@@ -413,6 +420,7 @@ span {
     overflow: hidden;
     max-height: auto;
     max-width: auto;
+    padding: 1px;
     transition: max-height 0.25s ease-in, max-width 0.25s ease-in;
 }
 
@@ -497,10 +505,26 @@ span {
 
 /* Musica */
 
-.musicPlayerDivider {
-    border-left: 1px solid white;
-    border-right: ridge 1px grey;
-    height: 30px;
+.wrapper {
+    display: flex;
+    overflow: hidden;
+}
+
+.textWrapper {
+    min-width: 300px;
+    white-space: nowrap;
+    padding: 8px 40rem 0 40rem;
+    animation: move-rlt 10000ms linear infinite;
+}
+
+@keyframes move-rlt {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 #music-player-body {
@@ -511,7 +535,7 @@ span {
 }
 
 #music-player-body p {
-    text-align: center;
+    color: #ccc;
 }
 
 #progress-bar-container {
@@ -543,6 +567,7 @@ span {
 }
 
 #music-player-title {
+    margin-top: 5px;
     background-color: black;
 }
 

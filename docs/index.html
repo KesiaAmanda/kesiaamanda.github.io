@@ -149,10 +149,14 @@
                     <div id="player" class="hidden"></div>
                     <img class="windowBorder grey" src="assets/images/1456855014belton-5.webp" width="300px"
                         height="300px">
+
+                    <div id="music-player-title" class="startClick wrapper">
+                        <p title="video-title" class="textWrapper videoTitle"></p>
+                        <p title="video-title" class="textWrapper videoTitle"></p>
+                    </div>
+
                     <div class="padding5px">
-                        <div id="music-player-title" class="startClick">
-                            <div id="video-title"></div>
-                        </div>
+
                         <div id="progress-bar-container">
                             <div id="progress-bar"></div>
                         </div>
@@ -161,12 +165,12 @@
                             <div id="pause-button" class="mediumButtom"></div>
                             <div id="stop-button" class="mediumButtom"></div>
 
-                            <div class="musicPlayerDivider"></div>
+                            <div class="windowDivider"></div>
 
                             <div id="previous-button" class="mediumButtomDisabled"></div>
                             <div id="next-button" class="mediumButtomDisabled"></div>
 
-                            <div class="musicPlayerDivider"></div>
+                            <div class="windowDivider"></div>
 
                             <div id="volume-icon" class="mediumButtomDisabled"></div>
                             <div id="volume">
@@ -195,9 +199,7 @@
             </div>
         </div>
 
-        <div>
-            <div class="verticalDivider"></div>
-        </div>
+        <div class="taskBarDivider"></div>
 
         <div id="hello-btn" class="startRest buttom">Olá</div>
         <div id="about-me-btn" class="startRest buttom">Sobre mim</div>
@@ -216,7 +218,6 @@
     </div>
     <!-- <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="./js/jquery.simplemarquee.js"></script>
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
@@ -228,7 +229,6 @@
         jQuery("#str-im").fitText(1, { minFontSize: '20px', maxFontSize: '30px' });
         jQuery("#str-name").fitText(1, { minFontSize: '30px', maxFontSize: '50px' });
         jQuery("#str-prof").fitText(1, { minFontSize: '10px', maxFontSize: '15px' });
-        jQuery('#video-title').simplemarquee();
     </script>
 
 </body>
