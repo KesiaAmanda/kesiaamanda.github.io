@@ -110,21 +110,6 @@ span {
     outline-offset: -4px;
 }
 
-.min {
-    background: url('../assets/icons/min.png') center center no-repeat;
-    background-size: 13px 13px;
-}
-
-.max {
-    background: url('../assets/icons/max.png') center center no-repeat;
-    background-size: 13px 13px;
-}
-
-.cls {
-    background: url('../assets/icons/cls.png') center center no-repeat;
-    background-size: 13px 13px;
-}
-
 .padding5px {
     padding: 5px;
 }
@@ -232,6 +217,7 @@ span {
 }
 
 .buttoms {
+    background-color: var(--backgroud);
     margin-left: auto;
     display: flex;
 }
@@ -299,35 +285,6 @@ span {
     height: 100%;
     width: 100%;
     padding: 10px;
-}
-
-/* Botões menu iniciar */
-
-#start-btn {
-    background: url('../assets/icons/social/icons8-pixel-star-16.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
-}
-
-#hello-btn,
-#hello-header-title {
-    background: url('../assets/icons/desktop/program.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
-}
-
-#about-me-btn,
-#about-me-header-title {
-    background: url('../assets/icons/desktop/notepad.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
-}
-
-#music-player-btn,
-#music-player-header-title {
-    background: url('../assets/icons/desktop/music.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
 }
 
 /* Start menu */
@@ -590,44 +547,6 @@ span {
 
 #music-player-title marquee {
     color: var(--white);
-}
-
-#play-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-play.svg');
-    background-repeat: no-repeat;
-}
-
-#pause-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-pause.svg');
-    background-repeat: no-repeat;
-}
-
-#stop-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-stop.svg');
-    background-repeat: no-repeat;
-}
-
-#previous-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-media-previous-disabled.svg');
-    background-repeat: no-repeat;
-}
-
-#next-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-media-next-disabled.svg');
-    background-repeat: no-repeat;
-}
-
-#volume-icon {
-    background-position: center;
-    background-image: url('../assets/icons/desktop/sounds.png');
-    background-size: 20px;
-    filter: grayscale(40%);
-    background-repeat: no-repeat;
 }
 
 #volume {
