@@ -57,7 +57,7 @@ span {
     max-width: 100%;
     display: flex;
     align-items: center;
-    margin: 1px;
+    margin-bottom: 2px;
     height: 23px;
     flex: 0 1 auto;
 }
@@ -275,6 +275,10 @@ span {
     color: white;
 }
 
+.margin2px {
+    margin: 2px;
+}
+
 #screen {
     display: grid;
     grid-template-rows: auto 26px;
@@ -383,14 +387,14 @@ span {
 
 #about-me-content.maximize #about-me-body {
     backface-visibility: hidden;
-    min-width: 100%;
-    min-height: calc(calc(var(--vh, 1vh) * 100) - 26px - 20px - 23px);
+    min-width: calc(100% - 4px);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 74px);
 }
 
 #hello-content.maximize #hello-greeting {
     backface-visibility: hidden;
-    min-width: 100%;
-    min-height: calc(calc(var(--vh, 1vh) * 100) - 26px);
+    min-width: calc(100% - 4px);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 60px);
 }
 
 #hello.hideContent #hello-content,
@@ -425,7 +429,6 @@ span {
     overflow: hidden;
     max-height: auto;
     max-width: auto;
-    padding: 1px;
     transition: max-height 0.25s ease-in, max-width 0.25s ease-in;
 }
 
@@ -487,7 +490,7 @@ span {
 #about-me-body {
     position: relative;
     height: 100%;
-    width: 100%;
+    max-width: calc(100% - 4px);
     background-color: var(--white);
     position: relative;
     max-height: 80vh;
