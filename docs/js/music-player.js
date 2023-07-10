@@ -35,6 +35,8 @@ function onPlayerReady(event) {
     var volumeElement = document.getElementById("volume-amount");
 
     getVideoTitle();
+    player.unMute();
+    player.setVolume(2);
 
     close.addEventListener("click", function () {
         player.stopVideo();
