@@ -592,7 +592,7 @@ span {
 }
 
 input[type=range] {
-    -webkit-appearance: none;
+    appearance: none;
     display: block;
     width: 70px;
     height: 18px;
