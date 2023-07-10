@@ -7,7 +7,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 var elements = document.getElementsByClassName('header');
 for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener('mousedown', filter, false);
-    elements[i].addEventListener('touchstart', filterCellPhone, false);
+    elements[i].addEventListener('touchstart', filter, false);
 }
 
 $(document).ready(function () {
@@ -284,9 +284,9 @@ function filter(e) {
     target.ontouchend = endDrag;
 }
 
-function filterCellPhone(e) {
-    if (!e.target.parentNode.parentNode.classList.contains("index")) {
-        return;
-    }
-    filter(e);
-}
+//function filterCellPhone(e) {
+//    if (!e.target.parentNode.parentNode.classList.contains("index")) {
+//        return;
+//    }
+//    filter(e);
+//}
