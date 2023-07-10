@@ -86,7 +86,7 @@ function onPlayerStateChange(event) {
 function updateProgressBar() {
     var currentTime = player.getCurrentTime();
     var duration = player.getDuration();
-    var progress = (currentTime / duration) * 100;
+    var progress = ((currentTime / duration) * 92);
     progressBar.style.marginLeft = progress + "%";
 }
 
