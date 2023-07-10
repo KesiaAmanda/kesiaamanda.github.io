@@ -398,6 +398,7 @@ span {
 #music-player.hideContent #music-player-content {
     max-height: 0;
     max-width: 0;
+    padding: 0;
     border: 0;
     transition: max-height 0.25s ease-out, max-width 0.25s ease-out;
     overflow: hidden;
