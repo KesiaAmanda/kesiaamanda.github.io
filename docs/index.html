@@ -216,7 +216,7 @@
     </div>
     <!-- <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="lib/jquery.simplemarquee.js"></script>
+    <script src="./js/jquery.simplemarquee.js"></script>
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
@@ -228,7 +228,14 @@
         jQuery("#str-im").fitText(1, { minFontSize: '20px', maxFontSize: '30px' });
         jQuery("#str-name").fitText(1, { minFontSize: '30px', maxFontSize: '50px' });
         jQuery("#str-prof").fitText(1, { minFontSize: '10px', maxFontSize: '15px' });
-        jQuery('#video-title').simplemarquee();
+        jQuery('#video-title').simplemarquee({
+            speed: 100,
+            cycles: 100,
+            space: 100,
+            delayBetweenCycles: 2000,
+            handleHover: false,
+            handleResize: false
+        });
     </script>
 
 </body>
