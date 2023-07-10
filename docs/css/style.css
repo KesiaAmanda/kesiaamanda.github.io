@@ -218,6 +218,10 @@ span {
     outline: 1px dotted black;
 }
 
+.desktopIcon p {
+    padding: 2px;
+}
+
 .resizable {
     resize: both;
     min-width: 300px;

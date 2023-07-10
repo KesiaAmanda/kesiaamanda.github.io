@@ -9,12 +9,19 @@ var selectedVideo = videoList[Math.round(Math.random() * 1)];
 var player;
 var progressBar;
 var videoTitleElement;
+var playlistId = 'PLUO8mnyUG2EIpm1PymeZmMT7sH8UJky6c'; // ID da playlist do YouTube
+// var playlistId = 'PL91KhE7INCB3pz2F4rriUbOeqVeWLA1cl'; // ID da playlist do YouTube
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '315',
         width: '560',
-        videoId: selectedVideo,
+        playerVars: {
+            'listType': 'playlist',
+            'list': playlistId,
+            'loop': 1,
+            'shuffle': 1
+        },
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -33,6 +40,8 @@ function onPlayerReady(event) {
     var stopButton = document.getElementById("stop-button");
     var volumeButton = document.getElementById("volume-input");
     var volumeElement = document.getElementById("volume-amount");
+    var previousButton = document.getElementById("previous-button");
+    var nextButton = document.getElementById("next-button");
 
     getVideoTitle();
     player.unMute();
@@ -57,12 +66,21 @@ function onPlayerReady(event) {
     volumeButton.addEventListener("click", function () {
         player.setVolume(volumeElement.value);
     });
+
+    nextButton.addEventListener("click", function () {
+        player.nextVideo();
+    });
+
+    previousButton.addEventListener("click", function () {
+        player.previousVideo();
+    });
 }
 
 function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.PLAYING) {
         setInterval(updateProgressBar, 100);
     }
+    getVideoTitle();
 }
 
 function updateProgressBar() {
@@ -77,5 +95,4 @@ function getVideoTitle() {
     for (let i = 0; i < videoTitleElement.length; i++) {
         videoTitleElement[i].innerHTML = videoData.title;
     }
-    // videoTitleElement.innerHTML = videoData.title;
 }

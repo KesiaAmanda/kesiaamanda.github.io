@@ -64,13 +64,13 @@
 
 #previous-button {
     background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-media-previous-disabled.svg');
+    background-image: url('../assets/icons/player/iconmonstr-media-previous.svg');
     background-repeat: no-repeat;
 }
 
 #next-button {
     background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-media-next-disabled.svg');
+    background-image: url('../assets/icons/player/iconmonstr-media-next.svg');
     background-repeat: no-repeat;
 }
 
