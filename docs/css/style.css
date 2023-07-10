@@ -62,10 +62,9 @@ span {
 }
 
 .title {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 3px;
+    display: inline-block;
+    padding: 0px 10px 0px 20px;
+    max-width: 200px;
     color: white;
     align-self: center;
     overflow: hidden;
@@ -126,10 +125,18 @@ span {
     background-size: 13px 13px;
 }
 
-.desktopIcon {
-    margin: 7px 7px;
-    display: block;
-    height: 50px;
+.padding5px {
+    padding: 5px;
+}
+
+#desktop-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+#desktop-icons p {
     width: 50px;
     font-size: 12px;
     text-shadow:
@@ -139,10 +146,24 @@ span {
         1px 1px 1px black;
     text-align: center;
     color: white;
-    cursor: pointer;
+}
+
+.grey {
+    filter: grayscale(40%);
 }
 
 .icon {
+    width: 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    filter: grayscale(40%);
+}
+
+.iconImage {
+    size: 32px;
     filter: grayscale(40%);
 }
 
@@ -160,7 +181,7 @@ span {
     margin: 1px 3px 0px 3px;
 }
 
-.winButtom {
+.smallButtom {
     background-color: var(--backgroud);
     display: flex;
     justify-content: center;
@@ -170,7 +191,28 @@ span {
     cursor: default;
 }
 
-.winButtom:active {
+.mediumButtom {
+    background-color: var(--backgroud);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 30px;
+    height: 30px;
+    cursor: default;
+}
+
+.mediumButtomDisabled {
+    background-color: var(--backgroud);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 30px;
+    height: 30px;
+    cursor: default;
+}
+
+.smallButtom:active,
+.mediumButtom:active {
     border-top: inset 2px black;
     border-left: inset 2px black;
     border-bottom: inset 2px white;
@@ -187,6 +229,51 @@ span {
     resize: both;
     min-width: 300px;
     min-height: 100px;
+}
+
+.buttoms {
+    margin-left: auto;
+    display: flex;
+}
+
+.buttom {
+    text-align: center;
+    display: inline-block;
+    min-width: 60px;
+    max-width: 100px;
+    font-size: 12px;
+    height: 21px;
+    padding: 0px 10px 0px 20px;
+    margin: 1px 2px 0px 2px;
+    cursor: default;
+}
+
+.content {
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+    flex-flow: column;
+    background-color: var(--backgroud);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.windowMenu {
+    display: flex;
+}
+
+.windowMenu div {
+    padding: 0 5px 0 5px;
+}
+
+.windowMenu div:first-letter {
+    text-decoration: underline;
+}
+
+.windowMenu div:hover {
+    background-color: var(--hover);
+    color: white;
 }
 
 #screen {
@@ -214,45 +301,36 @@ span {
     padding: 10px;
 }
 
+/* Botões menu iniciar */
+
 #start-btn {
     background: url('../assets/icons/social/icons8-pixel-star-16.png') left center no-repeat;
     background-size: 15px 15px;
     background-position-x: 2px;
 }
 
-#hello-btn {
+#hello-btn,
+#hello-header-title {
     background: url('../assets/icons/desktop/program.png') left center no-repeat;
     background-size: 15px 15px;
     background-position-x: 2px;
-
 }
 
-#about-me-btn {
+#about-me-btn,
+#about-me-header-title {
     background: url('../assets/icons/desktop/notepad.png') left center no-repeat;
     background-size: 15px 15px;
     background-position-x: 2px;
-    width: 90px;
 }
 
-#start-btn,
-#hello-btn,
-#about-me-btn {
-    text-align: center;
-    display: inline-block;
-    min-width: 60px;
-    max-width: 100px;
-    font-size: 12px;
-    height: 21px;
-    padding: 0px 10px 0px 20px;
-    margin: 1px 2px 0px 2px;
-    cursor: default;
+#music-player-btn,
+#music-player-header-title {
+    background: url('../assets/icons/desktop/music.png') left center no-repeat;
+    background-size: 15px 15px;
+    background-position-x: 2px;
 }
 
-#hello-btns,
-#about-me-btns {
-    margin-left: auto;
-    display: flex;
-}
+/* Start menu */
 
 #start-menu {
     display: flex;
@@ -307,10 +385,19 @@ span {
     text-decoration: none;
 }
 
+/* Janelas */
+
 #about-me,
-#hello {
+#hello,
+#music-player {
     position: relative;
 }
+
+/* #about-me,
+#hello,
+#music-player {
+    position: fixed;
+} */
 
 #about-me-content.maximize,
 #hello-content.maximize {
@@ -336,13 +423,9 @@ span {
     min-height: calc(calc(var(--vh, 1vh) * 100) - 26px);
 }
 
-#about-me,
-#hello {
-    position: fixed;
-}
-
 #hello.hideContent #hello-content,
-#about-me.hideContent #about-me-content {
+#about-me.hideContent #about-me-content,
+#music-player.hideContent #music-player-content {
     max-height: 0;
     max-width: 0;
     border: 0;
@@ -367,7 +450,8 @@ span {
 }
 
 #hello-content,
-#about-me-content {
+#about-me-content,
+#music-player-content {
     overflow: hidden;
     max-height: auto;
     max-width: auto;
@@ -375,17 +459,50 @@ span {
 }
 
 #about-me-content {
-    display: flex;
-    overflow: hidden;
-    flex-flow: column;
-    position: fixed;
-    background-color: var(--backgroud);
     max-width: 900px;
     max-width: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
+
+#hello-content {
+    max-width: 90%;
+    height: auto;
+    width: 900px;
+}
+
+/* Olá */
+
+#hello-body {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+#hello-greeting {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#hello-greeting>* {
+    flex: 1 1 170px;
+}
+
+#hello-img {
+    border-radius: 50%;
+    max-width: 80%;
+    border: 2px solid #fff;
+    box-shadow: 1px 2px 5px #ccc;
+}
+
+#hello-social {
+    margin-top: 20px;
+}
+
+/* Sobre mim */
 
 #about-me-body {
     position: relative;
@@ -420,64 +537,159 @@ span {
     font-size: 8px;
 }
 
-#about-me-menu {
-    display: flex;
+/* Musica */
+
+.musicPlayerDivider {
+    border-left: 1px solid white;
+    border-right: ridge 1px grey;
+    height: 30px;
 }
 
-#about-me-menu div {
-    padding: 0 5px 0 5px;
+#music-player-body {
+    padding: 1px;
+    position: relative;
+    max-height: 80vh;
+    width: 300px;
 }
 
-#about-me-menu div:first-letter {
-    text-decoration: underline;
+#music-player-body p {
+    text-align: center;
 }
 
-#about-me-menu div:hover {
-    background-color: var(--hover);
-    color: white;
+#progress-bar-container {
+    width: 560px;
+    height: 10px;
+    margin-top: 10px;
+    border-top: inset 1px rgb(172, 172, 172);
+    border-left: inset 1px rgb(172, 172, 172);
+    border-bottom: inset 1px white;
+    border-right: inset 1px white;
 }
 
-#hello-content {
-    position: fixed;
+#progress-bar {
+    position: absolute;
+    margin-top: -6px;
+    height: 20px;
+    width: 10px;
     background-color: var(--backgroud);
-    max-width: 90%;
-    height: auto;
-    width: 900px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-top: ridge 1px white;
+    border-left: ridge 1px white;
+    border-bottom: ridge 1px black;
+    border-right: ridge 1px black;
 }
 
-#hello-body {
-    background-color: var(--white);
+#music-player-controls {
     display: flex;
-    flex-direction: column;
+    padding: 10px 0 10px 0;
+    gap: 5px;
 }
 
-#hello-greeting {
-    width: 100%;
-    height: 100%;
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+#music-player-title {
+    background-color: black;
 }
 
-#hello-greeting>* {
-    flex: 1 1 170px;
+#music-player-title marquee {
+    color: var(--white);
 }
 
-#hello-img {
-    border-radius: 50%;
-    max-width: 80%;
-    border: 2px solid #fff;
-    box-shadow: 1px 2px 5px #ccc;
+#play-button {
+    background-position: center;
+    background-image: url('../assets/icons/player/iconmonstr-play.svg');
+    background-repeat: no-repeat;
 }
 
-#hello-social {
-    margin-top: 20px;
+#pause-button {
+    background-position: center;
+    background-image: url('../assets/icons/player/iconmonstr-pause.svg');
+    background-repeat: no-repeat;
 }
+
+#stop-button {
+    background-position: center;
+    background-image: url('../assets/icons/player/iconmonstr-stop.svg');
+    background-repeat: no-repeat;
+}
+
+#previous-button {
+    background-position: center;
+    background-image: url('../assets/icons/player/iconmonstr-media-previous-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+#next-button {
+    background-position: center;
+    background-image: url('../assets/icons/player/iconmonstr-media-next-disabled.svg');
+    background-repeat: no-repeat;
+}
+
+#volume-icon {
+    background-position: center;
+    background-image: url('../assets/icons/desktop/sounds.png');
+    background-size: 20px;
+    filter: grayscale(40%);
+    background-repeat: no-repeat;
+}
+
+#volume {
+    padding-top: 5px;
+}
+
+#volume-image {
+    z-index: 1;
+    position: fixed;
+    width: 0;
+    height: 0;
+    border-left: 69px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 15px inset rgb(88, 88, 88);
+}
+
+
+#volume-image-2 {
+    z-index: 2;
+    position: fixed;
+    margin-top: 1px;
+    margin-left: 2px;
+    width: 0;
+    height: 0;
+    border-left: 67px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 15px inset var(--backgroud);
+}
+
+.volume-input {
+    -webkit-appearance: none;
+}
+
+input[type=range] {
+    z-index: 5;
+    display: block;
+    width: 70px;
+    height: 17px;
+    background-color: transparent;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.volume-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 10px;
+    margin-top: -8px;
+    background-color: var(--backgroud);
+    border-top: ridge 1px white;
+    border-left: ridge 1px white;
+    border-bottom: ridge 1px black;
+    border-right: ridge 1px black;
+}
+
+.volume-input::-webkit-slider-runnable-track {
+    z-index: 5;
+    height: 1px;
+}
+
+
+/* Outros */
 
 #notifications {
     margin-left: auto;

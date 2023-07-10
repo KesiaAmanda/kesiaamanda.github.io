@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kesia Amanda</title>
+
     <link rel="icon" type="image/png" href="./assets/icons/social/happy.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Ubuntu:wght@500&display=swap"
@@ -17,26 +18,38 @@
 
 <body id="screen">
     <div id="desktop">
-        <div id="hello-icon" class="desktopIcon">
-            <img class="icon" src="assets/icons/desktop/program.png" />
-            <p>Olá.exe</p>
-        </div>
-        <div id="aboutMeIcon" class="desktopIcon">
-            <img class="icon" src="assets/icons/desktop/notepad.png" />
-            <p>Sobre mim.txt</p>
+        <div id="desktop-icons">
+            <div id="hello-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/program.png" />
+                </div>
+                <p>Olá.exe</p>
+            </div>
+
+            <div id="aboutMeIcon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/notepad.png" />
+                </div>
+                <p>Sobre mim.txt</p>
+            </div>
+            <div id="music-player-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/music.png" />
+                </div>
+                <p>Música.wav</p>
+            </div>
         </div>
 
         <div id="hello" class="visible">
-            <div id="hello-content" class="startRest">
+            <div id="hello-content" class="content startRest">
                 <div id="hello-header" class="header">
                     <div id="hello-header-title" class="title">
-                        <img class="icon" src="assets/icons/desktop/program.png" height="15px">
                         Olá.exe
                     </div>
-                    <div id="hello-btns">
-                        <div id="hello-min" class="startRest min winButtom"></div>
-                        <div id="hello-max" class="startRest max winButtom"></div>
-                        <div id="hello-cls" class="startRest cls winButtom"></div>
+                    <div id="hello-btns" class="buttoms">
+                        <div id="hello-min" class="startRest min smallButtom"></div>
+                        <div id="hello-max" class="startRest max smallButtom"></div>
+                        <div id="hello-cls" class="startRest cls smallButtom"></div>
                     </div>
                 </div>
                 <div id="hello-body" class="windowBorder">
@@ -47,11 +60,11 @@
                             <h1 id="str-prof">Desenvolvedora backend</h1>
                             <div id="hello-social">
                                 <a href="https://www.linkedin.com/in/kesiaamanda/" target="_blank">
-                                    <img class="icon" height="25px"
+                                    <img class="iconImage" height="25px"
                                         src="assets/icons/social/linkedin_pixel_logo_icon_181925.png">
                                 </a>
                                 <a href="https://github.com/KesiaAmanda" target="_blank">
-                                    <img class="icon" height="25px" src="assets/icons/social/github.png">
+                                    <img class="iconImage" height="25px" src="assets/icons/social/github.png">
                                 </a>
                             </div>
                         </div>
@@ -64,19 +77,18 @@
         </div>
 
         <div id="about-me" class="hideContent">
-            <div id="about-me-content" class="startRest">
+            <div id="about-me-content" class="content startRest">
                 <div id="about-me-header" class="header">
                     <div id="about-me-header-title" class="title">
-                        <img class="icon" src="assets/icons/desktop/notepad.png" height="15px">
                         Sobre mim.txt - Notepad
                     </div>
-                    <div id="about-me-btns">
-                        <div id="about-me-min" class="startRest min winButtom"></div>
-                        <div id="about-me-max" class="startRest max winButtom"></div>
-                        <div id="about-me-cls" class="startRest cls winButtom"></div>
+                    <div id="about-me-btns" class="buttoms">
+                        <div id="about-me-min" class="startRest min smallButtom"></div>
+                        <div id="about-me-max" class="startRest max smallButtom"></div>
+                        <div id="about-me-cls" class="startRest cls smallButtom"></div>
                     </div>
                 </div>
-                <div id="about-me-menu">
+                <div id="about-me-menu" class="windowMenu">
                     <div>File</div>
                     <div>Edit</div>
                     <div>Search</div>
@@ -115,10 +127,64 @@
                 </div>
             </div>
         </div>
+
+        <div id="music-player" class="hideContent">
+            <div id="music-player-content" class="content startRest">
+                <div id="music-player-header" class="header">
+                    <div id="music-player-header-title" class="title">
+                        Música.wav - Sound Recorder
+                    </div>
+                    <div id="music-player-btns" class="buttoms">
+                        <div id="music-player-min" class="startRest min smallButtom"></div>
+                        <div id="music-player-cls" class="startRest cls smallButtom"></div>
+                    </div>
+                </div>
+                <div id="music-player-menu" class="windowMenu">
+                    <div>File</div>
+                    <div>Edit</div>
+                    <div>Help</div>
+                </div>
+                <div id="music-player-body">
+                    <div id="player" class="hidden"></div>
+                    <img class="windowBorder grey" src="assets/images/1456855014belton-5.webp" width="300px"
+                        height="300px">
+                    <div class="padding5px">
+                        <div id="music-player-title" class="startClick">
+                            <marquee id="video-title"></marquee>
+                        </div>
+                        <div id="progress-bar-container">
+                            <div id="progress-bar"></div>
+                        </div>
+                        <div id="music-player-controls">
+                            <div id="play-button" class="mediumButtom"></div>
+                            <div id="pause-button" class="mediumButtom"></div>
+                            <div id="stop-button" class="mediumButtom"></div>
+
+                            <div class="musicPlayerDivider"></div>
+
+                            <div id="previous-button" class="mediumButtomDisabled"></div>
+                            <div id="next-button" class="mediumButtomDisabled"></div>
+
+                            <div class="musicPlayerDivider"></div>
+
+                            <div id="volume-icon" class="mediumButtomDisabled"></div>
+                            <div id="volume">
+                                <div id="volume-image"></div>
+                                <div id="volume-image-2"></div>
+                                <input id="volume-input" class="volume-input" name="volume" type="range" value="2"
+                                    min="0" max="15" oninput="this.nextElementSibling.value = this.value">
+                                <output id="volume-amount" for="volume-input" hidden>2</output>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div id="taskbar">
         <div>
-            <div id="start-btn" class="startRest">Iniciar</div>
+            <div id="start-btn" class="startRest buttom">Iniciar</div>
             <div id="start-menu" class="hidden">
                 <div id="left"></div>
                 <div id='hello-menu-icon' class="menuItem">Olá.exe</div>
@@ -133,15 +199,16 @@
             <div class="verticalDivider"></div>
         </div>
 
-        <div id="hello-btn" class="startRest">Olá</div>
-        <div id="about-me-btn" class="startRest">Sobre mim</div>
+        <div id="hello-btn" class="startRest buttom">Olá</div>
+        <div id="about-me-btn" class="startRest buttom">Sobre mim</div>
+        <div id="music-player-btn" class="startRest buttom">Música</div>
 
 
 
         <div id="notifications" class="windowBorder">
             <div>
                 <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')">
-                    <img class="icon" src="assets/icons/desktop/sounds.png" height="15px">
+                    <img class="iconImage" src="assets/icons/desktop/sounds.png" height="13px" width="20px">
                 </a>
                 <span id="clock" />
             </div>
@@ -150,6 +217,7 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="./js/jquery.fittext.js"></script>
+    <script src="./js/music-player.js"></script>
     <script src="./js/script.js"></script>
     <script>
         jQuery("#str-hello").fitText(1, { minFontSize: '20px', maxFontSize: '30px' });

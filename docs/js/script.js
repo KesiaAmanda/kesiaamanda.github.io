@@ -1,5 +1,5 @@
-let pages = [$("#hello"), $("#about-me")];
-let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn")];
+let pages = [$("#hello"), $("#about-me"), $("#music-player")];
+let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#music-player-me-btn")];
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -15,6 +15,7 @@ $(document).ready(function () {
     startTime();
     moveCat();
     $('#hello-btn').addClass('startClick');
+    $('#music-player-btn').slideUp(100);
 
     function swapPage(page, button) {
         $(pages).map(function () {
@@ -136,6 +137,52 @@ $(document).ready(function () {
     $('#hello-cls').click(function () {
         $('#hello').addClass('hideContent');
         $('#hello-btn').removeClass('startClick').slideUp(100);
+    });
+
+    // 
+
+    $('#music-player-content').click(function (e) {
+        swapPage('#music-player', '#music-player-btn');
+
+        if (e.target.id == 'music-player-min') {
+            $('#music-player').addClass('hideContent');
+            $('#music-player-btn').removeClass('startClick');
+        } else if (e.target.id == 'music-player-max') {
+            $(this).toggleClass('maximize');
+            $('#music-player-btn').addClass('startClick');
+        } else {
+            $('#music-player-btn').addClass('startClick');
+        }
+    })
+
+    $('#music-player-menu-icon').click(function () {
+        swapPage('#music-player', '#music-player-btn')
+        $('#music-player').removeClass('hideContent').addClass('index');
+        $('#start-menu').addClass('hidden');
+        $('#start-btn').removeClass('startClick');
+        $('#music-player-btn').addClass('startClick').slideDown(100);
+    });
+
+    $('#music-player-btn').click(function () {
+        swapPage('#music-player', '#music-player-btn');
+        if (this.classList.contains('startClick')) {
+            $('#music-player').addClass('hideContent');
+            $(this).removeClass('startClick');
+        } else {
+            $('#music-player').removeClass('hideContent').addClass('index');
+            $(this).addClass('startClick');
+        }
+    });
+
+    $('#music-player-icon').dblclick(function () {
+        swapPage('#music-player', '#music-player-btn')
+        $('#music-player-btn').addClass('startClick').slideDown(100);
+        $('#music-player').removeClass('hideContent').addClass('index');
+    });
+
+    $('#music-player-cls').click(function () {
+        $('#music-player').addClass('hideContent');
+        $('#music-player-btn').removeClass('startClick').slideUp(100);
     });
 
 });

@@ -33,49 +33,49 @@
 
 ::-webkit-scrollbar-button:vertical:increment {
     background-position: center;
-    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-down.svg');
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-down.svg');
     background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-button:vertical:disabled:increment {
     background-position: center;
-    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-down-disabled.svg');
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-down-disabled.svg');
     background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-button:horizontal:decrement {
     background-position: center;
-    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-left.svg');
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-left.svg');
     background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-button:horizontal:disabled:decrement {
     background-position: center;
-    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-left-disabled.svg');
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-left-disabled.svg');
     background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-button:horizontal:increment {
     background-position: center;
-    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-right.svg');
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-right.svg');
     background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-button:horizontal:disabled:increment {
     background-position: center;
-    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-right-disabled.svg');
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-right-disabled.svg');
     background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-button:vertical:decrement {
     background-position: center;
-    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-up.svg');
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-up.svg');
     background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-button:vertical:disabled:decrement {
     background-position: center;
-    background-image: url('../assets/scroll-buttom/iconmonstr-arrow-up-disabled.svg');
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-up-disabled.svg');
     background-repeat: no-repeat;
 }
 
