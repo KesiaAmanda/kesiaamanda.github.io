@@ -219,7 +219,8 @@ span {
 }
 
 .desktopIcon p {
-    padding: 2px;
+    padding-top: 2px;
+    cursor: pointer;
 }
 
 .resizable {
@@ -465,8 +466,17 @@ span {
     border-radius: 50%;
     max-width: 80%;
     border: 2px solid #fff;
-    box-shadow: 1px 2px 5px #ccc;
+    box-shadow: 5px 5px 0px #ccc;
+    filter: hue-rotate(340deg)
 }
+
+/* #hello-img {
+    border-radius: 50%;
+    max-width: 80%;
+    border: 2px solid #fff;
+    box-shadow: 1px 2px 5px #ccc;
+} */
+
 
 #hello-social {
     margin-top: 20px;
@@ -549,8 +559,8 @@ span {
     width: 560px;
     height: 10px;
     margin-top: 10px;
-    border-top: inset 1px rgb(172, 172, 172);
-    border-left: inset 1px rgb(172, 172, 172);
+    border-top: inset 1px rgb(214, 214, 214);
+    border-left: inset 1px rgb(214, 214, 214);
     border-bottom: inset 1px white;
     border-right: inset 1px white;
 }
@@ -595,7 +605,7 @@ span {
     cursor: pointer;
     background: linear-gradient(to bottom right,
             transparent 50%,
-            rgb(143, 143, 143) 50%);
+            rgba(107, 107, 107, 0.5) 50%);
 }
 
 input[type=range] {
