@@ -518,7 +518,7 @@ span {
     min-width: 300px;
     white-space: nowrap;
     padding: 8px 40rem 0 40rem;
-    animation: move-rlt 10000ms linear infinite;
+    animation: move-rlt 50000ms linear infinite;
 }
 
 @keyframes move-rlt {
@@ -527,7 +527,7 @@ span {
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-250%);
     }
 }
 
