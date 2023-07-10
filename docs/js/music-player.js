@@ -14,7 +14,8 @@ function onYouTubeIframeAPIReady() {
         videoId: 'xb0cMDEyMzg',
         events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onStateChange': onPlayerStateChange,
+            'onError': errorEncountered
         }
     });
 }
