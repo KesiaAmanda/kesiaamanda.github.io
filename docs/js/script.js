@@ -38,6 +38,10 @@ $(document).ready(function () {
         });
     }
 
+    $('#dark-mode-icon').dblclick(function () {
+        $(':root').toggleClass("dark-mode");
+    });
+
     $('#start-btn').click(function () {
         swapButtons('#start-btn');
         $('#start-menu').toggleClass("hidden");

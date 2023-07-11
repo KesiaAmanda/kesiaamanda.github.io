@@ -29,13 +29,6 @@ body {
     left: 0px;
     right: 0px;
     bottom: 0px;
-    /* position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: var(--backgroud-image) fixed;
-    background-size: cover; */
 }
 
 body::before {
@@ -120,18 +113,18 @@ span {
 }
 
 .startRest {
-    border-top: ridge 2px var(--frame-shadow-white);
-    border-left: ridge 2px var(--frame-shadow-white);
-    border-bottom: ridge 2px var(--frame-shadow-black);
-    border-right: ridge 2px var(--frame-shadow-black);
+    border-top: solid 2px var(--frame-shadow-white);
+    border-left: solid 2px var(--frame-shadow-white);
+    border-bottom: solid 2px var(--frame-shadow-black);
+    border-right: solid 2px var(--frame-shadow-black);
 }
 
 .startClick,
 .windowBorder {
-    border-top: inset 2px var(--frame-shadow-black);
-    border-left: inset 2px var(--frame-shadow-black);
-    border-bottom: inset 2px var(--frame-shadow-white);
-    border-right: inset 2px var(--frame-shadow-white);
+    border-top: solid 2px var(--frame-shadow-black);
+    border-left: solid 2px var(--frame-shadow-black);
+    border-bottom: solid 2px var(--frame-shadow-white);
+    border-right: solid 2px var(--frame-shadow-white);
 }
 
 .startClick {
@@ -162,10 +155,6 @@ span {
     color: var(--desktop-title-icon-color);
 }
 
-.grey {
-    filter: grayscale(40%);
-}
-
 .icon {
     width: 50px;
     overflow: hidden;
@@ -173,31 +162,29 @@ span {
     flex-direction: column;
     cursor: pointer;
     align-items: center;
-    filter: grayscale(40%);
 }
 
 .iconImage {
     size: 32px;
-    filter: grayscale(40%);
 }
 
 .divider {
     height: 1px;
-    border-top: ridge 1px var(--frame-shadow-white);
-    border-bottom: ridge 1px var(--frame-shadow-black);
+    border-top: solid 1px var(--frame-shadow-white);
+    border-bottom: solid 1px var(--frame-shadow-black);
     margin: 2px;
 }
 
 .taskBarDivider {
     border-left: 1px solid var(--frame-shadow-white);
-    border-right: ridge 1px var(--frame-shadow-black);
+    border-right: solid 1px var(--frame-shadow-black);
     height: 19px;
     margin: 1px 3px 0px 3px;
 }
 
 .windowDivider {
     border-left: 1px solid var(--frame-shadow-white);
-    border-right: ridge 1px var(--frame-shadow-black);
+    border-right: solid 1px var(--frame-shadow-black);
     height: 30px;
 }
 
@@ -233,10 +220,10 @@ span {
 
 .smallButtom:active,
 .mediumButtom:active {
-    border-top: inset 2px var(--frame-shadow-black);
-    border-left: inset 2px var(--frame-shadow-black);
-    border-bottom: inset 2px var(--frame-shadow-white);
-    border-right: inset 2px var(--frame-shadow-white);
+    border-top: solid 2px var(--frame-shadow-black);
+    border-left: solid 2px var(--frame-shadow-black);
+    border-bottom: solid 2px var(--frame-shadow-white);
+    border-right: solid 2px var(--frame-shadow-white);
     outline: 1px dotted var(--button-frame-dotted-click);
     outline-offset: -4px;
 }
@@ -316,12 +303,13 @@ span {
     position: relative;
     height: 100%;
     width: 100%;
+    padding: 1px;
     background-color: var(--window-backgroud);
     display: flex;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    border-top: ridge 2px var(--frame-shadow-white);
+    border-top: solid 2px var(--frame-shadow-white);
 }
 
 #desktop {
@@ -344,10 +332,10 @@ span {
     position: absolute;
     z-index: 99;
     display: block;
-    border-top: ridge 3px var(--frame-shadow-white);
-    border-left: ridge 3px var(--frame-shadow-white);
-    border-bottom: ridge 2px var(--frame-shadow-black);
-    border-right: ridge 2px var(--frame-shadow-black);
+    border-top: solid 3px var(--frame-shadow-white);
+    border-left: solid 3px var(--frame-shadow-white);
+    border-bottom: solid 2px var(--frame-shadow-black);
+    border-right: solid 2px var(--frame-shadow-black);
     max-width: unset;
     max-height: unset;
 }
@@ -532,6 +520,7 @@ span {
     padding: 20px;
     height: auto;
     resize: both;
+    text-align: justify;
     overflow-x: scroll;
     overflow-y: scroll;
 }
@@ -542,7 +531,7 @@ span {
 
 #about-me-title,
 #about-me-footer {
-    margin: 20px 20px 20px 20px;
+    margin: 20px 0px 20px 0px;
     font-size: 10px;
     font-weight: bold;
     font-family: monospace;
@@ -551,7 +540,7 @@ span {
 
 #about-me-title {
     white-space: pre;
-    font-size: 8px;
+    font-size: 7px;
 }
 
 /* Musica */
@@ -560,6 +549,7 @@ span {
     display: flex;
     overflow: hidden;
     gap: 100px;
+    outline: none;
 }
 
 .textWrapper {
@@ -592,10 +582,10 @@ span {
     width: 560px;
     height: 10px;
     margin-top: 10px;
-    border-top: inset 1px var(--music-player-slider-shadow-black);
-    border-left: inset 1px var(--music-player-slider-shadow-black);
-    border-bottom: inset 1px var(--frame-shadow-white);
-    border-right: inset 1px var(--frame-shadow-white);
+    border-top: solid 1px var(--music-player-slider-shadow-black);
+    border-left: solid 1px var(--music-player-slider-shadow-black);
+    border-bottom: solid 1px var(--frame-shadow-white);
+    border-right: solid 1px var(--frame-shadow-white);
 }
 
 #progress-bar {
@@ -604,10 +594,10 @@ span {
     height: 20px;
     width: 10px;
     background-color: var(--window-backgroud);
-    border-top: ridge 1px var(--frame-shadow-white);
-    border-left: ridge 1px var(--frame-shadow-white);
-    border-bottom: ridge 1px var(--music-player-buttons-shadow-black);
-    border-right: ridge 1px var(--music-player-buttons-shadow-black);
+    border-top: solid 1px var(--frame-shadow-white);
+    border-left: solid 1px var(--frame-shadow-white);
+    border-bottom: solid 1px var(--music-player-buttons-shadow-black);
+    border-right: solid 1px var(--music-player-buttons-shadow-black);
 }
 
 #music-player-controls {
@@ -623,6 +613,10 @@ span {
 
 #music-player-body p {
     color: var(--music-player-text-color);
+}
+
+#music-player-image {
+    filter: var(--music-player-image-effect);
 }
 
 #volume {
@@ -668,10 +662,10 @@ input[type=range]::-webkit-slider-thumb {
     width: 10px;
     margin-top: -1px;
     background-color: var(--window-backgroud);
-    border-top: ridge 1px var(--frame-shadow-white);
-    border-left: ridge 1px var(--frame-shadow-white);
-    border-bottom: ridge 1px var(--music-player-buttons-shadow-black);
-    border-right: ridge 1px var(--music-player-buttons-shadow-black);
+    border-top: solid 1px var(--frame-shadow-white);
+    border-left: solid 1px var(--frame-shadow-white);
+    border-bottom: solid 1px var(--music-player-buttons-shadow-black);
+    border-right: solid 1px var(--music-player-buttons-shadow-black);
 }
 
 .volume-input::-webkit-slider-runnable-track {

@@ -6,7 +6,7 @@
     --task-bar-button-hover: rgb(136, 24, 112);
     --task-bar-button-hover-text-color: white;
 
-    --screnn-filter: hue-rotate(20deg) sepia(0.15);
+    --screnn-filter: invert(1%) sepia(10%) hue-rotate(10deg) brightness(99%);
 
     --body-backgroud-white: rgb(255, 251, 245);
 
@@ -16,33 +16,74 @@
     --window-header-backgroud-color: linear-gradient(to right, rgb(150, 62, 128), rgb(209, 130, 189));
     --window-header-title-color: rgb(255, 251, 245);
 
-    --frame-shadow-white: white;
-    --frame-shadow-black: rgb(172, 172, 172);
+    --frame-shadow-white: rgb(235, 235, 235);
+    --frame-shadow-black: rgb(97, 97, 97);
     --music-player-volume-shadow-black: rgba(107, 107, 107, 0.5);
     --music-player-buttons-shadow-black: rgba(107, 107, 107);
-    --music-player-slider-shadow-black: rgb(212, 212, 212);
+    --music-player-slider-shadow-black: rgba(107, 107, 107);
 
     --button-frame-dotted-click: black;
 
     --desktop-title-icon-shadow: black;
     --desktop-title-icon-color: white;
 
-    --image-border-color: #fff;
+    --image-border-color: transparent;
     --image-shadow-color: #ccc;
 
     --dashed-text-divider: black;
 
     --music-player-text-color: #ccc;
     --music-player-backgroud-color: black;
+    --music-player-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
 
     --scroll-backgroud: rgb(228, 228, 228);
 
-    --control-icon-color: black;
+    --control-icon-color: rgb(32, 5, 27);
 
-    --text-color: black;
+    --text-color: rgb(32, 5, 27);
 }
 
 .dark-mode:root {
-    --white: rgb(78, 78, 78);
-    --backgroud-image-effect: brightness(0.7) hue-rotate(20deg);
+    --window-backgroud: #141414;
+
+    --start-menu-left-color: #1e0524;
+
+    --task-bar-button-hover: #381639;
+    --task-bar-button-hover-text-color: rgb(226, 213, 224);
+
+    --screnn-filter: invert(5%) sepia(10%) hue-rotate(10deg) brightness(99%);
+    /* brightness(0.9) hue-rotate(10deg); */
+
+    --body-backgroud-white: #222222;
+
+    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif');
+    --backgroud-image-effect: grayscale(0.69) brightness(0.5) saturate(2.1) contrast(2.4) hue-rotate(360deg) sepia(0.29);
+
+    --window-header-backgroud-color: linear-gradient(to right, #2a0733c9, #381639);
+    --window-header-title-color: rgb(226, 213, 224);
+
+    --frame-shadow-white: rgb(56, 56, 56);
+    --frame-shadow-black: rgba(0, 0, 0, 0.616);
+
+    --music-player-volume-shadow-black: black;
+    --music-player-buttons-shadow-black: black;
+    --music-player-slider-shadow-black: black;
+
+    --button-frame-dotted-click: rgb(78, 78, 78);
+
+    --desktop-title-icon-shadow: black;
+    --desktop-title-icon-color: white;
+
+    --image-border-color: transparent;
+    --image-shadow-color: #00000041;
+
+    --music-player-text-color: rgb(226, 213, 224);
+    --music-player-backgroud-color: black;
+    --music-player-image-effect: grayscale(0.69) brightness(0.5) saturate(2.1) contrast(2.4) hue-rotate(360deg) sepia(0.29);
+
+    --scroll-backgroud: #272727;
+
+    --control-icon-color: rgb(247, 242, 248);
+    --dashed-text-divider: rgb(247, 242, 248);
+    --text-color: rgb(247, 242, 248);
 }
