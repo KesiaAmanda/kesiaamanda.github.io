@@ -1,3 +1,33 @@
+@import './constants.css';
+
+:root {
+    --vertical-increment: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)' fill='black'><path d='M12 3l12 18h-24z'/></svg>");
+    --vertical-increment-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)' fill='grey'><path d='M12 3l12 18h-24z'/></svg>");
+
+    --vertical-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: black;' d='M12 3l12 18h-24z'/></svg>");
+    --vertical-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: grey;' d='M12 3l12 18h-24z'/></svg>");
+
+    --horizontal-increment: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: black;' d='M25 12l-18 12v-24z'/></svg>");
+    --horizontal-increment-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>");
+
+    --horizontal-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: black;' d='M25 12l-18 12v-24z'/></svg>");
+    --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>");
+}
+
+.dark-mode:root {
+    --vertical-increment: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)' fill='white'><path d='M12 3l12 18h-24z'/></svg>");
+    --vertical-increment-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)' fill='grey'><path d='M12 3l12 18h-24z'/></svg>");
+
+    --vertical-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: white;' d='M12 3l12 18h-24z'/></svg>");
+    --vertical-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: grey;' d='M12 3l12 18h-24z'/></svg>");
+
+    --horizontal-increment: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: white;' d='M25 12l-18 12v-24z'/></svg>");
+    --horizontal-increment-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>");
+
+    --horizontal-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: white;' d='M25 12l-18 12v-24z'/></svg>");
+    --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>");
+}
+
 * {
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -11,17 +41,16 @@
 }
 
 ::-webkit-scrollbar-button {
+    display: block;
     width: 20px;
     height: 20px;
-    background-color: rgb(189, 181, 181);
-    border-top: ridge 2px white;
-    border-left: ridge 2px white;
-    border-bottom: ridge 2px black;
-    border-right: ridge 2px black;
-}
-
-::-webkit-scrollbar-button {
-    display: block;
+    background-color: var(--window-backgroud);
+    border-top: ridge 2px var(--frame-shadow-white);
+    border-left: ridge 2px var(--frame-shadow-white);
+    border-bottom: ridge 2px var(--frame-shadow-black);
+    border-right: ridge 2px var(--frame-shadow-black);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-button:vertical:start:increment,
@@ -32,66 +61,54 @@
 }
 
 ::-webkit-scrollbar-button:vertical:increment {
-    background-position: center;
-    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-down.svg');
-    background-repeat: no-repeat;
+    background-image: var(--vertical-increment);
 }
 
 ::-webkit-scrollbar-button:vertical:disabled:increment {
-    background-position: center;
-    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-down-disabled.svg');
-    background-repeat: no-repeat;
-}
-
-::-webkit-scrollbar-button:horizontal:decrement {
-    background-position: center;
-    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-left.svg');
-    background-repeat: no-repeat;
-}
-
-::-webkit-scrollbar-button:horizontal:disabled:decrement {
-    background-position: center;
-    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-left-disabled.svg');
-    background-repeat: no-repeat;
-}
-
-::-webkit-scrollbar-button:horizontal:increment {
-    background-position: center;
-    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-right.svg');
-    background-repeat: no-repeat;
-}
-
-::-webkit-scrollbar-button:horizontal:disabled:increment {
-    background-position: center;
-    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-right-disabled.svg');
-    background-repeat: no-repeat;
+    background-image: var(--vertical-increment-disabled);
 }
 
 ::-webkit-scrollbar-button:vertical:decrement {
-    background-position: center;
-    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-up.svg');
-    background-repeat: no-repeat;
+    background-image: var(--vertical-decrement);
 }
 
 ::-webkit-scrollbar-button:vertical:disabled:decrement {
-    background-position: center;
-    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-up-disabled.svg');
-    background-repeat: no-repeat;
+    background-image: var(--vertical-decrement-disabled);
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-right.svg');
+    background-image: var(--horizontal-increment);
+}
+
+::-webkit-scrollbar-button:horizontal:disabled:increment {
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-right-disabled.svg');
+    background-image: var(--horizontal-increment-disabled);
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-left.svg');
+    background-image: var(--horizontal-decrement);
+}
+
+::-webkit-scrollbar-button:horizontal:disabled:decrement {
+    background-image: url('../assets/icons/scroll-buttom/iconmonstr-arrow-left-disabled.svg');
+    background-image: var(--horizontal-decrement-disabled);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(189, 181, 181);
-    border-top: ridge 2px white;
-    border-left: ridge 2px white;
-    border-bottom: ridge 2px black;
-    border-right: ridge 2px black;
+    background-color: var(--window-backgroud);
+    border-top: ridge 2px var(--frame-shadow-white);
+    border-left: ridge 2px var(--frame-shadow-white);
+    border-bottom: ridge 2px var(--frame-shadow-black);
+    border-right: ridge 2px var(--frame-shadow-black);
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: rgb(228, 228, 228);
+    background-color: var(--scroll-backgroud);
 }
 
 ::-webkit-resizer {
-    background: rgb(187, 180, 185);
+    background: var(--scroll-backgroud);
     background-image: url('../assets/icons/resize.png');
 }

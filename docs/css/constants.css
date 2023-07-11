@@ -37,7 +37,9 @@
 
     --scroll-backgroud: rgb(228, 228, 228);
 
-    --control-icon-color: rgb(223, 12, 128);
+    --control-icon-color: black;
+
+    --text-color: rgb(155, 14, 14);
 }
 
 .dark-mode:root {

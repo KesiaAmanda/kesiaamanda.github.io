@@ -16,6 +16,12 @@
     max-height: 100%;
 }
 
+p,
+h1,
+span {
+    color: var(--text-color);
+}
+
 body {
     overflow: auto;
     position: fixed;
@@ -293,6 +299,9 @@ span {
 
 .windowMenu div:hover {
     background-color: var(--task-bar-button-hover);
+}
+
+.windowMenu div:hover span {
     color: var(--task-bar-button-hover-text-color);
 }
 
@@ -366,6 +375,10 @@ span {
 
 #start-menu .menuItem:hover {
     background-color: var(--task-bar-button-hover);
+    color: var(--task-bar-button-hover-text-color);
+}
+
+#start-menu .menuItem:hover span {
     color: var(--task-bar-button-hover-text-color);
 }
 
