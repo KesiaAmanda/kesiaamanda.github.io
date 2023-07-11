@@ -1,17 +1,4 @@
-.min {
-    background: url('../assets/icons/min.png') center center no-repeat;
-    background-size: 13px 13px;
-}
-
-.max {
-    background: url('../assets/icons/max.png') center center no-repeat;
-    background-size: 13px 13px;
-}
-
-.cls {
-    background: url('../assets/icons/cls.png') center center no-repeat;
-    background-size: 13px 13px;
-}
+@import './constants.css';
 
 /* Botões menu iniciar */
 
@@ -45,36 +32,51 @@
     filter: grayscale(40%);
 }
 
-/* Musica */
-
-#play-button {
+.controlButtom {
+    background-color: var(--control-icon-color);
     background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-play.svg');
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
 }
 
-#pause-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-pause.svg');
-    background-repeat: no-repeat;
+.min {
+    -webkit-mask: url('../assets/icons/minimize.svg') no-repeat 50% 75%;
+    mask: url('../assets/icons/minimize.svg') no-repeat 50% 75%;
 }
 
-#stop-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-stop.svg');
-    background-repeat: no-repeat;
+.max {
+    -webkit-mask: url('../assets/icons/iconmonstr-maximize.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/iconmonstr-maximize.svg') no-repeat 50% 50%;
 }
 
-#previous-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-media-previous.svg');
-    background-repeat: no-repeat;
+.cls {
+    -webkit-mask: url('../assets/icons/iconmonstr-x-close.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/iconmonstr-x-close.svg') no-repeat 50% 50%;
 }
 
-#next-button {
-    background-position: center;
-    background-image: url('../assets/icons/player/iconmonstr-media-next.svg');
-    background-repeat: no-repeat;
+.play {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-play.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-play.svg') no-repeat 50% 50%;
+}
+
+.pause {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-pause.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-pause.svg') no-repeat 50% 50%;
+}
+
+.stop {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-stop.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-stop.svg') no-repeat 50% 50%;
+}
+
+.previous {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-media-previous.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-media-previous.svg') no-repeat 50% 50%;
+}
+
+.next {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-media-next.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-media-next.svg') no-repeat 50% 50%;
 }
 
 #volume-icon {

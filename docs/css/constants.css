@@ -1,0 +1,46 @@
+:root {
+    --window-backgroud: rgb(187, 180, 185);
+
+    --start-menu-left-color: rgb(151, 132, 151);
+
+    --task-bar-button-hover: rgb(136, 24, 112);
+    --task-bar-button-hover-text-color: white;
+
+    --screnn-filter: hue-rotate(20deg) sepia(0.15);
+
+    --body-backgroud-white: rgb(255, 251, 245);
+
+    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif');
+    --backgroud-image-effect: none;
+
+    --window-header-backgroud-color: linear-gradient(to right, rgb(150, 62, 128), rgb(209, 130, 189));
+    --window-header-title-color: rgb(255, 251, 245);
+
+    --frame-shadow-white: white;
+    --frame-shadow-black: rgb(172, 172, 172);
+    --music-player-volume-shadow-black: rgba(107, 107, 107, 0.5);
+    --music-player-buttons-shadow-black: rgba(107, 107, 107);
+    --music-player-slider-shadow-black: rgb(212, 212, 212);
+
+    --button-frame-dotted-click: black;
+
+    --desktop-title-icon-shadow: black;
+    --desktop-title-icon-color: white;
+
+    --image-border-color: #fff;
+    --image-shadow-color: #ccc;
+
+    --dashed-text-divider: black;
+
+    --music-player-text-color: #ccc;
+    --music-player-backgroud-color: black;
+
+    --scroll-backgroud: rgb(228, 228, 228);
+
+    --control-icon-color: rgb(223, 12, 128);
+}
+
+.dark-mode:root {
+    --white: rgb(78, 78, 78);
+    --backgroud-image-effect: brightness(0.7) hue-rotate(20deg);
+}

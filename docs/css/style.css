@@ -1,16 +1,4 @@
-:root {
-    --backgroud: rgb(187, 180, 185);
-    --white: rgb(255, 251, 245);
-    --hover: rgb(136, 24, 112);
-    --shadow: rgb(172, 172, 172);
-    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif');
-    --backgroud-image-effect: none;
-}
-
-.dark-mode:root {
-    --white: rgb(78, 78, 78);
-    --backgroud-image-effect: brightness(0.7) hue-rotate(20deg);
-}
+@import './constants.css';
 
 @font-face {
     font-family: 'Windows 95';
@@ -86,7 +74,7 @@ span {
 
 .header {
     touch-action: none;
-    background-image: linear-gradient(to right, rgb(150, 62, 128), rgb(209, 130, 189));
+    background-image: var(--window-header-backgroud-color);
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -99,7 +87,7 @@ span {
     display: inline-block;
     padding: 0px 10px 0px 20px;
     max-width: 200px;
-    color: white;
+    color: var(--window-header-title-color);
     align-self: center;
     overflow: hidden;
     max-width: 100%;
@@ -126,22 +114,22 @@ span {
 }
 
 .startRest {
-    border-top: ridge 2px white;
-    border-left: ridge 2px white;
-    border-bottom: ridge 2px var(--shadow);
-    border-right: ridge 2px var(--shadow);
+    border-top: ridge 2px var(--frame-shadow-white);
+    border-left: ridge 2px var(--frame-shadow-white);
+    border-bottom: ridge 2px var(--frame-shadow-black);
+    border-right: ridge 2px var(--frame-shadow-black);
 }
 
 .startClick,
 .windowBorder {
-    border-top: inset 2px var(--shadow);
-    border-left: inset 2px var(--shadow);
-    border-bottom: inset 2px white;
-    border-right: inset 2px white;
+    border-top: inset 2px var(--frame-shadow-black);
+    border-left: inset 2px var(--frame-shadow-black);
+    border-bottom: inset 2px var(--frame-shadow-white);
+    border-right: inset 2px var(--frame-shadow-white);
 }
 
 .startClick {
-    outline: 1px dotted black;
+    outline: 1px dotted var(--button-frame-dotted-click);
     outline-offset: -4px;
 }
 
@@ -160,12 +148,12 @@ span {
     width: 50px;
     font-size: 12px;
     text-shadow:
-        -1px -1px 1px black,
-        -1px 1px 1px black,
-        1px -1px 1px black,
-        1px 1px 1px black;
+        -1px -1px 1px var(--desktop-title-icon-shadow),
+        -1px 1px 1px var(--desktop-title-icon-shadow),
+        1px -1px 1px var(--desktop-title-icon-shadow),
+        1px 1px 1px var(--desktop-title-icon-shadow);
     text-align: center;
-    color: white;
+    color: var(--desktop-title-icon-color);
 }
 
 .grey {
@@ -189,26 +177,26 @@ span {
 
 .divider {
     height: 1px;
-    border-top: ridge 1px white;
-    border-bottom: ridge 1px var(--shadow);
+    border-top: ridge 1px var(--frame-shadow-white);
+    border-bottom: ridge 1px var(--frame-shadow-black);
     margin: 2px;
 }
 
 .taskBarDivider {
-    border-left: 1px solid white;
-    border-right: ridge 1px var(--shadow);
+    border-left: 1px solid var(--frame-shadow-white);
+    border-right: ridge 1px var(--frame-shadow-black);
     height: 19px;
     margin: 1px 3px 0px 3px;
 }
 
 .windowDivider {
-    border-left: 1px solid white;
-    border-right: ridge 1px grey;
+    border-left: 1px solid var(--frame-shadow-white);
+    border-right: ridge 1px var(--frame-shadow-black);
     height: 30px;
 }
 
 .smallButtom {
-    background-color: var(--backgroud);
+    background-color: var(--window-backgroud);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -218,7 +206,7 @@ span {
 }
 
 .mediumButtom {
-    background-color: var(--backgroud);
+    background-color: var(--window-backgroud);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -228,7 +216,7 @@ span {
 }
 
 .mediumButtomDisabled {
-    background-color: var(--backgroud);
+    background-color: var(--window-backgroud);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -239,16 +227,16 @@ span {
 
 .smallButtom:active,
 .mediumButtom:active {
-    border-top: inset 2px var(--shadow);
-    border-left: inset 2px black;
-    border-bottom: inset 2px white;
-    border-right: inset 2px white;
-    outline: 1px dotted black;
+    border-top: inset 2px var(--frame-shadow-black);
+    border-left: inset 2px var(--frame-shadow-black);
+    border-bottom: inset 2px var(--frame-shadow-white);
+    border-right: inset 2px var(--frame-shadow-white);
+    outline: 1px dotted var(--button-frame-dotted-click);
     outline-offset: -4px;
 }
 
 .desktopIcon:active p {
-    outline: 1px dotted black;
+    outline: 1px dotted var(--button-frame-dotted-click);
 }
 
 .desktopIcon p {
@@ -263,7 +251,7 @@ span {
 }
 
 .buttoms {
-    background-color: var(--backgroud);
+    background-color: var(--window-backgroud);
     margin-left: auto;
     display: flex;
 }
@@ -285,7 +273,7 @@ span {
     display: flex;
     overflow: hidden;
     flex-flow: column;
-    background-color: var(--backgroud);
+    background-color: var(--window-backgroud);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -304,27 +292,27 @@ span {
 }
 
 .windowMenu div:hover {
-    background-color: var(--hover);
-    color: white;
+    background-color: var(--task-bar-button-hover);
+    color: var(--task-bar-button-hover-text-color);
 }
 
 #screen {
     position: fixed;
     display: grid;
     grid-template-rows: auto 26px;
-    filter: hue-rotate(20deg) sepia(0.15);
+    filter: var(--screnn-filter);
 }
 
 #taskbar {
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: var(--backgroud);
+    background-color: var(--window-backgroud);
     display: flex;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    border-top: ridge 2px white;
+    border-top: ridge 2px var(--frame-shadow-white);
 }
 
 #desktop {
@@ -342,15 +330,15 @@ span {
     flex-direction: column;
     top: -141px;
     left: 0;
-    background-color: var(--backgroud);
+    background-color: var(--window-backgroud);
     background-size: 100px;
     position: absolute;
     z-index: 99;
     display: block;
-    border-top: ridge 3px white;
-    border-left: ridge 3px white;
-    border-bottom: ridge 2px black;
-    border-right: ridge 2px grey;
+    border-top: ridge 3px var(--frame-shadow-white);
+    border-left: ridge 3px var(--frame-shadow-white);
+    border-bottom: ridge 2px var(--frame-shadow-black);
+    border-right: ridge 2px var(--frame-shadow-black);
     max-width: unset;
     max-height: unset;
 }
@@ -361,7 +349,7 @@ span {
     left: 0px;
     top: 0px;
     bottom: 0px;
-    background-color: rgb(151, 132, 151);
+    background-color: var(--start-menu-left-color);
     font-family: Arial;
     font-weight: 900;
     text-transform: capitalize;
@@ -377,8 +365,8 @@ span {
 }
 
 #start-menu .menuItem:hover {
-    background-color: var(--hover);
-    color: white;
+    background-color: var(--task-bar-button-hover);
+    color: var(--task-bar-button-hover-text-color);
 }
 
 
@@ -480,7 +468,7 @@ span {
 /* Olá */
 
 #hello-body {
-    background-color: var(--white);
+    background-color: var(--body-backgroud-white);
     display: flex;
     flex-direction: column;
 }
@@ -502,8 +490,8 @@ span {
 #hello-img {
     border-radius: 50%;
     max-width: 80%;
-    border: 2px solid #fff;
-    box-shadow: 5px 5px 0px #ccc;
+    border: 2px solid var(--image-border-color);
+    box-shadow: 5px 5px 0px var(--image-shadow-color);
     filter: hue-rotate(315deg);
 }
 
@@ -524,7 +512,7 @@ span {
 #about-me-body {
     position: relative;
     height: 100%;
-    background-color: var(--white);
+    background-color: var(--body-backgroud-white);
     position: relative;
     max-height: 80vh;
     width: 600px;
@@ -536,7 +524,7 @@ span {
 }
 
 #about-me-body hr {
-    border-top: 1px dashed black;
+    border-top: 1px dashed var(--dashed-text-divider);
 }
 
 #about-me-title,
@@ -587,18 +575,14 @@ span {
     width: 300px;
 }
 
-#music-player-body p {
-    color: #ccc;
-}
-
 #progress-bar-container {
     width: 560px;
     height: 10px;
     margin-top: 10px;
-    border-top: inset 1px rgb(214, 214, 214);
-    border-left: inset 1px rgb(214, 214, 214);
-    border-bottom: inset 1px white;
-    border-right: inset 1px white;
+    border-top: inset 1px var(--music-player-slider-shadow-black);
+    border-left: inset 1px var(--music-player-slider-shadow-black);
+    border-bottom: inset 1px var(--frame-shadow-white);
+    border-right: inset 1px var(--frame-shadow-white);
 }
 
 #progress-bar {
@@ -606,11 +590,11 @@ span {
     margin-top: -6px;
     height: 20px;
     width: 10px;
-    background-color: var(--backgroud);
-    border-top: ridge 1px white;
-    border-left: ridge 1px white;
-    border-bottom: ridge 1px black;
-    border-right: ridge 1px black;
+    background-color: var(--window-backgroud);
+    border-top: ridge 1px var(--frame-shadow-white);
+    border-left: ridge 1px var(--frame-shadow-white);
+    border-bottom: ridge 1px var(--music-player-buttons-shadow-black);
+    border-right: ridge 1px var(--music-player-buttons-shadow-black);
 }
 
 #music-player-controls {
@@ -621,11 +605,11 @@ span {
 
 #music-player-title {
     margin-top: 5px;
-    background-color: black;
+    background-color: var(--music-player-backgroud-color);
 }
 
-#music-player-title div {
-    color: var(--white);
+#music-player-body p {
+    color: var(--music-player-text-color);
 }
 
 #volume {
@@ -641,7 +625,7 @@ span {
     cursor: pointer;
     background: linear-gradient(to bottom right,
             transparent 50%,
-            rgba(107, 107, 107, 0.5) 50%);
+            var(--music-player-volume-shadow-black) 50%);
 }
 
 input[type=range] {
@@ -650,8 +634,8 @@ input[type=range] {
     width: 70px;
     height: 18px;
     background-color: transparent;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+    border-right: 1px solid var(--frame-shadow-white);
+    border-bottom: 1px solid var(--frame-shadow-white);
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -661,7 +645,7 @@ input[type=range]::-webkit-slider-runnable-track {
     cursor: pointer;
     background: linear-gradient(to bottom right,
             transparent 50%,
-            var(--backgroud) 50%);
+            var(--window-backgroud) 50%);
 }
 
 
@@ -670,11 +654,11 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     width: 10px;
     margin-top: -1px;
-    background-color: var(--backgroud);
-    border-top: ridge 1px white;
-    border-left: ridge 1px white;
-    border-bottom: ridge 1px black;
-    border-right: ridge 1px black;
+    background-color: var(--window-backgroud);
+    border-top: ridge 1px var(--frame-shadow-white);
+    border-left: ridge 1px var(--frame-shadow-white);
+    border-bottom: ridge 1px var(--music-player-buttons-shadow-black);
+    border-right: ridge 1px var(--music-player-buttons-shadow-black);
 }
 
 .volume-input::-webkit-slider-runnable-track {
