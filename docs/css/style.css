@@ -3,6 +3,13 @@
     --white: rgb(255, 251, 245);
     --hover: rgb(136, 24, 112);
     --shadow: rgb(172, 172, 172);
+    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif');
+    --backgroud-image-effect: none;
+}
+
+.dark-mode:root {
+    --white: rgb(78, 78, 78);
+    --backgroud-image-effect: brightness(0.7) hue-rotate(20deg);
 }
 
 @font-face {
@@ -22,13 +29,39 @@
 }
 
 body {
+    overflow: auto;
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background: url('../assets/background/kime-nanami-pastelsky.gif') fixed;
+    /* position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: var(--backgroud-image) fixed;
+    background-size: cover; */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    background: var(--backgroud-image) fixed;
     background-size: cover;
+    width: 100%;
+    height: 100%;
+
+    -webkit-filter: var(--backgroud-image-effect);
+    -moz-filter: var(--backgroud-image-effect);
+    -o-filter: var(--backgroud-image-effect);
+    -ms-filter: var(--backgroud-image-effect);
+    filter: var(--backgroud-image-effect);
 }
 
 body div {
@@ -276,8 +309,10 @@ span {
 }
 
 #screen {
+    position: fixed;
     display: grid;
     grid-template-rows: auto 26px;
+    filter: hue-rotate(20deg) sepia(0.15);
 }
 
 #taskbar {
@@ -469,7 +504,7 @@ span {
     max-width: 80%;
     border: 2px solid #fff;
     box-shadow: 5px 5px 0px #ccc;
-    filter: hue-rotate(340deg)
+    filter: hue-rotate(315deg);
 }
 
 /* #hello-img {
