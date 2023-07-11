@@ -113,18 +113,18 @@ span {
 }
 
 .startRest {
-    border-top: solid 2px var(--frame-shadow-white);
-    border-left: solid 2px var(--frame-shadow-white);
-    border-bottom: solid 2px var(--frame-shadow-black);
-    border-right: solid 2px var(--frame-shadow-black);
+    border-top: ridge 2px var(--frame-shadow-white);
+    border-left: ridge 2px var(--frame-shadow-white);
+    border-bottom: var(--frame-border-style) 2px var(--frame-shadow-black);
+    border-right: var(--frame-border-style) 2px var(--frame-shadow-black);
 }
 
 .startClick,
 .windowBorder {
-    border-top: solid 2px var(--frame-shadow-black);
-    border-left: solid 2px var(--frame-shadow-black);
-    border-bottom: solid 2px var(--frame-shadow-white);
-    border-right: solid 2px var(--frame-shadow-white);
+    border-top: inset 2px var(--frame-shadow-black);
+    border-left: inset 2px var(--frame-shadow-black);
+    border-bottom: inset 2px var(--frame-shadow-white);
+    border-right: inset 2px var(--frame-shadow-white);
 }
 
 .startClick {
@@ -220,10 +220,10 @@ span {
 
 .smallButtom:active,
 .mediumButtom:active {
-    border-top: solid 2px var(--frame-shadow-black);
-    border-left: solid 2px var(--frame-shadow-black);
-    border-bottom: solid 2px var(--frame-shadow-white);
-    border-right: solid 2px var(--frame-shadow-white);
+    border-top: ridge 2px var(--frame-shadow-black);
+    border-left: ridge 2px var(--frame-shadow-black);
+    border-bottom: inset 2px var(--frame-shadow-white);
+    border-right: inset 2px var(--frame-shadow-white);
     outline: 1px dotted var(--button-frame-dotted-click);
     outline-offset: -4px;
 }
@@ -303,13 +303,12 @@ span {
     position: relative;
     height: 100%;
     width: 100%;
-    padding: 1px;
     background-color: var(--window-backgroud);
     display: flex;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    border-top: solid 2px var(--frame-shadow-white);
+    border-top: var(--frame-border-style) 2px var(--frame-shadow-white);
 }
 
 #desktop {
@@ -332,10 +331,10 @@ span {
     position: absolute;
     z-index: 99;
     display: block;
-    border-top: solid 3px var(--frame-shadow-white);
-    border-left: solid 3px var(--frame-shadow-white);
-    border-bottom: solid 2px var(--frame-shadow-black);
-    border-right: solid 2px var(--frame-shadow-black);
+    border-top: ridge 3px var(--frame-shadow-white);
+    border-left: ridge 3px var(--frame-shadow-white);
+    border-bottom: var(--frame-border-style) 2px var(--frame-shadow-black);
+    border-right: var(--frame-border-style) 2px var(--frame-shadow-black);
     max-width: unset;
     max-height: unset;
 }
@@ -582,10 +581,10 @@ span {
     width: 560px;
     height: 10px;
     margin-top: 10px;
-    border-top: solid 1px var(--music-player-slider-shadow-black);
-    border-left: solid 1px var(--music-player-slider-shadow-black);
-    border-bottom: solid 1px var(--frame-shadow-white);
-    border-right: solid 1px var(--frame-shadow-white);
+    border-top: ridge 1px var(--music-player-slider-shadow-black);
+    border-left: ridge 1px var(--music-player-slider-shadow-black);
+    border-bottom: var(--frame-border-style) 1px var(--frame-shadow-white);
+    border-right: var(--frame-border-style) 1px var(--frame-shadow-white);
 }
 
 #progress-bar {
@@ -594,10 +593,10 @@ span {
     height: 20px;
     width: 10px;
     background-color: var(--window-backgroud);
-    border-top: solid 1px var(--frame-shadow-white);
-    border-left: solid 1px var(--frame-shadow-white);
-    border-bottom: solid 1px var(--music-player-buttons-shadow-black);
-    border-right: solid 1px var(--music-player-buttons-shadow-black);
+    border-top: ridge 1px var(--frame-shadow-white);
+    border-left: ridge 1px var(--frame-shadow-white);
+    border-bottom: var(--frame-border-style) 1px var(--music-player-buttons-shadow-black);
+    border-right: var(--frame-border-style) 1px var(--music-player-buttons-shadow-black);
 }
 
 #music-player-controls {

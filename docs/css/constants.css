@@ -17,7 +17,9 @@
     --window-header-title-color: rgb(255, 251, 245);
 
     --frame-shadow-white: rgb(235, 235, 235);
-    --frame-shadow-black: rgb(97, 97, 97);
+    --frame-shadow-black: rgb(175, 175, 175);
+    --frame-border-style: ridge;
+
     --music-player-volume-shadow-black: rgba(107, 107, 107, 0.5);
     --music-player-buttons-shadow-black: rgba(107, 107, 107);
     --music-player-slider-shadow-black: rgba(107, 107, 107);
@@ -62,8 +64,9 @@
     --window-header-backgroud-color: linear-gradient(to right, #2a0733c9, #381639);
     --window-header-title-color: rgb(226, 213, 224);
 
-    --frame-shadow-white: rgb(56, 56, 56);
-    --frame-shadow-black: rgba(0, 0, 0, 0.616);
+    --frame-shadow-white: rgba(102, 102, 102, 0.336);
+    --frame-shadow-black: rgba(0, 0, 0, 0.692);
+    --frame-border-style: solid;
 
     --music-player-volume-shadow-black: black;
     --music-player-buttons-shadow-black: black;

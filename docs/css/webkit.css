@@ -45,10 +45,10 @@
     width: 20px;
     height: 20px;
     background-color: var(--window-backgroud);
-    border-top: solid 2px var(--frame-shadow-white);
-    border-left: solid 2px var(--frame-shadow-white);
-    border-bottom: solid 2px var(--frame-shadow-black);
-    border-right: solid 2px var(--frame-shadow-black);
+    border-top: ridge 2px var(--frame-shadow-white);
+    border-left: ridge 2px var(--frame-shadow-white);
+    border-bottom: var(--frame-border-style) 2px var(--frame-shadow-black);
+    border-right: var(--frame-border-style) 2px var(--frame-shadow-black);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -98,10 +98,10 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--window-backgroud);
-    border-top: solid 2px var(--frame-shadow-white);
-    border-left: solid 2px var(--frame-shadow-white);
-    border-bottom: solid 2px var(--frame-shadow-black);
-    border-right: solid 2px var(--frame-shadow-black);
+    border-top: ridge 2px var(--frame-shadow-white);
+    border-left: ridge 2px var(--frame-shadow-white);
+    border-bottom: var(--frame-border-style) 2px var(--frame-shadow-black);
+    border-right: var(--frame-border-style) 2px var(--frame-shadow-black);
 }
 
 ::-webkit-scrollbar-track-piece {
