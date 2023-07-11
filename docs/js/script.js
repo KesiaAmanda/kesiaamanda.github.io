@@ -55,10 +55,10 @@ $(document).ready(function () {
     $('#about-me-content').click(function (e) {
         swapPage('#about-me', '#about-me-btn');
 
-        if (e.target.id == 'about-me-min') {
+        if (e.target.classList.contains('min')) {
             $('#about-me').addClass('hideContent');
             $('#about-me-btn').removeClass('startClick');
-        } else if (e.target.id == 'about-me-max') {
+        } else if (e.target.classList.contains('max')) {
             $(this).toggleClass('maximize');
         } else {
             $('#about-me-btn').addClass('startClick');
@@ -98,10 +98,10 @@ $(document).ready(function () {
     $('#hello-content').click(function (e) {
         swapPage('#hello', '#hello-btn');
 
-        if (e.target.id == 'hello-min') {
+        if (e.target.classList.contains('min')) {
             $('#hello').addClass('hideContent');
             $('#hello-btn').removeClass('startClick');
-        } else if (e.target.id == 'hello-max') {
+        } else if (e.target.classList.contains('max')) {
             $(this).toggleClass('maximize');
             $('#hello-btn').addClass('startClick');
         } else {
@@ -139,17 +139,12 @@ $(document).ready(function () {
         $('#hello-btn').removeClass('startClick').slideUp(100);
     });
 
-    // 
-
     $('#music-player-content').click(function (e) {
         swapPage('#music-player', '#music-player-btn');
 
-        if (e.target.id == 'music-player-min') {
+        if (e.target.classList.contains('min')) {
             $('#music-player').addClass('hideContent');
             $('#music-player-btn').removeClass('startClick');
-        } else if (e.target.id == 'music-player-max') {
-            $(this).toggleClass('maximize');
-            $('#music-player-btn').addClass('startClick');
         } else {
             $('#music-player-btn').addClass('startClick');
         }
