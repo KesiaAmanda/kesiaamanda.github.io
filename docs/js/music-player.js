@@ -19,8 +19,7 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             'listType': 'playlist',
             'list': playlistId,
-            'loop': 1,
-            'shuffle': 1
+            'loop': 1
         },
         events: {
             'onReady': onPlayerReady,
@@ -30,6 +29,10 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
+    player.setShuffle(true);
+    player.unMute();
+    player.setVolume(2);
+
     progressBar = document.getElementById("progress-bar");
     videoTitleElement = document.getElementsByClassName("videoTitle");
 
@@ -44,8 +47,6 @@ function onPlayerReady(event) {
     var nextButton = document.getElementById("next-button");
 
     getVideoTitle();
-    player.unMute();
-    player.setVolume(2);
 
     close.addEventListener("click", function () {
         player.stopVideo();

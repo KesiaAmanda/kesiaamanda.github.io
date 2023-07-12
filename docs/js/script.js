@@ -4,31 +4,12 @@ let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#music-p
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-var elements = document.getElementsByClassName('header');
-for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('mousedown', filter, false);
-    elements[i].addEventListener('touchstart', filter, false);
-}
-
 $(document).ready(function () {
     initText();
     startTime();
     moveCat();
     $('#hello-btn').addClass('startClick');
     $('#music-player-btn').slideUp(100);
-
-    function swapPage(page, button) {
-        $(pages).map(function () {
-            $(this.selector).removeClass('index');
-        });
-        $(page).addClass('index');
-        $(buttons).map(function () {
-            if (this.selector != button) {
-                $(this).removeClass('startClick');
-            }
-        });
-        $('#start-menu').addClass('hidden');
-    }
 
     function swapButtons(button) {
         $(buttons).map(function () {
@@ -55,136 +36,78 @@ $(document).ready(function () {
         $('#start-menu').addClass('hidden');
         $('#start-btn').removeClass('startClick').addClass('startRest');
     });
+});
 
-    $('#about-me-content').click(function (e) {
-        swapPage('#about-me', '#about-me-btn');
+swapPageElements('#about-me');
+swapPageElements('#hello');
+swapPageElements('#music-player');
+
+function swapPageElements(page) {
+    let content = page + '-content';
+    let buttom = page + '-btn';
+    let menuIcon = page + '-menu-icon';
+    let desktopIcon = page + '-icon';
+    let close = page + '-cls';
+
+    $(content).click(function (e) {
+        swapPage(page, buttom);
 
         if (e.target.classList.contains('min')) {
-            $('#about-me').addClass('hideContent');
-            $('#about-me-btn').removeClass('startClick');
+            $(page).addClass('hideContent');
+            $(buttom).removeClass('startClick');
         } else if (e.target.classList.contains('max')) {
             $(this).toggleClass('maximize');
         } else {
-            $('#about-me-btn').addClass('startClick');
+            $(buttom).addClass('startClick');
         }
-    })
+    });
 
-    $('#about-me-menu-icon').click(function () {
-        swapPage('#about-me', '#about-me-btn')
-        $('#about-me').removeClass('hideContent').addClass('index');
+    $(menuIcon).click(function () {
+        swapPage(page, buttom);
+
+        $(page).removeClass('hideContent').addClass('index');
+        $(buttom).addClass('startClick').slideDown(100);
         $('#start-menu').addClass('hidden');
         $('#start-btn').removeClass('startClick').addClass('startRest');
-        $('#about-me-btn').addClass('startClick').slideDown(100);
     });
 
-    $('#about-me-btn').click(function () {
-        swapPage('#about-me', '#about-me-btn')
+    $(buttom).click(function () {
+        swapPage(page, buttom);
+
         if (this.classList.contains('startClick')) {
-            $('#about-me').addClass('hideContent').addClass('index');
+            $(page).addClass('hideContent').addClass('index');
             $(this).removeClass('startClick');
         } else if (!this.classList.contains('startClick')) {
-            $('#about-me').removeClass('hideContent');
+            $(page).removeClass('hideContent');
             $(this).addClass('startClick');
         }
     });
 
-    $('#aboutMeIcon').dblclick(function () {
-        swapPage('#about-me', '#about-me-btn')
-        $('#about-me').removeClass('hideContent').addClass('index');
-        $('#about-me-btn').addClass('startClick').slideDown(100);
+    $(desktopIcon).dblclick(function () {
+        swapPage(page, buttom);
+
+        $(page).removeClass('hideContent').addClass('index');
+        $(buttom).addClass('startClick').slideDown(100);
     });
 
-    $('#about-me-cls').click(function () {
-        $('#about-me').addClass('hideContent');
-        $('#about-me-btn').removeClass('startClick').slideUp(100);
+    $(close).click(function () {
+        $(page).addClass('hideContent');
+        $(buttom).removeClass('startClick').slideUp(100);
     });
+}
 
-    $('#hello-content').click(function (e) {
-        swapPage('#hello', '#hello-btn');
-
-        if (e.target.classList.contains('min')) {
-            $('#hello').addClass('hideContent');
-            $('#hello-btn').removeClass('startClick');
-        } else if (e.target.classList.contains('max')) {
-            $(this).toggleClass('maximize');
-            $('#hello-btn').addClass('startClick');
-        } else {
-            $('#hello-btn').addClass('startClick');
-        }
-    })
-
-    $('#hello-menu-icon').click(function () {
-        swapPage('#hello', '#hello-btn')
-        $('#hello').removeClass('hideContent').addClass('index');
-        $('#start-menu').addClass('hidden');
-        $('#start-btn').removeClass('startClick');
-        $('#hello-btn').addClass('startClick').slideDown(100);
+function swapPage(page, button) {
+    $(pages).map(function () {
+        $(this.selector).removeClass('index');
     });
-
-    $('#hello-btn').click(function () {
-        swapPage('#hello', '#hello-btn');
-        if (this.classList.contains('startClick')) {
-            $('#hello').addClass('hideContent');
+    $(page).addClass('index');
+    $(buttons).map(function () {
+        if (this.selector != button) {
             $(this).removeClass('startClick');
-        } else {
-            $('#hello').removeClass('hideContent').addClass('index');
-            $(this).addClass('startClick');
         }
     });
-
-    $('#hello-icon').dblclick(function () {
-        swapPage('#hello', '#hello-btn')
-        $('#hello-btn').addClass('startClick').slideDown(100);
-        $('#hello').removeClass('hideContent').addClass('index');
-    });
-
-    $('#hello-cls').click(function () {
-        $('#hello').addClass('hideContent');
-        $('#hello-btn').removeClass('startClick').slideUp(100);
-    });
-
-    $('#music-player-content').click(function (e) {
-        swapPage('#music-player', '#music-player-btn');
-
-        if (e.target.classList.contains('min')) {
-            $('#music-player').addClass('hideContent');
-            $('#music-player-btn').removeClass('startClick');
-        } else {
-            $('#music-player-btn').addClass('startClick');
-        }
-    })
-
-    $('#music-player-menu-icon').click(function () {
-        swapPage('#music-player', '#music-player-btn')
-        $('#music-player').removeClass('hideContent').addClass('index');
-        $('#start-menu').addClass('hidden');
-        $('#start-btn').removeClass('startClick');
-        $('#music-player-btn').addClass('startClick').slideDown(100);
-    });
-
-    $('#music-player-btn').click(function () {
-        swapPage('#music-player', '#music-player-btn');
-        if (this.classList.contains('startClick')) {
-            $('#music-player').addClass('hideContent');
-            $(this).removeClass('startClick');
-        } else {
-            $('#music-player').removeClass('hideContent').addClass('index');
-            $(this).addClass('startClick');
-        }
-    });
-
-    $('#music-player-icon').dblclick(function () {
-        swapPage('#music-player', '#music-player-btn')
-        $('#music-player-btn').addClass('startClick').slideDown(100);
-        $('#music-player').removeClass('hideContent').addClass('index');
-    });
-
-    $('#music-player-cls').click(function () {
-        $('#music-player').addClass('hideContent');
-        $('#music-player-btn').removeClass('startClick').slideUp(100);
-    });
-
-});
+    $('#start-menu').addClass('hidden');
+}
 
 function initText() {
     var spr1 = " _______         __                   _______  __           <br>|     __|.-----.|  |--..----..-----. |   |   ||__|.--------.<br>|__     ||  _  ||  _  ||   _||  -__| |       ||  ||        |<br>|_______||_____||_____||__|  |_____| |__|_|__||__||__|__|__|"
@@ -215,18 +138,25 @@ function checkTime(i) {
     return i;
 }
 
+const headers = document.getElementsByClassName('header');
+Array.from(headers).forEach(header => {
+    header.addEventListener('mousedown', filter);
+    header.addEventListener('touchstart', filter);
+});
+
+var elements = document.getElementsByClassName('header');
+for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener('mousedown', filter, false);
+    elements[i].addEventListener('touchstart', filter, false);
+}
+
 function filter(e) {
-    let target = e.target.parentNode;
-    let father = e.target.parentNode.parentNode;
+    let father = e.target;
+    let target = null;
 
-    if (!target.id.toString().includes('content')) {
-        target = e.target.parentNode.parentNode;
-        father = e.target.parentNode.parentNode.parentNode;
-    }
-
-    if (!target.id.toString().includes('content')) {
-        target = e.target.parentNode.parentNode.parentNode;
-        father = e.target.parentNode.parentNode.parentNode.parentNode;
+    while (father && !(target?.id?.includes('content'))) {
+        target = father;
+        father = target.parentNode;
     }
 
     if (target.classList.contains('maximize')) {
@@ -283,9 +213,3 @@ function filter(e) {
     target.ontouchend = endDrag;
 }
 
-//function filterCellPhone(e) {
-//    if (!e.target.parentNode.parentNode.classList.contains("index")) {
-//        return;
-//    }
-//    filter(e);
-//}
