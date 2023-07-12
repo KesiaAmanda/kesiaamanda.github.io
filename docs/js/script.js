@@ -1,5 +1,5 @@
-let pages = [$("#hello"), $("#about-me"), $("#music-player")];
-let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#music-player-btn")];
+let pages = [$("#hello"), $("#about-me"), $("#training"), $("#music-player")];
+let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#training-btn"), $("#music-player-btn")];
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -40,6 +40,7 @@ $(document).ready(function () {
 
 swapPageElements('#about-me');
 swapPageElements('#hello');
+swapPageElements('#training');
 swapPageElements('#music-player');
 
 function swapPageElements(page) {

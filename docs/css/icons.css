@@ -1,4 +1,4 @@
-@import './constants.css';
+@import url('./constants.css');
 
 /* Botões menu iniciar */
 
@@ -21,6 +21,14 @@
     background-size: 15px 15px;
     background-position-x: 2px;
 }
+
+#training-btn,
+#training-header-title {
+    background: url('../assets/icons/desktop/program.png') left center no-repeat;
+    background-size: 15px 15px;
+    background-position-x: 2px;
+}
+
 
 #music-player-btn,
 #music-player-header-title {

@@ -382,7 +382,8 @@ span {
 
 #about-me,
 #hello,
-#music-player {
+#music-player,
+#training {
     position: relative;
 }
 
@@ -393,7 +394,8 @@ span {
 } */
 
 #about-me-content.maximize,
-#hello-content.maximize {
+#hello-content.maximize,
+#training.maximize {
     position: fixed;
     min-width: 100%;
     min-height: calc(calc(var(--vh, 1vh) * 100) - 26px);
@@ -410,7 +412,8 @@ span {
     min-height: calc(calc(var(--vh, 1vh) * 100) - 74px);
 }
 
-#hello-content.maximize #hello-greeting {
+#hello-content.maximize #hello-greeting,
+#training-content.maximize #training-body {
     backface-visibility: hidden;
     min-width: 100%;
     min-height: calc(calc(var(--vh, 1vh) * 100) - 60px);
@@ -418,6 +421,7 @@ span {
 
 #hello.hideContent #hello-content,
 #about-me.hideContent #about-me-content,
+#training.hideContent #training-content,
 #music-player.hideContent #music-player-content {
     max-height: 0;
     max-width: 0;
@@ -427,16 +431,18 @@ span {
     overflow: hidden;
 }
 
-#about-me #about-me-content.maximize,
-#hello #hello-content.maximize {
+#hello #hello-content.maximize,
+#training #training-content.maximize,
+#about-me #about-me-content.maximize {
     max-height: 0;
     max-width: 0;
     transition: min-height 0.25s ease-out, min-width 0.25s ease-out;
     overflow: hidden;
 }
 
-#about-me.hideContent #about-me-content.maximize,
-#hello.hideContent #hello-content.maximize {
+#hello.hideContent #hello-content.maximize,
+#training.hideContent #training-content.maximize,
+#about-me.hideContent #about-me-content.maximize {
     min-height: 0;
     min-width: 0;
     padding: 0;
@@ -446,6 +452,7 @@ span {
 
 #hello-content,
 #about-me-content,
+#training-content,
 #music-player-content {
     overflow: hidden;
     max-height: auto;
@@ -454,15 +461,20 @@ span {
     transition: max-height 0.25s ease-in, max-width 0.25s ease-in;
 }
 
+#hello-content {
+    max-width: 90%;
+    height: auto;
+    width: 900px;
+}
+
 #about-me-content {
     max-width: 900px;
     max-width: 90%;
 }
 
-#hello-content {
+#training-content {
+    max-width: 900px;
     max-width: 90%;
-    height: auto;
-    width: 900px;
 }
 
 /* Olá */
@@ -540,6 +552,27 @@ span {
 #about-me-title {
     white-space: pre;
     font-size: 7px;
+}
+
+/* Formação */
+
+#training-body {
+    position: relative;
+    height: 100%;
+    background-color: rgb(8, 8, 8);
+    position: relative;
+    max-height: 80vh;
+    width: 600px;
+    padding: 5px;
+    height: auto;
+    resize: both;
+    text-align: justify;
+    overflow-x: none;
+    overflow-y: none;
+}
+
+#training-body p {
+    color: rgb(111, 172, 82) !important;
 }
 
 /* Musica */
