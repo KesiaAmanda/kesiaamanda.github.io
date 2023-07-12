@@ -8,7 +8,7 @@
 
     --screnn-filter: invert(1%) sepia(10%) hue-rotate(10deg) brightness(99%);
 
-    --body-backgroud-white: rgb(255, 251, 245);
+    --body-backgroud-white: rgb(230, 230, 230);
 
     --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif');
     --backgroud-image-effect: none;
@@ -32,17 +32,15 @@
     --image-border-color: transparent;
     --image-shadow-color: #ccc;
 
-    --dashed-text-divider: black;
-
     --music-player-text-color: #ccc;
     --music-player-backgroud-color: black;
     --music-player-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
 
-    --scroll-backgroud: rgb(228, 228, 228);
+    --scroll-backgroud: rgb(209, 209, 209);
 
-    --control-icon-color: rgb(32, 5, 27);
-
-    --text-color: rgb(32, 5, 27);
+    --control-icon-color: rgb(12, 5, 11);
+    --dashed-text-divider: rgb(12, 5, 11);
+    --text-color: rgb(12, 5, 11);
 }
 
 .dark-mode:root {
