@@ -21,6 +21,11 @@ $(document).ready(function () {
 
     $('#dark-mode-icon').dblclick(function () {
         $(':root').toggleClass("dark-mode");
+        if ($(':root').hasClass("dark-mode")) {
+            $('#dark-mode-icon-text').html('Modo claro');
+        } else {
+            $('#dark-mode-icon-text').html('Modo escuro');
+        }
     });
 
     $('#start-btn').click(function () {
@@ -35,6 +40,21 @@ $(document).ready(function () {
         }
         $('#start-menu').addClass('hidden');
         $('#start-btn').removeClass('startClick').addClass('startRest');
+    });
+
+    $(':root').on("keypress", function (e) {
+        e.preventDefault();
+        if (e.keyCode == 13) {
+            if ($('#training').hasClass('index')) {
+                seeMoreContent();
+            }
+        }
+    });
+
+    $(':root').on("touchstart", function (e) {
+        if ($('#training').hasClass('index')) {
+            seeMoreContent();
+        }
     });
 });
 
@@ -61,6 +81,7 @@ function swapPageElements(page) {
         } else {
             $(buttom).addClass('startClick');
         }
+        typeText(page);
     });
 
     $(menuIcon).click(function () {
@@ -70,6 +91,7 @@ function swapPageElements(page) {
         $(buttom).addClass('startClick').slideDown(100);
         $('#start-menu').addClass('hidden');
         $('#start-btn').removeClass('startClick').addClass('startRest');
+        typeText(page);
     });
 
     $(buttom).click(function () {
@@ -82,6 +104,7 @@ function swapPageElements(page) {
             $(page).removeClass('hideContent');
             $(this).addClass('startClick');
         }
+        typeText(page);
     });
 
     $(desktopIcon).dblclick(function () {
@@ -89,6 +112,7 @@ function swapPageElements(page) {
 
         $(page).removeClass('hideContent').addClass('index');
         $(buttom).addClass('startClick').slideDown(100);
+        typeText(page);
     });
 
     $(close).click(function () {
@@ -108,6 +132,16 @@ function swapPage(page, button) {
         }
     });
     $('#start-menu').addClass('hidden');
+}
+
+function typeText(page) {
+    if (page == "#training") {
+        if (!$(page).hasClass('hideContent')) {
+            textWriter();
+        } else {
+            textClear();
+        }
+    }
 }
 
 function initText() {

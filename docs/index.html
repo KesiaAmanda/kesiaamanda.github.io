@@ -19,12 +19,13 @@
 
 <body id="screen">
     <div id="desktop">
+
         <div id="desktop-icons">
             <div id="dark-mode-icon" class="desktopIcon">
                 <div class="icon">
                     <img class="iconImage" src="assets/icons/desktop/this_computer.png" />
                 </div>
-                <p>Modo escuro</p>
+                <p id="dark-mode-icon-text">Modo escuro</p>
             </div>
             <div id="hello-icon" class="desktopIcon">
                 <div class="icon">
@@ -40,7 +41,7 @@
             </div>
             <div id="training-icon" class="desktopIcon">
                 <div class="icon">
-                    <img class="iconImage" src="assets/icons/desktop/program.png" />
+                    <img class="iconImage" src="assets/icons/desktop/console.png" />
                 </div>
                 <p>Formação</p>
             </div>
@@ -52,7 +53,7 @@
             </div>
         </div>
 
-        <div id="hello" class="visible">
+        <div id="hello" class="">
             <div id="hello-content" class="content startRest">
                 <div id="hello-header" class="header">
                     <div id="hello-header-title" class="title">
@@ -73,7 +74,9 @@
                 <div id="hello-body" class="windowBorder margin2px">
                     <div id="hello-greeting">
                         <div class="helloItem helloGreetingText">
-                            <h1 id="str-hello">Olá, <span id="str-im">eu sou a</span></h1>
+                            <div style="display: flex; align-items: flex-end; white-space: pre;">
+                                <h1 id="str-hello">Olá, </h1><span id="str-im" style="width: 35%;">eu sou a</span>
+                            </div>
                             <h1 id="str-name">>Kesia Amanda!</h1>
                             <h1 id="str-prof">Desenvolvedora backend</h1>
                             <div id="hello-social">
@@ -171,23 +174,15 @@
                     </div>
                 </div>
                 <div id="training-body" class="windowBorder resizable">
-                    <p>C:/> Oi! Me chamo Kesia e sou formada em Análise e Desenvolvimento de Sistemas. Sou
-                        apaixonada pelo mundo da programação e atualmente atuo como desenvolvedora
-                        backend.
-                    </p>
-                    <p>C:/> Minha experiência profissional gira em torno de linguagens como Java, Python e
-                        frameworks como Spring. Com conhecimento em SQL e React, estou sempre buscando
-                        expandir meu conhecimento e me manter atualizada com as últimas tendências do
-                        mercado.</p>
-                    <p>C:/> Além do meu trabalho, tenho alguns hobbies que me ajudam a relaxar e me divertir.
-                        Adoro jogar videogame e me aventurar em diferentes universos virtuais. Também
-                        gosto
-                        de desenvolver pequenos projetos pessoais, onde posso explorar minha
-                        criatividade e
-                        aprender coisas novas.
-                    </p>
-                    <p>C:/> Outra paixão minha é a história. Acredito que entender o passado nos ajuda a
-                        compreender melhor o presente e a moldar o futuro.</p>
+                    <span id="training-body-text-conteiner">
+                        <span id="training-body-text-before"></span>
+                        <span id="training-body-header-training"></span>
+                        <span id="training-body-training"></span>
+                        <span id="training-body-header-certificates"></span>
+                        <span id="training-body-certificates"></span>
+                        <span id="training-body-see-more"></span>
+                    </span>
+                    <span id="anchor">|</span>
                 </div>
             </div>
         </div>
@@ -296,16 +291,14 @@
             </div>
         </div>
     </div>
-    <!-- <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script> -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
-    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/jquery.fittext.js"></script>
+    <script src="./js/text-writer.js"></script>
     <script src="./js/music-player.js"></script>
     <script src="./js/script.js"></script>
     <script>
-        jQuery("#str-hello").fitText(1, { minFontSize: '20px', maxFontSize: '30px' });
+        jQuery("#str-hello").fitText(1, { minFontSize: '25px', maxFontSize: '40px' });
         jQuery("#str-im").fitText(1, { minFontSize: '20px', maxFontSize: '30px' });
         jQuery("#str-name").fitText(1, { minFontSize: '30px', maxFontSize: '50px' });
         jQuery("#str-prof").fitText(1, { minFontSize: '10px', maxFontSize: '15px' });

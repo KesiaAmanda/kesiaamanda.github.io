@@ -9,9 +9,12 @@
     --screnn-filter: invert(1%) sepia(10%) hue-rotate(10deg) brightness(99%);
 
     --body-backgroud-white: rgb(230, 230, 230);
+    --body-backgroud-black: black;
+    --console-text-color: rgb(111, 172, 82);
 
-    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif');
+    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif') 50% 50%;
     --backgroud-image-effect: none;
+
 
     --window-header-backgroud-color: linear-gradient(to right, rgb(150, 62, 128), rgb(209, 130, 189));
     --window-header-title-color: rgb(255, 251, 245);
@@ -30,10 +33,9 @@
     --desktop-title-icon-color: white;
 
     --image-border-color: transparent;
-    --image-shadow-color: #ccc;
+    --image-shadow-color: #00000041;
 
     --music-player-text-color: #ccc;
-    --music-player-backgroud-color: black;
     --music-player-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
 
     --scroll-backgroud: rgb(209, 209, 209);
@@ -52,14 +54,13 @@
     --task-bar-button-hover-text-color: rgb(226, 213, 224);
 
     --screnn-filter: invert(5%) sepia(10%) hue-rotate(10deg) brightness(99%);
-    /* brightness(0.9) hue-rotate(10deg); */
 
     --body-backgroud-white: #222222;
 
-    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif');
-    --backgroud-image-effect: grayscale(0.69) brightness(0.5) saturate(2.1) contrast(2.4) hue-rotate(360deg) sepia(0.29);
+    --backgroud-image: url('../assets/background/kime-nanami-pastelsky-nigth.gif') 50% 50%;
+    --backgroud-image-effect: none;
 
-    --window-header-backgroud-color: linear-gradient(to right, #2a0733c9, #381639);
+    --window-header-backgroud-color: linear-gradient(to right, rgba(150, 62, 128, 0.185), rgba(209, 130, 189, 0.089));
     --window-header-title-color: rgb(226, 213, 224);
 
     --frame-shadow-white: rgba(102, 102, 102, 0.336);
