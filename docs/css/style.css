@@ -312,6 +312,22 @@ span {
     color: var(--task-bar-button-hover-text-color);
 }
 
+#start-menu #left .b {
+    color: rgb(192, 192, 192);
+    transform: rotateZ(-90deg);
+    transform-origin: center left;
+    display: inline-block;
+    width: 200px;
+    white-space: nowrap;
+    font-size: 20px;
+    margin-top: 150px;
+    margin-left: 20px;
+}
+
+#start-menu #left .menu {
+    color: white;
+}
+
 #screen {
     position: fixed;
     display: grid;
