@@ -12,7 +12,7 @@
     --body-backgroud-black: black;
     --console-text-color: rgb(111, 172, 82);
 
-    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif') 50% 50%;
+    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif') 25% 50%;
     --backgroud-image-effect: none;
 
 
@@ -57,7 +57,7 @@
 
     --body-backgroud-white: #222222;
 
-    --backgroud-image: url('../assets/background/kime-nanami-pastelsky-nigth.gif') 50% 50%;
+    --backgroud-image: url('../assets/background/kime-nanami-pastelsky-nigth.gif') 25% 50%;
     --backgroud-image-effect: none;
 
     --window-header-backgroud-color: linear-gradient(to right, rgba(150, 62, 128, 0.185), rgba(209, 130, 189, 0.089));

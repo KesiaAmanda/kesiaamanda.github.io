@@ -13,6 +13,10 @@
     .buttom {
         padding: 0px 10px 0px 20px;
     }
+
+    #hello-greeting {
+        flex-wrap: wrap;
+    }
 }
 
 @media screen and (min-width: 767px) {
@@ -22,6 +26,10 @@
 
     .buttom {
         padding: 5px 10px 0px 20px;
+    }
+
+    #hello-greeting {
+        flex-wrap: nowrap;
     }
 }
 
@@ -48,6 +56,7 @@ h1,
 span {
     font-weight: lighter;
     color: var(--text-color);
+    font-size: 100%;
 }
 
 body {
@@ -87,13 +96,6 @@ body div {
 
 a:link {
     text-decoration: none;
-}
-
-h1,
-span {
-    width: 100%;
-    font-size: 100%;
-    margin: 0;
 }
 
 .index {
@@ -285,7 +287,7 @@ span {
     max-width: 100px;
     font-size: 10px;
     height: 21px;
-    margin: 1px 2px 0px 2px;
+    margin: 1px 1px 0px 1px;
     overflow: hidden;
     cursor: default;
 }
@@ -378,7 +380,7 @@ span {
 #start-menu {
     display: flex;
     flex-direction: column;
-    top: -173px;
+    top: -172px;
     left: 0;
     background-color: var(--window-backgroud);
     background-size: 100px;
@@ -541,11 +543,12 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
-#hello-greeting>* {
-    flex: 1 1 170px;
+#hello-greeting h1 {
+    width: 100%;
+    font-size: 100%;
+    margin: 2px;
 }
 
 #hello-img {
