@@ -393,8 +393,6 @@ span {
     top: 0px;
     bottom: 0px;
     background-color: var(--start-menu-left-color);
-    /* font-family: Arial; */
-    /* font-weight: 900; */
     text-transform: capitalize;
 }
 
@@ -616,8 +614,12 @@ span {
 }
 
 .unlockHeight {
-    min-height: 150px !important;
+    min-height: 100% !important;
     max-height: 100% !important;
+}
+
+#training-content.maximize #training-body {
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 54px) !important;
 }
 
 #training-body-text-conteiner {
