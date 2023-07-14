@@ -5,6 +5,16 @@
     src: url('fonts/Minecraftia-Regular.ttf');
 }
 
+@media screen and (max-width: 767px) {
+    #notifications span {
+        margin-top: 0px;
+    }
+
+    .buttom {
+        padding: 0px 10px 0px 20px;
+    }
+}
+
 * {
     font-size: 12px;
     text-underline-offset: -0.5rem;
@@ -269,6 +279,7 @@ span {
     height: 21px;
     padding: 5px 10px 0px 20px;
     margin: 1px 2px 0px 2px;
+    overflow: hidden;
     cursor: default;
 }
 
