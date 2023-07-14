@@ -499,7 +499,7 @@ span {
 #training-content,
 #music-player-content {
     overflow: hidden;
-    max-height: calc(calc(var(--vh, 1vh) * 87));
+    max-height: auto;
     max-width: auto;
     padding: 2px;
     /* transition: max-height 0.25s ease-in, max-width 0.25s ease-in; */
