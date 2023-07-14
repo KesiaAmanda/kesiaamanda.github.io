@@ -4,6 +4,33 @@ let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#trainin
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const trainingBody = document.querySelector("#training-body");
+    let count = 0;
+    let firstWidth;
+
+    const resizeObserver = new ResizeObserver(entries => {
+        for (let entry of entries) {
+            if (!trainingBody.classList.contains('unlockHeight')) {
+                if (entry.target === trainingBody) {
+                    count++;
+                    const newWidth = entry.contentRect.width;
+
+                    console.log(newWidth);
+                    if (!firstWidth && count > 8) {
+                        firstWidth = newWidth;
+                    } else if (newWidth > firstWidth + 10 || newWidth < firstWidth - 10) {
+                        trainingBody.classList.add('unlockHeight');
+                    }
+                }
+            }
+        }
+    });
+
+    resizeObserver.observe(trainingBody);
+});
+
 $(document).ready(function () {
     initText();
     startTime();

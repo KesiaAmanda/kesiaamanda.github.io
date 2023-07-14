@@ -604,6 +604,11 @@ span {
     overflow-anchor: none;
 }
 
+.unlockHeight {
+    min-height: 150px !important;
+    max-height: 100% !important;
+}
+
 #training-body-text-conteiner {
     max-width: 900px;
 }
