@@ -15,6 +15,16 @@
     }
 }
 
+@media screen and (min-width: 767px) {
+    #notifications span {
+        margin-top: 7px;
+    }
+
+    .buttom {
+        padding: 5px 10px 0px 20px;
+    }
+}
+
 * {
     font-size: 12px;
     text-underline-offset: -0.5rem;
@@ -275,7 +285,6 @@ span {
     max-width: 100px;
     font-size: 10px;
     height: 21px;
-    padding: 5px 10px 0px 20px;
     margin: 1px 2px 0px 2px;
     overflow: hidden;
     cursor: default;
@@ -796,10 +805,6 @@ input[type=range]::-webkit-slider-thumb {
     display: flex;
     align-items: center;
     text-align: center;
-}
-
-#notifications span {
-    margin-top: 7px;
 }
 
 #clock {
