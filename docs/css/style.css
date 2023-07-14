@@ -112,8 +112,6 @@ span {
 }
 
 .helloGreetingText {
-    /* display: inline-block; */
-    /* line-height: 0; */
     width: 100%;
 }
 
@@ -434,12 +432,6 @@ span {
     position: relative;
 }
 
-/* #about-me,
-#hello,
-#music-player {
-    position: fixed;
-} */
-
 #about-me-content.maximize,
 #hello-content.maximize,
 #training-content.maximize {
@@ -450,7 +442,6 @@ span {
     left: 0px !important;
     transform: none;
     border: none;
-    /* transition: min-height 0.25s ease-in, min-width 0.25s ease-in; */
 }
 
 #about-me-content.maximize #about-me-body,
@@ -480,7 +471,6 @@ span {
     max-width: 0;
     padding: 0;
     border: 0;
-    /* transition: max-height 0.25s ease-out, max-width 0.25s ease-out; */
     overflow: hidden;
 }
 
@@ -489,7 +479,6 @@ span {
 #about-me #about-me-content.maximize {
     max-height: 0;
     max-width: 0;
-    /* transition: min-height 0.25s ease-out, min-width 0.25s ease-out; */
     overflow: hidden;
 }
 
@@ -499,7 +488,6 @@ span {
     min-height: 0;
     min-width: 0;
     padding: 0;
-    /* transition: min-height 0.25s ease-out, min-width 0.25s ease-out; */
     overflow: hidden;
 }
 
@@ -511,7 +499,6 @@ span {
     max-height: auto;
     max-width: auto;
     padding: 2px;
-    /* transition: max-height 0.25s ease-in, max-width 0.25s ease-in; */
 }
 
 #hello-content {
@@ -614,7 +601,6 @@ span {
 }
 
 .unlockHeight {
-    min-height: 100% !important;
     max-height: 100% !important;
 }
 
