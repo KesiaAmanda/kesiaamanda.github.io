@@ -4,6 +4,11 @@ let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#trainin
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+const colorButtom = document.getElementById('dark-mode-icon-text');
+
+if (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+    colorButtom.innerHTML = 'Modo claro';
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const trainingBody = document.querySelector("#training-body");
@@ -47,11 +52,11 @@ $(document).ready(function () {
     }
 
     $('#dark-mode-icon').dblclick(function () {
-        $(':root').toggleClass("dark-mode");
-        if ($(':root').hasClass("dark-mode")) {
-            $('#dark-mode-icon-text').html('Modo claro');
+        $(':root').toggleClass("switchColor");
+        if (colorButtom.textContent == 'Modo escuro') {
+            colorButtom.innerHTML = 'Modo claro';
         } else {
-            $('#dark-mode-icon-text').html('Modo escuro');
+            colorButtom.innerHTML = 'Modo escuro';
         }
     });
 
