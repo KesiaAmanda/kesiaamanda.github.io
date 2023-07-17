@@ -12,21 +12,21 @@ if (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').ma
 
 document.addEventListener("DOMContentLoaded", function () {
     const trainingBody = document.querySelector("#training-body");
-    let count = 0;
+    const training = document.querySelector("#training-content");
     let firstWidth;
 
     const resizeObserver = new ResizeObserver(entries => {
         for (let entry of entries) {
             if (!trainingBody.classList.contains('unlockHeight')) {
                 if (entry.target === trainingBody) {
-                    count++;
                     const newWidth = entry.contentRect.width;
+                    const screenWidth = window.innerWidth;
 
-                    console.log(newWidth);
-                    if (!firstWidth && count > 8) {
+                    if (!firstWidth && (training.offsetWidth == Math.round(screenWidth * 0.9) || newWidth == 856)) {
                         firstWidth = newWidth;
-                    } else if (newWidth > firstWidth + 10 || newWidth < firstWidth - 10) {
+                    } else if (newWidth > firstWidth || newWidth < firstWidth) {
                         trainingBody.classList.add('unlockHeight');
+                        return;
                     }
                 }
             }
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     resizeObserver.observe(trainingBody);
 });
 
-$(document).ready(function () {
+$(document).ready(function (e) {
     initText();
     startTime();
     moveCat();

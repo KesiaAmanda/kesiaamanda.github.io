@@ -912,6 +912,7 @@ body div {
 }
 
 .unlockHeight {
+  min-height: 120px !important;
   max-height: 100% !important;
 }
 
