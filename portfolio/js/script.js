@@ -1,9 +1,6 @@
 let pages = [$("#hello"), $("#about-me"), $("#training"), $("#music-player")];
 let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#training-btn"), $("#music-player-btn")];
 
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 const colorButtom = document.getElementById('dark-mode-icon-text');
 
 if (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
@@ -87,6 +84,11 @@ $(document).ready(function (e) {
         if ($('#training').hasClass('index')) {
             seeMoreContent();
         }
+    });
+
+    $(window).on("resize", function (e) {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
 });
 
