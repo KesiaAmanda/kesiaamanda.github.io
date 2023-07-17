@@ -1,0 +1,71 @@
+#training-btn,
+#training-header-title {
+    background: url('../assets/icons/desktop/console.png') left center no-repeat;
+    background-size: 15px 15px;
+    background-position-x: 2px;
+}
+
+#training-content {
+    max-width: 900px;
+    max-width: 90%;
+}
+
+#training-body {
+    position: relative;
+    background-color: var(--body-backgroud-black);
+    min-height: 511px;
+    max-height: 511px;
+    width: 900px;
+    padding: 10px;
+    resize: both;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow-anchor: none;
+}
+
+.unlockHeight {
+    max-height: 100% !important;
+}
+
+#training-content.maximize #training-body {
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 54px) !important;
+}
+
+#training-body-text-conteiner {
+    max-width: 900px;
+}
+
+#training-body-text-conteiner u {
+    text-decoration: underline;
+}
+
+#training-body span {
+    color: var(--console-text-color);
+}
+
+#training-body-header-training,
+#training-body-header-certificates {
+    display: flex;
+    justify-content: center;
+    white-space: pre;
+    padding-bottom: 19px;
+    max-width: 900px;
+}
+
+@keyframes cursorBlink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#anchor {
+    animation: cursorBlink 1s step-end infinite;
+}

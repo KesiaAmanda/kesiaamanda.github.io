@@ -1,0 +1,49 @@
+#desktop {
+    position: relative;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+#screen {
+    position: fixed;
+    display: grid;
+    grid-template-rows: auto 26px;
+    filter: var(--screnn-filter);
+}
+
+#taskbar {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--window-backgroud);
+    display: flex;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-top: var(--frame-border-style) 2px var(--frame-shadow-white);
+}
+
+#notifications {
+    margin-left: auto;
+    min-width: 55px;
+    max-height: 21px;
+}
+
+#notifications img {
+    margin-top: -8px;
+}
+
+#notifications div {
+    padding: 2px;
+    margin-left: 3px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#clock {
+    cursor: default;
+    font-size: 10px;
+}

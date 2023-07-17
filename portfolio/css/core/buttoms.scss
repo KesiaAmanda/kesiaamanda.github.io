@@ -1,40 +1,59 @@
-@import url('./constants.css');
-
-/* Botões menu iniciar */
-
-#start-btn {
-    background: url('../assets/icons/social/icons8-pixel-star-16.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
+.buttoms {
+    background-color: var(--window-backgroud);
+    margin-left: auto;
+    display: flex;
 }
 
-#hello-btn,
-#hello-header-title {
-    background: url('../assets/icons/desktop/program.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
+.buttom {
+    text-align: center;
+    display: inline-block;
+    min-width: 60px;
+    max-width: 100px;
+    font-size: 10px;
+    height: 21px;
+    margin: 1px 1px 0px 1px;
+    overflow: hidden;
+    cursor: default;
 }
 
-#about-me-btn,
-#about-me-header-title {
-    background: url('../assets/icons/desktop/text_file.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
+.smallButtom {
+    background-color: var(--window-backgroud);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 21px;
+    height: 21px;
+    cursor: default;
 }
 
-#training-btn,
-#training-header-title {
-    background: url('../assets/icons/desktop/console.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
+.mediumButtom {
+    background-color: var(--window-backgroud);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 30px;
+    height: 30px;
+    cursor: default;
 }
 
+.mediumButtomDisabled {
+    background-color: var(--window-backgroud);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 30px;
+    height: 30px;
+    cursor: default;
+}
 
-#music-player-btn,
-#music-player-header-title {
-    background: url('../assets/icons/desktop/music.png') left center no-repeat;
-    background-size: 15px 15px;
-    background-position-x: 2px;
+.smallButtom:active,
+.mediumButtom:active {
+    border-top: ridge 2px var(--frame-shadow-black);
+    border-left: ridge 2px var(--frame-shadow-black);
+    border-bottom: inset 2px var(--frame-shadow-white);
+    border-right: inset 2px var(--frame-shadow-white);
+    outline: 1px dotted var(--button-frame-dotted-click);
+    outline-offset: -4px;
 }
 
 .controlButtom {
@@ -82,11 +101,4 @@
 .next {
     -webkit-mask: url('../assets/icons/player/iconmonstr-media-next.svg') no-repeat 50% 50%;
     mask: url('../assets/icons/player/iconmonstr-media-next.svg') no-repeat 50% 50%;
-}
-
-#volume-icon {
-    background-position: center;
-    background-image: url('../assets/icons/desktop/sounds.png');
-    background-size: 20px;
-    background-repeat: no-repeat;
 }
