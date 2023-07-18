@@ -6,7 +6,7 @@
     background-color: var(--window-backgroud);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -51.5%);
     transition: background 1s linear,
         border 0.1s linear,
         outline 0.5s linear,
@@ -85,10 +85,6 @@ body div {
 
 #hello-content.maximize #hello-greeting {
     min-height: calc(calc(var(--vh, 1vh) * 100) - 59px);
-}
-
-#training-content.maximize #training-body {
-    min-height: calc(calc(var(--vh, 1vh) * 100) - 55px);
 }
 
 #hello.hideContent #hello-content,

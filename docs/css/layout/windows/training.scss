@@ -25,11 +25,11 @@
 
 .unlockHeight {
     min-height: 120px !important;
-    max-height: 100% !important;
+    max-height: calc(var(--vh, 1vh) * 85) !important;
 }
 
 #training-content.maximize #training-body {
-    min-height: calc(calc(var(--vh, 1vh) * 100) - 54px) !important;
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 55px) !important;
 }
 
 #training-body-text-conteiner {

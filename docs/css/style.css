@@ -197,13 +197,14 @@
   -moz-box-sizing: border-box;
   max-width: 100%;
   max-height: 100%;
+  font-weight: normal;
   transition: background 1s linear, outline 0.2s linear, color 0.5s linear, box-shadow 0.5s linear;
 }
 
 p,
 h1,
 span {
-  font-weight: lighter;
+  font-weight: normal;
   color: var(--text-color);
   font-size: 100%;
 }
@@ -392,45 +393,6 @@ a:link {
   max-width: 100%;
 }
 
-.desktopIcon:active p {
-  outline: 1px dotted var(--button-frame-dotted-click);
-}
-
-.desktopIcon p {
-  padding-top: 2px;
-  cursor: pointer;
-}
-
-.icon {
-  width: 50px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  align-items: center;
-}
-
-.iconImage {
-  size: 32px;
-}
-
-#desktop-icons {
-  display: flex;
-  flex-direction: column;
-  padding-left: 5px;
-  gap: 2px;
-  align-items: flex-start;
-}
-
-#desktop-icons p {
-  width: 50px;
-  font-size: 10px;
-  padding-top: 5px;
-  text-shadow: -1px -1px 1px var(--desktop-title-icon-shadow), -1px 1px 1px var(--desktop-title-icon-shadow), 1px -1px 1px var(--desktop-title-icon-shadow), 1px 1px 1px var(--desktop-title-icon-shadow);
-  text-align: center;
-  color: var(--desktop-title-icon-color);
-}
-
 ::-webkit-scrollbar {
   width: 20px;
   height: 20px;
@@ -514,7 +476,7 @@ a:link {
   background: transparent;
   height: 100%;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
 }
 
 #screen {
@@ -524,25 +486,15 @@ a:link {
   filter: var(--screnn-filter);
 }
 
-#taskbar {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-color: var(--window-backgroud);
-  display: flex;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  border-top: var(--frame-border-style) 2px var(--frame-shadow-white);
-}
-
 #notifications {
   margin-left: auto;
   min-width: 55px;
   max-height: 21px;
 }
 
-#notifications img {
+#notifications .iconImage {
+  height: 15px;
+  width: 15px;
   margin-top: -8px;
 }
 
@@ -557,6 +509,18 @@ a:link {
 #clock {
   cursor: default;
   font-size: 10px;
+}
+
+#taskbar {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: var(--window-backgroud);
+  display: flex;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-top: var(--frame-border-style) 2px var(--frame-shadow-white);
 }
 
 #start-btn {
@@ -657,6 +621,40 @@ a:link {
   color: var(--task-bar-button-hover-text-color);
 }
 
+.desktopIcon:active p {
+  outline: 1px dotted var(--button-frame-dotted-click);
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+}
+
+.iconImage {
+  height: 32px;
+  width: 32px;
+}
+
+#workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+#workspace p {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  font-size: 10px;
+  padding-top: 5px;
+  cursor: pointer;
+  text-shadow: -1px -1px 1px var(--desktop-title-icon-shadow), -1px 1px 1px var(--desktop-title-icon-shadow), 1px -1px 1px var(--desktop-title-icon-shadow), 1px 1px 1px var(--desktop-title-icon-shadow);
+  text-align: center;
+  color: var(--desktop-title-icon-color);
+}
+
 .content {
   position: fixed;
   display: flex;
@@ -665,7 +663,7 @@ a:link {
   background-color: var(--window-backgroud);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -51.5%);
   transition: background 1s linear, border 0.1s linear, outline 0.5s linear, color 0.5s linear, box-shadow 0.5s linear, min-height 0.25s ease-in-out, min-width 0.25s ease-in-out, max-height 0.25s ease-in-out, max-width 0.25s ease-in-out;
 }
 
@@ -736,10 +734,6 @@ body div {
   min-height: calc(var(--vh, 1vh) * 100 - 59px);
 }
 
-#training-content.maximize #training-body {
-  min-height: calc(var(--vh, 1vh) * 100 - 55px);
-}
-
 #hello.hideContent #hello-content,
 #about-me.hideContent #about-me-content,
 #training.hideContent #training-content,
@@ -795,6 +789,11 @@ body div {
   background-color: var(--body-backgroud-white);
   display: flex;
   flex-direction: column;
+}
+
+#hello-body .iconImage {
+  width: 25px;
+  height: 25px;
 }
 
 #hello-greeting {
@@ -913,11 +912,11 @@ body div {
 
 .unlockHeight {
   min-height: 120px !important;
-  max-height: 100% !important;
+  max-height: calc(var(--vh, 1vh) * 85) !important;
 }
 
 #training-content.maximize #training-body {
-  min-height: calc(var(--vh, 1vh) * 100 - 54px) !important;
+  min-height: calc(var(--vh, 1vh) * 100 - 55px) !important;
 }
 
 #training-body-text-conteiner {
