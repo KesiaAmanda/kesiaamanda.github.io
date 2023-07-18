@@ -2,5 +2,4 @@
 *.css linguist-language=CSS
 *.scss linguist-language=SCSS
 
-gulpfile.js linguist-vendored=true
 docs/js/jquery.fittext.js linguist-vendored=true
