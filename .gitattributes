@@ -1,6 +1,0 @@
-gulpfile.js linguist-vendored=true
-docs/js/jquery.fittext.js linguist-vendored=true
-
-*.css linguist-detectable=true
-*.js linguist-detectable=true
-*.html linguist-detectable=true
