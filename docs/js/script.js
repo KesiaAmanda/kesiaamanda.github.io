@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     const newHeigth = entry.contentRect.height;
                     const screenWidth = window.innerWidth;
 
+                    console.log(newWidth);
                     if (!firstWidth && (training.offsetWidth == Math.round(screenWidth * 0.9) || newWidth == 856)) {
                         firstWidth = newWidth;
-                        trainingBody.setAttribute('style', 'width: ' + newWidth + 'px; height: ' + newHeigth + 'px;');
+                        trainingBody.setAttribute('style', 'width: ' + (newWidth + 44) + 'px; height: ' + (newHeigth + 44) + 'px;');
                     } else if (newWidth > firstWidth || newWidth < firstWidth) {
                         trainingBody.classList.add('unlockHeight');
                         return;
