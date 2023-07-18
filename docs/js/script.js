@@ -17,10 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!trainingBody.classList.contains('unlockHeight')) {
                 if (entry.target === trainingBody) {
                     const newWidth = entry.contentRect.width;
+                    const newHeigth = entry.contentRect.height;
                     const screenWidth = window.innerWidth;
 
                     if (!firstWidth && (training.offsetWidth == Math.round(screenWidth * 0.9) || newWidth == 856)) {
                         firstWidth = newWidth;
+                        trainingBody.setAttribute('style', 'width: ' + newWidth + 'px; height: ' + newHeigth + 'px;');
                     } else if (newWidth > firstWidth || newWidth < firstWidth) {
                         trainingBody.classList.add('unlockHeight');
                         return;
