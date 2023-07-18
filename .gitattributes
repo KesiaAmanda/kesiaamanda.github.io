@@ -1,5 +1,1 @@
-*.html linguist-language=HTML
-*.css linguist-language=CSS
-*.scss linguist-language=SCSS
-
 docs/js/jquery.fittext.js linguist-vendored=true
