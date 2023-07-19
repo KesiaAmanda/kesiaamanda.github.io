@@ -29,6 +29,7 @@
     --control-icon-color: rgb(12, 5, 11);
     --dashed-text-divider: rgb(12, 5, 11);
     --text-color: rgb(12, 5, 11);
+    --music-player-album-image: url("../assets/images/1456855014belton-5.webp");
     --vertical-increment: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: rgb(32, 5, 27);' d='M12 3l12 18h-24z'/></svg>");
     --vertical-increment-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: grey;' d='M12 3l12 18h-24z'/></svg>");
     --vertical-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: rgb(32, 5, 27);' d='M12 3l12 18h-24z'/></svg>");
@@ -48,7 +49,7 @@
     --body-backgroud-black: #0f0d0f;
     --console-text-color: rgb(111, 172, 82);
     --backgroud-image: url("../assets/background/kime-nanami-pastelsky-nigth.gif") 25% 50%;
-    --backgroud-image-effect: none;
+    --backgroud-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
     --window-header-backgroud-color: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
     --window-header-title-color: rgb(226, 213, 224);
     --frame-shadow-white: rgba(102, 102, 102, 0.336);
@@ -64,11 +65,12 @@
     --image-shadow-color: #00000041;
     --music-player-text-color: rgb(226, 213, 224);
     --music-player-backgroud-color: black;
-    --music-player-image-effect: grayscale(0.69) brightness(0.5) saturate(2.1) contrast(2.4) hue-rotate(360deg) sepia(0.29);
+    --music-player-image-effect: none;
     --scroll-backgroud: #1D1C24;
     --control-icon-color: rgb(247, 242, 248);
     --dashed-text-divider: rgb(247, 242, 248);
     --text-color: rgb(247, 242, 248);
+    --music-player-album-image: url("../assets/images/0c3fa88ba0eac42.gif");
     --vertical-increment: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: rgb(226, 213, 224);' d='M12 3l12 18h-24z'/></svg>");
     --vertical-increment-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: rgb(56, 56, 56);' d='M12 3l12 18h-24z'/></svg>");
     --vertical-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: rgb(226, 213, 224);' d='M12 3l12 18h-24z'/></svg>");
@@ -90,7 +92,7 @@
     --body-backgroud-black: #0f0d0f;
     --console-text-color: rgb(111, 172, 82);
     --backgroud-image: url("../assets/background/kime-nanami-pastelsky-nigth.gif") 25% 50%;
-    --backgroud-image-effect: none;
+    --backgroud-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
     --window-header-backgroud-color: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
     --window-header-title-color: rgb(226, 213, 224);
     --frame-shadow-white: rgba(102, 102, 102, 0.336);
@@ -106,11 +108,12 @@
     --image-shadow-color: #00000041;
     --music-player-text-color: rgb(226, 213, 224);
     --music-player-backgroud-color: black;
-    --music-player-image-effect: grayscale(0.69) brightness(0.5) saturate(2.1) contrast(2.4) hue-rotate(360deg) sepia(0.29);
+    --music-player-image-effect: none;
     --scroll-backgroud: #1D1C24;
     --control-icon-color: rgb(247, 242, 248);
     --dashed-text-divider: rgb(247, 242, 248);
     --text-color: rgb(247, 242, 248);
+    --music-player-album-image: url("../assets/images/0c3fa88ba0eac42.gif");
     --vertical-increment: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: rgb(226, 213, 224);' d='M12 3l12 18h-24z'/></svg>");
     --vertical-increment-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: rgb(56, 56, 56);' d='M12 3l12 18h-24z'/></svg>");
     --vertical-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: rgb(226, 213, 224);' d='M12 3l12 18h-24z'/></svg>");
@@ -150,6 +153,7 @@
     --control-icon-color: rgb(12, 5, 11);
     --dashed-text-divider: rgb(12, 5, 11);
     --text-color: rgb(12, 5, 11);
+    --music-player-album-image: url("../assets/images/1456855014belton-5.webp");
     --vertical-increment: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: rgb(32, 5, 27);' d='M12 3l12 18h-24z'/></svg>");
     --vertical-increment-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: grey;' d='M12 3l12 18h-24z'/></svg>");
     --vertical-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: rgb(32, 5, 27);' d='M12 3l12 18h-24z'/></svg>");
@@ -1089,4 +1093,13 @@ input[type=range]::-webkit-slider-thumb {
 .volume-input::-webkit-slider-runnable-track {
   z-index: 5;
   height: 1px;
+}
+
+#music-player-image {
+  width: 300px;
+  height: 300px;
+  background-image: var(--music-player-album-image);
+  background-position: center;
+  background-size: 300px;
+  background-repeat: no-repeat;
 }
