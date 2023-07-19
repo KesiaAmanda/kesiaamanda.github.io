@@ -2,15 +2,15 @@
   :root {
     --window-backgroud: rgb(187, 180, 185);
     --start-menu-left-color: rgb(151, 132, 151);
-    --task-bar-button-hover: rgb(136, 24, 112);
+    --task-bar-button-hover: rgb(136, 24, 112, 0.6);
     --task-bar-button-hover-text-color: white;
     --screnn-filter: invert(1%) sepia(10%) hue-rotate(10deg) brightness(99%);
     --body-backgroud-white: rgb(230, 230, 230);
-    --body-backgroud-black: black;
+    --body-backgroud-black: #0f0d0f;
     --console-text-color: rgb(111, 172, 82);
     --backgroud-image: url("../assets/background/kime-nanami-pastelsky.gif") 25% 50%;
     --backgroud-image-effect: none;
-    --window-header-backgroud-color: linear-gradient(to right, rgb(150, 62, 128), rgb(209, 130, 189));
+    --window-header-backgroud-color: linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5));
     --window-header-title-color: rgb(255, 251, 245);
     --frame-shadow-white: rgb(235, 235, 235);
     --frame-shadow-black: rgb(175, 175, 175);
@@ -45,7 +45,7 @@
     --task-bar-button-hover-text-color: rgb(226, 213, 224);
     --screnn-filter: invert(5%) sepia(10%) hue-rotate(10deg) brightness(99%);
     --body-backgroud-white: #23222B;
-    --body-backgroud-black: black;
+    --body-backgroud-black: #0f0d0f;
     --console-text-color: rgb(111, 172, 82);
     --backgroud-image: url("../assets/background/kime-nanami-pastelsky-nigth.gif") 25% 50%;
     --backgroud-image-effect: none;
@@ -87,7 +87,7 @@
     --task-bar-button-hover-text-color: rgb(226, 213, 224);
     --screnn-filter: invert(5%) sepia(10%) hue-rotate(10deg) brightness(99%);
     --body-backgroud-white: #23222B;
-    --body-backgroud-black: black;
+    --body-backgroud-black: #0f0d0f;
     --console-text-color: rgb(111, 172, 82);
     --backgroud-image: url("../assets/background/kime-nanami-pastelsky-nigth.gif") 25% 50%;
     --backgroud-image-effect: none;
@@ -123,15 +123,15 @@
   :root.switchColor {
     --window-backgroud: rgb(187, 180, 185);
     --start-menu-left-color: rgb(151, 132, 151);
-    --task-bar-button-hover: rgb(136, 24, 112);
+    --task-bar-button-hover: rgb(136, 24, 112, 0.6);
     --task-bar-button-hover-text-color: white;
     --screnn-filter: invert(1%) sepia(10%) hue-rotate(10deg) brightness(99%);
     --body-backgroud-white: rgb(230, 230, 230);
-    --body-backgroud-black: black;
+    --body-backgroud-black: #0f0d0f;
     --console-text-color: rgb(111, 172, 82);
     --backgroud-image: url("../assets/background/kime-nanami-pastelsky.gif") 25% 50%;
     --backgroud-image-effect: none;
-    --window-header-backgroud-color: linear-gradient(to right, rgb(150, 62, 128), rgb(209, 130, 189));
+    --window-header-backgroud-color: linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5));
     --window-header-title-color: rgb(255, 251, 245);
     --frame-shadow-white: rgb(235, 235, 235);
     --frame-shadow-black: rgb(175, 175, 175);
@@ -162,7 +162,7 @@
 }
 @font-face {
   font-family: "Minecraftia-Regular";
-  src: url("fonts//Minecraftia-Regular.ttf") format("truetype");
+  src: url("fonts/Minecraftia-Regular.ttf") format("truetype");
 }
 @media screen and (max-width: 767px) {
   #notifications span {
