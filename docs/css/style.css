@@ -376,6 +376,11 @@ a:link {
   mask: url("../assets/icons/player/iconmonstr-media-next.svg") no-repeat 50% 50%;
 }
 
+.volume {
+  -webkit-mask: url("../assets/icons/player/iconmonstr-audio.svg") no-repeat 50% 50%;
+  mask: url("../assets/icons/player/iconmonstr-audio.svg") no-repeat 50% 50%;
+}
+
 .header {
   touch-action: none;
   background: var(--window-header-backgroud-color);
@@ -490,31 +495,6 @@ a:link {
   filter: var(--screnn-filter);
 }
 
-#notifications {
-  margin-left: auto;
-  min-width: 55px;
-  max-height: 21px;
-}
-
-#notifications .iconImage {
-  height: 15px;
-  width: 15px;
-  margin-top: -8px;
-}
-
-#notifications div {
-  padding: 2px;
-  margin-left: 3px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-#clock {
-  cursor: default;
-  font-size: 10px;
-}
-
 #taskbar {
   position: relative;
   height: 100%;
@@ -623,6 +603,25 @@ a:link {
 
 .windowMenu div:hover span {
   color: var(--task-bar-button-hover-text-color);
+}
+
+#notifications {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 62px;
+  font-weight: lighter;
+}
+
+#notifications div {
+  height: 15px;
+  width: 15px;
+}
+
+#clock {
+  cursor: default;
+  font-size: 10px;
 }
 
 .desktopIcon:active p {
@@ -964,13 +963,6 @@ body div {
   background: url("../assets/icons/desktop/music.png") left center no-repeat;
   background-size: 15px 15px;
   background-position-x: 2px;
-}
-
-#volume-icon {
-  background-position: center;
-  background-image: url("../assets/icons/desktop/sounds.png");
-  background-size: 20px;
-  background-repeat: no-repeat;
 }
 
 .wrapper {

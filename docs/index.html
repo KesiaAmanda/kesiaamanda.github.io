@@ -235,7 +235,10 @@
 
                             <div class="windowDivider"></div>
 
-                            <div id="volume-icon" class="mediumButtomDisabled"></div>
+                            <div id="volume-icon" class="mediumButtomDisabled">
+                                <div class="controlButtom volume"></div>
+                            </div>
+
                             <div id="volume">
                                 <div id="volume-image-shadow"></div>
                                 <input id="volume-input" class="volume-input" name="volume" type="range" value="2"
@@ -279,12 +282,11 @@
         </div>
 
         <div id="notifications" class="windowBorder">
-            <div>
-                <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')">
-                    <img class="iconImage" src="assets/icons/desktop/sounds.png" height="14px" width="15px">
-                </a>
-                <span id="clock" />
-            </div>
+            <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')">
+                <div class="controlButtom volume"></div>
+                <!-- <img class="iconImage" src="assets/icons/desktop/sounds.png" height="14px" width="15px"> -->
+            </a>
+            <span id="clock" />
         </div>
     </div>
 

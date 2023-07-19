@@ -108,3 +108,22 @@
 .windowMenu div:hover span {
     color: var(--task-bar-button-hover-text-color);
 }
+
+#notifications {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 62px;
+    font-weight: lighter;
+}
+
+#notifications div {
+    height: 15px;
+    width: 15px;
+}
+
+#clock {
+    cursor: default;
+    font-size: 10px;
+}

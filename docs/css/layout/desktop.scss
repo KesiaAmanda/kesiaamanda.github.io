@@ -12,28 +12,3 @@
     grid-template-rows: auto 26px;
     filter: var(--screnn-filter);
 }
-
-#notifications {
-    margin-left: auto;
-    min-width: 55px;
-    max-height: 21px;
-}
-
-#notifications .iconImage {
-    height: 15px;
-    width: 15px;
-    margin-top: -8px;
-}
-
-#notifications div {
-    padding: 2px;
-    margin-left: 3px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-#clock {
-    cursor: default;
-    font-size: 10px;
-}
