@@ -54,7 +54,7 @@
         transform: translateY(0%);
         visibility: visible;
 
-        max-height: 200px;
+        max-height: 300px;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
@@ -132,7 +132,7 @@
 
 @media screen and (max-width: 767px) {
     #skills-body {
-        width: auto;
+        width: 90%;
     }
 
     .skillContainer {
