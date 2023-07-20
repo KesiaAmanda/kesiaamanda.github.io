@@ -5,6 +5,15 @@
     background-position-x: 2px;
 }
 
+#training-content.maximize #training-body {
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 55px) !important;
+}
+
+.unlockHeight {
+    min-height: 120px !important;
+    max-height: calc(var(--vh, 1vh) * 85) !important;
+}
+
 #training-content {
     max-width: 900px;
     max-width: 90%;
@@ -21,15 +30,6 @@
     overflow-x: scroll;
     overflow-y: scroll;
     overflow-anchor: none;
-}
-
-.unlockHeight {
-    min-height: 120px !important;
-    max-height: calc(var(--vh, 1vh) * 85) !important;
-}
-
-#training-content.maximize #training-body {
-    min-height: calc(calc(var(--vh, 1vh) * 100) - 55px) !important;
 }
 
 #training-body-text-conteiner {

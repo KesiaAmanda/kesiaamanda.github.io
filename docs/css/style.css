@@ -221,10 +221,6 @@ a:link {
   z-index: 2;
 }
 
-.padding5px {
-  padding: 5px;
-}
-
 .resizable {
   resize: both;
   min-width: 300px;
@@ -337,17 +333,17 @@ a:link {
 }
 
 .min {
-  -webkit-mask: url("../assets/icons/minimize.svg") no-repeat 50% 75%;
+  -webkit-mask: url("../assets/icons/window/minimize.svg") no-repeat 50% 75%;
   mask: url("../assets/icons/minimize.svg") no-repeat 50% 75%;
 }
 
 .max {
-  -webkit-mask: url("../assets/icons/iconmonstr-maximize.svg") no-repeat 50% 50%;
+  -webkit-mask: url("../assets/icons/window/iconmonstr-maximize.svg") no-repeat 50% 50%;
   mask: url("../assets/icons/iconmonstr-maximize.svg") no-repeat 50% 50%;
 }
 
 .cls {
-  -webkit-mask: url("../assets/icons/iconmonstr-x-close.svg") no-repeat 50% 50%;
+  -webkit-mask: url("../assets/icons/window/iconmonstr-x-close.svg") no-repeat 50% 50%;
   mask: url("../assets/icons/iconmonstr-x-close.svg") no-repeat 50% 50%;
 }
 
@@ -477,7 +473,7 @@ a:link {
 
 ::-webkit-resizer {
   background: var(--scroll-backgroud);
-  background-image: url("../assets/icons/resize.png");
+  background-image: url("../assets/icons/window/resize.png");
 }
 
 #desktop {
@@ -495,6 +491,22 @@ a:link {
   filter: var(--screnn-filter);
 }
 
+.windowMenu {
+  display: flex;
+}
+.windowMenu div {
+  padding: 5px 5px 0 5px;
+}
+.windowMenu div:first-letter {
+  text-decoration: underline;
+}
+.windowMenu div:hover {
+  background-color: var(--task-bar-button-hover);
+}
+.windowMenu div:hover span {
+  color: var(--task-bar-button-hover-text-color);
+}
+
 #taskbar {
   position: relative;
   height: 100%;
@@ -509,7 +521,7 @@ a:link {
 
 #start-btn {
   background: url("../assets/icons/social/icons8-pixel-star-16.png") left center no-repeat;
-  background-size: 15px 15px;
+  background-size: 12px 12px;
   background-position-x: 2px;
 }
 
@@ -530,7 +542,6 @@ a:link {
   max-width: unset;
   max-height: unset;
 }
-
 #start-menu #left {
   width: 28px;
   position: absolute;
@@ -540,35 +551,6 @@ a:link {
   background-color: var(--start-menu-left-color);
   text-transform: capitalize;
 }
-
-#start-menu .menuItem {
-  height: 32px;
-  width: 134px;
-  line-height: 0px;
-  margin-left: 29px;
-  padding-left: 5px;
-  padding-top: 20px;
-  margin-bottom: 0px;
-}
-
-#start-menu .menuItem:hover {
-  background-color: var(--task-bar-button-hover);
-  color: var(--task-bar-button-hover-text-color);
-}
-
-#start-menu .menuItem:hover span {
-  color: var(--task-bar-button-hover-text-color);
-}
-
-#start-menu .menuItem:first-letter {
-  text-decoration: underline;
-  padding: 0;
-}
-
-#start-menu #shutdown:first-letter {
-  text-decoration: none;
-}
-
 #start-menu #left .b {
   color: rgb(192, 192, 192);
   transform: rotateZ(-90deg);
@@ -580,29 +562,31 @@ a:link {
   margin-top: 150px;
   margin-left: 20px;
 }
-
 #start-menu #left .menu {
   color: white;
 }
-
-.windowMenu {
-  display: flex;
+#start-menu .menuItem {
+  height: 32px;
+  width: 134px;
+  line-height: 0px;
+  margin-left: 29px;
+  padding-left: 5px;
+  padding-top: 20px;
+  margin-bottom: 0px;
 }
-
-.windowMenu div {
-  padding: 5px 5px 0 5px;
-}
-
-.windowMenu div:first-letter {
+#start-menu .menuItem:first-letter {
   text-decoration: underline;
+  padding: 0;
 }
-
-.windowMenu div:hover {
+#start-menu .menuItem:hover {
   background-color: var(--task-bar-button-hover);
-}
-
-.windowMenu div:hover span {
   color: var(--task-bar-button-hover-text-color);
+}
+#start-menu .menuItem:hover span {
+  color: var(--task-bar-button-hover-text-color);
+}
+#start-menu #shutdown:first-letter {
+  text-decoration: none;
 }
 
 #notifications {
@@ -613,7 +597,6 @@ a:link {
   min-width: 62px;
   font-weight: lighter;
 }
-
 #notifications div {
   height: 15px;
   width: 15px;
@@ -678,7 +661,10 @@ body {
   right: 0px;
   bottom: 0px;
 }
-
+body div {
+  font-family: "Minecraftia-Regular", sans-serif;
+  color: black;
+}
 body::before {
   content: "";
   position: fixed;
@@ -696,11 +682,6 @@ body::before {
   -o-filter: var(--backgroud-image-effect);
   -ms-filter: var(--backgroud-image-effect);
   filter: var(--backgroud-image-effect);
-}
-
-body div {
-  font-family: "Minecraftia-Regular", sans-serif;
-  color: black;
 }
 
 #about-me,
@@ -727,14 +708,6 @@ body div {
 #training-content.maximize #training-body {
   backface-visibility: hidden;
   min-width: 100%;
-}
-
-#about-me-content.maximize #about-me-body {
-  min-height: calc(var(--vh, 1vh) * 100 - 74px);
-}
-
-#hello-content.maximize #hello-greeting {
-  min-height: calc(var(--vh, 1vh) * 100 - 59px);
 }
 
 #hello.hideContent #hello-content,
@@ -782,6 +755,10 @@ body div {
   background-position-x: 2px;
 }
 
+#hello-content.maximize #hello-greeting {
+  min-height: calc(var(--vh, 1vh) * 100 - 59px);
+}
+
 #hello-content {
   max-width: 90%;
   height: auto;
@@ -793,7 +770,6 @@ body div {
   display: flex;
   flex-direction: column;
 }
-
 #hello-body .iconImage {
   width: 25px;
   height: 25px;
@@ -851,6 +827,10 @@ body div {
   background-position-x: 2px;
 }
 
+#about-me-content.maximize #about-me-body {
+  min-height: calc(var(--vh, 1vh) * 100 - 74px);
+}
+
 #about-me-content {
   max-width: 900px;
   max-width: 90%;
@@ -869,7 +849,6 @@ body div {
   overflow-y: scroll;
   overflow-anchor: none;
 }
-
 #about-me-body hr {
   border-top: 1px dashed var(--dashed-text-divider);
 }
@@ -895,6 +874,15 @@ body div {
   background-position-x: 2px;
 }
 
+#training-content.maximize #training-body {
+  min-height: calc(var(--vh, 1vh) * 100 - 55px) !important;
+}
+
+.unlockHeight {
+  min-height: 120px !important;
+  max-height: calc(var(--vh, 1vh) * 85) !important;
+}
+
 #training-content {
   max-width: 900px;
   max-width: 90%;
@@ -911,15 +899,6 @@ body div {
   overflow-x: scroll;
   overflow-y: scroll;
   overflow-anchor: none;
-}
-
-.unlockHeight {
-  min-height: 120px !important;
-  max-height: calc(var(--vh, 1vh) * 85) !important;
-}
-
-#training-content.maximize #training-body {
-  min-height: calc(var(--vh, 1vh) * 100 - 55px) !important;
 }
 
 #training-body-text-conteiner {
@@ -1061,7 +1040,6 @@ input[type=range] {
   border-right: 1px solid var(--frame-shadow-white);
   border-bottom: 1px solid var(--frame-shadow-white);
 }
-
 input[type=range]::-webkit-slider-runnable-track {
   height: 18px;
   margin-top: -1px;
@@ -1069,7 +1047,6 @@ input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
   background: linear-gradient(to bottom right, transparent 50%, var(--window-backgroud) 50%);
 }
-
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;

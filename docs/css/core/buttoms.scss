@@ -64,17 +64,17 @@
 }
 
 .min {
-    -webkit-mask: url('../assets/icons/minimize.svg') no-repeat 50% 75%;
+    -webkit-mask: url('../assets/icons/window/minimize.svg') no-repeat 50% 75%;
     mask: url('../assets/icons/minimize.svg') no-repeat 50% 75%;
 }
 
 .max {
-    -webkit-mask: url('../assets/icons/iconmonstr-maximize.svg') no-repeat 50% 50%;
+    -webkit-mask: url('../assets/icons/window/iconmonstr-maximize.svg') no-repeat 50% 50%;
     mask: url('../assets/icons/iconmonstr-maximize.svg') no-repeat 50% 50%;
 }
 
 .cls {
-    -webkit-mask: url('../assets/icons/iconmonstr-x-close.svg') no-repeat 50% 50%;
+    -webkit-mask: url('../assets/icons/window/iconmonstr-x-close.svg') no-repeat 50% 50%;
     mask: url('../assets/icons/iconmonstr-x-close.svg') no-repeat 50% 50%;
 }
 

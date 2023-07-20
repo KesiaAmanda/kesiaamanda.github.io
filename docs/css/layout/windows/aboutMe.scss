@@ -5,6 +5,9 @@
     background-position-x: 2px;
 }
 
+#about-me-content.maximize #about-me-body {
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 74px);
+}
 
 #about-me-content {
     max-width: 900px;
@@ -23,10 +26,10 @@
     overflow-x: scroll;
     overflow-y: scroll;
     overflow-anchor: none;
-}
 
-#about-me-body hr {
-    border-top: 1px dashed var(--dashed-text-divider);
+    & hr {
+        border-top: 1px dashed var(--dashed-text-divider);
+    }
 }
 
 #about-me-title,

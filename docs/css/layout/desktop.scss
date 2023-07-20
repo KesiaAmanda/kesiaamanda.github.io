@@ -12,3 +12,23 @@
     grid-template-rows: auto 26px;
     filter: var(--screnn-filter);
 }
+
+.windowMenu {
+    display: flex;
+
+    & div {
+        padding: 5px 5px 0 5px;
+
+        &:first-letter {
+            text-decoration: underline;
+        }
+
+        &:hover {
+            background-color: var(--task-bar-button-hover);
+
+            & span {
+                color: var(--task-bar-button-hover-text-color);
+            }
+        }
+    }
+}

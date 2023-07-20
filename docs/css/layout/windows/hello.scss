@@ -5,6 +5,10 @@
     background-position-x: 2px;
 }
 
+#hello-content.maximize #hello-greeting {
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 59px);
+}
+
 #hello-content {
     max-width: 90%;
     height: auto;
@@ -15,11 +19,11 @@
     background-color: var(--body-backgroud-white);
     display: flex;
     flex-direction: column;
-}
 
-#hello-body .iconImage {
-    width: 25px;
-    height: 25px;
+    & .iconImage {
+        width: 25px;
+        height: 25px;
+    }
 }
 
 #hello-greeting {

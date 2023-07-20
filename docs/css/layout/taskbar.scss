@@ -12,7 +12,7 @@
 
 #start-btn {
     background: url('../assets/icons/social/icons8-pixel-star-16.png') left center no-repeat;
-    background-size: 15px 15px;
+    background-size: 12px 12px;
     background-position-x: 2px;
 }
 
@@ -32,81 +32,60 @@
     border-right: var(--frame-border-style) 2px var(--frame-shadow-black);
     max-width: unset;
     max-height: unset;
-}
 
-#start-menu #left {
-    width: 28px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
-    background-color: var(--start-menu-left-color);
-    text-transform: capitalize;
-}
+    & #left {
+        width: 28px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        background-color: var(--start-menu-left-color);
+        text-transform: capitalize;
 
-#start-menu .menuItem {
-    height: 32px;
-    width: 134px;
-    line-height: 0px;
-    margin-left: 29px;
-    padding-left: 5px;
-    padding-top: 20px;
-    margin-bottom: 0px;
-}
+        & .b {
+            color: rgb(192, 192, 192);
+            transform: rotateZ(-90deg);
+            transform-origin: center left;
+            display: inline-block;
+            width: 200px;
+            white-space: nowrap;
+            font-size: 20px;
+            margin-top: 150px;
+            margin-left: 20px;
+        }
 
-#start-menu .menuItem:hover {
-    background-color: var(--task-bar-button-hover);
-    color: var(--task-bar-button-hover-text-color);
-}
+        & .menu {
+            color: white;
+        }
+    }
 
-#start-menu .menuItem:hover span {
-    color: var(--task-bar-button-hover-text-color);
-}
+    & .menuItem {
+        height: 32px;
+        width: 134px;
+        line-height: 0px;
+        margin-left: 29px;
+        padding-left: 5px;
+        padding-top: 20px;
+        margin-bottom: 0px;
 
+        &:first-letter {
+            text-decoration: underline;
+            padding: 0;
+        }
+    }
 
-#start-menu .menuItem:first-letter {
-    text-decoration: underline;
-    padding: 0;
-}
+    & .menuItem:hover {
+        background-color: var(--task-bar-button-hover);
+        color: var(--task-bar-button-hover-text-color);
 
-#start-menu #shutdown:first-letter {
-    text-decoration: none;
-}
+        & span {
+            color: var(--task-bar-button-hover-text-color);
+        }
+    }
 
-#start-menu #left .b {
-    color: rgb(192, 192, 192);
-    transform: rotateZ(-90deg);
-    transform-origin: center left;
-    display: inline-block;
-    width: 200px;
-    white-space: nowrap;
-    font-size: 20px;
-    margin-top: 150px;
-    margin-left: 20px;
-}
-
-#start-menu #left .menu {
-    color: white;
-}
-
-.windowMenu {
-    display: flex;
-}
-
-.windowMenu div {
-    padding: 5px 5px 0 5px;
-}
-
-.windowMenu div:first-letter {
-    text-decoration: underline;
-}
-
-.windowMenu div:hover {
-    background-color: var(--task-bar-button-hover);
-}
-
-.windowMenu div:hover span {
-    color: var(--task-bar-button-hover-text-color);
+    & #shutdown:first-letter {
+        text-decoration: none;
+    }
 }
 
 #notifications {
@@ -116,11 +95,11 @@
     align-items: center;
     min-width: 62px;
     font-weight: lighter;
-}
 
-#notifications div {
-    height: 15px;
-    width: 15px;
+    & div {
+        height: 15px;
+        width: 15px;
+    }
 }
 
 #clock {
