@@ -720,7 +720,6 @@ body::before {
 #welcome-content.maximize #welcome-body-container,
 #training-content.maximize #training-body,
 #skills-content.maximize #skills-body {
-  backface-visibility: hidden;
   min-width: 100%;
 }
 
@@ -1068,7 +1067,6 @@ body::before {
 @media screen and (max-width: 767px) {
   #skills-body {
     width: auto;
-    height: 80vh;
   }
   .skillContainer .skillsTextContainer span {
     margin-bottom: 0px;
@@ -1077,7 +1075,6 @@ body::before {
 @media screen and (min-width: 767px) {
   #skills-body {
     width: 1280px;
-    height: 720px;
   }
   .skillContainer .skillsTextContainer span {
     margin-bottom: -7px;
