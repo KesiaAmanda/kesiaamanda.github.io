@@ -129,6 +129,7 @@ input[type=range] {
 }
 
 .volume-input::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
     z-index: 5;
     height: 1px;
 }

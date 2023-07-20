@@ -1,0 +1,143 @@
+#skills-btn,
+#skills-header-title {
+    background: url('../assets/icons/desktop/folder_open.png') left center no-repeat;
+    background-size: 15px 15px;
+    background-position-x: 2px;
+}
+
+#skills-content.maximize #skills-body {
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 76px);
+}
+
+#skills-content {
+    max-width: 90%;
+}
+
+#skills-body {
+    padding: 10px;
+    resize: both;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow-anchor: none;
+    background-color: var(--body-background);
+    max-height: 80vh;
+    height: 720px;
+}
+
+.skillContainer {
+    & .skillsTextContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 5px;
+        gap: 5px;
+
+        & span {
+            margin-bottom: -7px;
+            flex-grow: 0;
+        }
+
+        & .divider {
+            flex-grow: 1;
+            border: 1px;
+            background-color: var(--text-color);
+        }
+
+        & .expander {
+            transform: none;
+        }
+    }
+
+    & .folderIconContainer {
+        overflow: hidden;
+        transition: all 0.7s ease-in-out;
+        transform: translateY(0%);
+        visibility: visible;
+
+        max-height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+
+
+        & .folderIcon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+
+            & p {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+                gap: 6px;
+                width: 90px;
+                font-size: 11px;
+                margin: 0px;
+                cursor: pointer;
+                text-align: center;
+
+                &.oneStar::after {
+                    content: '\A★☆☆☆☆';
+                }
+
+                &.twoStars::after {
+                    content: '\A★★☆☆☆';
+                }
+
+                &.threeStars::after {
+                    content: '\A★★★☆☆';
+                }
+
+                &.fourStars::after {
+                    content: '\A★★★★☆';
+                }
+
+                &.fiveStars::after {
+                    content: '\A★★★★★';
+                }
+            }
+
+            &:active p {
+                outline: 1px dotted var(--button-frame-dotted-click);
+            }
+
+            & .icon {
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
+
+.retract {
+    & .skillsTextContainer {
+        & .expander {
+            transform: rotate(270deg);
+        }
+    }
+
+    & .folderIconContainer {
+        max-height: 0;
+        transition: all 0.7s ease-in-out;
+
+        & .folderIcon {
+            overflow: hidden;
+            transition: all 0.7s ease-in-out;
+            transform: translateY(-100%);
+            visibility: hidden;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #skills-body {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    #skills-body {
+        width: 1280px;
+    }
+}

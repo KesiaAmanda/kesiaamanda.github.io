@@ -1,5 +1,5 @@
-let pages = [$("#welcome"), $("#about-me"), $("#training"), $("#music-player")];
-let buttons = [$("#start-btn"), $("#welcome-btn"), $("#about-me-btn"), $("#training-btn"), $("#music-player-btn")];
+let pages = [$("#welcome"), $("#about-me"), $("#training"), $("#skills"), $("#music-player")];
+let buttons = [$("#start-btn"), $("#welcome-btn"), $("#about-me-btn"), $("#training-btn"), $("#skills-btn"), $("#music-player-btn")];
 
 const colorButtom = document.getElementById('dark-mode-icon-text');
 
@@ -74,6 +74,10 @@ $(document).ready(function (e) {
         $('#start-btn').removeClass('startClick').addClass('startRest');
     });
 
+    $('.expander').click(function (e) {
+        $(e.target.parentNode.parentNode.parentNode).toggleClass('retract');
+    });
+
     $(':root').on("keypress", function (e) {
         e.preventDefault();
         if (e.keyCode == 13) {
@@ -98,6 +102,7 @@ $(document).ready(function (e) {
 swapPageElements('#about-me');
 swapPageElements('#welcome');
 swapPageElements('#training');
+swapPageElements('#skills');
 swapPageElements('#music-player');
 
 function swapPageElements(page) {

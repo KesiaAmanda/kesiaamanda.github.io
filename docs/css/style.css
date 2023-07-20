@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media (prefers-color-scheme: light) {
   :root {
     --window-background: rgb(187, 180, 185);
@@ -325,6 +326,15 @@ a:link {
   outline-offset: -4px;
 }
 
+.invisibleButtom {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 15px;
+  height: 15px;
+  cursor: default;
+}
+
 .controlButtom {
   background-color: var(--control-icon-color);
   background-position: center;
@@ -375,6 +385,11 @@ a:link {
 .volume {
   -webkit-mask: url("../assets/icons/player/iconmonstr-audio.svg") no-repeat 50% 50%;
   mask: url("../assets/icons/player/iconmonstr-audio.svg") no-repeat 50% 50%;
+}
+
+.expander {
+  -webkit-mask: url("../assets/icons/window/iconmonstr-arrow.svg") no-repeat 50% 50%;
+  mask: url("../assets/icons/window/iconmonstr-arrow.svg") no-repeat 50% 50%;
 }
 
 .header {
@@ -481,7 +496,7 @@ a:link {
   background: transparent;
   height: 100%;
   width: 100%;
-  padding: 15px;
+  padding-top: 15px;
 }
 
 #screen {
@@ -493,6 +508,7 @@ a:link {
 
 .windowMenu {
   display: flex;
+  max-width: 60px;
 }
 .windowMenu div {
   padding: 5px 5px 0 5px;
@@ -632,13 +648,14 @@ a:link {
 #workspace p {
   display: flex;
   justify-content: center;
-  width: 50px;
+  width: 90px;
   font-size: 10px;
   padding-top: 5px;
   cursor: pointer;
   text-shadow: -1px -1px 1px var(--desktop-title-icon-shadow), -1px 1px 1px var(--desktop-title-icon-shadow), 1px -1px 1px var(--desktop-title-icon-shadow), 1px 1px 1px var(--desktop-title-icon-shadow);
   text-align: center;
   color: var(--desktop-title-icon-color);
+  overflow: hidden;
 }
 
 .content {
@@ -686,14 +703,16 @@ body::before {
 
 #about-me,
 #welcome,
-#music-player,
-#training {
+#training,
+#skills,
+#music-player {
   position: relative;
 }
 
 #about-me-content.maximize,
 #welcome-content.maximize,
-#training-content.maximize {
+#training-content.maximize,
+#skills-content.maximize {
   position: fixed;
   min-width: 100%;
   min-height: calc(var(--vh, 1vh) * 100 - 26px);
@@ -705,7 +724,8 @@ body::before {
 
 #about-me-content.maximize #about-me-body,
 #welcome-content.maximize #welcome-body-container,
-#training-content.maximize #training-body {
+#training-content.maximize #training-body,
+#skills-content.maximize #skills-body {
   backface-visibility: hidden;
   min-width: 100%;
 }
@@ -713,6 +733,7 @@ body::before {
 #welcome.hideContent #welcome-content,
 #about-me.hideContent #about-me-content,
 #training.hideContent #training-content,
+#skills.hideContent #skills-content,
 #music-player.hideContent #music-player-content {
   max-height: 0;
   max-width: 0;
@@ -723,7 +744,8 @@ body::before {
 
 #welcome #welcome-content.maximize,
 #training #training-content.maximize,
-#about-me #about-me-content.maximize {
+#about-me #about-me-content.maximize,
+#skills #skills-content.maximize {
   max-height: 0;
   max-width: 0;
   overflow: hidden;
@@ -731,6 +753,7 @@ body::before {
 
 #welcome.hideContent #welcome-content.maximize,
 #training.hideContent #training-content.maximize,
+#skills.hideContent #skills-content.maximize,
 #about-me.hideContent #about-me-content.maximize {
   min-height: 0;
   min-width: 0;
@@ -741,6 +764,7 @@ body::before {
 #welcome-content,
 #about-me-content,
 #training-content,
+#skills-content,
 #music-player-content {
   overflow: hidden;
   max-height: auto;
@@ -929,6 +953,125 @@ body::before {
   animation: cursorBlink 1s step-end infinite;
 }
 
+#skills-btn,
+#skills-header-title {
+  background: url("../assets/icons/desktop/folder_open.png") left center no-repeat;
+  background-size: 15px 15px;
+  background-position-x: 2px;
+}
+
+#skills-content.maximize #skills-body {
+  min-height: calc(var(--vh, 1vh) * 100 - 76px);
+}
+
+#skills-content {
+  max-width: 90%;
+}
+
+#skills-body {
+  padding: 10px;
+  resize: both;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  overflow-anchor: none;
+  background-color: var(--body-background);
+  max-height: 80vh;
+  height: 720px;
+}
+
+.skillContainer .skillsTextContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 5px;
+  gap: 5px;
+}
+.skillContainer .skillsTextContainer span {
+  margin-bottom: -7px;
+  flex-grow: 0;
+}
+.skillContainer .skillsTextContainer .divider {
+  flex-grow: 1;
+  border: 1px;
+  background-color: var(--text-color);
+}
+.skillContainer .skillsTextContainer .expander {
+  transform: none;
+}
+.skillContainer .folderIconContainer {
+  overflow: hidden;
+  transition: all 0.7s ease-in-out;
+  transform: translateY(0%);
+  visibility: visible;
+  max-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+.skillContainer .folderIconContainer .folderIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.skillContainer .folderIconContainer .folderIcon p {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 6px;
+  width: 90px;
+  font-size: 11px;
+  margin: 0px;
+  cursor: pointer;
+  text-align: center;
+}
+.skillContainer .folderIconContainer .folderIcon p.oneStar::after {
+  content: "\a★☆☆☆☆";
+}
+.skillContainer .folderIconContainer .folderIcon p.twoStars::after {
+  content: "\a★★☆☆☆";
+}
+.skillContainer .folderIconContainer .folderIcon p.threeStars::after {
+  content: "\a★★★☆☆";
+}
+.skillContainer .folderIconContainer .folderIcon p.fourStars::after {
+  content: "\a★★★★☆";
+}
+.skillContainer .folderIconContainer .folderIcon p.fiveStars::after {
+  content: "\a★★★★★";
+}
+.skillContainer .folderIconContainer .folderIcon:active p {
+  outline: 1px dotted var(--button-frame-dotted-click);
+}
+.skillContainer .folderIconContainer .folderIcon .icon {
+  margin-bottom: 2px;
+}
+
+.retract .skillsTextContainer .expander {
+  transform: rotate(270deg);
+}
+.retract .folderIconContainer {
+  max-height: 0;
+  transition: all 0.7s ease-in-out;
+}
+.retract .folderIconContainer .folderIcon {
+  overflow: hidden;
+  transition: all 0.7s ease-in-out;
+  transform: translateY(-100%);
+  visibility: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  #skills-body {
+    width: auto;
+  }
+}
+@media screen and (min-width: 767px) {
+  #skills-body {
+    width: 1280px;
+  }
+}
 #music-player-btn,
 #music-player-header-title {
   background: url("../assets/icons/desktop/music.png") left center no-repeat;
@@ -1052,6 +1195,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .volume-input::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
   z-index: 5;
   height: 1px;
 }

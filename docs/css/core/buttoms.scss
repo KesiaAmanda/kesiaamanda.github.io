@@ -56,6 +56,15 @@
     outline-offset: -4px;
 }
 
+.invisibleButtom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15px;
+    height: 15px;
+    cursor: default;
+}
+
 .controlButtom {
     background-color: var(--control-icon-color);
     background-position: center;
@@ -106,4 +115,9 @@
 .volume {
     -webkit-mask: url('../assets/icons/player/iconmonstr-audio.svg') no-repeat 50% 50%;
     mask: url('../assets/icons/player/iconmonstr-audio.svg') no-repeat 50% 50%;
+}
+
+.expander {
+    -webkit-mask: url('../assets/icons/window/iconmonstr-arrow.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/window/iconmonstr-arrow.svg') no-repeat 50% 50%;
 }
