@@ -71,3 +71,15 @@
 .welcomeItemImg {
     align-items: center;
 }
+
+@media screen and (max-width: 767px) {
+    #welcome-body-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    #welcome-body-container {
+        flex-wrap: nowrap;
+    }
+}

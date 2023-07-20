@@ -11,10 +11,6 @@
     .buttom {
         padding: 0px 10px 0px 20px;
     }
-
-    #hello-greeting {
-        flex-wrap: wrap;
-    }
 }
 
 @media screen and (min-width: 767px) {
@@ -24,10 +20,6 @@
 
     .buttom {
         padding: 5px 10px 0px 20px;
-    }
-
-    #hello-greeting {
-        flex-wrap: nowrap;
     }
 }
 

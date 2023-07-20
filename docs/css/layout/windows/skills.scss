@@ -6,7 +6,7 @@
 }
 
 #skills-content.maximize #skills-body {
-    min-height: calc(calc(var(--vh, 1vh) * 100) - 76px);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 74px);
 }
 
 #skills-content {
@@ -14,14 +14,14 @@
 }
 
 #skills-body {
+    position: relative;
+    max-height: 80vh;
     padding: 10px;
     resize: both;
     overflow-x: scroll;
     overflow-y: scroll;
     overflow-anchor: none;
     background-color: var(--body-background);
-    max-height: 80vh;
-    height: 720px;
 }
 
 .skillContainer {
@@ -133,11 +133,29 @@
 @media screen and (max-width: 767px) {
     #skills-body {
         width: auto;
+        height: 80vh;
+    }
+
+    .skillContainer {
+        & .skillsTextContainer {
+            & span {
+                margin-bottom: 0px;
+            }
+        }
     }
 }
 
 @media screen and (min-width: 767px) {
     #skills-body {
         width: 1280px;
+        height: 720px;
+    }
+
+    .skillContainer {
+        & .skillsTextContainer {
+            & span {
+                margin-bottom: -7px;
+            }
+        }
     }
 }
