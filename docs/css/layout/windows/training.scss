@@ -21,7 +21,7 @@
 
 #training-body {
     position: relative;
-    background-color: var(--body-backgroud-black);
+    background-color: var(--console-background);
     min-height: 511px;
     max-height: 511px;
     width: 900px;
@@ -30,27 +30,18 @@
     overflow-x: scroll;
     overflow-y: scroll;
     overflow-anchor: none;
-}
 
-#training-body-text-conteiner {
-    max-width: 900px;
-}
-
-#training-body-text-conteiner u {
-    text-decoration: underline;
-}
-
-#training-body span {
-    color: var(--console-text-color);
+    & span {
+        max-width: 900px;
+        color: var(--console-text-color);
+    }
 }
 
 #training-body-header-training,
 #training-body-header-certificates {
     display: flex;
-    justify-content: center;
     white-space: pre;
-    padding-bottom: 19px;
-    max-width: 900px;
+    justify-content: center;
 }
 
 @keyframes cursorBlink {
@@ -67,6 +58,6 @@
     }
 }
 
-#anchor {
+#cursor {
     animation: cursorBlink 1s step-end infinite;
 }

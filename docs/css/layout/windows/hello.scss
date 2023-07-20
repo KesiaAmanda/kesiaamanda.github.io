@@ -16,14 +16,14 @@
 }
 
 #hello-body {
-    background-color: var(--body-backgroud-white);
+    background-color: var(--body-background);
     display: flex;
     flex-direction: column;
+}
 
-    & .iconImage {
-        width: 25px;
-        height: 25px;
-    }
+#hello-body .iconImage {
+    width: 25px;
+    height: 25px;
 }
 
 #hello-greeting {
@@ -65,6 +65,7 @@
     max-width: 100%;
     max-height: 90%;
     padding: 1em;
+    max-width: 500px
 }
 
 .helloItemImg {

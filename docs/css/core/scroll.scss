@@ -7,7 +7,7 @@
     display: block;
     width: 20px;
     height: 20px;
-    background-color: var(--window-backgroud);
+    background-color: var(--window-background);
     border-top: ridge 2px var(--frame-shadow-white);
     border-left: ridge 2px var(--frame-shadow-white);
     border-bottom: var(--frame-border-style) 2px var(--frame-shadow-black);
@@ -60,7 +60,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--window-backgroud);
+    background-color: var(--window-background);
     border-top: ridge 2px var(--frame-shadow-white);
     border-left: ridge 2px var(--frame-shadow-white);
     border-bottom: var(--frame-border-style) 2px var(--frame-shadow-black);
@@ -68,10 +68,10 @@
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: var(--scroll-backgroud);
+    background-color: var(--scroll-background);
 }
 
 ::-webkit-resizer {
-    background: var(--scroll-backgroud);
+    background: var(--scroll-background);
     background-image: url('../assets/icons/window/resize.png');
 }

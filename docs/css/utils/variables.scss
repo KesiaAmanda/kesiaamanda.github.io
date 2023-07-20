@@ -1,5 +1,8 @@
 @mixin light-color-scheme {
-    --window-backgroud: rgb(187, 180, 185);
+    --window-background: rgb(187, 180, 185);
+    --body-background: rgb(230, 230, 230);
+    --console-background: #0f0d0f;
+    --console-text-color: rgb(111, 172, 82);
 
     --start-menu-left-color: rgb(151, 132, 151);
 
@@ -8,15 +11,11 @@
 
     --screnn-filter: invert(1%) sepia(10%) hue-rotate(10deg) brightness(99%);
 
-    --body-backgroud-white: rgb(230, 230, 230);
-    --body-backgroud-black: #0f0d0f;
-    --console-text-color: rgb(111, 172, 82);
-
-    --backgroud-image: url('../assets/background/kime-nanami-pastelsky.gif') 25% 50%;
-    --backgroud-image-effect: none;
+    --background-image: url('../assets/background/kime-nanami-pastelsky.gif') 25% 50%;
+    --background-image-effect: none;
 
 
-    --window-header-backgroud-color: linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5));
+    --window-header-background-color: linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5));
     --window-header-title-color: rgb(255, 251, 245);
 
     --frame-shadow-white: rgb(235, 235, 235);
@@ -38,7 +37,7 @@
     --music-player-text-color: #ccc;
     --music-player-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
 
-    --scroll-backgroud: rgb(209, 209, 209);
+    --scroll-background: rgb(209, 209, 209);
 
     --control-icon-color: rgb(12, 5, 11);
     --dashed-text-divider: rgb(12, 5, 11);
@@ -60,7 +59,10 @@
 }
 
 @mixin dark-color-scheme {
-    --window-backgroud: #1B1A21;
+    --window-background: #1B1A21;
+    --body-background: #23222B;
+    --console-background: #0f0d0f;
+    --console-text-color: rgb(111, 172, 82);
 
     --start-menu-left-color: #131314;
 
@@ -69,14 +71,10 @@
 
     --screnn-filter: invert(5%) sepia(10%) hue-rotate(10deg) brightness(99%);
 
-    --body-backgroud-white: #23222B;
-    --body-backgroud-black: #0f0d0f;
-    --console-text-color: rgb(111, 172, 82);
+    --background-image: url('../assets/background/kime-nanami-pastelsky-nigth.gif') 25% 50%;
+    --background-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
 
-    --backgroud-image: url('../assets/background/kime-nanami-pastelsky-nigth.gif') 25% 50%;
-    --backgroud-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
-
-    --window-header-backgroud-color: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    --window-header-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
     --window-header-title-color: rgb(226, 213, 224);
 
     --frame-shadow-white: rgba(102, 102, 102, 0.336);
@@ -96,10 +94,10 @@
     --image-shadow-color: #00000041;
 
     --music-player-text-color: rgb(226, 213, 224);
-    --music-player-backgroud-color: black;
+    --music-player-background-color: black;
     --music-player-image-effect: none;
 
-    --scroll-backgroud: #1D1C24;
+    --scroll-background: #1D1C24;
 
     --control-icon-color: rgb(247, 242, 248);
     --dashed-text-divider: rgb(247, 242, 248);

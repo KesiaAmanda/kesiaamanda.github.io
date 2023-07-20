@@ -1,16 +1,16 @@
 @media (prefers-color-scheme: light) {
   :root {
-    --window-backgroud: rgb(187, 180, 185);
+    --window-background: rgb(187, 180, 185);
+    --body-background: rgb(230, 230, 230);
+    --console-background: #0f0d0f;
+    --console-text-color: rgb(111, 172, 82);
     --start-menu-left-color: rgb(151, 132, 151);
     --task-bar-button-hover: rgb(136, 24, 112, 0.6);
     --task-bar-button-hover-text-color: white;
     --screnn-filter: invert(1%) sepia(10%) hue-rotate(10deg) brightness(99%);
-    --body-backgroud-white: rgb(230, 230, 230);
-    --body-backgroud-black: #0f0d0f;
-    --console-text-color: rgb(111, 172, 82);
-    --backgroud-image: url("../assets/background/kime-nanami-pastelsky.gif") 25% 50%;
-    --backgroud-image-effect: none;
-    --window-header-backgroud-color: linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5));
+    --background-image: url("../assets/background/kime-nanami-pastelsky.gif") 25% 50%;
+    --background-image-effect: none;
+    --window-header-background-color: linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5));
     --window-header-title-color: rgb(255, 251, 245);
     --frame-shadow-white: rgb(235, 235, 235);
     --frame-shadow-black: rgb(175, 175, 175);
@@ -25,7 +25,7 @@
     --image-shadow-color: #00000041;
     --music-player-text-color: #ccc;
     --music-player-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
-    --scroll-backgroud: rgb(209, 209, 209);
+    --scroll-background: rgb(209, 209, 209);
     --control-icon-color: rgb(12, 5, 11);
     --dashed-text-divider: rgb(12, 5, 11);
     --text-color: rgb(12, 5, 11);
@@ -40,17 +40,17 @@
     --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>");
   }
   :root.switchColor {
-    --window-backgroud: #1B1A21;
+    --window-background: #1B1A21;
+    --body-background: #23222B;
+    --console-background: #0f0d0f;
+    --console-text-color: rgb(111, 172, 82);
     --start-menu-left-color: #131314;
     --task-bar-button-hover: #381639ab;
     --task-bar-button-hover-text-color: rgb(226, 213, 224);
     --screnn-filter: invert(5%) sepia(10%) hue-rotate(10deg) brightness(99%);
-    --body-backgroud-white: #23222B;
-    --body-backgroud-black: #0f0d0f;
-    --console-text-color: rgb(111, 172, 82);
-    --backgroud-image: url("../assets/background/kime-nanami-pastelsky-nigth.gif") 25% 50%;
-    --backgroud-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
-    --window-header-backgroud-color: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    --background-image: url("../assets/background/kime-nanami-pastelsky-nigth.gif") 25% 50%;
+    --background-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
+    --window-header-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
     --window-header-title-color: rgb(226, 213, 224);
     --frame-shadow-white: rgba(102, 102, 102, 0.336);
     --frame-shadow-black: rgba(0, 0, 0, 0.692);
@@ -64,9 +64,9 @@
     --image-border-color: transparent;
     --image-shadow-color: #00000041;
     --music-player-text-color: rgb(226, 213, 224);
-    --music-player-backgroud-color: black;
+    --music-player-background-color: black;
     --music-player-image-effect: none;
-    --scroll-backgroud: #1D1C24;
+    --scroll-background: #1D1C24;
     --control-icon-color: rgb(247, 242, 248);
     --dashed-text-divider: rgb(247, 242, 248);
     --text-color: rgb(247, 242, 248);
@@ -83,17 +83,17 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --window-backgroud: #1B1A21;
+    --window-background: #1B1A21;
+    --body-background: #23222B;
+    --console-background: #0f0d0f;
+    --console-text-color: rgb(111, 172, 82);
     --start-menu-left-color: #131314;
     --task-bar-button-hover: #381639ab;
     --task-bar-button-hover-text-color: rgb(226, 213, 224);
     --screnn-filter: invert(5%) sepia(10%) hue-rotate(10deg) brightness(99%);
-    --body-backgroud-white: #23222B;
-    --body-backgroud-black: #0f0d0f;
-    --console-text-color: rgb(111, 172, 82);
-    --backgroud-image: url("../assets/background/kime-nanami-pastelsky-nigth.gif") 25% 50%;
-    --backgroud-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
-    --window-header-backgroud-color: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    --background-image: url("../assets/background/kime-nanami-pastelsky-nigth.gif") 25% 50%;
+    --background-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
+    --window-header-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
     --window-header-title-color: rgb(226, 213, 224);
     --frame-shadow-white: rgba(102, 102, 102, 0.336);
     --frame-shadow-black: rgba(0, 0, 0, 0.692);
@@ -107,9 +107,9 @@
     --image-border-color: transparent;
     --image-shadow-color: #00000041;
     --music-player-text-color: rgb(226, 213, 224);
-    --music-player-backgroud-color: black;
+    --music-player-background-color: black;
     --music-player-image-effect: none;
-    --scroll-backgroud: #1D1C24;
+    --scroll-background: #1D1C24;
     --control-icon-color: rgb(247, 242, 248);
     --dashed-text-divider: rgb(247, 242, 248);
     --text-color: rgb(247, 242, 248);
@@ -124,17 +124,17 @@
     --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(56, 56, 56);' d='M25 12l-18 12v-24z'/></svg>");
   }
   :root.switchColor {
-    --window-backgroud: rgb(187, 180, 185);
+    --window-background: rgb(187, 180, 185);
+    --body-background: rgb(230, 230, 230);
+    --console-background: #0f0d0f;
+    --console-text-color: rgb(111, 172, 82);
     --start-menu-left-color: rgb(151, 132, 151);
     --task-bar-button-hover: rgb(136, 24, 112, 0.6);
     --task-bar-button-hover-text-color: white;
     --screnn-filter: invert(1%) sepia(10%) hue-rotate(10deg) brightness(99%);
-    --body-backgroud-white: rgb(230, 230, 230);
-    --body-backgroud-black: #0f0d0f;
-    --console-text-color: rgb(111, 172, 82);
-    --backgroud-image: url("../assets/background/kime-nanami-pastelsky.gif") 25% 50%;
-    --backgroud-image-effect: none;
-    --window-header-backgroud-color: linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5));
+    --background-image: url("../assets/background/kime-nanami-pastelsky.gif") 25% 50%;
+    --background-image-effect: none;
+    --window-header-background-color: linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5));
     --window-header-title-color: rgb(255, 251, 245);
     --frame-shadow-white: rgb(235, 235, 235);
     --frame-shadow-black: rgb(175, 175, 175);
@@ -149,7 +149,7 @@
     --image-shadow-color: #00000041;
     --music-player-text-color: #ccc;
     --music-player-image-effect: invert(1%) sepia(10%) grayscale(40%) hue-rotate(10deg) brightness(99%);
-    --scroll-backgroud: rgb(209, 209, 209);
+    --scroll-background: rgb(209, 209, 209);
     --control-icon-color: rgb(12, 5, 11);
     --dashed-text-divider: rgb(12, 5, 11);
     --text-color: rgb(12, 5, 11);
@@ -268,7 +268,7 @@ a:link {
 }
 
 .buttoms {
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   margin-left: auto;
   display: flex;
 }
@@ -286,7 +286,7 @@ a:link {
 }
 
 .smallButtom {
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -296,7 +296,7 @@ a:link {
 }
 
 .mediumButtom {
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -306,7 +306,7 @@ a:link {
 }
 
 .mediumButtomDisabled {
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -379,7 +379,7 @@ a:link {
 
 .header {
   touch-action: none;
-  background: var(--window-header-backgroud-color);
+  background: var(--window-header-background-color);
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -407,7 +407,7 @@ a:link {
   display: block;
   width: 20px;
   height: 20px;
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   border-top: ridge 2px var(--frame-shadow-white);
   border-left: ridge 2px var(--frame-shadow-white);
   border-bottom: var(--frame-border-style) 2px var(--frame-shadow-black);
@@ -460,7 +460,7 @@ a:link {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   border-top: ridge 2px var(--frame-shadow-white);
   border-left: ridge 2px var(--frame-shadow-white);
   border-bottom: var(--frame-border-style) 2px var(--frame-shadow-black);
@@ -468,11 +468,11 @@ a:link {
 }
 
 ::-webkit-scrollbar-track-piece {
-  background-color: var(--scroll-backgroud);
+  background-color: var(--scroll-background);
 }
 
 ::-webkit-resizer {
-  background: var(--scroll-backgroud);
+  background: var(--scroll-background);
   background-image: url("../assets/icons/window/resize.png");
 }
 
@@ -511,7 +511,7 @@ a:link {
   position: relative;
   height: 100%;
   width: 100%;
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   display: flex;
   bottom: 0px;
   left: 0px;
@@ -530,7 +530,7 @@ a:link {
   flex-direction: column;
   top: -172px;
   left: 0;
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   background-size: 100px;
   position: absolute;
   z-index: 99;
@@ -646,7 +646,7 @@ a:link {
   display: flex;
   overflow: hidden;
   flex-flow: column;
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -51.5%);
@@ -672,16 +672,16 @@ body::before {
   right: 0;
   z-index: -1;
   display: block;
-  background: var(--backgroud-image);
+  background: var(--background-image);
   background-size: cover;
   transition: background 1s ease-in-out;
   width: 100%;
   height: 100%;
-  -webkit-filter: var(--backgroud-image-effect);
-  -moz-filter: var(--backgroud-image-effect);
-  -o-filter: var(--backgroud-image-effect);
-  -ms-filter: var(--backgroud-image-effect);
-  filter: var(--backgroud-image-effect);
+  -webkit-filter: var(--background-image-effect);
+  -moz-filter: var(--background-image-effect);
+  -o-filter: var(--background-image-effect);
+  -ms-filter: var(--background-image-effect);
+  filter: var(--background-image-effect);
 }
 
 #about-me,
@@ -766,10 +766,11 @@ body::before {
 }
 
 #hello-body {
-  background-color: var(--body-backgroud-white);
+  background-color: var(--body-background);
   display: flex;
   flex-direction: column;
 }
+
 #hello-body .iconImage {
   width: 25px;
   height: 25px;
@@ -814,6 +815,7 @@ body::before {
   max-width: 100%;
   max-height: 90%;
   padding: 1em;
+  max-width: 500px;
 }
 
 .helloItemImg {
@@ -838,7 +840,7 @@ body::before {
 
 #about-me-body {
   position: relative;
-  background-color: var(--body-backgroud-white);
+  background-color: var(--body-background);
   max-height: 80vh;
   height: auto;
   width: 600px;
@@ -890,7 +892,7 @@ body::before {
 
 #training-body {
   position: relative;
-  background-color: var(--body-backgroud-black);
+  background-color: var(--console-background);
   min-height: 511px;
   max-height: 511px;
   width: 900px;
@@ -900,26 +902,16 @@ body::before {
   overflow-y: scroll;
   overflow-anchor: none;
 }
-
-#training-body-text-conteiner {
-  max-width: 900px;
-}
-
-#training-body-text-conteiner u {
-  text-decoration: underline;
-}
-
 #training-body span {
+  max-width: 900px;
   color: var(--console-text-color);
 }
 
 #training-body-header-training,
 #training-body-header-certificates {
   display: flex;
-  justify-content: center;
   white-space: pre;
-  padding-bottom: 19px;
-  max-width: 900px;
+  justify-content: center;
 }
 
 @keyframes cursorBlink {
@@ -933,7 +925,7 @@ body::before {
     opacity: 1;
   }
 }
-#anchor {
+#cursor {
   animation: cursorBlink 1s step-end infinite;
 }
 
@@ -990,7 +982,7 @@ body::before {
   margin-top: -6px;
   height: 20px;
   width: 10px;
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   border-top: ridge 1px var(--frame-shadow-white);
   border-left: ridge 1px var(--frame-shadow-white);
   border-bottom: var(--frame-border-style) 1px var(--music-player-buttons-shadow-black);
@@ -1005,7 +997,7 @@ body::before {
 
 #music-player-title {
   margin-top: 5px;
-  background-color: var(--body-backgroud-black);
+  background-color: var(--console-background);
 }
 
 #music-player-body p {
@@ -1045,14 +1037,14 @@ input[type=range]::-webkit-slider-runnable-track {
   margin-top: -1px;
   width: 70px;
   cursor: pointer;
-  background: linear-gradient(to bottom right, transparent 50%, var(--window-backgroud) 50%);
+  background: linear-gradient(to bottom right, transparent 50%, var(--window-background) 50%);
 }
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;
   width: 10px;
   margin-top: -1px;
-  background-color: var(--window-backgroud);
+  background-color: var(--window-background);
   border-top: solid 1px var(--frame-shadow-white);
   border-left: solid 1px var(--frame-shadow-white);
   border-bottom: solid 1px var(--music-player-buttons-shadow-black);

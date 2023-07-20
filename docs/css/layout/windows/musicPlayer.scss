@@ -53,7 +53,7 @@
     margin-top: -6px;
     height: 20px;
     width: 10px;
-    background-color: var(--window-backgroud);
+    background-color: var(--window-background);
     border-top: ridge 1px var(--frame-shadow-white);
     border-left: ridge 1px var(--frame-shadow-white);
     border-bottom: var(--frame-border-style) 1px var(--music-player-buttons-shadow-black);
@@ -68,7 +68,7 @@
 
 #music-player-title {
     margin-top: 5px;
-    background-color: var(--body-backgroud-black);
+    background-color: var(--console-background);
 }
 
 #music-player-body p {
@@ -112,7 +112,7 @@ input[type=range] {
         cursor: pointer;
         background: linear-gradient(to bottom right,
                 transparent 50%,
-                var(--window-backgroud) 50%);
+                var(--window-background) 50%);
     }
 
     &::-webkit-slider-thumb {
@@ -120,7 +120,7 @@ input[type=range] {
         height: 20px;
         width: 10px;
         margin-top: -1px;
-        background-color: var(--window-backgroud);
+        background-color: var(--window-background);
         border-top: solid 1px var(--frame-shadow-white);
         border-left: solid 1px var(--frame-shadow-white);
         border-bottom: solid 1px var(--music-player-buttons-shadow-black);

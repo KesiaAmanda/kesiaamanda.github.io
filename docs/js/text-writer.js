@@ -16,7 +16,7 @@ async function textWriter() {
         isWritten = true;
         await typeWriterBr(textBefore, ["C:> type formação.txt", hr], speed);
         await typeWriterBr(headerTraining, ["█▀▀ █▀█ █▀█ █▀▄▀█ ▄▀█ █▀▀ ▄▀█ █▀█",
-            "█▀░ █▄█ █▀▄ █░▀░█ █▀█ █▄▄ █▀█ █▄█"
+            "█▀░ █▄█ █▀▄ █░▀░█ █▀█ █▄▄ █▀█ █▄█", ""
         ], speed);
         await typeWriterBr(training, [hr, "", "Faculdade de Tecnologia da Zona Leste",
             "Tecnólogo, Análise e Desenvolvimento de Sistemas",
@@ -24,7 +24,7 @@ async function textWriter() {
         ], speed);
 
         await typeWriterBr(headerCertificates, ["█▀▀ █▀▀ █▀█ ▀█▀ █ █▀▀ █ █▀▀ ▄▀█ █▀▄ █▀█ █▀",
-            "█▄▄ ██▄ █▀▄ ░█░ █ █▀░ █ █▄▄ █▀█ █▄▀ █▄█ ▄█"
+            "█▄▄ ██▄ █▀▄ ░█░ █ █▀░ █ █▄▄ █▀█ █▄▀ █▄█ ▄█", ""
         ], speed);
 
         // "Avançado"

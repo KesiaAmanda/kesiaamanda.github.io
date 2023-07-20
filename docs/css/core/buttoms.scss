@@ -1,5 +1,5 @@
 .buttoms {
-    background-color: var(--window-backgroud);
+    background-color: var(--window-background);
     margin-left: auto;
     display: flex;
 }
@@ -17,7 +17,7 @@
 }
 
 .smallButtom {
-    background-color: var(--window-backgroud);
+    background-color: var(--window-background);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -27,7 +27,7 @@
 }
 
 .mediumButtom {
-    background-color: var(--window-backgroud);
+    background-color: var(--window-background);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -37,7 +37,7 @@
 }
 
 .mediumButtomDisabled {
-    background-color: var(--window-backgroud);
+    background-color: var(--window-background);
     display: flex;
     justify-content: center;
     align-items: flex-end;
