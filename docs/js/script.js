@@ -1,5 +1,5 @@
-let pages = [$("#hello"), $("#about-me"), $("#training"), $("#music-player")];
-let buttons = [$("#start-btn"), $("#hello-btn"), $("#about-me-btn"), $("#training-btn"), $("#music-player-btn")];
+let pages = [$("#welcome"), $("#about-me"), $("#training"), $("#music-player")];
+let buttons = [$("#start-btn"), $("#welcome-btn"), $("#about-me-btn"), $("#training-btn"), $("#music-player-btn")];
 
 const colorButtom = document.getElementById('dark-mode-icon-text');
 
@@ -40,7 +40,7 @@ $(document).ready(function (e) {
     initText();
     startTime();
     moveCat();
-    $('#hello-btn').addClass('startClick');
+    $('#welcome-btn').addClass('startClick');
     $('#music-player-btn').slideUp(100);
 
     function swapButtons(button) {
@@ -96,7 +96,7 @@ $(document).ready(function (e) {
 });
 
 swapPageElements('#about-me');
-swapPageElements('#hello');
+swapPageElements('#welcome');
 swapPageElements('#training');
 swapPageElements('#music-player');
 

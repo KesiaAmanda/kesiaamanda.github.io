@@ -1,32 +1,32 @@
-#hello-btn,
-#hello-header-title {
+#welcome-btn,
+#welcome-header-title {
     background: url('../assets/icons/desktop/program.png') left center no-repeat;
     background-size: 15px 15px;
     background-position-x: 2px;
 }
 
-#hello-content.maximize #hello-greeting {
+#welcome-content.maximize #welcome-body-container {
     min-height: calc(calc(var(--vh, 1vh) * 100) - 59px);
 }
 
-#hello-content {
+#welcome-content {
     max-width: 90%;
     height: auto;
     width: 900px;
 }
 
-#hello-body {
+#welcome-body {
     background-color: var(--body-background);
     display: flex;
     flex-direction: column;
 }
 
-#hello-body .iconImage {
+#welcome-body .iconImage {
     width: 25px;
     height: 25px;
 }
 
-#hello-greeting {
+#welcome-body-container {
     width: 100%;
     height: 100%;
     padding: 1em;
@@ -35,13 +35,13 @@
     justify-content: center;
 }
 
-#hello-greeting h1 {
+#welcome-body-container h1 {
     width: 100%;
     font-size: 100%;
     margin: 2px;
 }
 
-#hello-img {
+#welcome-img {
     border-radius: 50%;
     max-width: 80%;
     border: 2px solid var(--image-border-color);
@@ -49,15 +49,15 @@
     filter: hue-rotate(315deg);
 }
 
-#hello-social {
+#welcome-social {
     margin-top: 20px;
 }
 
-.helloGreetingText {
+.welcomeGreetingText {
     width: 100%;
 }
 
-.helloItem {
+.welcomeItem {
     text-align: right;
     display: flex;
     justify-content: center;
@@ -68,6 +68,6 @@
     max-width: 500px
 }
 
-.helloItemImg {
+.welcomeItemImg {
     align-items: center;
 }

@@ -54,14 +54,14 @@ body {
 }
 
 #about-me,
-#hello,
+#welcome,
 #music-player,
 #training {
     position: relative;
 }
 
 #about-me-content.maximize,
-#hello-content.maximize,
+#welcome-content.maximize,
 #training-content.maximize {
     position: fixed;
     min-width: 100%;
@@ -73,13 +73,13 @@ body {
 }
 
 #about-me-content.maximize #about-me-body,
-#hello-content.maximize #hello-greeting,
+#welcome-content.maximize #welcome-body-container,
 #training-content.maximize #training-body {
     backface-visibility: hidden;
     min-width: 100%;
 }
 
-#hello.hideContent #hello-content,
+#welcome.hideContent #welcome-content,
 #about-me.hideContent #about-me-content,
 #training.hideContent #training-content,
 #music-player.hideContent #music-player-content {
@@ -90,7 +90,7 @@ body {
     overflow: hidden;
 }
 
-#hello #hello-content.maximize,
+#welcome #welcome-content.maximize,
 #training #training-content.maximize,
 #about-me #about-me-content.maximize {
     max-height: 0;
@@ -98,7 +98,7 @@ body {
     overflow: hidden;
 }
 
-#hello.hideContent #hello-content.maximize,
+#welcome.hideContent #welcome-content.maximize,
 #training.hideContent #training-content.maximize,
 #about-me.hideContent #about-me-content.maximize {
     min-height: 0;
@@ -107,7 +107,7 @@ body {
     overflow: hidden;
 }
 
-#hello-content,
+#welcome-content,
 #about-me-content,
 #training-content,
 #music-player-content {
