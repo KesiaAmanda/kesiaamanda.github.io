@@ -1,17 +1,17 @@
 let pages = [$("#welcome"), $("#about-me"), $("#training"), $("#skills"), $("#music-player")];
 let buttons = [$("#start-btn"), $("#welcome-btn"), $("#about-me-btn"), $("#training-btn"), $("#skills-btn"), $("#music-player-btn")];
 
-const colorButtom = document.getElementById('dark-mode-icon-text');
-
-if (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-    colorButtom.innerHTML = 'Modo claro';
-}
-
 const includes = document.getElementsByClassName('include');
 Array.from(includes).forEach(element => {
     let filePath = element.getAttribute('src');
     $(element).load(filePath);
 });
+
+const colorButtom = document.getElementById('dark-mode-icon-text');
+
+if (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+    colorButtom.innerHTML = 'Modo claro';
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const trainingBody = document.querySelector("#training-body");
@@ -41,39 +41,43 @@ document.addEventListener("DOMContentLoaded", function () {
     resizeObserver.observe(trainingBody);
 });
 
-$(document).ready(function (e) {
-    initText();
-    startTime();
-    moveCat();
-    $('#welcome-btn').addClass('startClick');
-    $('#music-player-btn').slideUp(100);
+$('#welcome-btn').addClass('startClick');
+$('#music-player-btn').slideUp(100);
 
-    function swapButtons(button) {
-        $(buttons).map(function () {
-            if (this.selector != button) {
-                $(this).removeClass('startClick');
-            }
-        });
-    }
-
-    $('#start-btn').click(function () {
-        swapButtons('#start-btn');
-        $('#start-menu').toggleClass("hidden");
-        $(this).toggleClass('startClick');
-    });
-
-    $('#desktop').click(function (e) {
-        if (e.target.id == 'desktop') {
-            swapButtons();
+function swapButtons(button) {
+    $(buttons).map(function () {
+        if (this.selector != button) {
+            $(this).removeClass('startClick');
         }
-        $('#start-menu').addClass('hidden');
-        $('#start-btn').removeClass('startClick').addClass('startRest');
     });
+}
 
-    $(window).on("resize", function (e) {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
+$('#dark-mode-icon').dblclick(function () {
+    $(':root').toggleClass("switchColor");
+    if (colorButtom.textContent == 'Modo escuro') {
+        colorButtom.innerHTML = 'Modo claro';
+    } else {
+        colorButtom.innerHTML = 'Modo escuro';
+    }
+});
+
+$('#start-btn').click(function () {
+    swapButtons('#start-btn');
+    $('#start-menu').toggleClass("hidden");
+    $(this).toggleClass('startClick');
+});
+
+$('#desktop').click(function (e) {
+    if (e.target.id == 'desktop') {
+        swapButtons();
+    }
+    $('#start-menu').addClass('hidden');
+    $('#start-btn').removeClass('startClick').addClass('startRest');
+});
+
+$(window).on("resize", function (e) {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
 swapPageElements('#about-me');
@@ -170,6 +174,8 @@ function startTime() {
     $('#clock').html(checkTime(h) + ":" + checkTime(m));
     t = setTimeout(function () { startTime() }, 500);
 }
+
+startTime();
 
 function checkTime(i) {
     if (i < 10) {
