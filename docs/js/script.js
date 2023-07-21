@@ -7,6 +7,12 @@ if (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').ma
     colorButtom.innerHTML = 'Modo claro';
 }
 
+const includes = document.getElementsByClassName('include');
+Array.from(includes).forEach(element => {
+    let filePath = element.getAttribute('src');
+    $(element).load(filePath);
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const trainingBody = document.querySelector("#training-body");
     const training = document.querySelector("#training-content");
@@ -49,15 +55,6 @@ $(document).ready(function (e) {
             }
         });
     }
-
-    $('#dark-mode-icon').dblclick(function () {
-        $(':root').toggleClass("switchColor");
-        if (colorButtom.textContent == 'Modo escuro') {
-            colorButtom.innerHTML = 'Modo claro';
-        } else {
-            colorButtom.innerHTML = 'Modo escuro';
-        }
-    });
 
     $('#start-btn').click(function () {
         swapButtons('#start-btn');
