@@ -77,21 +77,6 @@ $(document).ready(function (e) {
         $(e.target.parentNode.parentNode.parentNode).toggleClass('retract');
     });
 
-    $(':root').on("keypress", function (e) {
-        e.preventDefault();
-        if (e.keyCode == 13) {
-            if ($('#training').hasClass('index')) {
-                seeMoreContent();
-            }
-        }
-    });
-
-    $(':root').on("touchstart", function (e) {
-        if ($('#training').hasClass('index')) {
-            seeMoreContent();
-        }
-    });
-
     $(window).on("resize", function (e) {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
