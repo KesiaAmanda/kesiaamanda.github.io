@@ -72,25 +72,7 @@
                     </div>
                 </div>
                 <div id="welcome-body" class="windowBorder margin2px">
-                    <div id="welcome-body-container">
-                        <div class="welcomeItem welcomeGreetingText">
-                            <h1 id="str-hello">Olá, eu sou a</h1>
-                            <h1 id="str-name">>Kesia Amanda!</h1>
-                            <h1 id="str-prof">Desenvolvedora backend</h1>
-                            <div id="welcome-social">
-                                <a href="https://www.linkedin.com/in/kesiaamanda/" target="_blank">
-                                    <img class="iconImage"
-                                        src="assets/icons/social/linkedin_pixel_logo_icon_181925.png">
-                                </a>
-                                <a href="https://github.com/KesiaAmanda" target="_blank">
-                                    <img class="iconImage" src="assets/icons/social/github.png">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="welcomeItem welcomeItemImg">
-                            <img id="welcome-img" src="assets/images/download20230701162715-1.png">
-                        </div>
-                    </div>
+                    <div id="include-welcome-content"></div>
                 </div>
             </div>
         </div>
@@ -510,18 +492,15 @@
             <span id="clock" />
         </div>
     </div>
-
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="./js/jquery/jquery.fittext.js"></script>
     <script src="./js/text-writer.js"></script>
     <script src="./js/music-player.js"></script>
     <script src="./js/script.js"></script>
     <script>
-        jQuery("#str-hello").fitText(1, { minFontSize: '20px', maxFontSize: '25px' });
-        jQuery("#str-name").fitText(1, { minFontSize: '30px', maxFontSize: '43px' });
-        jQuery("#str-prof").fitText(1, { minFontSize: '10px', maxFontSize: '15px' });
+        $(function () {
+            $("#include-welcome-content").load("templates/welcome.html");
+        });
     </script>
-
 </body>
 
 </html>
