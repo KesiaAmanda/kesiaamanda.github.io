@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div id="welcome-body" class="windowBorder margin2px">
-                    <div id="include-welcome-content"></div>
+                    <div src="templates/welcome.html" class="include"></div>
                 </div>
             </div>
         </div>
@@ -497,9 +497,13 @@
     <script src="./js/music-player.js"></script>
     <script src="./js/script.js"></script>
     <script>
-        $(function () {
-            $("#include-welcome-content").load("templates/welcome.html");
-        });
+        (() => {
+            const includes = document.getElementsByClassName('include');
+            Array.from(includes).forEach(element => {
+                let filePath = element.getAttribute('src');
+                $(element).load(filePath);
+            });
+        })();
     </script>
 </body>
 
