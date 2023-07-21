@@ -73,10 +73,6 @@ $(document).ready(function (e) {
         $('#start-btn').removeClass('startClick').addClass('startRest');
     });
 
-    $('.expander').click(function (e) {
-        $(e.target.parentNode.parentNode.parentNode).toggleClass('retract');
-    });
-
     $(window).on("resize", function (e) {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
