@@ -987,8 +987,9 @@ body::before {
   background-position-x: 2px;
 }
 
-#skills-content.maximize #skills-body {
-  min-height: calc(var(--vh, 1vh) * 100 - 74px);
+#skills-content.maximize .skillNavigator,
+#skills-content.maximize .skillIcons {
+  min-height: calc(var(--vh, 1vh) * 100 - 114px);
 }
 
 #skills-content {
@@ -997,13 +998,158 @@ body::before {
 
 #skills-body {
   position: relative;
-  max-height: 80vh;
+}
+
+#dir {
+  overflow: hidden;
+  max-width: 90%;
+}
+
+.skillsBody {
+  display: flex;
+  gap: 2px;
+}
+.skillsBody .windowBorder {
+  background-color: var(--body-background);
   padding: 10px;
-  resize: both;
+}
+.skillsBody .skillNavigator,
+.skillsBody .skillIcons {
   overflow-x: scroll;
   overflow-y: scroll;
-  overflow-anchor: none;
+  max-height: 80vh;
+}
+.skillsBody .skillIcons {
+  resize: vertical;
+  min-height: 300px;
+  height: 500px;
+  max-height: calc(var(--vh, 1vh) * 80);
+  width: 100%;
+}
+
+.skillNavigator {
+  resize: horizontal;
+  min-width: 150px;
+  width: 500px;
+  max-width: 400px;
+  z-index: 1;
+}
+.skillNavigator span {
+  white-space: pre;
+}
+.skillNavigator .selector {
+  padding-left: 1px;
+  display: flex;
+  gap: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  visibility: visible;
+}
+.skillNavigator .selector .selectorContent {
+  display: flex;
+  gap: 5px;
+  padding-left: 1px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  visibility: visible;
+}
+.skillNavigator .selector .selectorContent .selectorIcon {
+  margin-top: 2px;
+  margin-left: 1px;
+  margin-right: 2px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
   background-color: var(--body-background);
+  border: 1px solid var(--control-icon-color);
+}
+.skillNavigator .selector .selectorContent .selectorIcon .icon {
+  width: 12px;
+  height: 12px;
+  background-color: var(--control-icon-color);
+  -webkit-mask: url("../assets/icons/window/iconmonstr-minus.svg") no-repeat 50% 50%;
+  mask: url("../assets/icons/window/iconmonstr-minus.svg") no-repeat 50% 50%;
+}
+.skillNavigator .selector .selectorContent .selectorIcon span {
+  position: absolute;
+  padding-left: 3px;
+  margin-top: -5.5px;
+  font-size: 8px;
+}
+.skillNavigator .selector .selectorContent .item {
+  cursor: no-drop;
+}
+.skillNavigator .selector .selectorContent .toogleFolder {
+  cursor: pointer;
+}
+.skillNavigator .selector .selectorContent .toogleFolder:active {
+  outline: 1px dotted var(--control-icon-color);
+  outline-offset: -1px;
+}
+.skillNavigator .selector .selectorContent .item::before {
+  content: "";
+  position: absolute;
+  margin-left: -14px;
+  margin-top: -15px;
+  z-index: -1;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-left: 1px var(--text-color) dotted;
+  border-bottom: 1px var(--text-color) dotted;
+}
+.skillNavigator .item {
+  padding-top: 2px;
+  padding-bottom: -2px;
+}
+.skillNavigator .item span {
+  display: flex;
+  height: 20px;
+  align-items: flex-end;
+  padding-left: 24px;
+}
+.skillNavigator .myComputer {
+  background-image: url("../assets/icons/desktop/this_computer.png");
+  background-size: 17px;
+  background-repeat: no-repeat;
+}
+.skillNavigator .disk {
+  background-image: url("../assets/icons/desktop/drive.png");
+  background-size: 17px;
+  background-repeat: no-repeat;
+  background-position-y: -3px;
+}
+.skillNavigator .folder {
+  background-image: url("../assets/icons/desktop/folder_closed.png");
+  background-size: 17px;
+  background-repeat: no-repeat;
+  transition: none;
+}
+.skillNavigator .folderOpen {
+  background-image: url("../assets/icons/desktop/folder_open.png") !important;
+  background-size: 17px;
+  background-repeat: no-repeat;
+  transition: none;
+}
+
+.Backend .backend *,
+.Frontend .frontend *,
+.Database .database *,
+.BaaS .baas *,
+.Software .software *,
+.OS .os * {
+  max-height: auto;
+  visibility: visible;
+  transition: none;
+}
+
+.skillContainer {
+  visibility: hidden;
+  height: 0;
+}
+.skillContainer .folderIconContainer .folderIcon {
+  overflow: hidden;
+  visibility: hidden;
 }
 
 .skillContainer .skillsTextContainer {
@@ -1033,6 +1179,8 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  padding-top: 25px;
+  gap: 10px;
 }
 .skillContainer .folderIconContainer .folderIcon {
   transition: all 0.7s ease-in-out;
@@ -1069,7 +1217,7 @@ body::before {
   content: "\a★★★★★";
 }
 .skillContainer .folderIconContainer .folderIcon:active p {
-  outline: 1px dotted var(--button-frame-dotted-click);
+  outline: 1px dotted var(--control-icon-color);
 }
 .skillContainer .folderIconContainer .folderIcon .icon {
   margin-bottom: 2px;
@@ -1078,6 +1226,21 @@ body::before {
 .retract .skillsTextContainer .expander {
   transform: rotate(270deg);
 }
+.retract .selector {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.7s ease-in-out;
+}
+.retract .selector .selectorContent {
+  overflow: hidden;
+  transition: all 0.7s ease-in-out;
+  transform: translateY(-500%);
+  visibility: hidden;
+}
+.retract .selectorContent .selectorIcon .icon {
+  -webkit-mask: url("../assets/icons/window/iconmonstr-plus.svg") no-repeat 50% 50% !important;
+  mask: url("../assets/icons/window/iconmonstr-plus.svg") no-repeat 50% 50% !important;
+}
 .retract .folderIconContainer {
   max-height: 0;
   transition: all 0.7s ease-in-out;
@@ -1085,22 +1248,17 @@ body::before {
 .retract .folderIconContainer .folderIcon {
   overflow: hidden;
   transition: all 0.7s ease-in-out;
-  transform: translateY(-100%);
+  transform: translateY(-200%);
   visibility: hidden;
+  max-height: 0;
 }
 
 @media screen and (max-width: 767px) {
-  #skills-body {
-    width: 90%;
-  }
   .skillContainer .skillsTextContainer span {
     margin-bottom: 0px;
   }
 }
 @media screen and (min-width: 767px) {
-  #skills-body {
-    width: 1280px;
-  }
   .skillContainer .skillsTextContainer span {
     margin-bottom: -7px;
   }

@@ -5,8 +5,9 @@
     background-position-x: 2px;
 }
 
-#skills-content.maximize #skills-body {
-    min-height: calc(calc(var(--vh, 1vh) * 100) - 74px);
+#skills-content.maximize .skillNavigator,
+#skills-content.maximize .skillIcons {
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 114px);
 }
 
 #skills-content {
@@ -15,13 +16,184 @@
 
 #skills-body {
     position: relative;
-    max-height: 80vh;
-    padding: 10px;
-    resize: both;
-    overflow-x: scroll;
-    overflow-y: scroll;
-    overflow-anchor: none;
-    background-color: var(--body-background);
+}
+
+#dir {
+    overflow: hidden;
+    max-width: 90%;
+}
+
+.skillsBody {
+    display: flex;
+    gap: 2px;
+
+    & .windowBorder {
+        background-color: var(--body-background);
+        padding: 10px;
+    }
+
+    & .skillNavigator,
+    .skillIcons {
+        overflow-x: scroll;
+        overflow-y: scroll;
+        max-height: 80vh;
+    }
+
+    & .skillIcons {
+        resize: vertical;
+        min-height: 300px;
+        height: 500px;
+        max-height: calc(calc(var(--vh, 1vh) * 80));
+        width: 100%;
+    }
+}
+
+.skillNavigator {
+    resize: horizontal;
+    min-width: 150px;
+    width: 500px;
+    max-width: 400px;
+    z-index: 1;
+
+    & span {
+        white-space: pre;
+    }
+
+    & .selector {
+        padding-left: 1px;
+        display: flex;
+        gap: 5px;
+
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        visibility: visible;
+
+        & .selectorContent {
+            display: flex;
+            gap: 5px;
+            padding-left: 1px;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+            visibility: visible;
+
+            & .selectorIcon {
+                margin-top: 2px;
+                margin-left: 1px;
+                margin-right: 2px;
+                width: 12px;
+                height: 12px;
+                cursor: pointer;
+
+                background-color: var(--body-background);
+                border: 1px solid var(--control-icon-color);
+
+                & .icon {
+                    width: 12px;
+                    height: 12px;
+                    background-color: var(--control-icon-color);
+                    -webkit-mask: url('../assets/icons/window/iconmonstr-minus.svg') no-repeat 50% 50%;
+                    mask: url('../assets/icons/window/iconmonstr-minus.svg') no-repeat 50% 50%;
+                }
+
+                & span {
+                    position: absolute;
+                    padding-left: 3px;
+                    margin-top: -5.5px;
+                    font-size: 8px;
+                }
+            }
+
+            & .item {
+                cursor: no-drop;
+            }
+
+            & .toogleFolder {
+                cursor: pointer;
+
+                &:active {
+                    outline: 1px dotted var(--control-icon-color);
+                    outline-offset: -1px;
+                }
+            }
+
+            & .item::before {
+                content: '';
+                position: absolute;
+                margin-left: -14px;
+                margin-top: -15px;
+                z-index: -1;
+                width: 25px;
+                height: 25px;
+                border: none;
+                border-left: 1px var(--text-color) dotted;
+                border-bottom: 1px var(--text-color) dotted;
+            }
+        }
+    }
+
+    & .item {
+        padding-top: 2px;
+        padding-bottom: -2px;
+
+        & span {
+            display: flex;
+            height: 20px;
+            align-items: flex-end;
+            padding-left: 24px;
+
+        }
+    }
+
+    & .myComputer {
+        background-image: url('../assets/icons/desktop/this_computer.png');
+        background-size: 17px;
+        background-repeat: no-repeat;
+    }
+
+    & .disk {
+        background-image: url('../assets/icons/desktop/drive.png');
+        background-size: 17px;
+        background-repeat: no-repeat;
+        background-position-y: -3px;
+    }
+
+    & .folder {
+        background-image: url('../assets/icons/desktop/folder_closed.png');
+        background-size: 17px;
+        background-repeat: no-repeat;
+        transition: none;
+    }
+
+    & .folderOpen {
+        background-image: url('../assets/icons/desktop/folder_open.png') !important;
+        background-size: 17px;
+        background-repeat: no-repeat;
+        transition: none;
+    }
+}
+
+.Backend .backend,
+.Frontend .frontend,
+.Database .database,
+.BaaS .baas,
+.Software .software,
+.OS .os {
+    & * {
+        max-height: auto;
+        visibility: visible;
+        transition: none;
+    }
+}
+
+
+.skillContainer {
+    visibility: hidden;
+    height: 0;
+
+    & .folderIconContainer .folderIcon {
+        overflow: hidden;
+        visibility: hidden;
+    }
 }
 
 .skillContainer {
@@ -57,6 +229,8 @@
         display: flex;
         flex-wrap: wrap;
         padding: 10px;
+        padding-top: 25px;
+        gap: 10px;
 
 
         & .folderIcon {
@@ -101,7 +275,7 @@
             }
 
             &:active p {
-                outline: 1px dotted var(--button-frame-dotted-click);
+                outline: 1px dotted var(--control-icon-color);
             }
 
             & .icon {
@@ -118,6 +292,24 @@
         }
     }
 
+    & .selector {
+        overflow: hidden;
+        max-height: 0;
+        transition: all 0.7s ease-in-out;
+
+        & .selectorContent {
+            overflow: hidden;
+            transition: all 0.7s ease-in-out;
+            transform: translateY(-500%);
+            visibility: hidden;
+        }
+    }
+
+    & .selectorContent .selectorIcon .icon {
+        -webkit-mask: url('../assets/icons/window/iconmonstr-plus.svg') no-repeat 50% 50% !important;
+        mask: url('../assets/icons/window/iconmonstr-plus.svg') no-repeat 50% 50% !important;
+    }
+
     & .folderIconContainer {
         max-height: 0;
         transition: all 0.7s ease-in-out;
@@ -125,17 +317,14 @@
         & .folderIcon {
             overflow: hidden;
             transition: all 0.7s ease-in-out;
-            transform: translateY(-100%);
+            transform: translateY(-200%);
             visibility: hidden;
+            max-height: 0;
         }
     }
 }
 
 @media screen and (max-width: 767px) {
-    #skills-body {
-        width: 90%;
-    }
-
     .skillContainer {
         & .skillsTextContainer {
             & span {
@@ -146,10 +335,6 @@
 }
 
 @media screen and (min-width: 767px) {
-    #skills-body {
-        width: 1280px;
-    }
-
     .skillContainer {
         & .skillsTextContainer {
             & span {
