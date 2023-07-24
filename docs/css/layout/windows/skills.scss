@@ -11,6 +11,7 @@
 }
 
 #skills-content {
+    width: 1000px;
     max-width: 90%;
 }
 
@@ -21,6 +22,8 @@
 #dir {
     overflow: hidden;
     max-width: 90%;
+    max-height: 20px;
+    overflow: hidden;
 }
 
 .skillsBody {
@@ -54,10 +57,6 @@
     width: 500px;
     max-width: 400px;
     z-index: 1;
-
-    & span {
-        white-space: pre;
-    }
 
     & .selector {
         padding-left: 1px;
@@ -94,33 +93,13 @@
                     -webkit-mask: url('../assets/icons/window/iconmonstr-minus.svg') no-repeat 50% 50%;
                     mask: url('../assets/icons/window/iconmonstr-minus.svg') no-repeat 50% 50%;
                 }
-
-                & span {
-                    position: absolute;
-                    padding-left: 3px;
-                    margin-top: -5.5px;
-                    font-size: 8px;
-                }
-            }
-
-            & .item {
-                cursor: no-drop;
-            }
-
-            & .toogleFolder {
-                cursor: pointer;
-
-                &:active {
-                    outline: 1px dotted var(--control-icon-color);
-                    outline-offset: -1px;
-                }
             }
 
             & .item::before {
                 content: '';
                 position: absolute;
                 margin-left: -14px;
-                margin-top: -15px;
+                margin-top: -20px;
                 z-index: -1;
                 width: 25px;
                 height: 25px;
@@ -132,7 +111,7 @@
     }
 
     & .item {
-        padding-top: 2px;
+        padding-top: 4px;
         padding-bottom: -2px;
 
         & span {
@@ -140,7 +119,19 @@
             height: 20px;
             align-items: flex-end;
             padding-left: 24px;
+            cursor: no-drop;
+            white-space: pre;
+        }
+    }
 
+    & .toogleFolder {
+        & span {
+            cursor: pointer;
+        }
+
+        &:active {
+            outline: 1px dotted var(--control-icon-color);
+            outline-offset: -1px;
         }
     }
 
@@ -205,6 +196,7 @@
         gap: 5px;
 
         & span {
+            margin-top: 2px;
             margin-bottom: -7px;
             flex-grow: 0;
         }
@@ -216,6 +208,8 @@
         }
 
         & .expander {
+            cursor: pointer;
+            padding-top: -5px;
             transform: none;
         }
     }
@@ -325,6 +319,21 @@
 }
 
 @media screen and (max-width: 767px) {
+    .skillsBody {
+        flex-direction: column;
+        max-height: 80vh;
+
+        & .skillNavigator {
+            position: relative;
+            min-width: 100%;
+            overflow: visible;
+        }
+
+        & .skillIcons {
+            padding-top: 25px;
+        }
+    }
+
     .skillContainer {
         & .skillsTextContainer {
             & span {

@@ -993,6 +993,7 @@ body::before {
 }
 
 #skills-content {
+  width: 1000px;
   max-width: 90%;
 }
 
@@ -1003,6 +1004,8 @@ body::before {
 #dir {
   overflow: hidden;
   max-width: 90%;
+  max-height: 20px;
+  overflow: hidden;
 }
 
 .skillsBody {
@@ -1033,9 +1036,6 @@ body::before {
   width: 500px;
   max-width: 400px;
   z-index: 1;
-}
-.skillNavigator span {
-  white-space: pre;
 }
 .skillNavigator .selector {
   padding-left: 1px;
@@ -1070,27 +1070,11 @@ body::before {
   -webkit-mask: url("../assets/icons/window/iconmonstr-minus.svg") no-repeat 50% 50%;
   mask: url("../assets/icons/window/iconmonstr-minus.svg") no-repeat 50% 50%;
 }
-.skillNavigator .selector .selectorContent .selectorIcon span {
-  position: absolute;
-  padding-left: 3px;
-  margin-top: -5.5px;
-  font-size: 8px;
-}
-.skillNavigator .selector .selectorContent .item {
-  cursor: no-drop;
-}
-.skillNavigator .selector .selectorContent .toogleFolder {
-  cursor: pointer;
-}
-.skillNavigator .selector .selectorContent .toogleFolder:active {
-  outline: 1px dotted var(--control-icon-color);
-  outline-offset: -1px;
-}
 .skillNavigator .selector .selectorContent .item::before {
   content: "";
   position: absolute;
   margin-left: -14px;
-  margin-top: -15px;
+  margin-top: -20px;
   z-index: -1;
   width: 25px;
   height: 25px;
@@ -1099,7 +1083,7 @@ body::before {
   border-bottom: 1px var(--text-color) dotted;
 }
 .skillNavigator .item {
-  padding-top: 2px;
+  padding-top: 4px;
   padding-bottom: -2px;
 }
 .skillNavigator .item span {
@@ -1107,6 +1091,15 @@ body::before {
   height: 20px;
   align-items: flex-end;
   padding-left: 24px;
+  cursor: no-drop;
+  white-space: pre;
+}
+.skillNavigator .toogleFolder span {
+  cursor: pointer;
+}
+.skillNavigator .toogleFolder:active {
+  outline: 1px dotted var(--control-icon-color);
+  outline-offset: -1px;
 }
 .skillNavigator .myComputer {
   background-image: url("../assets/icons/desktop/this_computer.png");
@@ -1160,6 +1153,7 @@ body::before {
   gap: 5px;
 }
 .skillContainer .skillsTextContainer span {
+  margin-top: 2px;
   margin-bottom: -7px;
   flex-grow: 0;
 }
@@ -1169,6 +1163,8 @@ body::before {
   background-color: var(--text-color);
 }
 .skillContainer .skillsTextContainer .expander {
+  cursor: pointer;
+  padding-top: -5px;
   transform: none;
 }
 .skillContainer .folderIconContainer {
@@ -1254,6 +1250,18 @@ body::before {
 }
 
 @media screen and (max-width: 767px) {
+  .skillsBody {
+    flex-direction: column;
+    max-height: 80vh;
+  }
+  .skillsBody .skillNavigator {
+    position: relative;
+    min-width: 100%;
+    overflow: visible;
+  }
+  .skillsBody .skillIcons {
+    padding-top: 25px;
+  }
   .skillContainer .skillsTextContainer span {
     margin-bottom: 0px;
   }
