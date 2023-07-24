@@ -274,6 +274,10 @@
                 target = target.parentNode;
             }
             $(target).toggleClass('retract');
+            Array.from(e.target.parentNode.parentNode.childNodes).forEach(element => {
+                if (element.classList && !element.classList?.contains('selectorIcon'))
+                    $(element.childNodes[0].nextElementSibling).toggleClass('folderOpen');
+            });
         })
 
         $('.toogleFolder').click(function (e) {
