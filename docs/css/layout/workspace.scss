@@ -4,6 +4,10 @@
     }
 }
 
+.myComputerIcon {
+    content: var(--my-cumputer-icon);
+}
+
 .icon {
     display: flex;
     flex-direction: column;
