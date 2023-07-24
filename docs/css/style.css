@@ -994,6 +994,7 @@ body::before {
 
 #skills-content {
   max-width: 90%;
+  width: 1000px;
 }
 
 #skills-body {
