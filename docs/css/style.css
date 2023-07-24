@@ -989,11 +989,10 @@ body::before {
 
 #skills-content.maximize .skillNavigator,
 #skills-content.maximize .skillIcons {
-  min-height: calc(var(--vh, 1vh) * 100 - 114px);
+  min-height: calc(100vh - 114px);
 }
 
 #skills-content {
-  width: 1000px;
   max-width: 90%;
 }
 
@@ -1250,23 +1249,42 @@ body::before {
 }
 
 @media screen and (max-width: 767px) {
+  #skills-content.maximize .skillNavigator,
+  #skills-content.maximize .skillIcons {
+    min-height: auto;
+  }
+  #skills-content.maximize .skillsBody {
+    height: 86vh;
+  }
+  #skills-content.maximize .skillsBody .skillNavigator {
+    min-width: 100%;
+    min-height: 40%;
+    overflow: visible;
+  }
+  #skills-content.maximize .skillsBody .skillIcons {
+    padding-top: 25px;
+    min-height: 60%;
+  }
   .skillsBody {
+    height: 80vh;
     flex-direction: column;
-    max-height: 80vh;
   }
   .skillsBody .skillNavigator {
-    position: relative;
     min-width: 100%;
     overflow: visible;
   }
   .skillsBody .skillIcons {
     padding-top: 25px;
+    min-height: 60%;
   }
   .skillContainer .skillsTextContainer span {
     margin-bottom: 0px;
   }
 }
 @media screen and (min-width: 767px) {
+  .skillContainer .skillsTextContainer {
+    min-width: 500px;
+  }
   .skillContainer .skillsTextContainer span {
     margin-bottom: -7px;
   }
