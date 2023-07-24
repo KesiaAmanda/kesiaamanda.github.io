@@ -122,3 +122,31 @@ body {
     max-width: auto;
     padding: 2px;
 }
+
+.navigator {
+    display: flex;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    & span {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 8px;
+        margin-bottom: -20px;
+    }
+
+    & .navigatorText {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: var(--body-background);
+        outline: none;
+
+        & .startRest {
+            background-image: var(--vertical-increment);
+            background-color: var(--window-background);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
