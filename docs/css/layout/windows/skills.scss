@@ -38,7 +38,7 @@
     .skillIcons {
         overflow-x: scroll;
         overflow-y: scroll;
-        max-height: 80vh;
+        max-height: calc(calc(var(--vh, 1vh) * 80));
     }
 
     & .skillIcons {
@@ -319,40 +319,36 @@
 
 @media screen and (max-width: 767px) {
 
-    #skills-content.maximize .skillNavigator,
-    #skills-content.maximize .skillIcons {
-        min-height: auto;
-    }
-
     #skills-content.maximize {
         .skillsBody {
-            height: 86vh;
+            height: calc(calc(var(--vh, 1vh) * 86));
 
             & .skillNavigator {
                 min-width: 100%;
-                min-height: 40%;
+                min-height: 45%;
                 overflow: visible;
             }
 
             & .skillIcons {
                 padding-top: 25px;
-                min-height: 60%;
+                min-height: 55%;
             }
         }
     }
 
     .skillsBody {
-        height: 80vh;
+        height: calc(calc(var(--vh, 1vh) * 80));
         flex-direction: column;
 
         & .skillNavigator {
             min-width: 100%;
+            min-height: 45%;
             overflow: visible;
         }
 
         & .skillIcons {
             padding-top: 25px;
-            min-height: 60%;
+            min-height: 55%;
         }
     }
 
