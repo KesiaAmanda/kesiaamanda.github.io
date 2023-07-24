@@ -661,7 +661,7 @@ a:link {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -51.5%);
-  transition: background 1s linear, border 0.1s linear, outline 0.5s linear, color 0.5s linear, box-shadow 0.5s linear, min-height 0.25s ease-in-out, min-width 0.25s ease-in-out, max-height 0.25s ease-in-out, max-width 0.25s ease-in-out;
+  transition: background 0.1s linear, border 0.1s linear, outline 0.1s linear, color 0.1s linear, box-shadow 0.5s linear, min-height 0.25s ease-in-out, min-width 0.25s ease-in-out, max-height 0.25s ease-in-out, max-width 0.25s ease-in-out;
 }
 
 body {
