@@ -57,14 +57,16 @@ body {
 #welcome,
 #training,
 #skills,
-#music-player {
+#music-player,
+#credits {
     position: relative;
 }
 
 #about-me-content.maximize,
 #welcome-content.maximize,
 #training-content.maximize,
-#skills-content.maximize {
+#skills-content.maximize,
+#credits-content.maximize {
     position: fixed;
     min-width: 100%;
     min-height: calc(calc(var(--vh, 1vh) * 100) - 26px);
@@ -77,7 +79,8 @@ body {
 #about-me-content.maximize #about-me-body,
 #welcome-content.maximize #welcome-body-container,
 #training-content.maximize #training-body,
-#skills-content.maximize #skills-body {
+#skills-content.maximize #skills-body,
+#credits-content.maximize #credits-body {
     min-width: 100%;
 }
 
@@ -85,7 +88,8 @@ body {
 #about-me.hideContent #about-me-content,
 #training.hideContent #training-content,
 #skills.hideContent #skills-content,
-#music-player.hideContent #music-player-content {
+#music-player.hideContent #music-player-content,
+#credits.hideContent #credits-content {
     max-height: 0;
     max-width: 0;
     padding: 0;
@@ -96,7 +100,8 @@ body {
 #welcome #welcome-content.maximize,
 #training #training-content.maximize,
 #about-me #about-me-content.maximize,
-#skills #skills-content.maximize {
+#skills #skills-content.maximize,
+#credits #credits-content.maximize {
     max-height: 0;
     max-width: 0;
     overflow: hidden;
@@ -105,7 +110,8 @@ body {
 #welcome.hideContent #welcome-content.maximize,
 #training.hideContent #training-content.maximize,
 #skills.hideContent #skills-content.maximize,
-#about-me.hideContent #about-me-content.maximize {
+#about-me.hideContent #about-me-content.maximize,
+#credits.hideContent #credits-content.maximize {
     min-height: 0;
     min-width: 0;
     padding: 0;
@@ -116,7 +122,8 @@ body {
 #about-me-content,
 #training-content,
 #skills-content,
-#music-player-content {
+#music-player-content,
+#credits-content {
     overflow: hidden;
     max-height: auto;
     max-width: auto;

@@ -40,6 +40,8 @@
     --horizontal-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(32, 5, 27);' d='M25 12l-18 12v-24z'/></svg>");
     --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>");
     --my-cumputer-icon: url("../assets/icons/desktop/this_computer-day.png");
+    --color-link: rgba(78, 7, 63, 0.603);
+    --color-link-hover: rgba(150, 54, 129, 0.603);
   }
   :root.switchColor {
     --window-background: #1B1A21;
@@ -82,6 +84,8 @@
     --horizontal-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(226, 213, 224);' d='M25 12l-18 12v-24z'/></svg>");
     --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(56, 56, 56);' d='M25 12l-18 12v-24z'/></svg>");
     --my-cumputer-icon: url("../assets/icons/desktop/this_computer-night.png");
+    --color-link: rgba(185, 112, 169, 0.603);
+    --color-link-hover: rgba(243, 68, 205, 0.603);
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -126,6 +130,8 @@
     --horizontal-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(226, 213, 224);' d='M25 12l-18 12v-24z'/></svg>");
     --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(56, 56, 56);' d='M25 12l-18 12v-24z'/></svg>");
     --my-cumputer-icon: url("../assets/icons/desktop/this_computer-night.png");
+    --color-link: rgba(185, 112, 169, 0.603);
+    --color-link-hover: rgba(243, 68, 205, 0.603);
   }
   :root.switchColor {
     --window-background: rgb(187, 180, 185);
@@ -167,6 +173,8 @@
     --horizontal-decrement: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(32, 5, 27);' d='M25 12l-18 12v-24z'/></svg>");
     --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>");
     --my-cumputer-icon: url("../assets/icons/desktop/this_computer-day.png");
+    --color-link: rgba(78, 7, 63, 0.603);
+    --color-link-hover: rgba(150, 54, 129, 0.603);
   }
 }
 @font-face {
@@ -542,7 +550,7 @@ a:link {
 #start-menu {
   display: flex;
   flex-direction: column;
-  top: -172px;
+  top: -204px;
   left: 0;
   background-color: var(--window-background);
   background-size: 100px;
@@ -707,14 +715,16 @@ body::before {
 #welcome,
 #training,
 #skills,
-#music-player {
+#music-player,
+#credits {
   position: relative;
 }
 
 #about-me-content.maximize,
 #welcome-content.maximize,
 #training-content.maximize,
-#skills-content.maximize {
+#skills-content.maximize,
+#credits-content.maximize {
   position: fixed;
   min-width: 100%;
   min-height: calc(var(--vh, 1vh) * 100 - 26px);
@@ -727,7 +737,8 @@ body::before {
 #about-me-content.maximize #about-me-body,
 #welcome-content.maximize #welcome-body-container,
 #training-content.maximize #training-body,
-#skills-content.maximize #skills-body {
+#skills-content.maximize #skills-body,
+#credits-content.maximize #credits-body {
   min-width: 100%;
 }
 
@@ -735,7 +746,8 @@ body::before {
 #about-me.hideContent #about-me-content,
 #training.hideContent #training-content,
 #skills.hideContent #skills-content,
-#music-player.hideContent #music-player-content {
+#music-player.hideContent #music-player-content,
+#credits.hideContent #credits-content {
   max-height: 0;
   max-width: 0;
   padding: 0;
@@ -746,7 +758,8 @@ body::before {
 #welcome #welcome-content.maximize,
 #training #training-content.maximize,
 #about-me #about-me-content.maximize,
-#skills #skills-content.maximize {
+#skills #skills-content.maximize,
+#credits #credits-content.maximize {
   max-height: 0;
   max-width: 0;
   overflow: hidden;
@@ -755,7 +768,8 @@ body::before {
 #welcome.hideContent #welcome-content.maximize,
 #training.hideContent #training-content.maximize,
 #skills.hideContent #skills-content.maximize,
-#about-me.hideContent #about-me-content.maximize {
+#about-me.hideContent #about-me-content.maximize,
+#credits.hideContent #credits-content.maximize {
   min-height: 0;
   min-width: 0;
   padding: 0;
@@ -766,7 +780,8 @@ body::before {
 #about-me-content,
 #training-content,
 #skills-content,
-#music-player-content {
+#music-player-content,
+#credits-content {
   overflow: hidden;
   max-height: auto;
   max-width: auto;
@@ -1430,4 +1445,58 @@ input[type=range]::-webkit-slider-thumb {
   background-position: center;
   background-size: 300px;
   background-repeat: no-repeat;
+}
+
+#credits-btn,
+#credits-header-title {
+  background: url("../assets/icons/desktop/text_file_2.png") left center no-repeat;
+  background-size: 15px 15px;
+  background-position-x: 2px;
+}
+
+#credits-content.maximize #credits-body {
+  min-height: calc(var(--vh, 1vh) * 100 - 74px);
+}
+
+#credits-content {
+  max-width: 90%;
+}
+
+#credits-body {
+  position: relative;
+  background-color: var(--body-background);
+  max-height: 80vh;
+  height: auto;
+  width: 600px;
+  padding: 20px;
+  text-align: justify;
+  resize: both;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  overflow-anchor: none;
+}
+#credits-body hr {
+  border-top: 1px dashed var(--dashed-text-divider);
+}
+#credits-body h1 {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+#credits-body a {
+  color: var(--color-link);
+}
+#credits-body a:hover {
+  color: var(--color-link-hover);
+}
+
+pre {
+  color: var(--text-color);
+  font-family: monospace;
+  font-size: 8px;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+  font-weight: bolder;
 }

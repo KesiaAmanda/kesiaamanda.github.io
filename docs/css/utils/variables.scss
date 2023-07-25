@@ -57,6 +57,9 @@
     --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>");
 
     --my-cumputer-icon: url("../assets/icons/desktop/this_computer-day.png");
+
+    --color-link: rgba(78, 7, 63, 0.603);
+    --color-link-hover: rgba(150, 54, 129, 0.603);
 }
 
 @mixin dark-color-scheme {
@@ -119,4 +122,7 @@
     --horizontal-decrement-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(56, 56, 56);' d='M25 12l-18 12v-24z'/></svg>");
 
     --my-cumputer-icon: url("../assets/icons/desktop/this_computer-night.png");
+
+    --color-link: rgba(185, 112, 169, 0.603);
+    --color-link-hover: rgba(243, 68, 205, 0.603);
 }

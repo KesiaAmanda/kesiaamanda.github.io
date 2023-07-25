@@ -1,5 +1,5 @@
-let pages = [$("#welcome"), $("#about-me"), $("#training"), $("#skills"), $("#music-player")];
-let buttons = [$("#start-btn"), $("#welcome-btn"), $("#about-me-btn"), $("#training-btn"), $("#skills-btn"), $("#music-player-btn")];
+let pages = [$("#welcome"), $("#about-me"), $("#training"), $("#skills"), $("#music-player"), $("#credits")];
+let buttons = [$("#start-btn"), $("#welcome-btn"), $("#about-me-btn"), $("#training-btn"), $("#skills-btn"), $("#music-player-btn"), $("#credits-btn")];
 
 const includes = document.getElementsByClassName('include');
 Array.from(includes).forEach(element => {
@@ -85,6 +85,7 @@ swapPageElements('#welcome');
 swapPageElements('#training');
 swapPageElements('#skills');
 swapPageElements('#music-player');
+swapPageElements('#credits');
 
 function swapPageElements(page) {
     let content = page + '-content';
