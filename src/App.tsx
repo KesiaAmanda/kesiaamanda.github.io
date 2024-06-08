@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Desktop, Screen, Taskbar, Workspace } from "./styles";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./globals/theme";
@@ -6,14 +6,24 @@ import GlobalStyle from "./globals/style";
 
 function App() {
 
-  const [theme, setTheme] = useState('light');
+  const [isDark, setIsDark] = useState<boolean>(false);
 
   const themeToggler = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
+    setIsDark(!isDark);
   }
 
+  useEffect(() => {
+    const mq = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+
+    if (mq.matches) {
+      setIsDark(true);
+    }
+  }, []);
+
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Screen>
         <Desktop>
