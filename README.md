@@ -1,1 +1,0 @@
-# kesiaamanda.github.io
