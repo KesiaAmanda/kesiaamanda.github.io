@@ -25,6 +25,13 @@ export const lightTheme = {
     background: {
         image: lightThemeBackgroundImage,
 
+    },
+    button: {
+        frame: {
+            dotted: {
+                click: 'black'
+            }
+        }
     }
 }
 
@@ -44,13 +51,22 @@ export const darkTheme = {
     desktop: {
         title: {
             icon: {
-                shadow: 'white',
-                color: 'black'
+                // shadow: 'white',
+                // color: 'black'
+                shadow: 'black',
+                color: 'white'
             }
         }
     },
     background: {
         image: darkThemeBackgroundImage,
 
+    },
+    button: {
+        frame: {
+            dotted: {
+                click: 'rgb(78, 78, 78)'
+            }
+        }
     }
 }

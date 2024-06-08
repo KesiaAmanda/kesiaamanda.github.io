@@ -55,11 +55,9 @@ export const Workspace = styled.div`
     align-items: flex-start;
 
     & p {
-        display: flex;
-        justify-content: center;
+        margin: 0;
         width: 90px;
         font-size: 10px;
-        padding-top: 5px;
         cursor: pointer;
         text-shadow:
             -1px -1px 1px ${({ theme }) => theme.desktop.title.icon.shadow},

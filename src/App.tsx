@@ -4,13 +4,10 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./globals/theme";
 import GlobalStyle from "./globals/style";
 
+import { ThemeIcon } from "./components/desktop-icon/theme-icon";
+
 function App() {
-
   const [isDark, setIsDark] = useState<boolean>(false);
-
-  const themeToggler = () => {
-    setIsDark(!isDark);
-  }
 
   useEffect(() => {
     const mq = window.matchMedia(
@@ -28,14 +25,17 @@ function App() {
       <Screen>
         <Desktop>
           <Workspace>
-            <button onClick={themeToggler}>Switch Theme</button>
             {/* desktop icons */}
+            <ThemeIcon onClick={setIsDark} isDark={isDark} />
+
           </Workspace>
           {/* pages */}
-        </Desktop>
 
-        {/* icons */}
+        </Desktop>
         <Taskbar>
+          {/* icons */}
+          <ThemeIcon onClick={setIsDark} isDark={isDark} />
+
         </Taskbar>
       </Screen>
     </ThemeProvider>
