@@ -1,22 +1,31 @@
-import './App.css';
+import { useState } from "react";
+import { Desktop, Screen, Taskbar, Workspace } from "./styles";
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "./globals/theme";
 
 function App() {
+
+  const [theme, setTheme] = useState('light');
+
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <Screen>
+        <Desktop>
+          <Workspace>
+            <button onClick={themeToggler}>Switch Theme</button>
+            {/* desktop icons */}
+          </Workspace>
+          {/* pages */}
+        </Desktop>
+        <Taskbar>
+          {/* icons */}
+        </Taskbar>
+      </Screen>
+    </ThemeProvider>
   );
 }
 
