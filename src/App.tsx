@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Desktop, Screen, Taskbar, Workspace } from "./styles";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./globals/theme";
+import GlobalStyle from "./globals/style";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyle />
       <Screen>
         <Desktop>
           <Workspace>

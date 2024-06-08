@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import image from './assets/background/kime-nanami-pastelsky-nigth.gif'
+import styled from "styled-components"
 
 export const Desktop = styled.div`
     position: relative;
@@ -21,12 +20,6 @@ export const Screen = styled.div`
     right: 0px;
     bottom: 0px;
     transition: background 1s ease-in-out;
-
-    & div {
-        font-family: 'Minecraftia-Regular', sans-serif;
-        color: black;
-    }
-
 
     &::before {
         content: "";
