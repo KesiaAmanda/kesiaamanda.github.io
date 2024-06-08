@@ -1,3 +1,5 @@
+import lightThemeBackgroundImage from '../assets/background/kime-nanami-pastelsky.gif'
+import darkThemeBackgroundImage from '../assets/background/kime-nanami-pastelsky-nigth.gif'
 
 export const lightTheme = {
     window: {
@@ -19,6 +21,10 @@ export const lightTheme = {
                 color: 'white'
             }
         }
+    },
+    background: {
+        image: lightThemeBackgroundImage,
+
     }
 }
 
@@ -42,5 +48,9 @@ export const darkTheme = {
                 color: 'black'
             }
         }
+    },
+    background: {
+        image: darkThemeBackgroundImage,
+
     }
 }

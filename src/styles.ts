@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import image from './assets/background/kime-nanami-pastelsky-nigth.gif'
 
 export const Desktop = styled.div`
     position: relative;
@@ -11,12 +12,40 @@ export const Desktop = styled.div`
 export const Screen = styled.div`
     position: fixed;
     display: grid;
-    grid-template-rows: auto 26px;
+    grid-template-rows: auto 30px;
+
+    overflow: auto;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    transition: background 1s ease-in-out;
+
+    & div {
+        font-family: 'Minecraftia-Regular', sans-serif;
+        color: black;
+    }
+
+
+    &::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: -1;
+
+        display: block;
+        background: url(${({ theme }) => theme.background.image}) 25% 50%;
+        background-size: cover;
+        transition: background 1s ease-in-out;
+        width: 100%;
+        height: 100%;
+    }
 `
 
 export const Taskbar = styled.div`
     position: relative;
-    height: 100%;
     width: 100%;
     background-color: ${({ theme }) => theme.window.background};
     display: flex;

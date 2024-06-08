@@ -21,8 +21,9 @@ function App() {
           </Workspace>
           {/* pages */}
         </Desktop>
+
+        {/* icons */}
         <Taskbar>
-          {/* icons */}
         </Taskbar>
       </Screen>
     </ThemeProvider>
