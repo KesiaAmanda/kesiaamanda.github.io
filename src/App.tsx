@@ -8,6 +8,12 @@ import { ThemeIcon } from "./components/desktop-icon/theme-icon";
 import { StartButton } from "./components/taskbar-button/start-button";
 import { TaskbarButton } from "./components/taskbar-button";
 import { Notifications } from "./components/notification";
+import { AboutMeIcon } from "./components/desktop-icon/about-me-icon";
+import { WelcomeIcon } from "./components/desktop-icon/welcome-icon";
+import { TrainingIcon } from "./components/desktop-icon/training-icon";
+import { SkillsIcon } from "./components/desktop-icon/skills-icon";
+import { MusicPlayerIcon } from "./components/desktop-icon/music-player-icon";
+import { CreditsIcon } from "./components/desktop-icon/credits-icon";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -30,6 +36,12 @@ function App() {
           <Workspace>
             {/* desktop icons */}
             <ThemeIcon onClick={setIsDark} isDark={isDark} />
+            <WelcomeIcon></WelcomeIcon>
+            <AboutMeIcon></AboutMeIcon>
+            <TrainingIcon></TrainingIcon>
+            <SkillsIcon></SkillsIcon>
+            <MusicPlayerIcon></MusicPlayerIcon>
+            <CreditsIcon></CreditsIcon>
 
           </Workspace>
           {/* pages */}
