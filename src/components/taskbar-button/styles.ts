@@ -1,23 +1,18 @@
 import styled, { css } from 'styled-components';
 
 export const Content = styled.div<{ isSelected: boolean }>`
-    * {
-        cursor: default;
-    }
+    display: inline-block;
+    overflow: hidden;
 
-    div{
-        display: inline-block;
-        min-width: 60px;
-        max-width: 100px;
-        overflow: hidden;
+    * {
         cursor: default;
     }
 
     span {
         color: ${({ theme }) => theme.text.color};
+        white-space: nowrap;
         text-align: center;
         font-size: 11px;
-        overflow: hidden;
         display: table;
         margin: 0 auto 0 15px;
     }

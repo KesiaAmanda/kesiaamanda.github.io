@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TaskbarButton } from "..";
-import { Content } from "./styles";
+import { Content, Divider } from "./styles";
 import { StartMenu } from "../../../pages/start-menu";
 
 
@@ -11,6 +11,7 @@ function StartButton() {
         <Content>
             <TaskbarButton isSelected={isSelected} description="Iniciar" onClick={() => { setIsSelected(!isSelected) }} />
             <StartMenu isSelected={isSelected} />
+            <Divider />
         </Content>
     )
 

@@ -38,6 +38,7 @@ export const Screen = styled.div`
 
 export const Taskbar = styled.div`
     position: relative;
+    height: 100%;
     width: 100%;
     background-color: ${({ theme }) => theme.window.background};
     display: flex;
@@ -45,6 +46,10 @@ export const Taskbar = styled.div`
     left: 0px;
     right: 0px;
     border-top: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.white};
+`
+
+export const TaskbarButtons = styled.div`
+    overflow: hidden;
 `
 
 export const Workspace = styled.div`
