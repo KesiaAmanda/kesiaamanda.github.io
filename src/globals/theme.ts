@@ -2,6 +2,9 @@ import lightThemeBackgroundImage from '../assets/background/kime-nanami-pastelsk
 import darkThemeBackgroundImage from '../assets/background/kime-nanami-pastelsky-nigth.gif'
 
 export const lightTheme = {
+    text: {
+        color: 'rgb(12, 5, 11)'
+    },
     window: {
         background: 'rgb(187, 180, 185)'
     },
@@ -36,6 +39,9 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
+    text: {
+        color: 'rgb(247, 242, 248)'
+    },
     window: {
         background: '#1B1A21'
     },

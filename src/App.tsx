@@ -5,6 +5,7 @@ import { darkTheme, lightTheme } from "./globals/theme";
 import GlobalStyle from "./globals/style";
 
 import { ThemeIcon } from "./components/desktop-icon/theme-icon";
+import { StartButton } from "./components/taskbar-button/start-button";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -34,7 +35,7 @@ function App() {
         </Desktop>
         <Taskbar>
           {/* icons */}
-          <ThemeIcon onClick={setIsDark} isDark={isDark} />
+          <StartButton />
 
         </Taskbar>
       </Screen>

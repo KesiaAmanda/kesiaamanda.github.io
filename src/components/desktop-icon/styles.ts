@@ -11,12 +11,7 @@ export const Content = styled.div`
     }
     
     button {
-        padding: 10px 0 10px 0; 
-        cursor: pointer;
-        background: none;
-        border: none;
-        outline: none;
-        box-shadow: none;
+        padding: 10px 0 10px 0;
     }
 
     &:active p {
