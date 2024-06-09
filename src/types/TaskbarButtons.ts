@@ -1,6 +1,7 @@
 type TaskbarButtonProps = {
     description: string,
-    onClick: () => void
+    onClick: () => void,
+    isSelected: boolean
 }
 
 export type { TaskbarButtonProps }

@@ -5,7 +5,6 @@ export const Desktop = styled.div`
     background: transparent;
     height: 100%;
     width: 100%;
-    padding-top: 15px;
 `
 
 export const Screen = styled.div`

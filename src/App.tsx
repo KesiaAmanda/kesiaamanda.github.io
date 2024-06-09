@@ -34,7 +34,7 @@ function App() {
 
         </Desktop>
         <Taskbar>
-          {/* icons */}
+          {/* buttons */}
           <StartButton />
 
         </Taskbar>
