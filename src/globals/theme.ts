@@ -7,7 +7,22 @@ export const lightTheme = {
         color: 'rgb(12, 5, 11)'
     },
     window: {
-        background: 'rgb(187, 180, 185)'
+        background: {
+            color: 'rgb(187, 180, 185)'
+        },
+        header: {
+            background: {
+                color: 'linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5))'
+            },
+            title: {
+                color: 'rgb(255, 251, 245)'
+            }
+        },
+        body: {
+            background: {
+                color: 'rgb(230, 230, 230)'
+            }
+        }
     },
     frame: {
         border: {
@@ -67,7 +82,22 @@ export const darkTheme = {
         color: 'rgb(247, 242, 248)'
     },
     window: {
-        background: '#1B1A21'
+        background: {
+            color: '#1B1A21'
+        },
+        header: {
+            background: {
+                color: 'linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))'
+            },
+            title: {
+                color: 'rgb(226, 213, 224)'
+            }
+        },
+        body: {
+            background: {
+                color: '#23222B'
+            }
+        }
     },
     frame: {
         border: {

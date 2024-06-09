@@ -14,6 +14,7 @@ import { TrainingIcon } from "./components/desktop-icon/training-icon";
 import { SkillsIcon } from "./components/desktop-icon/skills-icon";
 import { MusicPlayerIcon } from "./components/desktop-icon/music-player-icon";
 import { CreditsIcon } from "./components/desktop-icon/credits-icon";
+import { Welcome } from "./pages/welcome";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -45,6 +46,8 @@ function App() {
 
           </Workspace>
           {/* pages */}
+          <Welcome></Welcome>
+
 
         </Desktop>
         <Taskbar>

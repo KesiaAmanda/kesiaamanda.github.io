@@ -11,7 +11,7 @@ export const Content = styled.div<{ isSelected: boolean }>`
   bottom: 30px;
 //   top: -204px;
   left: 0;
-  background-color: ${({ theme }) => theme.window.background};
+  background-color: ${({ theme }) => theme.window.background.color};
   background-size: 100px;
   position: absolute;
   z-index: 99;

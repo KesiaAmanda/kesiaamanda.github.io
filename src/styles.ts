@@ -40,7 +40,7 @@ export const Taskbar = styled.div`
     position: relative;
     max-height: 30px;
     width: 100%;
-    background-color: ${({ theme }) => theme.window.background};
+    background-color: ${({ theme }) => theme.window.background.color};
     display: flex;
     bottom: 0px;
     left: 0px;

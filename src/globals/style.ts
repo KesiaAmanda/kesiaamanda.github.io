@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Minecraftia Regular', sans-serif;
     color: black;
+    font-size: 12px;
 
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
