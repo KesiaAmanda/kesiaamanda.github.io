@@ -55,7 +55,7 @@ export const TaskbarButtons = styled.div`
 export const Workspace = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    padding: 3px;
     align-items: flex-start;
 
     & p {
