@@ -41,3 +41,10 @@ export const Content = styled.div<{ isSelected: boolean }>`
     `}
 
 `
+
+export const Divider = styled.div`
+    border-left: 1px solid ${({ theme }) => theme.frame.shadow.white};
+    border-right: solid 1px ${({ theme }) => theme.frame.shadow.black};
+    height: 24px;
+    margin: auto 3px;
+`

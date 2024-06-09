@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Content, Divider, Item, Menu, Text } from "./styles";
 import { StartMenuProps } from "../../types/StartMenu";
 

@@ -38,7 +38,7 @@ export const Screen = styled.div`
 
 export const Taskbar = styled.div`
     position: relative;
-    height: 100%;
+    max-height: 30px;
     width: 100%;
     background-color: ${({ theme }) => theme.window.background};
     display: flex;

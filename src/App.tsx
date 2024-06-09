@@ -7,6 +7,7 @@ import GlobalStyle from "./globals/style";
 import { ThemeIcon } from "./components/desktop-icon/theme-icon";
 import { StartButton } from "./components/taskbar-button/start-button";
 import { TaskbarButton } from "./components/taskbar-button";
+import { Notifications } from "./components/notification";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -45,7 +46,7 @@ function App() {
             <TaskbarButton isSelected={false} description="Rádio" onClick={() => { }} />
             <TaskbarButton isSelected={false} description="Créditos" onClick={() => { }} />
           </TaskbarButtons>
-
+          <Notifications />
 
         </Taskbar>
       </Screen>

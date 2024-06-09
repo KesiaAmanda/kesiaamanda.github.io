@@ -1,5 +1,6 @@
 import lightThemeBackgroundImage from '../assets/background/kime-nanami-pastelsky.gif'
 import darkThemeBackgroundImage from '../assets/background/kime-nanami-pastelsky-nigth.gif'
+// import darkThemeBackgroundImage from '../assets/background/noite.gif'
 
 export const lightTheme = {
     text: {
@@ -29,12 +30,20 @@ export const lightTheme = {
         image: lightThemeBackgroundImage,
 
     },
+    body: {
+        background: {
+            color: 'rgb(230, 230, 230)'
+        }
+    },
     button: {
         frame: {
             dotted: {
                 click: 'black'
             }
         }
+    },
+    icon: {
+        color: 'rgb(12, 5, 11)'
     },
     start: {
         menu: {
@@ -83,12 +92,20 @@ export const darkTheme = {
         image: darkThemeBackgroundImage,
 
     },
+    body: {
+        background: {
+            color: '#23222B'
+        }
+    },
     button: {
         frame: {
             dotted: {
                 click: 'rgb(78, 78, 78)'
             }
         }
+    },
+    icon: {
+        color: 'rgb(247, 242, 248)'
     },
     start: {
         menu: {

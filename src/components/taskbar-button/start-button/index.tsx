@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { TaskbarButton } from "..";
-import { Content, Divider } from "./styles";
+import { Content } from "./styles";
 import { StartMenu } from "../../../pages/start-menu";
+import { Divider } from "../styles";
 
 
 function StartButton() {
