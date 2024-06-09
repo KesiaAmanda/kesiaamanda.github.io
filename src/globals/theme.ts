@@ -35,6 +35,21 @@ export const lightTheme = {
                 click: 'black'
             }
         }
+    },
+    start: {
+        menu: {
+            left: {
+                color: 'rgb(151, 132, 151)'
+            },
+            button: {
+                hover: {
+                    color: 'rgb(136, 24, 112, 0.6)',
+                    text: {
+                        color: 'white'
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -72,6 +87,21 @@ export const darkTheme = {
         frame: {
             dotted: {
                 click: 'rgb(78, 78, 78)'
+            }
+        }
+    },
+    start: {
+        menu: {
+            left: {
+                color: '#131314'
+            },
+            button: {
+                hover: {
+                    color: '#381639ab',
+                    text: {
+                        color: 'rgb(226, 213, 224)'
+                    }
+                }
             }
         }
     }
