@@ -4,7 +4,7 @@ import { Container } from "./styles";
 function WindowButton(props: any) {
 
     return (
-        <Container onClick={() => console.log('oie')
+        <Container onClick={() => props.onClick()
         }>
             {props.icon}
         </Container >

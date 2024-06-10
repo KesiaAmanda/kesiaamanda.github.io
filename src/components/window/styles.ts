@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
     position: relative;
     background-color: ${({ theme }) => theme.window.background.color};
 `
 
-export const Content = styled.div`
+export const Content = styled.div<{ maximized?: boolean }>`
     position: fixed;
     display: flex;
     overflow: hidden;
@@ -20,6 +20,12 @@ export const Content = styled.div`
     border-left: ridge 2px ${({ theme }) => theme.frame.shadow.white};
     border-bottom: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
+
+    ${props => props.maximized && css`
+        @media screen and (min-width: 767px) {
+            top: 50.4%;
+        }
+    `}
 `
 
 export const Header = styled.div`

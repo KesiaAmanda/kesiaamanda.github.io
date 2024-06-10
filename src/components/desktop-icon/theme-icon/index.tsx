@@ -1,5 +1,5 @@
 import { DesktopIcon } from "..";
-import { ThemeIconProps } from "../../../types/DesktopIcons";
+import { ThemeIconProps } from "../../../types/DesktopIconsTypes";
 import light from '../../../assets/icons/desktop/this_computer-day.png'
 import dark from '../../../assets/icons/desktop/this_computer-night.png'
 

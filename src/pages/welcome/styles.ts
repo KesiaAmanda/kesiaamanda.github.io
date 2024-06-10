@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
-import { HeaderTitle } from '../../components/window/styles';
 import icon from '../../assets/icons/desktop/program.png'
 
-export const Container = styled.div<{ maximize?: boolean }>`
+export const Container = styled.div<{ maximized?: boolean }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
     flex-direction: column;
@@ -12,12 +11,13 @@ export const Container = styled.div<{ maximize?: boolean }>`
     border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
     border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
 
-    ${props => props.maximize && css`
+    ${props => props.maximized && css`
         min-height: calc(var(--vh, 1vh) * 100 - 59px);
+        min-width: 100vw;
     `}
 `
 
-export const Content = styled.div<{ maximize?: boolean }>`
+export const Content = styled.div<{ maximized?: boolean }>`
     width: 100%;
     height: 100%;
     display: flex;
@@ -38,13 +38,20 @@ export const Content = styled.div<{ maximize?: boolean }>`
         flex-wrap: nowrap;
     }
 
-    ${props => props.maximize && css`
-        min-width: 100%;
-        min-height: calc(var(--vh, 1vh) * 100 - 59px);
+    ${props => props.maximized && css`   
+        position: fixed;
+        transform: none;
+        border: none;
     `}
 `
 
-export const Header = styled(HeaderTitle)`
+export const Header = styled.div`
+    display: inline-block;
+    max-width: 200px;
+    color: ${({ theme }) => theme.window.header.title.color};
+    align-self: center;
+    overflow: hidden;
+    max-width: 100%;
     background: url(${icon}) left center no-repeat;
     padding: 0px 5px 0px 22px;
     background-size: 15px 15px;

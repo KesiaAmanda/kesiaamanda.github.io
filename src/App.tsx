@@ -15,6 +15,8 @@ import { SkillsIcon } from "./components/desktop-icon/skills-icon";
 import { MusicPlayerIcon } from "./components/desktop-icon/music-player-icon";
 import { CreditsIcon } from "./components/desktop-icon/credits-icon";
 import { Welcome } from "./pages/welcome";
+import { PagesContextProvider } from "./contexts/PagesContext";
+import { WelcomeButton } from "./components/taskbar-button/welcome-button";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -30,42 +32,44 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-      <GlobalStyle />
-      <Screen>
-        <Desktop>
-          <Workspace>
-            {/* desktop icons */}
-            <ThemeIcon onClick={setIsDark} isDark={isDark} />
-            <WelcomeIcon></WelcomeIcon>
-            <AboutMeIcon></AboutMeIcon>
-            <TrainingIcon></TrainingIcon>
-            <SkillsIcon></SkillsIcon>
-            <MusicPlayerIcon></MusicPlayerIcon>
-            <CreditsIcon></CreditsIcon>
+    <PagesContextProvider>
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Screen>
+          <Desktop>
+            <Workspace>
+              {/* desktop icons */}
+              <ThemeIcon onClick={setIsDark} isDark={isDark} />
+              <WelcomeIcon></WelcomeIcon>
+              <AboutMeIcon></AboutMeIcon>
+              <TrainingIcon></TrainingIcon>
+              <SkillsIcon></SkillsIcon>
+              <MusicPlayerIcon></MusicPlayerIcon>
+              <CreditsIcon></CreditsIcon>
 
-          </Workspace>
-          {/* pages */}
-          <Welcome></Welcome>
+            </Workspace>
+            {/* pages */}
+            <Welcome></Welcome>
 
 
-        </Desktop>
-        <Taskbar>
-          {/* buttons */}
-          <StartButton />
-          <TaskbarButtons>
-            <TaskbarButton isSelected={false} description="Bem-vindo" onClick={() => { }} />
-            <TaskbarButton isSelected={false} description="Sobre mim" onClick={() => { }} />
-            <TaskbarButton isSelected={false} description="Formação" onClick={() => { }} />
-            <TaskbarButton isSelected={false} description="Linguagens e Ferramentas" onClick={() => { }} />
-            <TaskbarButton isSelected={false} description="Rádio" onClick={() => { }} />
-            <TaskbarButton isSelected={false} description="Créditos" onClick={() => { }} />
-          </TaskbarButtons>
-          <Notifications />
+          </Desktop>
+          <Taskbar>
+            {/* buttons */}
+            <StartButton />
+            <TaskbarButtons>
+              <WelcomeButton />
+              <TaskbarButton isSelected={false} description="Sobre mim" onClick={() => { }} />
+              <TaskbarButton isSelected={false} description="Formação" onClick={() => { }} />
+              <TaskbarButton isSelected={false} description="Linguagens e Ferramentas" onClick={() => { }} />
+              <TaskbarButton isSelected={false} description="Rádio" onClick={() => { }} />
+              <TaskbarButton isSelected={false} description="Créditos" onClick={() => { }} />
+            </TaskbarButtons>
+            <Notifications />
 
-        </Taskbar>
-      </Screen>
-    </ThemeProvider>
+          </Taskbar>
+        </Screen>
+      </ThemeProvider>
+    </PagesContextProvider>
   );
 }
 

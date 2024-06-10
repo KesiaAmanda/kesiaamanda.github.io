@@ -49,6 +49,7 @@ export const Taskbar = styled.div`
 `
 
 export const TaskbarButtons = styled.div`
+    display: flex;
     overflow: hidden;
 `
 

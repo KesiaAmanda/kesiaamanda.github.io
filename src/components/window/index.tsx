@@ -1,15 +1,16 @@
+import { WindowProps } from "../../types/WindowTypes";
 import { Container, Content, Header } from "./styles";
 
 
-function Window(props: any) {
+function Window({ maximized, header, children }: WindowProps) {
 
     return (
         <Container>
-            <Content>
+            <Content maximized={maximized}>
                 <Header>
-                    {props.header}
+                    {header}
                 </Header>
-                {props.body}
+                {children}
             </Content>
         </Container>
     )

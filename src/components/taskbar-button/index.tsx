@@ -1,4 +1,4 @@
-import { TaskbarButtonProps } from "../../types/TaskbarButtons";
+import { TaskbarButtonProps } from "../../types/TaskbarButtonsTypes";
 import { Content } from "./styles";
 
 

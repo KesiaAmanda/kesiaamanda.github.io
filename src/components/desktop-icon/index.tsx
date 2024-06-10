@@ -1,4 +1,4 @@
-import { DesktopIconProps } from "../../types/DesktopIcons";
+import { DesktopIconProps } from "../../types/DesktopIconsTypes";
 import { Content } from "./styles";
 
 

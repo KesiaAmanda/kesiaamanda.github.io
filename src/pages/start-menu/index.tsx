@@ -1,8 +1,12 @@
 import { Content, Divider, Item, Menu, Text } from "./styles";
-import { StartMenuProps } from "../../types/StartMenu";
+import { StartMenuProps } from "../../types/StartMenuTypes";
 
 
-function StartMenu({ isSelected }: StartMenuProps) {
+function StartMenu({ isSelected, setIsSelected }: StartMenuProps) {
+
+    const handleClose = (e: any) => {
+        setIsSelected(false);
+    };
 
     return (
         <Content isSelected={isSelected}>
@@ -11,13 +15,13 @@ function StartMenu({ isSelected }: StartMenuProps) {
                     #<span>Menu</span>
                 </Text>
             </Menu>
-            <Item>Bem-vindo</Item>
-            <Item>Sobre mim</Item>
-            <Item>Formação</Item>
-            <Item>Linguagens e...</Item>
-            <Item>Créditos</Item>
+            <Item onClick={handleClose}>Bem-vindo</Item>
+            <Item onClick={handleClose}>Sobre mim</Item>
+            <Item onClick={handleClose}>Formação</Item>
+            <Item onClick={handleClose}>Linguagens e...</Item>
+            <Item onClick={handleClose}>Créditos</Item>
             <Divider />
-            <Item isShutdown={true}>Sh<span>u</span>t Down</Item>
+            <Item onClick={handleClose} isShutdown={true}>Sh<span>u</span>t Down</Item>
         </Content>
     )
 
