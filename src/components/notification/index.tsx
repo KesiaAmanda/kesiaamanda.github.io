@@ -32,7 +32,7 @@ function Notifications() {
             <Divider />
             <Box>
                 <Volume onClick={handleClick} />
-                <Clock>{time}</Clock>
+                <Clock>{time || '00:00'}</Clock>
             </Box>
         </Content>
     )

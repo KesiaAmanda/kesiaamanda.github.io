@@ -9,6 +9,7 @@ export const Content = styled.div`
 
 export const Box = styled.div`
     display: flex;
+    min-width: 70px;
     justify-content: space-around;
     border-top: inset 2px ${({ theme }) => theme.frame.shadow.black};
     border-left: inset 2px ${({ theme }) => theme.frame.shadow.black};

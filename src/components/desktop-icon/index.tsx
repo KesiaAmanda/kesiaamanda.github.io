@@ -18,7 +18,7 @@ function DesktopIcon({
     return (
         <Content>
             <button onClick={handleClick}>
-                <img src={icon} alt={description} />
+                <img draggable="false" src={icon} alt={description} />
                 <p>{description}</p>
             </button>
         </Content>
