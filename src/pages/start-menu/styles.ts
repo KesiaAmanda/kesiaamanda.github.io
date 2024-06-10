@@ -53,6 +53,7 @@ export const Text = styled.div`
 
   span {
     color: white;
+    font-size: 20px;
   }
 `
 
