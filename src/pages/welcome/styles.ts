@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import icon from '../../assets/icons/desktop/program.png'
 
-export const Container = styled.div<{ maximized?: boolean, minimized: boolean }>`
+export const Container = styled.div<{ maximized?: boolean }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
     flex-direction: column;
@@ -16,12 +16,6 @@ export const Container = styled.div<{ maximized?: boolean, minimized: boolean }>
         min-width: 100vw;
     `}
 
-    ${props => props.minimized && css`
-        min-height: 0;
-        min-width: 0;
-        padding: 0;
-        overflow: hidden;
-    `}
 `
 
 export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
@@ -33,7 +27,6 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
 
     h1 {
         width: 100%;
-        font-size: 100%;
         margin: 2px;
     }
 
@@ -52,12 +45,20 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     `}
 
     ${props => props.minimized && css`
-        max-height: 0;
-        max-width: 0;
-        padding: 0;
-        border: 0;
-        overflow: hidden;
-    `}  
+        div {
+            transition: all 0.5s ease;
+            opacity:0;
+            max-height: 0;
+            max-width: 0;
+        }
+    `}
+
+    ${props => !props.minimized && css`
+        div {
+            transition: all 0.5s ease;
+            max-height: 100%;
+        }
+    `}
 `
 
 export const Header = styled.div`
@@ -89,9 +90,11 @@ export const Text = styled.div`
     padding: 1em;
     max-width: 500px;
     width: 100%;
+    overflow: hidden;
     
     span {
-        color: ${({ theme }) => theme.text.color}
+        color: ${({ theme }) => theme.text.color};
+        white-space: nowrap;
     }
 `
 
@@ -115,6 +118,7 @@ export const Avatar = styled.div`
 
 export const Social = styled.div`
     margin-top: 20px; 
+    overflow: hidden;
 `
 
 export const Icon = styled.img`

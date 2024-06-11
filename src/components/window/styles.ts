@@ -28,7 +28,13 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     `}
 
     ${props => props.minimized && css`
-        visibility: hidden;
+        transition: all 0.5s ease;
+        opacity:0;
+    `}
+
+    ${props => !props.minimized && css`
+        transition: all 0.5s ease;
+        opacity: 1;
     `}
 `
 

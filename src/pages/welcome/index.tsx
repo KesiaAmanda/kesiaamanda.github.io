@@ -47,7 +47,7 @@ function Welcome() {
                     </Buttons>
                 </Fragment>
             }>
-                <Container maximized={welcome.isMaximized} minimized={welcome.isMinimized} onClick={handleFocus}>
+                <Container maximized={welcome.isMaximized} onClick={handleFocus}>
                     <Content maximized={welcome.isMaximized} minimized={welcome.isMinimized}>
                         <Text>
                             <span style={{ fontSize: '25px' }}>Olá, eu sou a</span>
