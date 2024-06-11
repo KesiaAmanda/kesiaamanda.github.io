@@ -1,8 +1,15 @@
 import { Content, Divider, Item, Menu, Text } from "./styles";
 import { StartMenuProps } from "../../types/StartMenuTypes";
+import { usePages } from "../../hooks/usePages";
 
 
 function StartMenu({ isSelected, setIsSelected }: StartMenuProps) {
+    const { welcome, setWelcome } = usePages();
+
+    const handleWelcomeClick = () => {
+        setWelcome({ ...welcome, isMinimized: false, isInFocus: true, isClosed: false });
+        setIsSelected(false);
+    }
 
     const handleClose = (e: any) => {
         setIsSelected(false);
@@ -15,7 +22,7 @@ function StartMenu({ isSelected, setIsSelected }: StartMenuProps) {
                     #<span>Menu</span>
                 </Text>
             </Menu>
-            <Item onClick={handleClose}>Bem-vindo</Item>
+            <Item onClick={handleWelcomeClick}>Bem-vindo</Item>
             <Item onClick={handleClose}>Sobre mim</Item>
             <Item onClick={handleClose}>Formação</Item>
             <Item onClick={handleClose}>Linguagens e...</Item>

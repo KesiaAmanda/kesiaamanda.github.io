@@ -2,11 +2,11 @@ import { WindowProps } from "../../types/WindowTypes";
 import { Container, Content, Header } from "./styles";
 
 
-function Window({ maximized, header, children }: WindowProps) {
+function Window({ maximized, minimized, header, children }: WindowProps) {
 
     return (
         <Container>
-            <Content maximized={maximized}>
+            <Content maximized={maximized} minimized={minimized}>
                 <Header>
                     {header}
                 </Header>

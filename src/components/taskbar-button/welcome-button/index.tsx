@@ -8,14 +8,14 @@ function WelcomeButton() {
 
     const handleClick = () => {
         if (welcome.isInFocus) {
-            setWelcome({ ...welcome, isMinimized: true });
+            setWelcome({ ...welcome, isMinimized: true, isInFocus: false });
+        } else {
+            setWelcome({ ...welcome, isMinimized: false, isInFocus: true });
         }
-        setWelcome({ ...welcome, isInFocus: !welcome.isInFocus });
-
     };
 
     return (
-        <Content>
+        <Content closed={welcome.isClosed}>
             <TaskbarButton isSelected={welcome.isInFocus} description="Bem-vindo" onClick={handleClick} />
         </Content>
     )

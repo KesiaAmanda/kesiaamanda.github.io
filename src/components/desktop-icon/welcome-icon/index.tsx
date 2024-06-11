@@ -1,11 +1,13 @@
 import { DesktopIcon } from "..";
 import icon from '../../../assets/icons/desktop/program.png'
+import { usePages } from "../../../hooks/usePages";
 
 
 function WelcomeIcon() {
+    const { welcome, setWelcome } = usePages();
 
     const handleClick = () => {
-        // onClick();
+        setWelcome({ ...welcome, isMinimized: false, isInFocus: true, isClosed: false });
     }
 
     return (

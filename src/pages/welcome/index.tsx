@@ -23,24 +23,32 @@ function Welcome() {
         setWelcome({ ...welcome, isMaximized: !welcome.isMaximized })
     };
 
+    const handleMinimize = () => {
+        setWelcome({ ...welcome, isMinimized: true, isInFocus: false })
+    };
+
+    const handleClose = () => {
+        setWelcome({ ...welcome, isMinimized: true, isInFocus: false, isClosed: true })
+    };
+
     const handleFocus = () => {
         setWelcome({ ...welcome, isInFocus: true })
     };
 
     return (
         <div ref={ref}>
-            <Window maximized={welcome.isMaximized} header={
+            <Window maximized={welcome.isMaximized} minimized={welcome.isMinimized} header={
                 <Fragment>
                     <Header>Bem-vindo!</Header>
                     <Buttons>
-                        <MiminizeButton />
+                        <MiminizeButton onClick={handleMinimize} />
                         <MaximizeButton onClick={handleMaximize} />
-                        <CloseButton />
+                        <CloseButton onClick={handleClose} />
                     </Buttons>
                 </Fragment>
             }>
-                <Container maximized={welcome.isMaximized} onClick={handleFocus}>
-                    <Content maximized={welcome.isMaximized}>
+                <Container maximized={welcome.isMaximized} minimized={welcome.isMinimized} onClick={handleFocus}>
+                    <Content maximized={welcome.isMaximized} minimized={welcome.isMinimized}>
                         <Text>
                             <span style={{ fontSize: '25px' }}>Olá, eu sou a</span>
                             <span style={{ fontSize: '43px' }}>&gt;Kesia Amanda!</span>

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import icon from '../../assets/icons/desktop/program.png'
 
-export const Container = styled.div<{ maximized?: boolean }>`
+export const Container = styled.div<{ maximized?: boolean, minimized: boolean }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
     flex-direction: column;
@@ -15,9 +15,16 @@ export const Container = styled.div<{ maximized?: boolean }>`
         min-height: calc(var(--vh, 1vh) * 100 - 59px);
         min-width: 100vw;
     `}
+
+    ${props => props.minimized && css`
+        min-height: 0;
+        min-width: 0;
+        padding: 0;
+        overflow: hidden;
+    `}
 `
 
-export const Content = styled.div<{ maximized?: boolean }>`
+export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     width: 100%;
     height: 100%;
     display: flex;
@@ -43,6 +50,14 @@ export const Content = styled.div<{ maximized?: boolean }>`
         transform: none;
         border: none;
     `}
+
+    ${props => props.minimized && css`
+        max-height: 0;
+        max-width: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+    `}  
 `
 
 export const Header = styled.div`

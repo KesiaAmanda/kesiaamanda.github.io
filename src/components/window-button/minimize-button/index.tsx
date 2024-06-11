@@ -1,11 +1,12 @@
 import { WindowButton } from "..";
+import { ButtonProps } from "../../../types/ButtonTypes";
 import { Icon } from "./styles";
 
 
-function MiminizeButton() {
+function MiminizeButton({ onClick }: ButtonProps) {
 
     return (
-        <WindowButton icon={<Icon />}>
+        <WindowButton icon={<Icon />} onClick={onClick}>
         </WindowButton>
     )
 

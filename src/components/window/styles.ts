@@ -5,7 +5,7 @@ export const Container = styled.div`
     background-color: ${({ theme }) => theme.window.background.color};
 `
 
-export const Content = styled.div<{ maximized?: boolean }>`
+export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     position: fixed;
     display: flex;
     overflow: hidden;
@@ -25,6 +25,10 @@ export const Content = styled.div<{ maximized?: boolean }>`
         @media screen and (min-width: 767px) {
             top: 50.4%;
         }
+    `}
+
+    ${props => props.minimized && css`
+        visibility: hidden;
     `}
 `
 

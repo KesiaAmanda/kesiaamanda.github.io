@@ -1,11 +1,12 @@
 import { WindowButton } from "..";
+import { ButtonProps } from "../../../types/ButtonTypes";
 import { Icon } from "./styles";
 
 
-function CloseButton() {
+function CloseButton({ onClick }: ButtonProps) {
 
     return (
-        <WindowButton icon={<Icon />}>
+        <WindowButton icon={<Icon />} onClick={onClick}>
         </WindowButton>
     )
 
