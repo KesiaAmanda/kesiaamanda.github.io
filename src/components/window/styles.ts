@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-    position: relative;
+    position: absolute;
     background-color: ${({ theme }) => theme.window.background.color};
 `
 
-export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
+export const Content = styled.div<{ maximized?: boolean, minimized: boolean, width: string }>`
     position: fixed;
+    min-width: ${(props) => props.width};
     display: flex;
     overflow: hidden;
     flex-flow: column;
@@ -14,7 +15,7 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -51.5%);
-    transition: background 0.1s linear, border 0.1s linear, outline 0.1s linear, color 0.1s linear, box-shadow 0.5s linear, min-height 0.25s ease-in-out, min-width 0.25s ease-in-out, max-height 0.25s ease-in-out, max-width 0.25s ease-in-out;
+    // transition: background 0.1s linear, border 0.1s linear, outline 0.1s linear, color 0.1s linear, box-shadow 0.5s linear, min-height 0.25s ease-in-out, min-width 0.25s ease-in-out, max-height 0.25s ease-in-out, max-width 0.25s ease-in-out;
 
     border-top: ridge 2px ${({ theme }) => theme.frame.shadow.white};
     border-left: ridge 2px ${({ theme }) => theme.frame.shadow.white};
@@ -28,12 +29,13 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     `}
 
     ${props => props.minimized && css`
-        transition: all 0.5s ease;
-        opacity:0;
+        transition: min-width 0.5s ease, opacity 0.5s ease;
+        min-width: 0;
+        opacity: 0;
     `}
 
     ${props => !props.minimized && css`
-        transition: all 0.5s ease;
+        transition: min-width 0.5s ease, opacity 0.5s ease;
         opacity: 1;
     `}
 `

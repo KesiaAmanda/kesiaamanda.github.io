@@ -4,7 +4,13 @@ type WindowProps = {
     maximized: boolean,
     minimized: boolean,
     header: ReactNode,
-    children: ReactNode
+    children: ReactNode,
+    width: string
 }
 
-export type { WindowProps }
+type Position = {
+    x: number,
+    y: number,
+}
+
+export type { WindowProps, Position }

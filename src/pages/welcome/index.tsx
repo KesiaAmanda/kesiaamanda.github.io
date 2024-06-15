@@ -37,16 +37,18 @@ function Welcome() {
 
     return (
         <div ref={ref}>
-            <Window maximized={welcome.isMaximized} minimized={welcome.isMinimized} header={
-                <Fragment>
-                    <Header>Bem-vindo!</Header>
-                    <Buttons>
-                        <MiminizeButton onClick={handleMinimize} />
-                        <MaximizeButton onClick={handleMaximize} />
-                        <CloseButton onClick={handleClose} />
-                    </Buttons>
-                </Fragment>
-            }>
+            <Window maximized={welcome.isMaximized} minimized={welcome.isMinimized} width={'900px'}
+                header={
+                    <Fragment>
+                        <Header>Bem-vindo!</Header>
+                        <Buttons>
+                            <MiminizeButton onClick={handleMinimize} />
+                            <MaximizeButton onClick={handleMaximize} />
+                            <CloseButton onClick={handleClose} />
+                        </Buttons>
+                    </Fragment>
+                }
+            >
                 <Container maximized={welcome.isMaximized} onClick={handleFocus}>
                     <Content maximized={welcome.isMaximized} minimized={welcome.isMinimized}>
                         <Text>
