@@ -31,6 +31,16 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean, wid
     ${props => props.maximized && css`
         @media screen and (min-width: 767px) {
             top: 50.4%;
+            max-width: 100%;
+        }
+    `}
+
+    ${props => !props.maximized && css`
+        @media screen and (max-width: 767px) {
+            max-width: 95%;
+        }
+        @media screen and (min-width: 767px) {
+            max-width: 100%;
         }
     `}
 

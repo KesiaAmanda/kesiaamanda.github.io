@@ -38,7 +38,7 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     padding: 20px;
     text-align: justify;
     overflow-anchor: none;
-    // max-width: 100%;
+    max-width: 100%;
 
     ${props => props.maximized && css`
         position: fixed;
@@ -53,17 +53,26 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
             max-width: 100%;
         }
 
+        @media screen and (min-width: 767px) {
+            min-width: 98%;
+        }
+
     `}
 
     ${props => !props.maximized && css`
-        @media screen and (min-width: 767px) {
-            width: 600px;
-            min-width: 600px;
-        }
         max-height: 80vh;
         resize: both;
         overflow-x: scroll;
         overflow-y: scroll;
+
+        @media screen and (max-width: 767px) {
+            min-width: 300px;
+        }
+
+        @media screen and (min-width: 767px) {
+            width: 600px;
+            min-width: 600px;
+        }
     `}
 
     ${props => props.minimized && css`

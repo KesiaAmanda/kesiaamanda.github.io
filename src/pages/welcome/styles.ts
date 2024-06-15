@@ -94,7 +94,6 @@ export const Text = styled.div`
     
     span {
         color: ${({ theme }) => theme.text.color};
-        white-space: nowrap;
     }
 `
 
