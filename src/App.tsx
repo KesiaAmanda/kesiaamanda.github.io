@@ -17,6 +17,8 @@ import { CreditsIcon } from "./components/desktop-icon/credits-icon";
 import { Welcome } from "./pages/welcome";
 import { PagesContextProvider } from "./contexts/PagesContext";
 import { WelcomeButton } from "./components/taskbar-button/welcome-button";
+import { AboutMe } from "./pages/about-me";
+import { AboutMeButton } from "./components/taskbar-button/about-me-button";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -50,6 +52,7 @@ function App() {
             </Workspace>
             {/* pages */}
             <Welcome></Welcome>
+            <AboutMe></AboutMe>
 
 
           </Desktop>
@@ -58,7 +61,7 @@ function App() {
             <StartButton />
             <TaskbarButtons>
               <WelcomeButton />
-              <TaskbarButton isSelected={false} description="Sobre mim" onClick={() => { }} />
+              <AboutMeButton />
               <TaskbarButton isSelected={false} description="Formação" onClick={() => { }} />
               <TaskbarButton isSelected={false} description="Linguagens e Ferramentas" onClick={() => { }} />
               <TaskbarButton isSelected={false} description="Rádio" onClick={() => { }} />

@@ -5,6 +5,8 @@ type PagesContextType = {
     setStartButtonFocus: Dispatch<SetStateAction<boolean>>,
     welcome: PagesProps,
     setWelcome: Dispatch<SetStateAction<PagesProps>>
+    aboutMe: PagesProps,
+    setAboutMe: Dispatch<SetStateAction<PagesProps>>
 }
 
 type PagesContextProviderType = {

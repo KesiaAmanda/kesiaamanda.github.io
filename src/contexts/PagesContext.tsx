@@ -12,12 +12,19 @@ export function PagesContextProvider(props: PagesContextProviderType) {
         isMaximized: false,
         isClosed: false
     })
-    // const welcome = useState<PagesProps>(defaultProps)
+    const [aboutMe, setAboutMe] = useState<PagesProps>({
+        isOpen: true,
+        isInFocus: true,
+        isMinimized: false,
+        isMaximized: false,
+        isClosed: false
+    })
 
     return (
         <PagesContext.Provider value={{
             startFocus, setStartButtonFocus,
-            welcome, setWelcome
+            welcome, setWelcome,
+            aboutMe, setAboutMe
         }}>
             {props.children}
         </PagesContext.Provider>

@@ -5,7 +5,7 @@ import { Container, Content, Header } from "./styles";
 
 function Window({ maximized, minimized, header, children, width }: WindowProps) {
 
-    const { position, onMouseDown } = useDraggable(maximized); // Posição inicial de "Primeiro"
+    const { position, onMouseDown } = useDraggable(maximized);
 
     return (
         <Container>
