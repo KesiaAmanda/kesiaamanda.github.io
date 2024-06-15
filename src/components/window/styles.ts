@@ -7,7 +7,13 @@ export const Container = styled.div`
 
 export const Content = styled.div<{ maximized?: boolean, minimized: boolean, width: string }>`
     position: fixed;
-    min-width: ${(props) => props.width};
+
+    @media screen and (min-width: 767px) {
+        min-width: ${(props) => props.width};
+    }
+    
+    max-width: 100%;
+
     display: flex;
     overflow: hidden;
     flex-flow: column;

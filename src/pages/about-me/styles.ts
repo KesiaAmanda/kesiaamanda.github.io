@@ -37,23 +37,33 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     padding: 20px;
     text-align: justify;
-    resize: both;
-    overflow-x: scroll;
-    overflow-y: scroll;
     overflow-anchor: none;
+    // max-width: 100%;
 
     ${props => props.maximized && css`
         position: fixed;
         transform: none;
         border: none;
-        min-width: 100%;
         min-height: 100%;
+        resize: none;
+        overflow-x: none;
+        overflow-y: none;
+
+        @media screen and (max-width: 767px) {
+            max-width: 100%;
+        }
+
     `}
 
     ${props => !props.maximized && css`
-        width: 600px;
-        min-width: 600px;
+        @media screen and (min-width: 767px) {
+            width: 600px;
+            min-width: 600px;
+        }
         max-height: 80vh;
+        resize: both;
+        overflow-x: scroll;
+        overflow-y: scroll;
     `}
 
     ${props => props.minimized && css`

@@ -12,7 +12,7 @@ export const Screen = styled.div`
     display: grid;
     grid-template-rows: auto 30px;
 
-    overflow: auto;
+    // overflow: auto;
     position: fixed;
     top: 0px;
     left: 0px;
