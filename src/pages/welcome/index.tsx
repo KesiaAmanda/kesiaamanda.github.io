@@ -37,7 +37,7 @@ function Welcome() {
 
     return (
         <div ref={ref}>
-            <Window maximized={welcome.isMaximized} minimized={welcome.isMinimized} width={'900px'}
+            <Window maximized={welcome.isMaximized} minimized={welcome.isMinimized} width={'950px'}
                 header={
                     <Fragment>
                         <Header>Bem-vindo!</Header>
