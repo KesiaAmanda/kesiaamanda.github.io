@@ -6,8 +6,8 @@ export const Container = styled.div<{ maximized?: boolean }>`
     display: flex;
     flex-direction: column;
 
-    border-top: ridge 2px ${({ theme }) => theme.frame.shadow.black};
-    border-left: ridge 2px ${({ theme }) => theme.frame.shadow.black};
+    border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
+    border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
     border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
 
