@@ -97,6 +97,6 @@ export const P = styled.p`
 export const Hr = styled.hr`
     border: none;
     width: 100%;
-    border-top: 1px dashed ${({ theme }) => theme.window.header.hr.color};
+    border-top: 1px dashed ${({ theme }) => theme.window.body.hr.color};
 `
 

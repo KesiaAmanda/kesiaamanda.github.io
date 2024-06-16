@@ -16,14 +16,14 @@ export const lightTheme = {
             },
             title: {
                 color: 'rgb(255, 251, 245)'
-            },
-            hr: {
-                color: 'rgb(12, 5, 11)'
             }
         },
         body: {
             background: {
                 color: 'rgb(230, 230, 230)'
+            },
+            hr: {
+                color: 'rgb(12, 5, 11)'
             }
         },
         scroll: {
@@ -113,14 +113,14 @@ export const darkTheme = {
             },
             title: {
                 color: 'rgb(226, 213, 224)'
-            },
-            hr: {
-                color: 'rgb(247, 242, 248)'
             }
         },
         body: {
             background: {
                 color: '#23222B'
+            },
+            hr: {
+                color: 'rgb(247, 242, 248)'
             }
         },
         scroll: {
