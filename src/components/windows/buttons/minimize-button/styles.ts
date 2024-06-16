@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import icon from '../../../assets/icons/window/minimize.svg'
+import icon from '../../../../assets/icons/window/minimize.svg'
 
 export const Icon = styled.image`
     background-color: ${({ theme }) => theme.icon.color};
