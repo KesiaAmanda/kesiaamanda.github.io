@@ -50,6 +50,10 @@ export function PagesContextProvider(props: PagesContextProviderType) {
         setState({ ...state, isInFocus: true })
     };
 
+    const removeFocus = ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => {
+        updateState({ isInFocus: false })
+    };
+
 
     const updateState = (props: any) => {
         welcome[1]({ ...welcome[0], ...props })
@@ -60,7 +64,7 @@ export function PagesContextProvider(props: PagesContextProviderType) {
         <PagesContext.Provider value={{
             startFocus, setStartButtonFocus,
             welcome, aboutMe,
-            open, maximize, minimize, close, focus
+            open, maximize, minimize, close, focus, removeFocus
         }}>
             {props.children}
         </PagesContext.Provider>

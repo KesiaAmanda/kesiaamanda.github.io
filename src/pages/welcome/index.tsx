@@ -12,16 +12,15 @@ import github from '../../assets/icons/social/github.png'
 
 
 function Welcome() {
-    const { welcome, maximize, minimize, close, focus } = usePages();
+    const { welcome, maximize, minimize, close, focus, removeFocus } = usePages();
 
     const ref = useOutsideClick(() => {
-        if (welcome[0].isInFocus)
-            focus(welcome)
+        removeFocus(welcome)
     });
 
     return (
         <div ref={ref}>
-            <Window maximized={welcome[0].isMaximized} minimized={welcome[0].isMinimized} width={'950px'}
+            <Window page={welcome[0]} width={'950px'} focus={() => focus(welcome)}
                 header={
                     <Fragment>
                         <Header>Bem-vindo!</Header>

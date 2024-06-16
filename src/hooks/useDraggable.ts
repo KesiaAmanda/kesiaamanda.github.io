@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Position } from '../types/WindowTypes';
 
-export const useDraggable = (maximized: boolean) => {
+export const useDraggable = (maximized: boolean, focus: () => void) => {
     const [position, setPosition] = useState<Position>();
     const [dragging, setDragging] = useState(false);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -16,6 +16,8 @@ export const useDraggable = (maximized: boolean) => {
     const onMouseMove = useCallback((event: MouseEvent) => {
         if (maximized)
             return
+
+        focus()
 
         if (dragging) {
             setPosition({

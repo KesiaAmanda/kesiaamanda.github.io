@@ -15,13 +15,12 @@ function AboutMe() {
 
     const [cat, setCat] = useState(spr1)
 
-    const { aboutMe, maximize, minimize, close, focus } = usePages();
+    const { aboutMe, maximize, minimize, close, focus, removeFocus } = usePages();
 
     var text = " _______         __                   _______  __           \n|     __|.-----.|  |--..----..-----. |   |   ||__|.--------.\n|__     ||  _  ||  _  ||   _||  -__| |       ||  ||        |\n|_______||_____||_____||__|  |_____| |__|_|__||__||__|__|__|\n"
 
     const ref = useOutsideClick(() => {
-        if (aboutMe[0].isInFocus)
-            focus(aboutMe)
+        removeFocus(aboutMe)
     });
 
     useEffect(() => {
@@ -36,7 +35,7 @@ function AboutMe() {
 
     return (
         <div ref={ref}>
-            <Window maximized={aboutMe[0].isMaximized} minimized={aboutMe[0].isMinimized} width={'600px'}
+            <Window page={aboutMe[0]} width={'600px'} focus={() => focus(aboutMe)}
                 header={
                     <Fragment>
                         <Header>Bem-vindo!</Header>

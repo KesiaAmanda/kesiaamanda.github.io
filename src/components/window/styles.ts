@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components';
+import { PagesProps } from '../../types/PagesTypes';
 
 export const Container = styled.div`
     position: absolute;
     background-color: ${({ theme }) => theme.window.background.color};
 `
 
-export const Content = styled.div<{ maximized?: boolean, minimized: boolean, width: string }>`
+export const Content = styled.div<{ width: string, page: PagesProps }>`
     position: fixed;
 
     @media screen and (min-width: 767px) {
@@ -28,14 +29,14 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean, wid
     border-bottom: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
 
-    ${props => props.maximized && css`
+    ${props => props.page.isMaximized && css`
         @media screen and (min-width: 767px) {
             top: 50.4%;
             max-width: 100%;
         }
     `}
 
-    ${props => !props.maximized && css`
+    ${props => !props.page.isMaximized && css`
         @media screen and (max-width: 767px) {
             max-width: 95%;
         }
@@ -44,15 +45,19 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean, wid
         }
     `}
 
-    ${props => props.minimized && css`
+    ${props => props.page.isMinimized && css`
         transition: min-width 0.5s ease, opacity 0.5s ease;
         min-width: 0;
         opacity: 0;
     `}
 
-    ${props => !props.minimized && css`
+    ${props => !props.page.isMinimized && css`
         transition: min-width 0.5s ease, opacity 0.5s ease;
         opacity: 1;
+    `}
+
+    ${props => props.page.isInFocus && css`
+        z-index: 99;
     `}
 `
 

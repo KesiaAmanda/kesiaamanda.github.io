@@ -3,20 +3,21 @@ import { WindowProps } from "../../types/WindowTypes";
 import { Container, Content, Header } from "./styles";
 
 
-function Window({ maximized, minimized, header, children, width }: WindowProps) {
+function Window({ header, children, width, page, focus }: WindowProps) {
 
-    const { position, onMouseDown } = useDraggable(maximized);
+    const { position, onMouseDown } = useDraggable(page.isMaximized, focus);
 
     return (
         <Container>
-            <Content maximized={maximized} minimized={minimized} width={width}
-                style={(position && !maximized) ? {
+            <Content width={width} page={page}
+                style={(position && !page.isMaximized) ? {
                     'position': 'fixed',
                     'top': `${position.y}px`,
                     'left': `${position.x}px`,
                     'transform': 'none',
                 } : {}}>
                 <Header
+                    onClick={focus}
                     onMouseDown={onMouseDown}>
                     {header}
                 </Header>

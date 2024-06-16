@@ -10,6 +10,7 @@ type PagesContextType = {
     minimize: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
     close: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
     focus: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    removeFocus: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
 }
 
 type PagesContextProviderType = {

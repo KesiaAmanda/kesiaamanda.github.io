@@ -1,11 +1,12 @@
 import { ReactNode } from "react"
+import { PagesProps } from "./PagesTypes"
 
 type WindowProps = {
-    maximized: boolean,
-    minimized: boolean,
     header: ReactNode,
     children: ReactNode,
     width: string,
+    page: PagesProps,
+    focus: () => void
 }
 
 type Position = {
