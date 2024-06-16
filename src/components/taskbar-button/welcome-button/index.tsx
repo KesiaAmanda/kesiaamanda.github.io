@@ -4,19 +4,19 @@ import { usePages } from "../../../hooks/usePages";
 
 
 function WelcomeButton() {
-    const { welcome, setWelcome } = usePages();
+    const { welcome, minimize, open } = usePages();
 
     const handleClick = () => {
-        if (welcome.isInFocus) {
-            setWelcome({ ...welcome, isMinimized: true, isInFocus: false });
+        if (welcome[0].isInFocus) {
+            minimize(welcome);
         } else {
-            setWelcome({ ...welcome, isMinimized: false, isInFocus: true });
+            open(welcome);
         }
     };
 
     return (
-        <Content closed={welcome.isClosed}>
-            <TaskbarButton isSelected={welcome.isInFocus} description="Bem-vindo" onClick={handleClick} />
+        <Content closed={welcome[0].isClosed}>
+            <TaskbarButton isSelected={welcome[0].isInFocus} description="Bem-vindo" onClick={handleClick} />
         </Content>
     )
 

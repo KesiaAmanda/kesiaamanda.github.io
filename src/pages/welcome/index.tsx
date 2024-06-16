@@ -12,45 +12,29 @@ import github from '../../assets/icons/social/github.png'
 
 
 function Welcome() {
-    const { welcome, setWelcome } = usePages();
+    const { welcome, maximize, minimize, close, focus } = usePages();
 
     const ref = useOutsideClick(() => {
-        if (welcome.isInFocus)
-            setWelcome({ ...welcome, isInFocus: false })
+        if (welcome[0].isInFocus)
+            focus(welcome)
     });
-
-    const handleMaximize = () => {
-        setWelcome({ ...welcome, isMaximized: !welcome.isMaximized })
-    };
-
-    const handleMinimize = () => {
-        setWelcome({ ...welcome, isMinimized: true, isInFocus: false })
-    };
-
-    const handleClose = () => {
-        setWelcome({ ...welcome, isMinimized: true, isInFocus: false, isClosed: true })
-    };
-
-    const handleFocus = () => {
-        setWelcome({ ...welcome, isInFocus: true })
-    };
 
     return (
         <div ref={ref}>
-            <Window maximized={welcome.isMaximized} minimized={welcome.isMinimized} width={'950px'}
+            <Window maximized={welcome[0].isMaximized} minimized={welcome[0].isMinimized} width={'950px'}
                 header={
                     <Fragment>
                         <Header>Bem-vindo!</Header>
                         <Buttons>
-                            <MiminizeButton onClick={handleMinimize} />
-                            <MaximizeButton onClick={handleMaximize} />
-                            <CloseButton onClick={handleClose} />
+                            <MiminizeButton onClick={() => minimize(welcome)} />
+                            <MaximizeButton onClick={() => maximize(welcome)} />
+                            <CloseButton onClick={() => close(welcome)} />
                         </Buttons>
                     </Fragment>
                 }
             >
-                <Container maximized={welcome.isMaximized} onClick={handleFocus}>
-                    <Content maximized={welcome.isMaximized} minimized={welcome.isMinimized}>
+                <Container maximized={welcome[0].isMaximized} onClick={() => focus(welcome)}>
+                    <Content maximized={welcome[0].isMaximized} minimized={welcome[0].isMinimized}>
                         <Text>
                             <span style={{ fontSize: '25px' }}>Olá, eu sou a</span>
                             <span style={{ fontSize: '43px' }}>&gt;Kesia Amanda!</span>

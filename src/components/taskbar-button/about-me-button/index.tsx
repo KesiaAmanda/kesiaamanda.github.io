@@ -4,19 +4,19 @@ import { usePages } from "../../../hooks/usePages";
 
 
 function AboutMeButton() {
-    const { aboutMe, setAboutMe } = usePages();
+    const { aboutMe, minimize, open } = usePages();
 
     const handleClick = () => {
-        if (aboutMe.isInFocus) {
-            setAboutMe({ ...aboutMe, isMinimized: true, isInFocus: false });
+        if (aboutMe[0].isInFocus) {
+            minimize(aboutMe);
         } else {
-            setAboutMe({ ...aboutMe, isMinimized: false, isInFocus: true });
+            open(aboutMe);
         }
     };
 
     return (
-        <Content closed={aboutMe.isClosed}>
-            <TaskbarButton isSelected={aboutMe.isInFocus} description="Sobre mim" onClick={handleClick} />
+        <Content closed={aboutMe[0].isClosed}>
+            <TaskbarButton isSelected={aboutMe[0].isInFocus} description="Sobre mim" onClick={handleClick} />
         </Content>
     )
 

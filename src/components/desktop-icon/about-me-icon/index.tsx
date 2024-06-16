@@ -4,10 +4,10 @@ import { usePages } from "../../../hooks/usePages";
 
 
 function AboutMeIcon() {
-    const { aboutMe, setAboutMe } = usePages();
+    const { aboutMe, open } = usePages();
 
     const handleClick = () => {
-        setAboutMe({ ...aboutMe, isMinimized: false, isInFocus: true, isClosed: false });
+        open(aboutMe)
     }
 
     return (

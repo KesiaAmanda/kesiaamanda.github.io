@@ -4,10 +4,10 @@ import { usePages } from "../../../hooks/usePages";
 
 
 function WelcomeIcon() {
-    const { welcome, setWelcome } = usePages();
+    const { welcome, open } = usePages();
 
     const handleClick = () => {
-        setWelcome({ ...welcome, isMinimized: false, isInFocus: true, isClosed: false });
+        open(welcome);
     }
 
     return (

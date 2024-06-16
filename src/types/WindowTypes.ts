@@ -5,7 +5,7 @@ type WindowProps = {
     minimized: boolean,
     header: ReactNode,
     children: ReactNode,
-    width: string
+    width: string,
 }
 
 type Position = {

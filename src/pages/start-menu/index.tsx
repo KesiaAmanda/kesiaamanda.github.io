@@ -4,15 +4,15 @@ import { usePages } from "../../hooks/usePages";
 
 
 function StartMenu({ isSelected, setIsSelected }: StartMenuProps) {
-    const { welcome, setWelcome, aboutMe, setAboutMe } = usePages();
+    const { welcome, aboutMe, open } = usePages();
 
     const handleWelcomeClick = () => {
-        setWelcome({ ...welcome, isMinimized: false, isInFocus: true, isClosed: false });
+        open(welcome);
         setIsSelected(false);
     }
 
     const handleAboutMeClick = () => {
-        setAboutMe({ ...aboutMe, isMinimized: false, isInFocus: true, isClosed: false });
+        open(aboutMe);
         setIsSelected(false);
     }
 

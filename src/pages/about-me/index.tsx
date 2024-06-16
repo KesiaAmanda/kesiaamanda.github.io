@@ -15,30 +15,14 @@ function AboutMe() {
 
     const [cat, setCat] = useState(spr1)
 
-    const { aboutMe, setAboutMe } = usePages();
+    const { aboutMe, maximize, minimize, close, focus } = usePages();
 
     var text = " _______         __                   _______  __           \n|     __|.-----.|  |--..----..-----. |   |   ||__|.--------.\n|__     ||  _  ||  _  ||   _||  -__| |       ||  ||        |\n|_______||_____||_____||__|  |_____| |__|_|__||__||__|__|__|\n"
 
     const ref = useOutsideClick(() => {
-        if (aboutMe.isInFocus)
-            setAboutMe({ ...aboutMe, isInFocus: false })
+        if (aboutMe[0].isInFocus)
+            focus(aboutMe)
     });
-
-    const handleMaximize = () => {
-        setAboutMe({ ...aboutMe, isMaximized: !aboutMe.isMaximized })
-    };
-
-    const handleMinimize = () => {
-        setAboutMe({ ...aboutMe, isMinimized: true, isInFocus: false })
-    };
-
-    const handleClose = () => {
-        setAboutMe({ ...aboutMe, isMinimized: true, isInFocus: false, isClosed: true })
-    };
-
-    const handleFocus = () => {
-        setAboutMe({ ...aboutMe, isInFocus: true })
-    };
 
     useEffect(() => {
         setInterval(() => {
@@ -52,14 +36,14 @@ function AboutMe() {
 
     return (
         <div ref={ref}>
-            <Window maximized={aboutMe.isMaximized} minimized={aboutMe.isMinimized} width={'600px'}
+            <Window maximized={aboutMe[0].isMaximized} minimized={aboutMe[0].isMinimized} width={'600px'}
                 header={
                     <Fragment>
                         <Header>Bem-vindo!</Header>
                         <Buttons>
-                            <MiminizeButton onClick={handleMinimize} />
-                            <MaximizeButton onClick={handleMaximize} />
-                            <CloseButton onClick={handleClose} />
+                            <MiminizeButton onClick={() => { minimize(aboutMe) }} />
+                            <MaximizeButton onClick={() => { maximize(aboutMe) }} />
+                            <CloseButton onClick={() => { close(aboutMe) }} />
                         </Buttons>
                     </Fragment>
                 }
@@ -70,8 +54,8 @@ function AboutMe() {
                     <span>Search</span>
                     <span>Help</span>
                 </WindowMenu>
-                <Container maximized={aboutMe.isMaximized} minimized={aboutMe.isMinimized} onClick={handleFocus}>
-                    <Content maximized={aboutMe.isMaximized} minimized={aboutMe.isMinimized}>
+                <Container maximized={aboutMe[0].isMaximized} minimized={aboutMe[0].isMinimized} onClick={() => { focus(aboutMe) }}>
+                    <Content maximized={aboutMe[0].isMaximized} minimized={aboutMe[0].isMinimized}>
                         <Hr />
                         <Title>{text}</Title>
                         <Hr />

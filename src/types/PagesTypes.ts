@@ -3,10 +3,13 @@ import { Dispatch, ReactNode, SetStateAction } from "react";
 type PagesContextType = {
     startFocus: boolean,
     setStartButtonFocus: Dispatch<SetStateAction<boolean>>,
-    welcome: PagesProps,
-    setWelcome: Dispatch<SetStateAction<PagesProps>>
-    aboutMe: PagesProps,
-    setAboutMe: Dispatch<SetStateAction<PagesProps>>
+    welcome: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>],
+    aboutMe: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>],
+    open: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    maximize: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    minimize: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    close: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    focus: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
 }
 
 type PagesContextProviderType = {
