@@ -49,11 +49,6 @@ export const Taskbar = styled.div`
     border-top: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.white};
 `
 
-export const TaskbarButtons = styled.div`
-    display: flex;
-    overflow: hidden;
-`
-
 export const Workspace = styled.div`
     display: flex;
     flex-direction: column;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Box, Clock, Content, Volume } from "./styles";
-import { Divider } from "../taskbar-button/styles";
+import { Divider } from "../taskbar/button/styles";
 
 
 function Notifications() {

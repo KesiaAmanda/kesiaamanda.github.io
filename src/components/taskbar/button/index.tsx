@@ -1,8 +1,8 @@
-import { TaskbarButtonProps } from "../../types/TaskbarButtonsTypes";
+import { TaskbarButtonProps } from "../../../types/TaskbarButtonsTypes";
 import { Content } from "./styles";
 
 
-function TaskbarButton({ description, onClick, isSelected }: TaskbarButtonProps) {
+function Button({ description, onClick, isSelected }: TaskbarButtonProps) {
 
     const handleClick = (e: any) => {
         onClick();
@@ -18,5 +18,5 @@ function TaskbarButton({ description, onClick, isSelected }: TaskbarButtonProps)
 
 }
 
-export { TaskbarButton };
+export { Button };
 

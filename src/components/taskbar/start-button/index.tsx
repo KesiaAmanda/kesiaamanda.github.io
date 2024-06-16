@@ -1,7 +1,7 @@
-import { TaskbarButton } from "..";
+import { Button } from "../button";
 import { Content } from "./styles";
 import { StartMenu } from "../../../pages/start-menu";
-import { Divider } from "../styles";
+import { Divider } from "../button/styles";
 import { usePages } from "../../../hooks/usePages";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 
@@ -23,7 +23,7 @@ function StartButton() {
 
     return (
         <Content ref={ref}>
-            <TaskbarButton isSelected={startMenu} description="Iniciar" onClick={handleClick} />
+            <Button isSelected={startMenu} description="Iniciar" onClick={handleClick} />
             <StartMenu isSelected={startMenu} onClick={() => { removeFocus() }} />
             <Divider />
         </Content>

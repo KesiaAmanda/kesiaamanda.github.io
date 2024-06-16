@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components';
-import icon from '../../../assets/icons/desktop/text_file.png'
 
-export const Content = styled.div<{ closed?: boolean }>`
+export const Content = styled.div<{ closed?: boolean, icon: any }>`
     display: flex;
     button {
-        background: url(${icon}) left center no-repeat;
+        background: url(${(props) => props.icon}) left center no-repeat;
         background-size: 15px 15px;
         background-position-x: 2px;
     }
@@ -18,4 +17,4 @@ export const Content = styled.div<{ closed?: boolean }>`
             visibility: hidden;
         }
     `}
-`   
+`
