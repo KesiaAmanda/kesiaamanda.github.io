@@ -50,6 +50,14 @@ export const lightTheme = {
                     decrement: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>\")"
                 }
             }
+        },
+        console: {
+            background: {
+                color: '#0f0d0f'
+            },
+            text: {
+                color: 'rgb(111, 172, 82)'
+            }
         }
     },
     frame: {
@@ -152,6 +160,14 @@ export const darkTheme = {
                     increment: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: rgb(56, 56, 56);' d='M25 12l-18 12v-24z'/></svg>\")",
                     decrement: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(56, 56, 56);' d='M25 12l-18 12v-24z'/></svg>\")"
                 }
+            }
+        },
+        console: {
+            background: {
+                color: '#0f0d0f'
+            },
+            text: {
+                color: 'rgb(111, 172, 82)'
             }
         }
     },
