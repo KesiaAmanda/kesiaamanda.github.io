@@ -57,7 +57,6 @@ export const Content = styled.div<{ page: PagesProps }>`
     ${props => !props.page.isMinimized && css`
         div {
             transition: all 0.5s ease;
-            max-height: 100%;
         }
     `}
 `

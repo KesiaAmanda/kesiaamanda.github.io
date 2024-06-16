@@ -46,13 +46,15 @@ export const Content = styled.div<{ width: string, page: PagesProps }>`
     `}
 
     ${props => props.page.isMinimized && css`
-        transition: min-width 0.5s ease, opacity 0.5s ease;
+        transition: min-width 0.5s ease, max-height 0.5s ease, opacity 0.7s ease;
         min-width: 0;
+        max-height: 0;
         opacity: 0;
     `}
 
     ${props => !props.page.isMinimized && css`
-        transition: min-width 0.5s ease, opacity 0.5s ease;
+        transition: min-width 0.5s ease, max-height 0.5s ease, opacity 0.7s ease;
+        max-height: 100%;
         opacity: 1;
     `}
 
