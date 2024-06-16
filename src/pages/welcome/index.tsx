@@ -20,7 +20,7 @@ function Welcome() {
 
     return (
         <div ref={ref}>
-            <Window page={welcome[0]} width={'950px'} focus={() => focus(welcome)}
+            <Window page={welcome[0]} width={'1000px'} focus={() => focus(welcome)}
                 header={
                     <Fragment>
                         <Header>Bem-vindo.exe</Header>

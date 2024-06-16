@@ -1,9 +1,12 @@
 import styled, { css } from 'styled-components';
 import { PagesProps } from '../../types/PagesTypes';
 
-export const Container = styled.div`
+export const Container = styled.div<{ page: PagesProps }>`
     position: absolute;
     background-color: ${({ theme }) => theme.window.background.color};
+    ${props => props.page.isInFocus && css`
+        z-index: 1;
+    `}
 `
 
 export const Content = styled.div<{ width: string, page: PagesProps }>`
@@ -24,19 +27,17 @@ export const Content = styled.div<{ width: string, page: PagesProps }>`
     border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
 
     ${props => props.page.isMaximized && css`
-        @media screen and (min-width: 767px) {
-            top: 50.4%;
-            max-width: 100%;
-        }
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        transform: none;
+        transition: none;
+        height: calc(var(--vh, 1vh) * 100 - 32px);
+        width: 100vw;
     `}
 
     ${props => !props.page.isMaximized && css`
-        @media screen and (max-width: 767px) {
-            max-width: 95%;
-        }
-        @media screen and (min-width: 767px) {
-            max-width: 100%;
-        }
+        max-width: 95%;
     `}
 
     ${props => props.page.isMinimized && css`
@@ -56,9 +57,6 @@ export const Content = styled.div<{ width: string, page: PagesProps }>`
         opacity: 1;
     `}
 
-    ${props => props.page.isInFocus && css`
-        z-index: 99;
-    `}
 `
 
 export const Header = styled.div`

@@ -37,6 +37,7 @@ export const Screen = styled.div`
 `
 
 export const Taskbar = styled.div`
+    z-index: 99;
     position: relative;
     max-height: 30px;
     width: 100%;

@@ -8,7 +8,7 @@ function Window({ header, children, width, page, focus }: WindowProps) {
     const { position, onMouseDown } = useDraggable(page.isMaximized, focus);
 
     return (
-        <Container onClick={focus}>
+        <Container onClick={focus} page={page}>
             <Content width={width} page={page}
                 style={(position && !page.isMaximized) ? {
                     'position': 'fixed',

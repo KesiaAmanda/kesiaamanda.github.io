@@ -5,23 +5,22 @@ import { PagesProps } from '../../types/PagesTypes';
 export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
+    height: 100%;
 
     border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
     border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
-
-    ${props => props.page.isMaximized && css`
-        min-height: calc(var(--vh, 1vh) * 100 - 77px);
-        min-width: 100vw;
-    `}
-
 `
 
 export const Content = styled.div<{ page: PagesProps }>`
-    position: relative;
-    padding: 1em;
-    text-align: justify;
+    padding: 1em;   
+    max-height: 80vh;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     ${props => props.page.isMaximized && css`
         height: calc(var(--vh, 1vh) * 100 - 99px);
@@ -33,15 +32,18 @@ export const Content = styled.div<{ page: PagesProps }>`
         overflow-x: none;
         overflow-y: none;
 
+        @media screen and (max-width: 767px) {
+            max-width: 92vw;
+        }
+
         @media screen and (min-width: 767px) {
-            width: 99vw;
+            min-width: 98.7vw;
+            max-width: 98.7vw;
         }
 
     `}
 
     ${props => !props.page.isMaximized && css`
-        max-height: 80vh;
-        max-width: 80vw;
         resize: both;
         overflow-x: scroll;
         overflow-y: scroll;
@@ -112,6 +114,7 @@ export const P = styled.p`
 
 export const Hr = styled.hr`
     border: none;
+    width: 100%;
     border-top: 1px dashed ${({ theme }) => theme.window.header.hr.color};
 `
 

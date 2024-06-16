@@ -5,21 +5,18 @@ import { PagesProps } from '../../types/PagesTypes';
 export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
+    height: 100%;
 
     border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
     border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
 
-    ${props => props.page.isMaximized && css`
-        min-height: calc(var(--vh, 1vh) * 100 - 59px);
-        min-width: 100vw;
-    `}
-
 `
 
 export const Content = styled.div<{ page: PagesProps }>`
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +34,6 @@ export const Content = styled.div<{ page: PagesProps }>`
     }
 
     ${props => props.page.isMaximized && css`   
-        height: calc(var(--vh, 1vh) * 100 - 99px);
         position: fixed;
         transform: none;
         border: none;
