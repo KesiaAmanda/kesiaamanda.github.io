@@ -5,7 +5,6 @@ import { PagesProps } from '../../types/PagesTypes';
 export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
-    flex-direction: column;
 
     border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
@@ -21,14 +20,12 @@ export const Container = styled.div<{ page: PagesProps }>`
 
 export const Content = styled.div<{ page: PagesProps }>`
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 
     h1 {
         width: 100%;
-        margin: 2px;
     }
 
     @media screen and (max-width: 767px) {
@@ -40,24 +37,10 @@ export const Content = styled.div<{ page: PagesProps }>`
     }
 
     ${props => props.page.isMaximized && css`   
+        height: calc(var(--vh, 1vh) * 100 - 99px);
         position: fixed;
         transform: none;
         border: none;
-    `}
-
-    ${props => props.page.isMinimized && css`
-        div {
-            transition: all 0.5s ease;
-            opacity:0;
-            max-height: 0;
-            max-width: 0;
-        }
-    `}
-
-    ${props => !props.page.isMinimized && css`
-        div {
-            transition: all 0.5s ease;
-        }
     `}
 `
 
@@ -85,9 +68,7 @@ export const Text = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    max-width: 100%;
-    max-height: 90%;
-    padding: 1em;
+    padding: 3em;
     max-width: 500px;
     width: 100%;
     overflow: hidden;

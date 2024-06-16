@@ -5,8 +5,6 @@ import { PagesProps } from '../../types/PagesTypes';
 export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
-    flex-direction: column;
-    max-width: 100%;
 
     border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
@@ -16,52 +14,34 @@ export const Container = styled.div<{ page: PagesProps }>`
     ${props => props.page.isMaximized && css`
         min-height: calc(var(--vh, 1vh) * 100 - 77px);
         min-width: 100vw;
-        transition: max-width 0.5s ease;
-        max-width: 0%;
     `}
-
-    ${props => props.page.isMinimized && css`
-        transition: max-width 0.5s ease;
-        max-width: 0;
-    `}
-
-    ${props => !props.page.isMinimized && css`
-        transition: max-width 0.5s ease;
-    `}
-
-    transition: none;
 
 `
 
 export const Content = styled.div<{ page: PagesProps }>`
     position: relative;
-    background-color: ${({ theme }) => theme.window.body.background.color};
-    padding: 20px;
+    padding: 1em;
     text-align: justify;
-    overflow-anchor: none;
-    max-width: 100%;
 
     ${props => props.page.isMaximized && css`
+        height: calc(var(--vh, 1vh) * 100 - 99px);
         position: fixed;
         transform: none;
         border: none;
-        min-height: 100%;
+
         resize: none;
         overflow-x: none;
         overflow-y: none;
 
-        @media screen and (max-width: 767px) {
-            max-width: 100%;
-        }
-
         @media screen and (min-width: 767px) {
-            min-width: 98%;
+            width: 99vw;
         }
 
     `}
 
     ${props => !props.page.isMaximized && css`
         max-height: 80vh;
+        max-width: 80vw;
         resize: both;
         overflow-x: scroll;
         overflow-y: scroll;
@@ -76,15 +56,6 @@ export const Content = styled.div<{ page: PagesProps }>`
         }
     `}
 
-    ${props => props.page.isMinimized && css`
-        transition: max-height 0.5s ease, max-width 0.5s ease;
-        max-height: 0;
-        max-width: 0;
-    `}
-
-    ${props => !props.page.isMinimized && css`
-        transition: max-width 0.5s ease;
-    `}
 `
 
 export const Header = styled.div`

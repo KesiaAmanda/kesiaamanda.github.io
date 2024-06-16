@@ -8,13 +8,7 @@ export const Container = styled.div`
 
 export const Content = styled.div<{ width: string, page: PagesProps }>`
     position: fixed;
-
-    @media screen and (min-width: 767px) {
-        min-width: ${(props) => props.width};
-    }
-    
     max-width: 100%;
-
     display: flex;
     overflow: hidden;
     flex-flow: column;
@@ -46,14 +40,18 @@ export const Content = styled.div<{ width: string, page: PagesProps }>`
     `}
 
     ${props => props.page.isMinimized && css`
-        transition: min-width 0.5s ease, max-height 0.5s ease, opacity 0.7s ease;
+        transition: max-height 0.5s ease, min-width 0.7s ease, opacity 0.7s ease;
         min-width: 0;
         max-height: 0;
         opacity: 0;
     `}
 
     ${props => !props.page.isMinimized && css`
-        transition: min-width 0.5s ease, max-height 0.5s ease, opacity 0.7s ease;
+        @media screen and (min-width: 767px) {
+            min-width: ${props.width};
+        }
+
+        transition: max-height 0.5s ease, opacity 0.7s ease;
         max-height: 100%;
         opacity: 1;
     `}
