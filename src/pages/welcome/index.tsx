@@ -23,7 +23,7 @@ function Welcome() {
             <Window page={welcome[0]} width={'950px'} focus={() => focus(welcome)}
                 header={
                     <Fragment>
-                        <Header>Bem-vindo!</Header>
+                        <Header>Bem-vindo.exe</Header>
                         <Buttons>
                             <MiminizeButton onClick={() => minimize(welcome)} />
                             <MaximizeButton onClick={() => maximize(welcome)} />

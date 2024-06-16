@@ -38,7 +38,7 @@ function AboutMe() {
             <Window page={aboutMe[0]} width={'600px'} focus={() => focus(aboutMe)}
                 header={
                     <Fragment>
-                        <Header>Bem-vindo!</Header>
+                        <Header>Sobre mim.txt</Header>
                         <Buttons>
                             <MiminizeButton onClick={() => { minimize(aboutMe) }} />
                             <MaximizeButton onClick={() => { maximize(aboutMe) }} />
