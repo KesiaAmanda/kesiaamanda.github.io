@@ -46,8 +46,10 @@ export function PagesContextProvider(props: PagesContextProviderType) {
     };
 
     const focus = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
-        updateState({ isInFocus: false })
-        setState({ ...state, isInFocus: true })
+        if (!state.isInFocus) {
+            updateState({ isInFocus: false })
+            setState({ ...state, isInFocus: true })
+        }
     };
 
     const removeFocus = () => {
