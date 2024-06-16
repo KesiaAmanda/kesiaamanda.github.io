@@ -2,7 +2,7 @@ import React from "react"
 
 type StartMenuProps = {
     isSelected: boolean,
-    setIsSelected: React.Dispatch<React.SetStateAction<boolean>>
+    onClick: () => void
 }
 
 export type { StartMenuProps }

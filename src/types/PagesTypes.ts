@@ -1,16 +1,16 @@
-import { Dispatch, ReactNode, SetStateAction } from "react";
+import { Dispatch, ReactNode } from "react";
 
 type PagesContextType = {
-    startFocus: boolean,
-    setStartButtonFocus: Dispatch<SetStateAction<boolean>>,
-    welcome: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>],
-    aboutMe: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>],
-    open: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
-    maximize: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
-    minimize: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
-    close: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
-    focus: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
-    removeFocus: ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    startMenu: boolean,
+    openMenu: () => void
+    welcome: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
+    aboutMe: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
+    open: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    maximize: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    minimize: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    close: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    focus: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
+    removeFocus: () => void,
 }
 
 type PagesContextProviderType = {

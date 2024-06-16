@@ -7,17 +7,24 @@ import { useOutsideClick } from "../../../hooks/useOutsideClick";
 
 
 function StartButton() {
-    const { startFocus, setStartButtonFocus } = usePages();
+    const { startMenu, removeFocus, openMenu } = usePages();
 
     const ref = useOutsideClick(() => {
-        if (startFocus)
-            setStartButtonFocus(false)
+        removeFocus()
     });
+
+    const handleClick = () => {
+        if (startMenu) {
+            removeFocus()
+        } else {
+            openMenu()
+        }
+    };
 
     return (
         <Content ref={ref}>
-            <TaskbarButton isSelected={startFocus} description="Iniciar" onClick={() => { setStartButtonFocus(!startFocus) }} />
-            <StartMenu isSelected={startFocus} setIsSelected={setStartButtonFocus} />
+            <TaskbarButton isSelected={startMenu} description="Iniciar" onClick={handleClick} />
+            <StartMenu isSelected={startMenu} onClick={() => { removeFocus() }} />
             <Divider />
         </Content>
     )

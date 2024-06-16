@@ -15,7 +15,7 @@ function Welcome() {
     const { welcome, maximize, minimize, close, focus, removeFocus } = usePages();
 
     const ref = useOutsideClick(() => {
-        removeFocus(welcome)
+        removeFocus()
     });
 
     return (

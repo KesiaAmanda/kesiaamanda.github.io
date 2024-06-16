@@ -17,7 +17,7 @@ function AboutMe() {
     var text = " _______         __                   _______  __           \n|     __|.-----.|  |--..----..-----. |   |   ||__|.--------.\n|__     ||  _  ||  _  ||   _||  -__| |       ||  ||        |\n|_______||_____||_____||__|  |_____| |__|_|__||__||__|__|__|\n"
 
     const ref = useOutsideClick(() => {
-        removeFocus(aboutMe)
+        removeFocus()
     });
 
     useEffect(() => {

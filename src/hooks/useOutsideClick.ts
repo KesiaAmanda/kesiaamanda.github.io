@@ -7,6 +7,7 @@ export const useOutsideClick = (callback: () => void) => {
       const handleClickOutside = (event: MouseEvent | TouchEvent) => {
          const node = event.target as Node
 
+
          if (String(node.parentElement) !== '[object HTMLButtonElement]') {
             if (ref.current && !ref.current.contains(event.target as Node)) {
                callback();

@@ -3,21 +3,21 @@ import { StartMenuProps } from "../../types/StartMenuTypes";
 import { usePages } from "../../hooks/usePages";
 
 
-function StartMenu({ isSelected, setIsSelected }: StartMenuProps) {
+function StartMenu({ isSelected, onClick }: StartMenuProps) {
     const { welcome, aboutMe, open } = usePages();
 
     const handleWelcomeClick = () => {
+        onClick();
         open(welcome);
-        setIsSelected(false);
     }
 
     const handleAboutMeClick = () => {
+        onClick();
         open(aboutMe);
-        setIsSelected(false);
     }
 
     const handleClose = (e: any) => {
-        setIsSelected(false);
+        onClick();
     };
 
     return (

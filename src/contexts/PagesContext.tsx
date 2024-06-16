@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { Dispatch, createContext, useState } from "react";
 import { PagesContextProviderType, PagesContextType, PagesProps } from "../types/PagesTypes";
 
 export const PagesContext = createContext({} as PagesContextType)
@@ -20,49 +20,55 @@ let defaultPage = {
 } as PagesProps;
 
 export function PagesContextProvider(props: PagesContextProviderType) {
-    const [startFocus, setStartButtonFocus] = useState(false);
+    const [startMenu, setStartMenu] = useState(false);
 
     const welcome = useState<PagesProps>(focusPage)
     const aboutMe = useState<PagesProps>(defaultPage)
 
-    const open = ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => {
+    const open = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
         setState({ ...state, isMinimized: false, isInFocus: true, isClosed: false })
     };
 
-    const maximize = ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => {
+    const maximize = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
         setState({ ...state, isMaximized: !state.isMaximized, isInFocus: true })
     };
 
-    const minimize = ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => {
+    const minimize = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
         setState({ ...state, isMinimized: true, isInFocus: false })
     };
 
-    const close = ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => {
+    const close = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
         setState({ ...state, isMinimized: true, isInFocus: false, isClosed: true })
     };
 
-    const focus = ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => {
+    const focus = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
         setState({ ...state, isInFocus: true })
     };
 
-    const removeFocus = ([state, setState]: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>]) => {
+    const removeFocus = () => {
         updateState({ isInFocus: false })
+    };
+
+    const openMenu = () => {
+        removeFocus()
+        setStartMenu(true)
     };
 
 
     const updateState = (props: any) => {
+        setStartMenu(false)
         welcome[1]({ ...welcome[0], ...props })
         aboutMe[1]({ ...aboutMe[0], ...props })
     };
 
     return (
         <PagesContext.Provider value={{
-            startFocus, setStartButtonFocus,
+            startMenu, openMenu,
             welcome, aboutMe,
             open, maximize, minimize, close, focus, removeFocus
         }}>
