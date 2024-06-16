@@ -19,6 +19,8 @@ import { PagesContextProvider } from "./contexts/PagesContext";
 import { WelcomeButton } from "./components/taskbar-button/welcome-button";
 import { AboutMe } from "./pages/about-me";
 import { AboutMeButton } from "./components/taskbar-button/about-me-button";
+import { Training } from "./pages/training";
+import { TrainingButton } from "./components/taskbar-button/training-button";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -53,6 +55,7 @@ function App() {
             {/* pages */}
             <Welcome></Welcome>
             <AboutMe></AboutMe>
+            <Training />
 
 
           </Desktop>
@@ -62,7 +65,7 @@ function App() {
             <TaskbarButtons>
               <WelcomeButton />
               <AboutMeButton />
-              <TaskbarButton isSelected={false} description="Formação" onClick={() => { }} />
+              <TrainingButton />
               <TaskbarButton isSelected={false} description="Linguagens e Ferramentas" onClick={() => { }} />
               <TaskbarButton isSelected={false} description="Rádio" onClick={() => { }} />
               <TaskbarButton isSelected={false} description="Créditos" onClick={() => { }} />

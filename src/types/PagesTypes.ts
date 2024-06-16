@@ -5,6 +5,7 @@ type PagesContextType = {
     openMenu: () => void
     welcome: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
     aboutMe: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
+    training: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
     open: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
     maximize: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
     minimize: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,

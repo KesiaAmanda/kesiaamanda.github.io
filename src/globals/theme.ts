@@ -1,6 +1,9 @@
 import lightThemeBackgroundImage from '../assets/background/kime-nanami-pastelsky.gif'
 import darkThemeBackgroundImage from '../assets/background/kime-nanami-pastelsky-nigth.gif'
-// import darkThemeBackgroundImage from '../assets/background/noite.gif'
+
+import welcomeIcon from '../assets/icons/desktop/program.png'
+import aboutMeIcon from '../assets/icons/desktop/text_file.png'
+import trainingIcon from '../assets/icons/desktop/console.png'
 
 export const lightTheme = {
     text: {
@@ -80,7 +83,10 @@ export const lightTheme = {
         }
     },
     icon: {
-        color: 'rgb(12, 5, 11)'
+        color: 'rgb(12, 5, 11)',
+        welcome: welcomeIcon,
+        aboutMe: aboutMeIcon,
+        training: trainingIcon,
     },
     start: {
         menu: {
@@ -179,7 +185,10 @@ export const darkTheme = {
         }
     },
     icon: {
-        color: 'rgb(247, 242, 248)'
+        color: 'rgb(247, 242, 248)',
+        welcome: welcomeIcon,
+        aboutMe: aboutMeIcon,
+        training: trainingIcon,
     },
     start: {
         menu: {
