@@ -54,7 +54,9 @@ function AboutMe() {
                     <span>Help</span>
                 </WindowMenu>
                 <Container page={aboutMe[0]} onClick={() => { focus(aboutMe) }}>
-                    <Content page={aboutMe[0]}>
+                    <Content maxWidth={(window.innerWidth - 30) + "px"}
+                        maxHeight={(window.innerHeight - 100) + "px"}
+                        page={aboutMe[0]} >
                         <Hr />
                         <Title>{text}</Title>
                         <Hr />

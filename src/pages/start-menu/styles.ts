@@ -1,15 +1,19 @@
 import styled, { css } from 'styled-components';
 
 export const Content = styled.div<{ isSelected: boolean }>`
+  transition: opacity 0.7s ease-in-out;
 
-    ${props => !props.isSelected && css`
-        visibility: hidden;
-    `}
+  ${props => props.isSelected && css`
+    opacity: 1;
+  `}
+
+  ${props => !props.isSelected && css`
+    opacity: 0;
+  `}
 
   display: flex;
   flex-direction: column;
   bottom: 30px;
-//   top: -204px;
   left: 0;
   background-color: ${({ theme }) => theme.window.background.color};
   background-size: 100px;

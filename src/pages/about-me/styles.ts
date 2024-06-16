@@ -13,41 +13,23 @@ export const Container = styled.div<{ page: PagesProps }>`
     border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
 `
 
-export const Content = styled.div<{ page: PagesProps }>`
+export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: PagesProps }>`
     padding: 1em;   
-    max-height: 80vh;
-
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
 
+    resize: both;
+    overflow-x: scroll;
+    overflow-y: scroll;
+
     ${props => props.page.isMaximized && css`
-        height: calc(var(--vh, 1vh) * 100 - 99px);
-        position: fixed;
-        transform: none;
-        border: none;
-
-        resize: none;
-        overflow-x: none;
-        overflow-y: none;
-
-        @media screen and (max-width: 767px) {
-            max-width: 92vw;
-        }
-
-        @media screen and (min-width: 767px) {
-            min-width: 98.7vw;
-            max-width: 98.7vw;
-        }
-
+        min-width: ${props.maxWidth};
+        min-height: ${props.maxHeight};
+        resize: horizontal;
     `}
 
     ${props => !props.page.isMaximized && css`
-        resize: both;
-        overflow-x: scroll;
-        overflow-y: scroll;
-
+        max-height: 80vh;
         @media screen and (max-width: 767px) {
             min-width: 300px;
         }

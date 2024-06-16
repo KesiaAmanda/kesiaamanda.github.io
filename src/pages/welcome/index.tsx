@@ -20,7 +20,7 @@ function Welcome() {
 
     return (
         <div ref={ref}>
-            <Window page={welcome[0]} width={'1000px'} focus={() => focus(welcome)}
+            <Window page={welcome[0]} width={'900px'} focus={() => focus(welcome)}
                 header={
                     <Fragment>
                         <Header>Bem-vindo.exe</Header>
@@ -33,7 +33,9 @@ function Welcome() {
                 }
             >
                 <Container page={welcome[0]} onClick={() => focus(welcome)}>
-                    <Content page={welcome[0]}>
+                    <Content maxWidth={(window.innerWidth - 30) + "px"}
+                        maxHeight={(window.innerHeight - 62) + "px"}
+                        page={welcome[0]}>
                         <Text>
                             <span style={{ fontSize: '25px' }}>Olá, eu sou a</span>
                             <span style={{ fontSize: '43px' }}>&gt;Kesia Amanda!</span>

@@ -10,6 +10,8 @@ function Window({ header, children, width, page, focus }: WindowProps) {
     return (
         <Container onClick={focus} page={page}>
             <Content width={width} page={page}
+                maxWidth={(window.innerWidth - 4) + "px"}
+                maxHeight={(window.innerHeight - 32) + "px"}
                 style={(position && !page.isMaximized) ? {
                     'position': 'fixed',
                     'top': `${position.y}px`,

@@ -5,7 +5,6 @@ import { PagesProps } from '../../types/PagesTypes';
 export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
-    height: 100%;
 
     border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
@@ -14,7 +13,7 @@ export const Container = styled.div<{ page: PagesProps }>`
 
 `
 
-export const Content = styled.div<{ page: PagesProps }>`
+export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: PagesProps }>`
     width: 100%;
     height: 100%;
     display: flex;
@@ -27,16 +26,17 @@ export const Content = styled.div<{ page: PagesProps }>`
 
     @media screen and (max-width: 767px) {
         flex-wrap: wrap;
+        width: 300px;
     }
 
     @media screen and (min-width: 767px) {
         flex-wrap: nowrap;
+        width: 900px;
     }
 
     ${props => props.page.isMaximized && css`   
-        position: fixed;
-        transform: none;
-        border: none;
+        min-width: ${props.maxWidth};
+        min-height: ${props.maxHeight};
     `}
 `
 

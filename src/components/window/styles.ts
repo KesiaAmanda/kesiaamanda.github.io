@@ -9,9 +9,8 @@ export const Container = styled.div<{ page: PagesProps }>`
     `}
 `
 
-export const Content = styled.div<{ width: string, page: PagesProps }>`
+export const Content = styled.div<{ width: string, maxWidth: string, maxHeight: string, page: PagesProps }>`
     position: fixed;
-    max-width: 100%;
     display: flex;
     overflow: hidden;
     flex-flow: column;
@@ -25,37 +24,32 @@ export const Content = styled.div<{ width: string, page: PagesProps }>`
     border-left: ridge 2px ${({ theme }) => theme.frame.shadow.white};
     border-bottom: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-
+    
     ${props => props.page.isMaximized && css`
         position: fixed;
         top: 0px;
         left: 0px;
         transform: none;
-        transition: none;
-        height: calc(var(--vh, 1vh) * 100 - 32px);
-        width: 100vw;
+        height: ${props.maxHeight};
+        width: ${props.maxWidth};
     `}
 
     ${props => !props.page.isMaximized && css`
-        max-width: 95%;
+        transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
+        max-height: 100%
     `}
 
     ${props => props.page.isMinimized && css`
-        transition: max-height 0.5s ease, min-width 0.7s ease, opacity 0.7s ease;
-        min-width: 0;
+        transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
         max-height: 0;
         opacity: 0;
     `}
 
     ${props => !props.page.isMinimized && css`
-        @media screen and (min-width: 767px) {
-            min-width: ${props.width};
-        }
-
-        transition: max-height 0.5s ease, opacity 0.7s ease;
+        transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
         max-height: 100%;
         opacity: 1;
-    `}
+    `}  
 
 `
 
