@@ -41,24 +41,6 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
 
 `
 
-export const WindowMenu = styled.div`
-    display: flex;
-    span {
-        padding: 0px 5px;
-        color: ${({ theme }) => theme.text.color};
-
-        &:hover {
-            transition: background-color 0.3s ease, color 0.3s ease;
-            background-color: ${({ theme }) => theme.start.menu.button.hover.color};
-            color: ${({ theme }) => theme.start.menu.button.hover.text.color};
-        }
-
-        &:first-letter {
-            text-decoration: underline;
-        }
-    }
-`
-
 export const Title = styled.div`
     color: ${({ theme }) => theme.text.color};
     margin: 20px 0px 20px 0px;
@@ -70,7 +52,7 @@ export const Title = styled.div`
     font-size: 7px;
 `
 
-export const P = styled.p`
+export const Text = styled.p`
     color: ${({ theme }) => theme.text.color};
 `
 

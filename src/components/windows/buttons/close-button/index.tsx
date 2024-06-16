@@ -1,5 +1,5 @@
-import { WindowButton } from "..";
-import { ButtonProps } from "../../../types/ButtonTypes";
+import { WindowButton } from "../button";
+import { ButtonProps } from "../../../../types/ButtonTypes";
 import { Icon } from "./styles";
 
 

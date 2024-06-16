@@ -1,9 +1,9 @@
-import { useDraggable } from "../../hooks/useDraggable";
-import { usePages } from "../../hooks/usePages";
-import { WindowProps } from "../../types/WindowTypes";
-import { CloseButton } from "../window-button/close-button";
-import { MaximizeButton } from "../window-button/maximize-button";
-import { MiminizeButton } from "../window-button/minimize-button";
+import { useDraggable } from "../../../hooks/useDraggable";
+import { usePages } from "../../../hooks/usePages";
+import { WindowProps } from "../../../types/WindowTypes";
+import { CloseButton } from "../buttons/close-button";
+import { MaximizeButton } from "../buttons/maximize-button";
+import { MiminizeButton } from "../buttons/minimize-button";
 import { Buttons, Container, Content, Header, Text } from "./styles";
 
 

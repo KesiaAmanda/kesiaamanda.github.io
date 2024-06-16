@@ -1,4 +1,4 @@
-import { Window } from "../../components/window";
+import { Window } from "../../components/windows/window";
 import { Container, Content } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";

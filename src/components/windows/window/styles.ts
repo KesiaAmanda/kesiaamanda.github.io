@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { PagesProps } from '../../types/PagesTypes';
+import { PagesProps } from '../../../types/PagesTypes';
 
 export const Container = styled.div<{ page: PagesProps }>`
     position: absolute;
