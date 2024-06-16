@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import icon from '../../assets/icons/desktop/console.png'
 import { PagesProps } from '../../types/PagesTypes';
 
 export const Container = styled.div<{ page: PagesProps }>`
@@ -40,24 +39,5 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
         }
     `}
 
-`
-
-export const Header = styled.div`
-    display: inline-block;
-    max-width: 200px;
-    color: ${({ theme }) => theme.window.header.title.color};
-    align-self: center;
-    overflow: hidden;
-    max-width: 100%;
-    background: url(${icon}) left center no-repeat;
-    padding: 0px 5px 0px 22px;
-    background-size: 15px 15px;
-    background-position-x: 2px;
-`
-
-export const Buttons = styled.div`
-    display: flex;
-    padding: 0 1px;
-    margin-left: auto;
 `
 

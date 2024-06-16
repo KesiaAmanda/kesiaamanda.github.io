@@ -64,6 +64,25 @@ export const Header = styled.div`
     flex: 0 1 auto;
 `
 
+export const Text = styled.div<{ icon: any }>`
+    display: inline-block;
+    max-width: 200px;
+    color: ${({ theme }) => theme.window.header.title.color};
+    align-self: center;
+    overflow: hidden;
+    max-width: 100%;
+    background: url(${(props) => props.icon}) left center no-repeat;
+    padding: 0px 5px 0px 22px;
+    background-size: 15px 15px;
+    background-position-x: 2px;
+`
+
+export const Buttons = styled.div`
+    display: flex;
+    padding: 0 1px;
+    margin-left: auto;
+`
+
 export const HeaderTitle = styled.div`
     display: inline-block;
     max-width: 200px;

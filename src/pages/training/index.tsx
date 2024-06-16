@@ -1,17 +1,15 @@
 import { Window } from "../../components/window";
-import { CloseButton } from "../../components/window-button/close-button";
-import { MaximizeButton } from "../../components/window-button/maximize-button";
-import { MiminizeButton } from "../../components/window-button/minimize-button";
-import { Buttons, Container, Content, Header } from "./styles";
+import { Container, Content } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-import { Fragment } from "react/jsx-runtime";
 import { useEffect } from "react";
+import { useTheme } from "styled-components";
 
 
 function Training() {
+    const theme = useTheme()
 
-    const { training, maximize, minimize, close, focus, removeFocus } = usePages();
+    const { training, focus, removeFocus } = usePages();
 
     const ref = useOutsideClick(() => {
         removeFocus()
@@ -26,18 +24,7 @@ function Training() {
 
     return (
         <div ref={ref}>
-            <Window page={training[0]} width={'600px'} focus={() => focus(training)}
-                header={
-                    <Fragment>
-                        <Header>Formação.txt</Header>
-                        <Buttons>
-                            <MiminizeButton onClick={() => { minimize(training) }} />
-                            <MaximizeButton onClick={() => { maximize(training) }} />
-                            <CloseButton onClick={() => { close(training) }} />
-                        </Buttons>
-                    </Fragment>
-                }
-            >
+            <Window page={training} width={'600px'} description="Formação.txt" icon={theme.icon.training}>
                 <Container page={training[0]} onClick={() => { focus(training) }}>
                     <Content maxWidth={(window.innerWidth - 30) + "px"}
                         maxHeight={(window.innerHeight - 100) + "px"}

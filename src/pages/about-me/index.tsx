@@ -1,18 +1,16 @@
 import { Window } from "../../components/window";
-import { CloseButton } from "../../components/window-button/close-button";
-import { MaximizeButton } from "../../components/window-button/maximize-button";
-import { MiminizeButton } from "../../components/window-button/minimize-button";
-import { Buttons, Container, Content, Header, Title, Hr, P, WindowMenu } from "./styles";
+import { Container, Content, Title, Hr, P, WindowMenu } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-import { Fragment } from "react/jsx-runtime";
 import { useEffect, useState } from "react";
+import { useTheme } from "styled-components";
 
 
 function AboutMe() {
     const [cat, setCat] = useState("")
+    const theme = useTheme()
 
-    const { aboutMe, maximize, minimize, close, focus, removeFocus } = usePages();
+    const { aboutMe, focus, removeFocus } = usePages();
 
     var text = " _______         __                   _______  __           \n|     __|.-----.|  |--..----..-----. |   |   ||__|.--------.\n|__     ||  _  ||  _  ||   _||  -__| |       ||  ||        |\n|_______||_____||_____||__|  |_____| |__|_|__||__||__|__|__|\n"
 
@@ -35,18 +33,7 @@ function AboutMe() {
 
     return (
         <div ref={ref}>
-            <Window page={aboutMe[0]} width={'600px'} focus={() => focus(aboutMe)}
-                header={
-                    <Fragment>
-                        <Header>Sobre mim.txt</Header>
-                        <Buttons>
-                            <MiminizeButton onClick={() => { minimize(aboutMe) }} />
-                            <MaximizeButton onClick={() => { maximize(aboutMe) }} />
-                            <CloseButton onClick={() => { close(aboutMe) }} />
-                        </Buttons>
-                    </Fragment>
-                }
-            >
+            <Window page={aboutMe} width={'600px'} description="Sobre mim.txt" icon={theme.icon.aboutMe}>
                 <WindowMenu>
                     <span>File</span>
                     <span>Edit</span>
@@ -54,9 +41,7 @@ function AboutMe() {
                     <span>Help</span>
                 </WindowMenu>
                 <Container page={aboutMe[0]} onClick={() => { focus(aboutMe) }}>
-                    <Content maxWidth={(window.innerWidth - 30) + "px"}
-                        maxHeight={(window.innerHeight - 100) + "px"}
-                        page={aboutMe[0]} >
+                    <Content maxWidth={(window.innerWidth - 30) + "px"} maxHeight={(window.innerHeight - 100) + "px"} page={aboutMe[0]} >
                         <Hr />
                         <Title>{text}</Title>
                         <Hr />

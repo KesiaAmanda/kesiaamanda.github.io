@@ -1,18 +1,16 @@
 import { Window } from "../../components/window";
-import { CloseButton } from "../../components/window-button/close-button";
-import { MaximizeButton } from "../../components/window-button/maximize-button";
-import { MiminizeButton } from "../../components/window-button/minimize-button";
-import { Buttons, Container, Content, Header, Avatar, Text, Social, Icon } from "./styles";
+import { Container, Content, Avatar, Text, Social, Icon } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-import { Fragment } from "react/jsx-runtime";
 import avatar from '../../assets/images/download20230701162715-1.png'
 import linkedin from '../../assets/icons/social/linkedin_pixel_logo_icon_181925.png'
 import github from '../../assets/icons/social/github.png'
+import { useTheme } from "styled-components";
 
 
 function Welcome() {
-    const { welcome, maximize, minimize, close, focus, removeFocus } = usePages();
+    const theme = useTheme()
+    const { welcome, focus, removeFocus } = usePages();
 
     const ref = useOutsideClick(() => {
         removeFocus()
@@ -20,22 +18,9 @@ function Welcome() {
 
     return (
         <div ref={ref}>
-            <Window page={welcome[0]} width={'900px'} focus={() => focus(welcome)}
-                header={
-                    <Fragment>
-                        <Header>Bem-vindo.exe</Header>
-                        <Buttons>
-                            <MiminizeButton onClick={() => minimize(welcome)} />
-                            <MaximizeButton onClick={() => maximize(welcome)} />
-                            <CloseButton onClick={() => close(welcome)} />
-                        </Buttons>
-                    </Fragment>
-                }
-            >
+            <Window page={welcome} width={'900px'} description="Bem-vindo.exe" icon={theme.icon.welcome}>
                 <Container page={welcome[0]} onClick={() => focus(welcome)}>
-                    <Content maxWidth={(window.innerWidth - 30) + "px"}
-                        maxHeight={(window.innerHeight - 62) + "px"}
-                        page={welcome[0]}>
+                    <Content maxWidth={(window.innerWidth - 30) + "px"} maxHeight={(window.innerHeight - 62) + "px"} page={welcome[0]}>
                         <Text>
                             <span style={{ fontSize: '25px' }}>Olá, eu sou a</span>
                             <span style={{ fontSize: '43px' }}>&gt;Kesia Amanda!</span>

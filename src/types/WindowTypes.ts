@@ -2,11 +2,11 @@ import { ReactNode } from "react"
 import { PagesProps } from "./PagesTypes"
 
 type WindowProps = {
-    header: ReactNode,
     children: ReactNode,
     width: string,
-    page: PagesProps,
-    focus: () => void
+    page: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>],
+    description: string,
+    icon: any
 }
 
 type Position = {
