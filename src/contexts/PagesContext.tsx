@@ -25,6 +25,9 @@ export function PagesContextProvider(props: PagesContextProviderType) {
     const welcome = useState<PagesProps>(focusPage)
     const aboutMe = useState<PagesProps>(defaultPage)
     const training = useState<PagesProps>(defaultPage)
+    const credits = useState<PagesProps>(defaultPage)
+    const musicPlayer = useState<PagesProps>(defaultPage)
+    const skills = useState<PagesProps>(defaultPage)
 
     const open = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
@@ -74,7 +77,7 @@ export function PagesContextProvider(props: PagesContextProviderType) {
     return (
         <PagesContext.Provider value={{
             startMenu, openMenu,
-            welcome, aboutMe, training,
+            welcome, aboutMe, training, credits, musicPlayer, skills,
             open, maximize, minimize, close, focus, removeFocus
         }}>
             {props.children}

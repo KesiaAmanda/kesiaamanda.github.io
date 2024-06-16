@@ -4,6 +4,9 @@ import darkThemeBackgroundImage from '../assets/background/kime-nanami-pastelsky
 import welcomeIcon from '../assets/icons/desktop/program.png'
 import aboutMeIcon from '../assets/icons/desktop/text_file.png'
 import trainingIcon from '../assets/icons/desktop/console.png'
+import creditsIcon from '../assets/icons/desktop/text_file_2.png'
+import musicPlayerIcon from '../assets/icons/desktop/music.png'
+import skillsIcon from '../assets/icons/desktop/folder_open.png'
 
 export const lightTheme = {
     text: {
@@ -87,6 +90,9 @@ export const lightTheme = {
         welcome: welcomeIcon,
         aboutMe: aboutMeIcon,
         training: trainingIcon,
+        credits: creditsIcon,
+        musicPlayer: musicPlayerIcon,
+        skills: skillsIcon
     },
     start: {
         menu: {
@@ -189,6 +195,9 @@ export const darkTheme = {
         welcome: welcomeIcon,
         aboutMe: aboutMeIcon,
         training: trainingIcon,
+        credits: creditsIcon,
+        musicPlayer: musicPlayerIcon,
+        skills: skillsIcon
     },
     start: {
         menu: {

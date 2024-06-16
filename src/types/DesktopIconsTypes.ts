@@ -1,7 +1,15 @@
-type DesktopIconProps = {
+import { PagesProps } from "./PagesTypes"
+
+type IconProps = {
     icon: string,
     description: string,
     onClick: () => void
+}
+
+type DesktopIconProps = {
+    icon: string,
+    description: string,
+    page: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>],
 }
 
 type ThemeIconProps = {
@@ -9,4 +17,4 @@ type ThemeIconProps = {
     onClick: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export type { DesktopIconProps, ThemeIconProps }
+export type { IconProps, DesktopIconProps, ThemeIconProps }

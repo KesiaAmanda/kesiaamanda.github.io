@@ -11,7 +11,7 @@ function TaskbarButtons() {
 
     return (
         <Content>
-            <TaskbarButton page={welcome} description="Formação" icon={theme.icon.welcome} />
+            <TaskbarButton page={welcome} description="Bem-vindo" icon={theme.icon.welcome} />
             <TaskbarButton page={aboutMe} description="Sobre mim" icon={theme.icon.aboutMe} />
             <TaskbarButton page={training} description="Formação" icon={theme.icon.training} />
             {/* <TaskbarButton isSelected={false} description="Linguagens e Ferramentas" onClick={() => { }} />

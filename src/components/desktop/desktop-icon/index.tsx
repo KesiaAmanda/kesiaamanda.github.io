@@ -1,23 +1,18 @@
-import { DesktopIconProps } from "../../types/DesktopIconsTypes";
+import { usePages } from "../../../hooks/usePages";
+import { DesktopIconProps } from "../../../types/DesktopIconsTypes";
 import { Content } from "./styles";
 
 
 function DesktopIcon({
     icon,
     description,
-    onClick }: DesktopIconProps) {
+    page }: DesktopIconProps) {
 
-    const handleClick = (e: any) => {
-        switch (e.detail) {
-            case 2:
-                onClick();
-                break;
-        }
-    };
+    const { open } = usePages();
 
     return (
         <Content>
-            <button onClick={handleClick}>
+            <button onClick={() => open(page)}>
                 <img draggable="false" src={icon} alt={description} />
                 <p>{description}</p>
             </button>

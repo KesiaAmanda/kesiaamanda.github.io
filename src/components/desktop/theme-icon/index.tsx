@@ -1,4 +1,4 @@
-import { DesktopIcon } from "..";
+import { Icon } from "..";
 import { ThemeIconProps } from "../../../types/DesktopIconsTypes";
 import light from '../../../assets/icons/desktop/this_computer-day.png'
 import dark from '../../../assets/icons/desktop/this_computer-night.png'
@@ -11,7 +11,7 @@ function ThemeIcon({ onClick, isDark }: ThemeIconProps) {
     }
 
     return (
-        <DesktopIcon icon={isDark ? dark : light} description={isDark ? "Modo claro" : "Modo escuro"} onClick={themeToggler} />
+        <Icon icon={isDark ? dark : light} description={isDark ? "Modo claro" : "Modo escuro"} onClick={themeToggler} />
     )
 
 }
