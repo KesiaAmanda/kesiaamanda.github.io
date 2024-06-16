@@ -8,16 +8,15 @@ export const useDraggable = (maximized: boolean, focus: () => void) => {
 
     const onMouseDown = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
         setDragging(true);
+        focus()
         const { clientX, clientY } = event;
         const { left, top } = event.currentTarget.getBoundingClientRect();
         setOffset({ x: clientX - left, y: clientY - top });
-    }, []);
+    }, [focus]);
 
     const onMouseMove = useCallback((event: MouseEvent) => {
         if (maximized)
             return
-
-        focus()
 
         if (dragging) {
             setPosition({

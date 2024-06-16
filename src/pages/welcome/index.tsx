@@ -32,8 +32,8 @@ function Welcome() {
                     </Fragment>
                 }
             >
-                <Container maximized={welcome[0].isMaximized} onClick={() => focus(welcome)}>
-                    <Content maximized={welcome[0].isMaximized} minimized={welcome[0].isMinimized}>
+                <Container page={welcome[0]} onClick={() => focus(welcome)}>
+                    <Content page={welcome[0]}>
                         <Text>
                             <span style={{ fontSize: '25px' }}>Olá, eu sou a</span>
                             <span style={{ fontSize: '43px' }}>&gt;Kesia Amanda!</span>

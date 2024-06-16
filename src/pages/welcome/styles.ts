@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import icon from '../../assets/icons/desktop/program.png'
+import { PagesProps } from '../../types/PagesTypes';
 
-export const Container = styled.div<{ maximized?: boolean }>`
+export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
     flex-direction: column;
@@ -11,14 +12,14 @@ export const Container = styled.div<{ maximized?: boolean }>`
     border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
     border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
 
-    ${props => props.maximized && css`
+    ${props => props.page.isMaximized && css`
         min-height: calc(var(--vh, 1vh) * 100 - 59px);
         min-width: 100vw;
     `}
 
 `
 
-export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
+export const Content = styled.div<{ page: PagesProps }>`
     width: 100%;
     height: 100%;
     display: flex;
@@ -38,13 +39,13 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
         flex-wrap: nowrap;
     }
 
-    ${props => props.maximized && css`   
+    ${props => props.page.isMaximized && css`   
         position: fixed;
         transform: none;
         border: none;
     `}
 
-    ${props => props.minimized && css`
+    ${props => props.page.isMinimized && css`
         div {
             transition: all 0.5s ease;
             opacity:0;
@@ -53,7 +54,7 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
         }
     `}
 
-    ${props => !props.minimized && css`
+    ${props => !props.page.isMinimized && css`
         div {
             transition: all 0.5s ease;
             max-height: 100%;

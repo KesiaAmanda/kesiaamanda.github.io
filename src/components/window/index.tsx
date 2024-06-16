@@ -8,7 +8,7 @@ function Window({ header, children, width, page, focus }: WindowProps) {
     const { position, onMouseDown } = useDraggable(page.isMaximized, focus);
 
     return (
-        <Container>
+        <Container onClick={focus}>
             <Content width={width} page={page}
                 style={(position && !page.isMaximized) ? {
                     'position': 'fixed',
@@ -17,7 +17,6 @@ function Window({ header, children, width, page, focus }: WindowProps) {
                     'transform': 'none',
                 } : {}}>
                 <Header
-                    onClick={focus}
                     onMouseDown={onMouseDown}>
                     {header}
                 </Header>

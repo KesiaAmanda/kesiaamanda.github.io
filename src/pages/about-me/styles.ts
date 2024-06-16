@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import icon from '../../assets/icons/desktop/text_file.png'
+import { PagesProps } from '../../types/PagesTypes';
 
-export const Container = styled.div<{ maximized?: boolean, minimized?: boolean }>`
+export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
     flex-direction: column;
@@ -12,19 +13,19 @@ export const Container = styled.div<{ maximized?: boolean, minimized?: boolean }
     border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
     border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
 
-    ${props => props.maximized && css`
+    ${props => props.page.isMaximized && css`
         min-height: calc(var(--vh, 1vh) * 100 - 77px);
         min-width: 100vw;
         transition: max-width 0.5s ease;
         max-width: 0%;
     `}
 
-    ${props => props.minimized && css`
+    ${props => props.page.isMinimized && css`
         transition: max-width 0.5s ease;
         max-width: 0;
     `}
 
-    ${props => !props.minimized && css`
+    ${props => !props.page.isMinimized && css`
         transition: max-width 0.5s ease;
     `}
 
@@ -32,7 +33,7 @@ export const Container = styled.div<{ maximized?: boolean, minimized?: boolean }
 
 `
 
-export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
+export const Content = styled.div<{ page: PagesProps }>`
     position: relative;
     background-color: ${({ theme }) => theme.window.body.background.color};
     padding: 20px;
@@ -40,7 +41,7 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
     overflow-anchor: none;
     max-width: 100%;
 
-    ${props => props.maximized && css`
+    ${props => props.page.isMaximized && css`
         position: fixed;
         transform: none;
         border: none;
@@ -59,7 +60,7 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
 
     `}
 
-    ${props => !props.maximized && css`
+    ${props => !props.page.isMaximized && css`
         max-height: 80vh;
         resize: both;
         overflow-x: scroll;
@@ -75,13 +76,13 @@ export const Content = styled.div<{ maximized?: boolean, minimized: boolean }>`
         }
     `}
 
-    ${props => props.minimized && css`
+    ${props => props.page.isMinimized && css`
         transition: max-height 0.5s ease, max-width 0.5s ease;
         max-height: 0;
         max-width: 0;
     `}
 
-    ${props => !props.minimized && css`
+    ${props => !props.page.isMinimized && css`
         transition: max-width 0.5s ease;
     `}
 `
