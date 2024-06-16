@@ -71,7 +71,9 @@ export function PagesContextProvider(props: PagesContextProviderType) {
         welcome[1]({ ...welcome[0], ...props })
         aboutMe[1]({ ...aboutMe[0], ...props })
         training[1]({ ...training[0], ...props })
-
+        credits[1]({ ...credits[0], ...props })
+        musicPlayer[1]({ ...musicPlayer[0], ...props })
+        skills[1]({ ...skills[0], ...props })
     };
 
     return (
