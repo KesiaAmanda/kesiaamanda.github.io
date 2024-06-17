@@ -4,13 +4,17 @@ import { Content } from "./styles";
 
 function Button({ description, onClick, isSelected }: TaskbarButtonProps) {
 
-    const handleClick = (e: any) => {
+    const handleClick = () => {
         onClick();
     };
 
     return (
         <Content isSelected={isSelected}>
-            <button onClick={handleClick}>
+            <button
+                // onClick={handleClick}
+                onMouseDown={handleClick}
+                onTouchStart={handleClick}
+            >
                 <span>{description}</span>
             </button>
         </Content>

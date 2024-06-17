@@ -2,11 +2,11 @@ import { Window } from "../../components/windows/window";
 import { Container, Content, Cursor, Text } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
 
 const hr = "===============================================================================================";
-const speed = 20;
+const speed = 1;
 
 function Training() {
     const theme = useTheme()
@@ -30,9 +30,14 @@ function Training() {
 
     }, [])
 
+    const typeWriter = useCallback(async (text: string[], timeout: number) => {
+        let newText;
+        if (displayText === '') {
+            newText = '';
+        } else {
+            newText = displayText.replace('Pressione \'Enter\' para ver mais...', '');
+        }
 
-    const typeWriter = async (text: string[], timeout: number) => {
-        let newText = displayText;
         for (let i = 0; i < text.length; i++) {
             const line = text[i];
             for (let j = 0; j < line.length; j++) {
@@ -45,9 +50,9 @@ function Training() {
                 setDisplayText(newText);
             }
         }
-    };
+    }, [displayText]);
 
-    const textWriter = async () => {
+    const textContent = useCallback(async () => {
         if (!isWritten) {
             setIsWritten(true);
             await typeWriter([
@@ -73,9 +78,9 @@ function Training() {
             ], speed);
             setIsDone(true);
         }
-    };
+    }, [isWritten, typeWriter]);
 
-    const seeMoreContent = async () => {
+    const seeMoreTextContent = useCallback(async () => {
         if (isDone && !sawMore) {
             setIsDone(false);
             setSawMore(true);
@@ -96,24 +101,32 @@ function Training() {
             ], speed);
             setIsDone(true);
         }
-    };
+    }, [isDone, sawMore, typeWriter]);
 
     useEffect(() => {
+        const textWriter = async () => {
+            if (isDone) {
+                if (training[0].isMinimized || training[0].isClosed) {
+                    setDisplayText('')
+                    setIsWritten(false)
+                    setSawMore(false);
+                } else {
+                    textContent();
+                }
+            } else {
+                if (!training[0].isMinimized && !training[0].isClosed) {
+                    textContent();
+                }
+            }
+        };
+
         textWriter();
-    }, []);
-
-    useEffect(() => {
-        if ((training[0].isMinimized || training[0].isClosed) && !isWritten) {
-            setDisplayText("")
-            setIsWritten(false);
-            setIsDone(false);
-        }
-    }, [training, setIsWritten, setIsDone, isWritten]);
+    }, [training, isDone, textContent]);
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === 'Enter') {
-                seeMoreContent();
+                seeMoreTextContent();
             }
         };
 
@@ -121,7 +134,7 @@ function Training() {
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [seeMoreContent]);
+    }, [seeMoreTextContent]);
 
     return (
         <div ref={ref}>

@@ -24,6 +24,7 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
     ${props => props.page.isMaximized && css`
         min-width: ${props.maxWidth};
         min-height: ${props.maxHeight};
+        max-height: ${props.maxHeight};
         resize: horizontal;
     `}
 
@@ -36,9 +37,9 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
         }
 
         @media screen and (min-width: 767px) {
-            height: 550px;
-            width: 870px;
-            min-width: 870px;
+            height: 510px;
+            width: 880px;
+            min-width: 880px;
         }
     `}
 
