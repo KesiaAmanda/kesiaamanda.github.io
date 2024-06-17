@@ -23,13 +23,6 @@ function Training() {
         removeFocus()
     });
 
-    useEffect(() => {
-        setInterval(() => {
-
-        }, 1000)
-
-    }, [])
-
     const typeWriter = useCallback(async (text: string[], timeout: number) => {
         let newText;
         if (displayText === '') {
