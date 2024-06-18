@@ -18,7 +18,7 @@ function Welcome() {
 
     return (
         <div ref={ref}>
-            <Window page={welcome} width={'900px'} description="Bem-vindo.exe" icon={theme.icon.welcome}>
+            <Window page={welcome} description="Bem-vindo.exe" icon={theme.icon.welcome}>
                 <Container page={welcome[0]} onClick={() => focus(welcome)}>
                     <Content maxWidth={(window.innerWidth - 30) + "px"} maxHeight={(window.innerHeight - 62) + "px"} page={welcome[0]}>
                         <Text>

@@ -3,8 +3,6 @@ import { PagesProps } from '../../types/PagesTypes';
 
 export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.console.background.color};
-    display: flex;
-    height: 100%;
 
     border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
@@ -13,9 +11,7 @@ export const Container = styled.div<{ page: PagesProps }>`
 `
 
 export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: PagesProps }>`
-    padding: 1em;   
-    // display: flex;
-    // flex-direction: column;
+    padding: 1em;
 
     resize: both;
     overflow-x: scroll;
@@ -24,13 +20,14 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
     ${props => props.page.isMaximized && css`
         min-width: ${props.maxWidth};
         min-height: ${props.maxHeight};
-        max-height: ${props.maxHeight};
+        // max-height: ${props.maxHeight};
         resize: horizontal;
     `}
 
     ${props => !props.page.isMaximized && css`
         max-height: 80vh;
         max-width: 80vw;
+
         @media screen and (max-width: 767px) {
             min-width: 300px;
             min-height: 80vh;
@@ -53,6 +50,7 @@ export const Text = styled.span`
 export const Cursor = styled.span`
     white-space: pre;
     color: ${({ theme }) => theme.window.console.text.color};
+    font-family: sans-serif;
 
     @keyframes cursorBlink {
         0% {

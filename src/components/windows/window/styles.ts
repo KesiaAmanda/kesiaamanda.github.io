@@ -24,18 +24,17 @@ export const Container = styled.div<{ page: PagesProps }>`
     border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
 `
 
-export const Content = styled.div<{ width: string, maxWidth: string, maxHeight: string, page: PagesProps }>`
+export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: PagesProps }>`
     position: fixed;
     display: flex;
     overflow: hidden;
     flex-flow: column;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -51.5%);
+    transform: translate(-50%, -50%);
 
-    
     ${props => props.page.isInFocus && css`
-        z-index: 1;
+        z-index: 2;
     `}
 
     ${props => props.page.isMaximized && css`
@@ -48,8 +47,8 @@ export const Content = styled.div<{ width: string, maxWidth: string, maxHeight: 
     `}
 
     // ${props => !props.page.isMaximized && css`
-    //     transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
-    //     max-height: 100%
+    //     max-width: 80vw;
+    //     max-height: 80vh;
     // `}
 
 `

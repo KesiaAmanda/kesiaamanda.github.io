@@ -7,14 +7,14 @@ import { MiminizeButton } from "../buttons/minimize-button";
 import { Buttons, Container, Content, Header, Text } from "./styles";
 
 
-function Window({ children, width, page, description, icon }: WindowProps) {
+function Window({ children, page, description, icon }: WindowProps) {
 
     const { position, onMouseDown } = useDraggable(page[0].isMaximized, () => focus(page));
 
     const { maximize, minimize, close, focus } = usePages();
 
     return (
-        <Content width={width} page={page[0]} onClick={() => focus(page)}
+        <Content page={page[0]} onClick={() => focus(page)}
             maxWidth={(window.innerWidth - 4) + "px"}
             maxHeight={(window.innerHeight - 32) + "px"}
             style={(position && !page[0].isMaximized) ? {

@@ -1,15 +1,10 @@
 import styled, { css } from 'styled-components';
 
 export const Content = styled.div<{ isSelected: boolean }>`
-  transition: opacity 0.7s ease-in-out;
-
-  ${props => props.isSelected && css`
-    opacity: 1;
-  `}
-
-  ${props => !props.isSelected && css`
-    opacity: 0;
-  `}
+  overflow: hidden;
+  position: relative;
+  transition: clip-path 0.3s ease;
+  clip-path: ${props => (props.isSelected ? 'inset(0 0 0 0)' : 'inset(100% 0 0 0)')};
 
   display: flex;
   flex-direction: column;

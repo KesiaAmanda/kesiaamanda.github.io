@@ -4,7 +4,6 @@ import { PagesProps } from '../../types/PagesTypes';
 export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
-    height: 100%;
 
     border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
@@ -28,7 +27,9 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
     `}
 
     ${props => !props.page.isMaximized && css`
+        max-width: 80vw;
         max-height: 80vh;
+
         @media screen and (max-width: 767px) {
             min-width: 300px;
         }
