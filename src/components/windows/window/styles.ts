@@ -2,11 +2,26 @@ import styled, { css } from 'styled-components';
 import { PagesProps } from '../../../types/PagesTypes';
 
 export const Container = styled.div<{ page: PagesProps }>`
-    position: absolute;
-    background-color: ${({ theme }) => theme.window.background.color};
-    ${props => props.page.isInFocus && css`
-        z-index: 1;
+    ${props => props.page.isMinimized && css`
+        transition: transform 0.25s ease-in-out, max-height 0.26s step-end, max-width 0.26s step-end;
+        transform: scale(0);
+        max-height: 0;
+        max-width: 0;
     `}
+
+    ${props => !props.page.isMinimized && css`
+        transition: transform 0.25s ease-in-out, max-height 0.26s step-start, max-width 0.26s step-start;
+        transform: scale(1);
+        max-height: 100%;
+        max-width: 100%;
+    `}  
+
+    background-color: ${({ theme }) => theme.window.background.color};
+
+    border-top: ridge 2px ${({ theme }) => theme.frame.shadow.white};
+    border-left: ridge 2px ${({ theme }) => theme.frame.shadow.white};
+    border-bottom: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
+    border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
 `
 
 export const Content = styled.div<{ width: string, maxWidth: string, maxHeight: string, page: PagesProps }>`
@@ -14,17 +29,15 @@ export const Content = styled.div<{ width: string, maxWidth: string, maxHeight: 
     display: flex;
     overflow: hidden;
     flex-flow: column;
-    background-color: ${({ theme }) => theme.window.background.color};
     top: 50%;
     left: 50%;
     transform: translate(-50%, -51.5%);
-    // transition: background 0.1s linear, border 0.1s linear, outline 0.1s linear, color 0.1s linear, box-shadow 0.5s linear, min-height 0.25s ease-in-out, min-width 0.25s ease-in-out, max-height 0.25s ease-in-out, max-width 0.25s ease-in-out;
 
-    border-top: ridge 2px ${({ theme }) => theme.frame.shadow.white};
-    border-left: ridge 2px ${({ theme }) => theme.frame.shadow.white};
-    border-bottom: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
     
+    ${props => props.page.isInFocus && css`
+        z-index: 1;
+    `}
+
     ${props => props.page.isMaximized && css`
         position: fixed;
         top: 0px;
@@ -34,22 +47,10 @@ export const Content = styled.div<{ width: string, maxWidth: string, maxHeight: 
         width: ${props.maxWidth};
     `}
 
-    ${props => !props.page.isMaximized && css`
-        transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
-        max-height: 100%
-    `}
-
-    ${props => props.page.isMinimized && css`
-        transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
-        max-height: 0;
-        opacity: 0;
-    `}
-
-    ${props => !props.page.isMinimized && css`
-        transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
-        max-height: 100%;
-        opacity: 1;
-    `}  
+    // ${props => !props.page.isMaximized && css`
+    //     transition: max-height 0.5s ease-in-out, opacity 0.7s ease-in-out;
+    //     max-height: 100%
+    // `}
 
 `
 

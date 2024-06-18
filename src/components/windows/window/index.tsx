@@ -14,16 +14,16 @@ function Window({ children, width, page, description, icon }: WindowProps) {
     const { maximize, minimize, close, focus } = usePages();
 
     return (
-        <Container onClick={() => focus(page)} page={page[0]}>
-            <Content width={width} page={page[0]}
-                maxWidth={(window.innerWidth - 4) + "px"}
-                maxHeight={(window.innerHeight - 32) + "px"}
-                style={(position && !page[0].isMaximized) ? {
-                    'position': 'fixed',
-                    'top': `${position.y}px`,
-                    'left': `${position.x}px`,
-                    'transform': 'none',
-                } : {}}>
+        <Content width={width} page={page[0]} onClick={() => focus(page)}
+            maxWidth={(window.innerWidth - 4) + "px"}
+            maxHeight={(window.innerHeight - 32) + "px"}
+            style={(position && !page[0].isMaximized) ? {
+                'position': 'fixed',
+                'top': `${position.y}px`,
+                'left': `${position.x}px`,
+                'transform': 'none',
+            } : {}}>
+            <Container page={page[0]}>
                 <Header
                     onMouseDown={onMouseDown}>
                     <Text icon={icon}>{description}</Text>
@@ -34,8 +34,8 @@ function Window({ children, width, page, description, icon }: WindowProps) {
                     </Buttons>
                 </Header>
                 {children}
-            </Content>
-        </Container>
+            </Container>
+        </Content>
     )
 
 }
