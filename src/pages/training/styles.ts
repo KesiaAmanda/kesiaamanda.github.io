@@ -36,10 +36,18 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
         @media screen and (min-width: 767px) {
             height: 510px;
             width: 880px;
-            min-width: 880px;
+            min-width: 200px;
         }
     `}
 
+`
+
+export const Title = styled.span`
+    white-space: pre;
+    display: flex;
+    max-width: 880px;
+    justify-content: center;
+    color: ${({ theme }) => theme.window.console.text.color};
 `
 
 export const Text = styled.span`
