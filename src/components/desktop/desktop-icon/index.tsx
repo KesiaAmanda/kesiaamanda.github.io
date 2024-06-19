@@ -12,7 +12,7 @@ function DesktopIcon({
 
     return (
         <Content>
-            <button onClick={() => open(page)}>
+            <button onDoubleClick={() => open(page)} onTouchStart={() => open(page)}>
                 <img draggable="false" src={icon} alt={description} />
                 <p>{description}</p>
             </button>

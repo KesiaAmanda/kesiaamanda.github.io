@@ -13,7 +13,7 @@ function Button({ description, onClick, isSelected }: TaskbarButtonProps) {
             <button
                 // onClick={handleClick}
                 onMouseDown={handleClick}
-                onTouchStart={handleClick}
+                onTouchCancel={handleClick}
             >
                 <span>{description}</span>
             </button>
