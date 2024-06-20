@@ -31,7 +31,7 @@ function Training() {
         removeFocus()
     });
 
-    const typeWriter = useCallback(async (setText :React.Dispatch<React.SetStateAction<string>>, timeout: number, text: string[]) => {        
+    const typeWriter = useCallback(async (setText: React.Dispatch<React.SetStateAction<string>>, timeout: number, text: string[]) => {
         let newText = '';
         for (let i = 0; i < text.length; i++) {
             const line = text[i];
@@ -40,7 +40,7 @@ function Training() {
                 setText(newText);
                 await delay(timeout);
             }
-            if (text[i] != seeMoreText) {
+            if (text[i] !== seeMoreText) {
                 newText += '\n';
                 setText(newText);
             }
@@ -51,18 +51,18 @@ function Training() {
         if (!isWritten && !isDone) {
             setIsWritten(true);
 
-            await typeWriter(setFirstParagraph, speed, 
+            await typeWriter(setFirstParagraph, speed,
                 ["C:> type formação.txt", hr])
-            await typeWriter(setSecondParagraph, speed, 
+            await typeWriter(setSecondParagraph, speed,
                 ["█▀▀ █▀█ █▀█ █▀▄▀█ ▄▀█ █▀▀ ▄▀█ █▀█", "█▀░ █▄█ █▀▄ █░▀░█ █▀█ █▄▄ █▀█ █▄█"])
-            await typeWriter(setThirdParagraph, speed, 
-                [hr, "","Faculdade de Tecnologia da Zona Leste",
-                    "Tecnólogo, Análise e Desenvolvimento de Sistemas", "jul de 2018 - jun de 2023", "" ,hr])
-            await typeWriter(setFourthParagraph, speed, 
+            await typeWriter(setThirdParagraph, speed,
+                [hr, "", "Faculdade de Tecnologia da Zona Leste",
+                    "Tecnólogo, Análise e Desenvolvimento de Sistemas", "jul de 2018 - jun de 2023", "", hr])
+            await typeWriter(setFourthParagraph, speed,
                 ["█▀▀ █▀▀ █▀█ ▀█▀ █ █▀▀ █ █▀▀ ▄▀█ █▀▄ █▀█ █▀", "█▄▄ ██▄ █▀▄ ░█░ █ █▀░ █ █▄▄ █▀█ █▄▀ █▄█ ▄█"])
-            await typeWriter(setFifthParagraph, speed, 
-                [hr, "", "CertiProf", "Scrum Foundation Professional Certificate", "agosto de 2019", 
-                    "", "DIO", "Implementando Collections e Streams com Java,","com carga horária de 6 horas.",
+            await typeWriter(setFifthParagraph, speed,
+                [hr, "", "CertiProf", "Scrum Foundation Professional Certificate", "agosto de 2019",
+                    "", "DIO", "Implementando Collections e Streams com Java,", "com carga horária de 6 horas.",
                     "junho de 2021", "", seeMoreText])
             setIsDone(true);
             setIsWritten(false);
@@ -91,11 +91,11 @@ function Training() {
             setSawMore(true);
             setIsWritten(false);
         }
-    }, [isDone, isWritten, sawMore, typeWriter]);
+    }, [isDone, isWritten, sawMore, fifthParagraph, typeWriter]);
 
     useEffect(() => {
         const textWriter = async () => {
-            if (!isWritten){
+            if (!isWritten) {
                 if (isDone) {
                     if (training[0].isMinimized || training[0].isClosed) {
                         setFirstParagraph('')
@@ -141,13 +141,13 @@ function Training() {
                     <Content maxWidth={(window.innerWidth - 30) + "px"}
                         maxHeight={(window.innerHeight - 82) + "px"}
                         page={training[0]} >
-                            <Text>{firstParagraph}</Text>
-                            <Title>{secondParagraph}</Title>
-                            <Text>{thirdParagraph}</Text>
-                            <Title>{fourthParagraph}</Title>
-                            <Text>{fifthParagraph}</Text>
-                            <Text>{seeMore}</Text>
-                            <Cursor>|</Cursor>
+                        <Text>{firstParagraph}</Text>
+                        <Title>{secondParagraph}</Title>
+                        <Text>{thirdParagraph}</Text>
+                        <Title>{fourthParagraph}</Title>
+                        <Text>{fifthParagraph}</Text>
+                        <Text>{seeMore}</Text>
+                        <Cursor>|</Cursor>
                     </Content>
                 </Container>
             </Window>
