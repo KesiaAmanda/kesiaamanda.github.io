@@ -5,7 +5,8 @@ type WindowProps = {
     children: ReactNode,
     page: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>],
     description: string,
-    icon: any
+    icon: any,
+    notMaximizeable?: boolean,
 }
 
 type Position = {
