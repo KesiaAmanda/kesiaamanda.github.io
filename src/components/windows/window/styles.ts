@@ -84,3 +84,12 @@ export const HeaderTitle = styled.div`
     overflow: hidden;
     max-width: 100%;
 `
+
+export const Icon = styled.img<IconProps>`
+    background-color: ${({ theme }) => theme.icon.color};
+    background-position: center;
+    min-width: 15px;
+    min-height: 15px;
+    -webkit-mask-box-image: url(${({ $icon }) => $icon}) no-repeat 50% 85%;
+    mask: url(${({ $icon }) => $icon}) no-repeat 50% 85%;
+`

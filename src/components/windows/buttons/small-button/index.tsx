@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 
 
-function WindowButton(props: any) {
+function SmallButtom(props: any) {
 
     return (
         <Container onClick={() => props.onClick()
@@ -12,4 +12,4 @@ function WindowButton(props: any) {
 
 }
 
-export { WindowButton };
+export { SmallButtom };
