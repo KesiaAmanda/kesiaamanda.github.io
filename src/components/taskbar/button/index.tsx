@@ -1,8 +1,8 @@
-import { TaskbarButtonProps } from "../../../types/TaskbarButtonsTypes";
+import { TaskbarButtonProps } from "../../../types/TaskbarTypes";
 import { Content } from "./styles";
 
 
-function Button({ description, onClick, isSelected }: TaskbarButtonProps) {
+function Button({ onClick, description, isSelected }: TaskbarButtonProps) {
 
     const handleClick = () => {
         onClick();
@@ -11,7 +11,6 @@ function Button({ description, onClick, isSelected }: TaskbarButtonProps) {
     return (
         <Content $isSelected={isSelected}>
             <button
-                // onClick={handleClick}
                 onMouseDown={handleClick}
                 onTouchCancel={handleClick}
             >

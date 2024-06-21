@@ -1,6 +1,6 @@
 import { Content, Divider, Item, Menu, Text } from "./styles";
-import { StartMenuProps } from "../../types/StartMenuTypes";
 import { usePages } from "../../hooks/usePages";
+import { StartMenuProps } from "../../types/TaskbarTypes";
 
 
 function StartMenu({ isSelected, onClick }: StartMenuProps) {

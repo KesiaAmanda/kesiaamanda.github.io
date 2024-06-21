@@ -1,12 +1,13 @@
+import { MediumButtomProps } from "../../../../types/ButtonTypes";
 import { Container } from "./styles";
 
 
-function MediumButtom(props: any) {
+function MediumButtom({ onClick, isDisabled, icon }: MediumButtomProps) {
 
     return (
-        <Container onClick={() => props.onClick()} $isDisabled={!!props.isDisabled}
+        <Container onClick={() => onClick()} $isDisabled={!!isDisabled}
         >
-            {props.icon}
+            {icon}
         </Container >
     )
 

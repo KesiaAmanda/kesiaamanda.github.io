@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./globals/theme";
 import GlobalStyle from "./globals/style";
 
-import { ThemeIcon } from "./components/desktop/theme-icon";
+import { ThemeShortcut } from "./components/desktop/theme-shortcut";
 import { StartButton } from "./components/taskbar/start-button";
 import { Notifications } from "./components/notification";
 import { Welcome } from "./pages/welcome";
@@ -12,7 +12,7 @@ import { PagesContextProvider } from "./contexts/PagesContext";
 import { AboutMe } from "./pages/about-me";
 import { Training } from "./pages/training";
 import { TaskbarButtons } from "./components/taskbar/taskbar-buttons";
-import { DesktopIcons } from "./components/desktop/desktop-icons";
+import { Shortcuts } from "./components/desktop/shortcuts";
 import { MusicPlayer } from "./pages/music-player";
 
 function App() {
@@ -36,8 +36,8 @@ function App() {
           <Desktop>
             <Workspace>
               {/* desktop icons */}
-              <ThemeIcon onClick={setIsDark} isDark={isDark} />
-              <DesktopIcons />
+              <ThemeShortcut onClick={setIsDark} isDark={isDark} />
+              <Shortcuts />
             </Workspace>
 
             {/* pages */}

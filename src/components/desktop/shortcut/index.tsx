@@ -1,18 +1,20 @@
 import { usePages } from "../../../hooks/usePages";
-import { DesktopIconProps } from "../../../types/DesktopIconsTypes";
+import { ShortcutProps } from "../../../types/DesktopTypes";
 import { Content } from "./styles";
 
 
-function DesktopIcon({
+function Shortcut({
     icon,
     description,
-    page }: DesktopIconProps) {
+    page,
+    onClick }: ShortcutProps) {
 
     const { open } = usePages();
 
     return (
         <Content>
-            <button onDoubleClick={() => open(page)} onTouchStart={() => open(page)}>
+            <button onDoubleClick={() => page ? open(page) : onClick && onClick()}
+                onTouchStart={() => page ? open(page) : onClick && onClick()}>
                 <img draggable="false" src={icon} alt={description} />
                 <p>{description}</p>
             </button>
@@ -21,5 +23,5 @@ function DesktopIcon({
 
 }
 
-export { DesktopIcon };
+export { Shortcut };
 

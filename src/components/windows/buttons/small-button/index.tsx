@@ -1,12 +1,13 @@
+import { SmallButtonProps } from "../../../../types/ButtonTypes";
 import { Container } from "./styles";
 
 
-function SmallButtom(props: any) {
+function SmallButtom({ onClick, icon }: SmallButtonProps) {
 
     return (
-        <Container onClick={() => props.onClick()
+        <Container onClick={() => onClick()
         }>
-            {props.icon}
+            {icon}
         </Container >
     )
 
