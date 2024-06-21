@@ -42,7 +42,7 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
 export const Title = styled.span`
     white-space: pre;
     display: flex;
-    max-width: 880px;
+    max-width: 850px;
     justify-content: center;
     color: ${({ theme }) => theme.window.console.text.color};
 `
