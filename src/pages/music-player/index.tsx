@@ -51,8 +51,6 @@ function MusicPlayer() {
         if (event.data === YouTube.PlayerState.PLAYING) {
             setInterval(updateProgressBar, 100);
         }
-        console.log('oi');
-
         getVideoTitle();
     };
 
@@ -66,7 +64,6 @@ function MusicPlayer() {
     const getVideoTitle = () => {
         const videoTitle = player?.getVideoData().title || '...';
         setTitle(videoTitle);
-        console.log('titulo');
     };
 
     return (
