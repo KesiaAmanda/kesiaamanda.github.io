@@ -39,8 +39,6 @@ function MusicPlayer() {
     };
 
     const onReady = (event: YouTubeEvent<any>) => {
-        console.log('event');
-
         setPlayer(event.target);
         event.target.setShuffle(true);
         event.target.unMute();
