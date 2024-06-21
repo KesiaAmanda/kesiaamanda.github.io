@@ -8,6 +8,9 @@ import creditsIcon from '../assets/icons/desktop/text_file_2.png'
 import musicPlayerIcon from '../assets/icons/desktop/music.png'
 import skillsIcon from '../assets/icons/desktop/folder_open.png'
 
+import playerLightTheme from '../assets/images/1456855014belton-5.webp'
+import playerDarkTheme from '../assets/images/bvn01m71yxxc1.gif'
+
 export const lightTheme = {
     text: {
         color: 'rgb(12, 5, 11)'
@@ -57,6 +60,18 @@ export const lightTheme = {
             },
             text: {
                 color: 'rgb(111, 172, 82)'
+            }
+        },
+        player: {
+            background: {
+                image: playerLightTheme
+            },
+            frame: {
+                shadow: {
+                    slider: 'rgba(107, 107, 107, 0.5)',
+                    black: 'rgba(107, 107, 107, 0.5)',
+                    white: 'rgb(235, 235, 235)'
+                }
             }
         }
     },
@@ -168,6 +183,18 @@ export const darkTheme = {
             },
             text: {
                 color: 'rgb(111, 172, 82)'
+            }
+        },
+        player: {
+            background: {
+                image: playerDarkTheme
+            },
+            frame: {
+                shadow: {
+                    slider: 'black',
+                    black: 'rgba(0, 0, 0, 0.692)',
+                    white: 'rgba(102, 102, 102, 0.336)'
+                }
             }
         }
     },

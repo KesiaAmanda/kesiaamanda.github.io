@@ -14,4 +14,8 @@ type Position = {
     y: number,
 }
 
-export type { WindowProps, Position }
+type WindowMenuProps = {
+    notSearchable?: boolean,
+}
+
+export type { WindowProps, Position, WindowMenuProps }

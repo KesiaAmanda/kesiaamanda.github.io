@@ -13,6 +13,7 @@ import { AboutMe } from "./pages/about-me";
 import { Training } from "./pages/training";
 import { TaskbarButtons } from "./components/taskbar/taskbar-buttons";
 import { DesktopIcons } from "./components/desktop/desktop-icons";
+import { MusicPlayer } from "./pages/music-player";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -37,12 +38,13 @@ function App() {
               {/* desktop icons */}
               <ThemeIcon onClick={setIsDark} isDark={isDark} />
               <DesktopIcons />
-
             </Workspace>
+
             {/* pages */}
-            <Welcome></Welcome>
-            <AboutMe></AboutMe>
+            <Welcome />
+            <AboutMe />
             <Training />
+            <MusicPlayer />
 
 
           </Desktop>
