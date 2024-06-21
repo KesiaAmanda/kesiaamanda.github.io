@@ -4,7 +4,7 @@ import { StartMenuProps } from "../../types/TaskbarTypes";
 
 
 function StartMenu({ isSelected, onClick }: StartMenuProps) {
-    const { welcome, aboutMe, open } = usePages();
+    const { welcome, aboutMe, training, credits, skills, open } = usePages();
 
     const handleWelcomeClick = () => {
         onClick();
@@ -14,6 +14,21 @@ function StartMenu({ isSelected, onClick }: StartMenuProps) {
     const handleAboutMeClick = () => {
         onClick();
         open(aboutMe);
+    }
+
+    const handleTrainingClick = () => {
+        onClick();
+        open(training);
+    }
+
+    const handleCreditsClick = () => {
+        onClick();
+        open(credits);
+    }
+
+    const handleSkillsClick = () => {
+        onClick();
+        open(skills);
     }
 
     const handleClose = (e: any) => {
@@ -29,9 +44,9 @@ function StartMenu({ isSelected, onClick }: StartMenuProps) {
             </Menu>
             <Item onClick={handleWelcomeClick}>Bem-vindo</Item>
             <Item onClick={handleAboutMeClick}>Sobre mim</Item>
-            <Item onClick={handleClose}>Formação</Item>
-            <Item onClick={handleClose}>Linguagens e...</Item>
-            <Item onClick={handleClose}>Créditos</Item>
+            <Item onClick={handleTrainingClick}>Formação</Item>
+            <Item onClick={handleSkillsClick}>Linguagens e...</Item>
+            <Item onClick={handleCreditsClick}>Créditos</Item>
             <Divider />
             <Item onClick={handleClose} $isShutdown={true}>Sh<span>u</span>t Down</Item>
         </Content>
