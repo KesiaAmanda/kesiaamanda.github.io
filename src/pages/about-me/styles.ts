@@ -1,14 +1,11 @@
 import styled, { css } from 'styled-components';
 import { PagesProps } from '../../types/PagesTypes';
+import { internal } from '../../globals/borders';
 
 export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
-
-    border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
-    border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
+    ${internal}
 `
 
 export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: PagesProps }>`

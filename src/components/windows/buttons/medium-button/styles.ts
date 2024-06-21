@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { internal } from '../../../../globals/borders';
 
 export const Container = styled.button<{ isDisabled: boolean }>`
     background-color: ${({ theme }) => theme.window.background.color};
@@ -11,10 +12,7 @@ export const Container = styled.button<{ isDisabled: boolean }>`
 
     ${(props) => !props.isDisabled && css`
         &:active {
-            border-top: ridge 2px ${({ theme }) => theme.frame.shadow.black};
-            border-left: ridge 2px ${({ theme }) => theme.frame.shadow.black};
-            border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
-            border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
+            ${internal}
             outline: 1px dotted ${({ theme }) => theme.button.frame.dotted.click};
             outline-offset: -4px;
         }

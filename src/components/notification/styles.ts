@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import icon from '../../assets/icons/player/iconmonstr-audio.svg'
+import { internal } from '../../globals/borders';
 
 export const Content = styled.div`
     display: flex;
@@ -11,10 +12,7 @@ export const Box = styled.div`
     display: flex;
     min-width: 70px;
     justify-content: space-around;
-    border-top: inset 2px ${({ theme }) => theme.frame.shadow.black};
-    border-left: inset 2px ${({ theme }) => theme.frame.shadow.black};
-    border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
-    border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
+    ${internal}
 `
 
 export const Clock = styled.div`

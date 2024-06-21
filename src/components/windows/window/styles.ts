@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 import { PagesProps } from '../../../types/PagesTypes';
+import { external } from '../../../globals/borders';
+
 
 export const Container = styled.div<{ page: PagesProps }>`
+    ${external}
+
     ${props => props.page.isMinimized && css`
         transition: transform 0.25s ease-in-out, max-height 0.26s step-end, max-width 0.26s step-end;
         transform: scale(0);
@@ -17,11 +21,6 @@ export const Container = styled.div<{ page: PagesProps }>`
     `}  
 
     background-color: ${({ theme }) => theme.window.background.color};
-
-    border-top: ridge 2px ${({ theme }) => theme.frame.shadow.white};
-    border-left: ridge 2px ${({ theme }) => theme.frame.shadow.white};
-    border-bottom: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
 `
 
 export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: PagesProps }>`
@@ -45,12 +44,6 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
         height: ${props.maxHeight};
         width: ${props.maxWidth};
     `}
-
-    // ${props => !props.page.isMaximized && css`
-    //     max-width: 80vw;
-    //     max-height: 80vh;
-    // `}
-
 `
 
 export const Header = styled.div`

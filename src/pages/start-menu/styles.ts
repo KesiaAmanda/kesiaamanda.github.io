@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { external, internal } from '../../globals/borders';
 
 export const Content = styled.div<{ isSelected: boolean }>`
   overflow: hidden;
@@ -15,10 +16,7 @@ export const Content = styled.div<{ isSelected: boolean }>`
   position: absolute;
   z-index: 99;
   display: block;
-  border-top: ridge 3px ${({ theme }) => theme.frame.shadow.white};
-  border-left: ridge 3px ${({ theme }) => theme.frame.shadow.white};
-  border-bottom: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-  border-right: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
+  ${external}
   max-width: unset;
   max-height: unset;
 `

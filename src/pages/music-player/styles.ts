@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { PagesProps } from '../../types/PagesTypes';
+import { external, internal } from '../../globals/borders';
 
 export const Container = styled.div<{ page: PagesProps }>`
     display: flex;  
@@ -20,10 +21,7 @@ export const Image = styled.div`
     background-size: 300px;
     background-repeat: no-repeat;
 
-    border-top:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    border-left:  ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
-    border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
+    ${internal}
 `
 
 export const BoxTitle = styled.div`
@@ -35,10 +33,7 @@ export const BoxTitle = styled.div`
     padding-bottom: 10px;
     outline: none;
     background-color: ${({ theme }) => theme.window.console.background.color};
-    border-top: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    border-left: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
-    border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
+    ${internal}
 `
 
 export const Title = styled.p`
@@ -87,10 +82,7 @@ export const ProgressBarBox = styled.div`
     max-width: 300px;
     height: 10px;
     margin-top: 10px;
-    border-top: ridge 1px ${({ theme }) => theme.window.player.frame.shadow.black};
-    border-left: ridge 1px ${({ theme }) => theme.window.player.frame.shadow.black};
-    border-bottom: ${({ theme }) => theme.frame.border.style} 1px ${({ theme }) => theme.window.player.frame.shadow.white};
-    border-right: ${({ theme }) => theme.frame.border.style} 1px ${({ theme }) => theme.window.player.frame.shadow.white};
+    ${internal}
 `
 
 export const ProgressBar = styled.div<{ margin: string }>`
@@ -100,10 +92,7 @@ export const ProgressBar = styled.div<{ margin: string }>`
     height: 20px;
     width: 10px;
     background-color: ${({ theme }) => theme.window.background.color};
-    border-top: ridge 1px ${({ theme }) => theme.window.player.frame.shadow.white};
-    border-left: ridge 1px ${({ theme }) => theme.window.player.frame.shadow.white};
-    border-bottom: ${({ theme }) => theme.frame.border.style} 1px ${({ theme }) => theme.window.player.frame.shadow.black};
-    border-right: ${({ theme }) => theme.frame.border.style} 1px ${({ theme }) => theme.window.player.frame.shadow.black};
+    ${external}
 `
 
 export const VolumeBox = styled.div`
