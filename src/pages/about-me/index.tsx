@@ -36,8 +36,8 @@ function AboutMe() {
         <div ref={ref}>
             <Window page={aboutMe} description="Sobre mim.txt" icon={theme.icon.aboutMe}>
                 <WindowMenu />
-                <Container page={aboutMe[0]} onClick={() => { focus(aboutMe) }}>
-                    <Content maxWidth={(window.innerWidth - 30) + "px"} maxHeight={(window.innerHeight - 100) + "px"} page={aboutMe[0]} >
+                <Container onClick={() => { focus(aboutMe) }}>
+                    <Content $maxWidth={(window.innerWidth - 30) + "px"} $maxHeight={(window.innerHeight - 100) + "px"} $page={aboutMe[0]} >
                         <Hr />
                         <Title>{text}</Title>
                         <Hr />

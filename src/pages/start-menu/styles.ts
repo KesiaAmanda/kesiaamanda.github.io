@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components';
-import { external, internal } from '../../globals/borders';
+import { external } from '../../globals/borders';
+import { IsSelectedProps, IsShutdownProps } from '../../types/StyleTypes';
 
-export const Content = styled.div<{ isSelected: boolean }>`
+export const Content = styled.div<IsSelectedProps>`
   overflow: hidden;
   position: relative;
   transition: clip-path 0.3s ease;
-  clip-path: ${props => (props.isSelected ? 'inset(0 0 0 0)' : 'inset(100% 0 0 0)')};
+  clip-path: ${({ $isSelected }) => ($isSelected ? 'inset(0 0 0 0)' : 'inset(100% 0 0 0)')};
 
   display: flex;
   flex-direction: column;
@@ -54,7 +55,7 @@ export const Text = styled.div`
   }
 `
 
-export const Item = styled.div<{ isShutdown?: boolean }>`
+export const Item = styled.div<IsShutdownProps>`
     color: ${({ theme }) => theme.text.color};
     font-size: 12px;
     width: 134px;
@@ -62,13 +63,13 @@ export const Item = styled.div<{ isShutdown?: boolean }>`
     margin-left: 29px;
     padding: 15px 5px;
 
-    ${props => !props.isShutdown && css`
+    ${({ $isShutdown }) => !$isShutdown && css`
         &:first-letter {
             text-decoration: underline;
         } 
     `}
 
-    ${props => props.isShutdown && css`
+    ${({ $isShutdown }) => $isShutdown && css`
         span {
             color: ${({ theme }) => theme.text.color};
             text-decoration: underline;

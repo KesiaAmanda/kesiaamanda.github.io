@@ -19,8 +19,8 @@ function Welcome() {
     return (
         <div ref={ref}>
             <Window page={welcome} description="Bem-vindo.exe" icon={theme.icon.welcome}>
-                <Container page={welcome[0]} onClick={() => focus(welcome)}>
-                    <Content maxWidth={(window.innerWidth - 30) + "px"} maxHeight={(window.innerHeight - 62) + "px"} page={welcome[0]}>
+                <Container onClick={() => focus(welcome)}>
+                    <Content $maxWidth={(window.innerWidth - 30) + "px"} $maxHeight={(window.innerHeight - 62) + "px"} $page={welcome[0]}>
                         <Text>
                             <span style={{ fontSize: '25px' }}>Olá, eu sou a</span>
                             <span style={{ fontSize: '43px' }}>&gt;Kesia Amanda!</span>

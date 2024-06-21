@@ -1,14 +1,16 @@
 import styled, { css } from 'styled-components';
+import { TaskBarButtonProps } from '../../../types/StyleTypes';
 
-export const Content = styled.div<{ closed?: boolean, icon: any }>`
+
+export const Content = styled.div<TaskBarButtonProps>`
     display: flex;
     button {
-        background: url(${(props) => props.icon}) left center no-repeat;
+        background: url(${({ $icon }) => $icon}) left center no-repeat;
         background-size: 15px 15px;
         background-position-x: 2px;
     }
 
-    ${props => props.closed && css`
+    ${({ $isClosed }) => $isClosed && css`
         * {
             max-height: 0;
             max-width: 0;

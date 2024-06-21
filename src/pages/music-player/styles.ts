@@ -1,18 +1,18 @@
 import styled from 'styled-components';
-import { PagesProps } from '../../types/PagesTypes';
 import { external, internal } from '../../globals/borders';
+import { IconProps, ProgressBarProps } from '../../types/StyleTypes';
 
-export const Container = styled.div<{ page: PagesProps }>`
+export const Container = styled.div`
     display: flex;  
 `
 
-export const Content = styled.div<{ page: PagesProps }>`
+export const Content = styled.div`
     padding: 1px;   
     display: flex;
     flex-direction: column;
 `
 
-export const Image = styled.div`
+export const MusicPlayerImage = styled.div`
     width: 300px;
     height: 300px;
     background-image: url(${({ theme }) => theme.window.player.background.image});
@@ -62,14 +62,14 @@ export const Buttons = styled.div`
     gap: 5px;
 `
 
-export const Icon = styled.image<{ icon: string }>`
+export const Icon = styled.img<IconProps>`
     background-color: ${({ theme }) => theme.icon.color};
     background-position: center;
     padding-bottom: 8px;
     min-width: 15px;
     min-height: 15px;
-    -webkit-mask-box-image: url(${(props) => props.icon}) no-repeat 50% 50%;
-    mask: url(${(props) => props.icon}) no-repeat 50% 50%;
+    -webkit-mask-box-image: url(${({ $icon }) => $icon}) no-repeat 50% 50%;
+    mask: url(${({ $icon }) => $icon}) no-repeat 50% 50%;
 `
 
 export const Divider = styled.div`
@@ -85,10 +85,10 @@ export const ProgressBarBox = styled.div`
     ${internal}
 `
 
-export const ProgressBar = styled.div<{ margin: string }>`
+export const ProgressBar = styled.div<ProgressBarProps>`
     position: absolute;
     margin-top: -6px;
-    margin-left: ${(props) => props.margin};
+    margin-left: ${({ $marginLeft }) => $marginLeft};
     height: 20px;
     width: 10px;
     background-color: ${({ theme }) => theme.window.background.color};

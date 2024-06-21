@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
-import { PagesProps } from '../../types/PagesTypes';
 import { internal } from '../../globals/borders';
+import { ContentProps } from '../../types/StyleTypes';
 
-export const Container = styled.div<{ page: PagesProps }>`
+export const Container = styled.div`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
     ${internal}
 `
 
-export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: PagesProps }>`
+export const Content = styled.div<ContentProps>`
     padding: 1em;   
     display: flex;
     flex-direction: column;
@@ -17,13 +17,13 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
     overflow-x: scroll;
     overflow-y: scroll;
 
-    ${props => props.page.isMaximized && css`
-        min-width: ${props.maxWidth};
-        min-height: ${props.maxHeight};
+    ${({ $page, $maxWidth, $maxHeight }) => $page.isMaximized && css`
+        min-width: ${$maxWidth};
+        min-height: ${$maxHeight};
         resize: horizontal;
     `}
 
-    ${props => !props.page.isMaximized && css`
+    ${({ $page }) => !$page.isMaximized && css`
         max-width: 80vw;
         max-height: 80vh;
 

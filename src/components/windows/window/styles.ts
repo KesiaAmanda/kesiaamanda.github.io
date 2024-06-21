@@ -1,19 +1,19 @@
 import styled, { css } from 'styled-components';
-import { PagesProps } from '../../../types/PagesTypes';
 import { external } from '../../../globals/borders';
+import { ContentProps, IconProps, PageElementsProps } from '../../../types/StyleTypes';
 
 
-export const Container = styled.div<{ page: PagesProps }>`
+export const Container = styled.div<PageElementsProps>`
     ${external}
 
-    ${props => props.page.isMinimized && css`
+    ${({ $page }) => $page.isMinimized && css`
         transition: transform 0.25s ease-in-out, max-height 0.26s step-end, max-width 0.26s step-end;
         transform: scale(0);
         max-height: 0;
         max-width: 0;
     `}
 
-    ${props => !props.page.isMinimized && css`
+    ${({ $page }) => !$page.isMinimized && css`
         transition: transform 0.25s ease-in-out, max-height 0.26s step-start, max-width 0.26s step-start;
         transform: scale(1);
         max-height: 100%;
@@ -23,7 +23,7 @@ export const Container = styled.div<{ page: PagesProps }>`
     background-color: ${({ theme }) => theme.window.background.color};
 `
 
-export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: PagesProps }>`
+export const Content = styled.div<ContentProps>`
     position: fixed;
     display: flex;
     overflow: hidden;
@@ -32,17 +32,17 @@ export const Content = styled.div<{ maxWidth: string, maxHeight: string, page: P
     left: 50%;
     transform: translate(-50%, -50%);
 
-    ${props => props.page.isInFocus && css`
+    ${({ $page }) => $page.isInFocus && css`
         z-index: 2;
     `}
 
-    ${props => props.page.isMaximized && css`
+    ${({ $page, $maxHeight, $maxWidth }) => $page.isMaximized && css`
         position: fixed;
         top: 0px;
         left: 0px;
         transform: none;
-        height: ${props.maxHeight};
-        width: ${props.maxWidth};
+        height: ${$maxHeight};
+        width: ${$maxWidth};
     `}
 `
 
@@ -57,14 +57,14 @@ export const Header = styled.div`
     flex: 0 1 auto;
 `
 
-export const Text = styled.div<{ icon: any }>`
+export const Text = styled.div<IconProps>`
     display: inline-block;
     max-width: 200px;
     color: ${({ theme }) => theme.window.header.title.color};
     align-self: center;
     overflow: hidden;
     max-width: 100%;
-    background: url(${(props) => props.icon}) left center no-repeat;
+    background: url(${({ $icon }) => $icon}) left center no-repeat;
     padding: 0px 5px 0px 22px;
     background-size: 15px 15px;
     background-position-x: 2px;

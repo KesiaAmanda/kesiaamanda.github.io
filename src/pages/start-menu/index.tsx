@@ -21,7 +21,7 @@ function StartMenu({ isSelected, onClick }: StartMenuProps) {
     };
 
     return (
-        <Content isSelected={isSelected}>
+        <Content $isSelected={isSelected}>
             <Menu>
                 <Text>
                     #<span>Menu</span>
@@ -33,7 +33,7 @@ function StartMenu({ isSelected, onClick }: StartMenuProps) {
             <Item onClick={handleClose}>Linguagens e...</Item>
             <Item onClick={handleClose}>Créditos</Item>
             <Divider />
-            <Item onClick={handleClose} isShutdown={true}>Sh<span>u</span>t Down</Item>
+            <Item onClick={handleClose} $isShutdown={true}>Sh<span>u</span>t Down</Item>
         </Content>
     )
 

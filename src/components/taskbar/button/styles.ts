@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import { external, internal } from '../../../globals/borders';
+import { IsSelectedProps } from '../../../types/StyleTypes';
 
-export const Content = styled.div<{ isSelected: boolean }>`
+export const Content = styled.div<IsSelectedProps>`
     display: inline-block;
     overflow: hidden;
 
@@ -27,12 +28,12 @@ export const Content = styled.div<{ isSelected: boolean }>`
         ${external}
     }
     
-    ${props => props.isSelected && css`
+    ${({ $isSelected, theme }) => $isSelected && css`
         button {
             ${internal}
-            outline: 1px dotted ${({ theme }) => theme.button.frame.dotted.click};
+            outline: 1px dotted ${theme.button.frame.dotted.click};
             outline-offset: -4px;
-        }   
+        }
     `}
 
 `

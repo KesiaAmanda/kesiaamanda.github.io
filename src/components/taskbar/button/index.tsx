@@ -9,7 +9,7 @@ function Button({ description, onClick, isSelected }: TaskbarButtonProps) {
     };
 
     return (
-        <Content isSelected={isSelected}>
+        <Content $isSelected={isSelected}>
             <button
                 // onClick={handleClick}
                 onMouseDown={handleClick}

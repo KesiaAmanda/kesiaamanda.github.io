@@ -1,11 +1,11 @@
 import { Window } from "../../components/windows/window";
-import { BoxTitle, Buttons, Container, Content, Divider, Icon, Image, ProgressBar, ProgressBarBox, Title, Volume, VolumeBox, VolumeInput } from "./styles";
+import { BoxTitle, Buttons, Container, Content, Divider, Icon, MusicPlayerImage, ProgressBar, ProgressBarBox, Title, Volume, VolumeBox, VolumeInput } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useTheme } from "styled-components";
 import { WindowMenu } from "../../components/windows/menu";
 import { MediumButtom } from "../../components/windows/buttons/medium-button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import YouTube, { YouTubeEvent } from "react-youtube";
 
 import play from '../../assets/icons/player/iconmonstr-play.svg';
@@ -68,8 +68,8 @@ function MusicPlayer() {
         <div ref={ref}>
             <Window page={musicPlayer} description="Rádio" icon={theme.icon.musicPlayer} notMaximizeable={true}>
                 <WindowMenu notSearchable={true} />
-                <Container page={musicPlayer[0]} onClick={() => { focus(musicPlayer) }}>
-                    <Content page={musicPlayer[0]} >
+                <Container onClick={() => { focus(musicPlayer) }}>
+                    <Content >
                         <YouTube
                             videoId={playlistId}
                             opts={{
@@ -84,21 +84,21 @@ function MusicPlayer() {
                             onReady={onReady}
                             onStateChange={onStateChange}
                         />
-                        <Image />
+                        <MusicPlayerImage />
                         <BoxTitle>
                             <Title>{title || '...'}</Title>
                             <Title>{title || '...'}</Title>
                         </BoxTitle>
-                        <ProgressBarBox><ProgressBar margin={progress} /></ProgressBarBox>
+                        <ProgressBarBox><ProgressBar $marginLeft={progress} /></ProgressBarBox>
                         <Buttons>
-                            <MediumButtom onClick={() => player?.playVideo()} icon={<Icon icon={play} />} />
-                            <MediumButtom onClick={() => player?.pauseVideo()} icon={<Icon icon={pause} />} />
-                            <MediumButtom onClick={() => player?.stopVideo()} icon={<Icon icon={stop} />} />
+                            <MediumButtom onClick={() => player?.playVideo()} icon={<Icon $icon={play} />} />
+                            <MediumButtom onClick={() => player?.pauseVideo()} icon={<Icon $icon={pause} />} />
+                            <MediumButtom onClick={() => player?.stopVideo()} icon={<Icon $icon={stop} />} />
                             <Divider />
-                            <MediumButtom onClick={() => player?.previousVideo()} icon={<Icon icon={previous} />} />
-                            <MediumButtom onClick={() => player?.nextVideo()} icon={<Icon icon={next} />} />
+                            <MediumButtom onClick={() => player?.previousVideo()} icon={<Icon $icon={previous} />} />
+                            <MediumButtom onClick={() => player?.nextVideo()} icon={<Icon $icon={next} />} />
                             <Divider />
-                            <MediumButtom isDisabled={true} onClick={() => { }} icon={<Icon icon={volume} />} />
+                            <MediumButtom isDisabled={true} onClick={() => { }} icon={<Icon $icon={volume} />} />
                             <VolumeBox>
                                 <Volume />
                                 <VolumeInput

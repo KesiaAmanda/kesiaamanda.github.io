@@ -14,19 +14,19 @@ function Window({ children, page, description, icon, notMaximizeable }: WindowPr
     const { maximize, minimize, close, focus } = usePages();
 
     return (
-        <Content page={page[0]} onClick={() => focus(page)}
-            maxWidth={(window.innerWidth - 4) + "px"}
-            maxHeight={(window.innerHeight - 32) + "px"}
+        <Content $page={page[0]} onClick={() => focus(page)}
+            $maxWidth={(window.innerWidth - 4) + "px"}
+            $maxHeight={(window.innerHeight - 32) + "px"}
             style={(position && !page[0].isMaximized) ? {
                 'position': 'fixed',
                 'top': `${position.y}px`,
                 'left': `${position.x}px`,
                 'transform': 'none',
             } : {}}>
-            <Container page={page[0]}>
+            <Container $page={page[0]}>
                 <Header
                     onMouseDown={onMouseDown}>
-                    <Text icon={icon}>{description}</Text>
+                    <Text $icon={icon}>{description}</Text>
                     <Buttons>
                         <MiminizeButton onClick={() => minimize(page)} />
                         {!!!notMaximizeable && <MaximizeButton onClick={() => maximize(page)} />}

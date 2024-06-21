@@ -16,8 +16,8 @@ function TaskbarButton({ page, description, icon }: DefaultButtonProps) {
     };
 
     return (
-        <Content closed={page[0].isClosed} icon={icon}>
-            <Button isSelected={page[0].isInFocus} description={description} onClick={handleClick}/>
+        <Content $isClosed={page[0].isClosed} $icon={icon}>
+            <Button isSelected={page[0].isInFocus} description={description} onClick={handleClick} />
         </Content>
     )
 
