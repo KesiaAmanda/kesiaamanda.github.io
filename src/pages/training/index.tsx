@@ -136,7 +136,7 @@ function Training() {
 
     return (
         <div ref={ref}>
-            <Window page={training} description="Formação.txt" icon={theme.icon.training}>
+            <Window page={training} description="Formação" icon={theme.icon.training}>
                 <Container onClick={() => { focus(training) }}>
                     <Content $maxWidth={(window.innerWidth - 30) + "px"}
                         $maxHeight={(window.innerHeight - 82) + "px"}
