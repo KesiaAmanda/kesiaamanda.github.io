@@ -18,4 +18,8 @@ type WindowMenuProps = {
     notSearchable?: boolean,
 }
 
-export type { WindowProps, Position, WindowMenuProps }
+type WindowAddressProps = {
+    path: string,
+}
+
+export type { WindowProps, Position, WindowMenuProps, WindowAddressProps }
