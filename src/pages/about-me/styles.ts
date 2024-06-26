@@ -47,7 +47,6 @@ export const Title = styled.div`
     font-family: monospace;
     text-align: center;
     white-space: pre;
-    font-size: 7px;
 `
 
 export const Text = styled.p`

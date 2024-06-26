@@ -48,12 +48,9 @@ export const Title = styled.div`
     font-size: 8px;
     font-family: monospace;
     margin: 20px 0px 20px 0px;
-    font-size: 10px;
     font-weight: bold;
-    font-family: monospace;
     text-align: center;
     white-space: pre;
-    font-size: 7px;
 `
 
 export const Text = styled.p`
