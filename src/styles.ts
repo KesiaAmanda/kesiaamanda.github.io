@@ -1,10 +1,17 @@
 import styled from "styled-components"
+import minecraftia from './fonts/Minecraftia-Regular.ttf'
 
 export const Desktop = styled.div`
     position: relative;
     background: transparent;
     height: 100%;
     width: 100%;
+    
+    @font-face {
+        font-family: "Minecraftia Regular";
+        src: local("Minecraftia-Regular"),
+            url(${minecraftia}) format("truetype");
+    }
 `
 
 export const Screen = styled.div`
