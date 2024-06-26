@@ -4,6 +4,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 
     img {
         height: 32px;

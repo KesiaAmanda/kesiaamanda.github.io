@@ -33,6 +33,12 @@ export const lightTheme = {
             },
             hr: {
                 color: 'rgb(12, 5, 11)'
+            },
+            link: {
+                color: {
+                    default: 'rgba(78, 7, 63, 0.603)',
+                    hover: 'rgba(150, 54, 129, 0.603)'
+                }
             }
         },
         scroll: {
@@ -156,6 +162,12 @@ export const darkTheme = {
             },
             hr: {
                 color: 'rgb(247, 242, 248)'
+            },
+            link: {
+                color: {
+                    default: 'rgba(185, 112, 169, 0.603)',
+                    hover: 'rgba(243, 68, 205, 0.603)'
+                }
             }
         },
         scroll: {

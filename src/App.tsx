@@ -14,6 +14,7 @@ import { Training } from "./pages/training";
 import { TaskbarButtons } from "./components/taskbar/taskbar-buttons";
 import { Shortcuts } from "./components/desktop/shortcuts";
 import { MusicPlayer } from "./pages/music-player";
+import { Credits } from "./pages/credits";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -45,6 +46,7 @@ function App() {
             <AboutMe />
             <Training />
             <MusicPlayer />
+            <Credits />
 
 
           </Desktop>
