@@ -7,6 +7,18 @@ export const Content = styled.div`
         padding: 2px 5px;
         color: ${({ theme }) => theme.text.color};
     }
+
+    p {
+        padding: 2px 5px;
+        color: ${({ theme }) => theme.text.color};
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+         @media screen and (max-width: 767px) {
+            max-width: 50vw;
+        }
+    }
 `
 
 export const Navigator = styled.div`

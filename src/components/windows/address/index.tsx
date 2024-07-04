@@ -11,7 +11,7 @@ function WindowAddress({ path }: WindowAddressProps) {
         <Content>
             <span>Address</span>
             <Navigator>
-                <span>{path}</span>
+                <p>{path}</p>
                 <SmallButtom onClick={() => { }} icon={<Icon $icon={minimizeIcon} />}></SmallButtom>
             </Navigator>
         </Content>

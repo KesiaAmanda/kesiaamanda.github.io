@@ -26,7 +26,6 @@ export const Container = styled.div<PageElementsProps>`
 export const Content = styled.div<ContentProps>`
     position: fixed;
     display: flex;
-    overflow: hidden;
     flex-flow: column;
     top: 50%;
     left: 50%;

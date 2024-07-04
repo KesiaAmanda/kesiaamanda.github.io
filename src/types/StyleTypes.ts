@@ -26,6 +26,12 @@ interface IconProps {
     $icon: string
 }
 
+interface FoldersProps {
+    $icon: string,
+    $skillsFolder?: boolean
+    $first?: boolean
+}
+
 interface TaskBarButtonProps {
     $isClosed?: boolean,
     $icon: any
@@ -35,4 +41,4 @@ interface PageElementsProps {
     $page: PagesProps
 }
 
-export type { ContentProps, IsSelectedProps, IsShutdownProps, IsDisabledProps, ProgressBarProps, IconProps, TaskBarButtonProps, PageElementsProps }
+export type { ContentProps, IsSelectedProps, IsShutdownProps, IsDisabledProps, ProgressBarProps, IconProps, TaskBarButtonProps, PageElementsProps, FoldersProps }

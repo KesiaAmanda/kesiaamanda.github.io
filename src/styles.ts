@@ -15,6 +15,8 @@ export const Desktop = styled.div`
 `
 
 export const Screen = styled.div`
+    height: 100%;
+    width: 100%;
     position: fixed;
     display: grid;
     grid-template-rows: auto 30px;

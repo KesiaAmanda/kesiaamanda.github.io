@@ -17,7 +17,7 @@ function Window({ children, page, description, icon, notMaximizeable }: WindowPr
 
     return (
         <Content $page={page[0]} onClick={() => focus(page)}
-            $maxWidth={(window.innerWidth - 4) + "px"}
+            $maxWidth={(window.innerWidth - 0) + "px"}
             $maxHeight={(window.innerHeight - 32) + "px"}
             style={(position && !page[0].isMaximized) ? {
                 'position': 'fixed',

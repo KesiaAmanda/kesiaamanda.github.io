@@ -5,6 +5,10 @@ type ButtonProps = {
     onClick: () => void,
 }
 
+type ActiveProps = {
+    $active: boolean
+}
+
 type SmallButtonProps = {
     onClick: () => void,
     icon: ReactElement<any, any>
@@ -16,6 +20,9 @@ type MediumButtomProps = {
     isDisabled?: boolean
 }
 
+type InvisibleButtonProps = {
+    active: boolean
+}
 
 type DefaultButtonProps = {
     page: [PagesProps, React.Dispatch<React.SetStateAction<PagesProps>>],
@@ -23,4 +30,4 @@ type DefaultButtonProps = {
     icon: string
 }
 
-export type { ButtonProps, DefaultButtonProps, SmallButtonProps, MediumButtomProps }
+export type { ButtonProps, DefaultButtonProps, SmallButtonProps, MediumButtomProps, InvisibleButtonProps, ActiveProps }

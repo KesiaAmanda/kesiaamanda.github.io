@@ -3,8 +3,8 @@ import reziseIcon from '../assets/icons/window/resize.png'
 
 export const GlobalStyle = createGlobalStyle`
   * {
-    font-family: 'Minecraftia Regular', sans-serif;
-    color: black;
+    font-family: 'Minecraftia Regular';
+    color: ${({ theme }) => theme.text.color};
     font-size: 12px;
 
     -webkit-touch-callout: none; /* iOS Safari */
