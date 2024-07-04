@@ -60,7 +60,14 @@ export const Navigator = styled.div`
     padding: 1em;
     overflow-x: hidden;
     overflow-y: scroll;
-    border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
+
+    @media screen and (min-width: 767px) {
+        border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
+    }
+
+    @media screen and (max-width: 767px) {
+        border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
+    }
 `
 
 export const NavigatorItem = styled.div<FoldersProps>`
@@ -93,7 +100,14 @@ export const Pages = styled.div`
     padding: 1em;
     overflow-x: hidden;
     overflow-y: scroll;
-    border-left: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
+
+    @media screen and (min-width: 767px) {
+        border-left: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
+    }
+
+    @media screen and (max-width: 767px) {
+        border-top: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
+    }
 `
 
 export const Selector = styled.div<IsSelectedProps>`
