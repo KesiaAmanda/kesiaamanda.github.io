@@ -6,7 +6,7 @@ import { TaskbarButton } from "../taskbar-button";
 
 function TaskbarButtons() {
 
-    const { welcome, aboutMe, training, skills, musicPlayer, credits } = usePages();
+    const { welcome, aboutMe, training, skills, musicPlayer, credits, paint } = usePages();
     const theme = useTheme();
 
     return (
@@ -17,6 +17,7 @@ function TaskbarButtons() {
             <TaskbarButton page={skills} description="Linguagens e Ferramentas" icon={theme.icon.skills} />
             <TaskbarButton page={musicPlayer} description="Rádio" icon={theme.icon.musicPlayer} />
             <TaskbarButton page={credits} description="Créditos" icon={theme.icon.credits} />
+            <TaskbarButton page={paint} description="Paint" icon={theme.icon.paint} />
         </Content>
     )
 

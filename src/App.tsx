@@ -16,6 +16,7 @@ import { Shortcuts } from "./components/desktop/shortcuts";
 import { MusicPlayer } from "./pages/music-player";
 import { Credits } from "./pages/credits";
 import { Skills } from "./pages/skills";
+import { Paint } from "./pages/paint";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -49,6 +50,7 @@ function App() {
             <MusicPlayer />
             <Skills />
             <Credits />
+            <Paint />
 
 
           </Desktop>

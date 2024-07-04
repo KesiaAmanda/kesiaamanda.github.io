@@ -9,6 +9,7 @@ type PagesContextType = {
     credits: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
     musicPlayer: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
     skills: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
+    paint: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
     open: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
     maximize: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
     minimize: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,

@@ -7,6 +7,7 @@ import trainingIcon from '../assets/icons/desktop/console.png'
 import creditsIcon from '../assets/icons/desktop/text_file_2.png'
 import musicPlayerIcon from '../assets/icons/desktop/music.png'
 import skillsIcon from '../assets/icons/desktop/folder_open.png'
+import paintIcon from '../assets/icons/desktop/Win95PaintLogo.gif'
 
 import playerLightTheme from '../assets/images/1456855014belton-5.webp'
 import playerDarkTheme from '../assets/images/bvn01m71yxxc1.gif'
@@ -121,7 +122,8 @@ export const lightTheme = {
         training: trainingIcon,
         credits: creditsIcon,
         musicPlayer: musicPlayerIcon,
-        skills: skillsIcon
+        skills: skillsIcon,
+        paint: paintIcon
     },
     start: {
         menu: {
@@ -130,7 +132,7 @@ export const lightTheme = {
             },
             button: {
                 hover: {
-                    color: 'rgb(136, 24, 112, 0.6)',
+                    color: '#9D568D',
                     text: {
                         color: 'white'
                     }
@@ -252,7 +254,8 @@ export const darkTheme = {
         training: trainingIcon,
         credits: creditsIcon,
         musicPlayer: musicPlayerIcon,
-        skills: skillsIcon
+        skills: skillsIcon,
+        paint: paintIcon
     },
     start: {
         menu: {

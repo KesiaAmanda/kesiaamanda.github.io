@@ -19,6 +19,14 @@ let defaultPage = {
     isClosed: false
 } as PagesProps;
 
+let defaultClosePage = {
+    isOpen: false,
+    isInFocus: false,
+    isMinimized: true,
+    isMaximized: false,
+    isClosed: true
+} as PagesProps;
+
 export function PagesContextProvider(props: PagesContextProviderType) {
     const [startMenu, setStartMenu] = useState(false);
 
@@ -28,6 +36,7 @@ export function PagesContextProvider(props: PagesContextProviderType) {
     const credits = useState<PagesProps>(defaultPage)
     const musicPlayer = useState<PagesProps>(defaultPage)
     const skills = useState<PagesProps>(defaultPage)
+    const paint = useState<PagesProps>(defaultClosePage)
 
     const open = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
@@ -74,12 +83,13 @@ export function PagesContextProvider(props: PagesContextProviderType) {
         credits[1]({ ...credits[0], ...props })
         musicPlayer[1]({ ...musicPlayer[0], ...props })
         skills[1]({ ...skills[0], ...props })
+        paint[1]({ ...paint[0], ...props })
     };
 
     return (
         <PagesContext.Provider value={{
             startMenu, openMenu,
-            welcome, aboutMe, training, credits, musicPlayer, skills,
+            welcome, aboutMe, training, credits, musicPlayer, skills, paint,
             open, maximize, minimize, close, focus, removeFocus
         }}>
             {props.children}

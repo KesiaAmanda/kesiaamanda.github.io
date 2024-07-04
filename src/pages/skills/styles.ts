@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { internal } from '../../globals/borders';
-import { ContentProps, FoldersProps, IsSelectedProps, PageElementsProps } from '../../types/StyleTypes';
+import { ContentProps, FoldersProps, IsSelectedProps } from '../../types/StyleTypes';
 
 import minusIcon from '../../assets/icons/window/iconmonstr-minus.svg'
 import plusIcon from '../../assets/icons/window/iconmonstr-plus.svg'
