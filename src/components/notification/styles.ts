@@ -3,9 +3,13 @@ import icon from '../../assets/icons/player/iconmonstr-audio.svg'
 import { internal } from '../../globals/borders';
 
 export const Content = styled.div`
-    display: flex;
     margin-left: auto;
-    padding: 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 85px;
+    max-width: 85px;
+    font-weight: lighter;
 `
 
 export const Box = styled.div`
