@@ -1,0 +1,123 @@
+.buttoms {
+    background-color: var(--window-background);
+    margin-left: auto;
+    display: flex;
+}
+
+.buttom {
+    text-align: center;
+    display: inline-block;
+    min-width: 60px;
+    max-width: 100px;
+    font-size: 10px;
+    height: 21px;
+    margin: 1px 1px 0px 1px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.smallButtom {
+    background-color: var(--window-background);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 21px;
+    height: 21px;
+    cursor: default;
+}
+
+.mediumButtom {
+    background-color: var(--window-background);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 30px;
+    height: 30px;
+    cursor: default;
+}
+
+.mediumButtomDisabled {
+    background-color: var(--window-background);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 30px;
+    height: 30px;
+    cursor: default;
+}
+
+.smallButtom:active,
+.mediumButtom:active {
+    border-top: ridge 2px var(--frame-shadow-black);
+    border-left: ridge 2px var(--frame-shadow-black);
+    border-bottom: inset 2px var(--frame-shadow-white);
+    border-right: inset 2px var(--frame-shadow-white);
+    outline: 1px dotted var(--button-frame-dotted-click);
+    outline-offset: -4px;
+}
+
+.invisibleButtom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15px;
+    height: 15px;
+    cursor: default;
+}
+
+.controlButtom {
+    background-color: var(--control-icon-color);
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.min {
+    -webkit-mask: url('../assets/icons/window/minimize.svg') no-repeat 50% 75%;
+    mask: url('../assets/icons/minimize.svg') no-repeat 50% 75%;
+}
+
+.max {
+    -webkit-mask: url('../assets/icons/window/iconmonstr-maximize.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/iconmonstr-maximize.svg') no-repeat 50% 50%;
+}
+
+.cls {
+    -webkit-mask: url('../assets/icons/window/iconmonstr-x-close.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/iconmonstr-x-close.svg') no-repeat 50% 50%;
+}
+
+.play {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-play.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-play.svg') no-repeat 50% 50%;
+}
+
+.pause {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-pause.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-pause.svg') no-repeat 50% 50%;
+}
+
+.stop {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-stop.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-stop.svg') no-repeat 50% 50%;
+}
+
+.previous {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-media-previous.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-media-previous.svg') no-repeat 50% 50%;
+}
+
+.next {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-media-next.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-media-next.svg') no-repeat 50% 50%;
+}
+
+.volume {
+    -webkit-mask: url('../assets/icons/player/iconmonstr-audio.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/player/iconmonstr-audio.svg') no-repeat 50% 50%;
+}
+
+.expander {
+    -webkit-mask: url('../assets/icons/window/iconmonstr-arrow.svg') no-repeat 50% 50%;
+    mask: url('../assets/icons/window/iconmonstr-arrow.svg') no-repeat 50% 50%;
+}

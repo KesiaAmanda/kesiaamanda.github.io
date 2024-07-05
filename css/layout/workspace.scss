@@ -1,0 +1,45 @@
+.desktopIcon {
+    &:active p {
+        outline: 1px dotted var(--button-frame-dotted-click);
+    }
+}
+
+.myComputerIcon {
+    content: var(--my-cumputer-icon);
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+}
+
+.iconImage {
+    height: 32px;
+    width: 32px;
+}
+
+#workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+
+    & p {
+        display: flex;
+        justify-content: center;
+        width: 90px;
+        font-size: 10px;
+        padding-top: 5px;
+        cursor: pointer;
+        text-shadow:
+            -1px -1px 1px var(--desktop-title-icon-shadow),
+            -1px 1px 1px var(--desktop-title-icon-shadow),
+            1px -1px 1px var(--desktop-title-icon-shadow),
+            1px 1px 1px var(--desktop-title-icon-shadow);
+        text-align: center;
+        color: var(--desktop-title-icon-color);
+        overflow: hidden;
+    }
+}

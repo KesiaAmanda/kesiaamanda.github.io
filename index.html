@@ -1,1 +1,273 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/happy.png"/><title>🚧 Work in progress 🏗️ - Kesia Amanda</title><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link href="https://db.onlinewebfonts.com/c/bf3f245b7cd53caea0cb07d265a64adc?family=Minecraftia+Regular" rel="stylesheet"><link rel="manifest" href="/manifest.json"/><title>React App</title><script defer="defer" src="/static/js/main.18031779.js"></script><link href="/static/css/main.31d6cfe0.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>🚧 Work in progress 🏗️ - Kesia Amanda</title>
+    <link rel="icon" type="image/png" href="./assets/icons/social/happy.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body id="screen">
+    <div id="desktop">
+
+        <div id="workspace">
+            <div id="dark-mode-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage myComputerIcon" />
+                </div>
+                <p id="dark-mode-icon-text">Modo escuro</p>
+            </div>
+            <div id="welcome-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/program.png" />
+                </div>
+                <p>Bem-vindo</p>
+            </div>
+            <div id="about-me-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/text_file.png" />
+                </div>
+                <p>Sobre mim</p>
+            </div>
+            <div id="training-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/console.png" />
+                </div>
+                <p>Formação</p>
+            </div>
+            <div id="skills-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/folder_open.png" />
+                </div>
+                <p>Linguagens e Ferramentas</p>
+            </div>
+            <div id="music-player-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/music.png" />
+                </div>
+                <p>Rádio</p>
+            </div>
+            <div id="credits-icon" class="desktopIcon">
+                <div class="icon">
+                    <img class="iconImage" src="assets/icons/desktop/text_file_2.png" />
+                </div>
+                <p>Créditos</p>
+            </div>
+
+        </div>
+
+        <div id="welcome" class="">
+            <div id="welcome-content" class="content startRest">
+                <div id="welcome-header" class="header">
+                    <div id="welcome-header-title" class="title">
+                        Bem-vindo!
+                    </div>
+                    <div id="welcome-btns" class="buttoms">
+                        <div id="welcome-min" class="startRest smallButtom">
+                            <div class="controlButtom min"></div>
+                        </div>
+                        <div id="welcome-max" class="startRest smallButtom">
+                            <div class="controlButtom max"></div>
+                        </div>
+                        <div id="welcome-cls" class="startRest smallButtom">
+                            <div class="controlButtom cls"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="welcome-body" class="windowBorder margin2px">
+                    <div src="templates/welcome.html" class="include"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about-me" class="hideContent">
+            <div id="about-me-content" class="content startRest">
+                <div id="about-me-header" class="header">
+                    <div id="about-me-header-title" class="title">
+                        Sobre mim
+                    </div>
+                    <div id="about-me-btns" class="buttoms">
+                        <div id="about-me-min" class="startRest smallButtom">
+                            <div class="controlButtom min"></div>
+                        </div>
+                        <div id="about-me-max" class="startRest smallButtom">
+                            <div class="controlButtom max"></div>
+                        </div>
+                        <div id="about-me-cls" class="startRest smallButtom">
+                            <div class="controlButtom cls"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="about-me-menu" class="windowMenu">
+                    <div><span>File</span></div>
+                    <div><span>Edit</span></div>
+                    <div><span>Search</span></div>
+                    <div><span>Help</span></div>
+                </div>
+                <div id="about-me-body" class="windowBorder resizable">
+                    <div src="templates/aboutMe.html" class="include"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="training" class="hideContent">
+            <div id="training-content" class="content startRest">
+                <div id="training-header" class="header">
+                    <div id="training-header-title" class="title">
+                        Formação
+                    </div>
+                    <div id="training-btns" class="buttoms">
+                        <div id="training-min" class="startRest smallButtom">
+                            <div class="controlButtom min"></div>
+                        </div>
+                        <div id="training-max" class="startRest smallButtom">
+                            <div class="controlButtom max"></div>
+                        </div>
+                        <div id="training-cls" class="startRest smallButtom">
+                            <div class="controlButtom cls"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="training-body" class="windowBorder resizable">
+                    <div src="templates/training.html" class="include"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="skills" class="hideContent">
+            <div id="skills-content" class="content startRest">
+                <div id="skills-header" class="header">
+                    <div id="skills-header-title" class="title">
+                        Linguagens e Ferramentas
+                    </div>
+                    <div id="skills-btns" class="buttoms">
+                        <div id="skills-min" class="startRest smallButtom">
+                            <div class="controlButtom min"></div>
+                        </div>
+                        <div id="skills-max" class="startRest smallButtom">
+                            <div class="controlButtom max"></div>
+                        </div>
+                        <div id="skills-cls" class="startRest smallButtom">
+                            <div class="controlButtom cls"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="windowMenu">
+                    <div><span>File</span></div>
+                    <div><span>Edit</span></div>
+                    <div><span>View</span></div>
+                    <div><span>Help</span></div>
+                </div>
+                <div id="skills-body" class="resizable">
+                    <div src="templates/skills.html" class="include"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="music-player" class="hideContent">
+            <div id="music-player-content" class="content startRest">
+                <div id="music-player-header" class="header">
+                    <div id="music-player-header-title" class="title">
+                        Rádio
+                    </div>
+                    <div id="music-player-btns" class="buttoms">
+                        <div id="music-player-min" class="startRest smallButtom">
+                            <div class="controlButtom min"></div>
+                        </div>
+                        <div id="music-player-cls" class="startRest smallButtom">
+                            <div class="controlButtom cls"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="music-player-menu" class="windowMenu">
+                    <div><span>File</span></div>
+                    <div><span>Edit</span></div>
+                    <div><span>Help</span></div>
+                </div>
+                <div id="music-player-body">
+                    <div src="templates/musicPlayer.html" class="include"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="credits" class="hideContent">
+            <div id="credits-content" class="content startRest">
+                <div id="credits-header" class="header">
+                    <div id="credits-header-title" class="title">
+                        Créditos
+                    </div>
+                    <div id="credits-btns" class="buttoms">
+                        <div id="credits-min" class="startRest smallButtom">
+                            <div class="controlButtom min"></div>
+                        </div>
+                        <div id="credits-max" class="startRest smallButtom">
+                            <div class="controlButtom max"></div>
+                        </div>
+                        <div id="credits-cls" class="startRest smallButtom">
+                            <div class="controlButtom cls"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="credits-menu" class="windowMenu">
+                    <div><span>File</span></div>
+                    <div><span>Edit</span></div>
+                    <div><span>Search</span></div>
+                    <div><span>Help</span></div>
+                </div>
+                <div id="credits-body" class="windowBorder resizable">
+                    <div src="templates/credits.html" class="include"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="taskbar">
+        <div>
+            <div id="start-btn" class="startRest buttom"><span>Iniciar</span></div>
+            <div id="start-menu" class="hidden">
+                <div id="left">
+                    <div class="b">
+                        #
+                        <span class="menu">Menu</span>
+                    </div>
+                </div>
+                <div id='welcome-menu-icon' class="menuItem"><span>Bem-vindo</span></div>
+                <div id='about-me-menu-icon' class="menuItem"><span>Sobre mim</span></div>
+                <div id='training-menu-icon' class="menuItem"><span>Formação</span></div>
+                <div id='skills-menu-icon' class="menuItem"><span>Linguagens e...</span></div>
+                <div id='credits-menu-icon' class="menuItem"><span>Créditos</span></div>
+                <div class="divider"></div>
+                <div id="shutdown" class="menuItem"><span>Sh<span style="text-decoration:underline;">u</span>t
+                        Down</span></div>
+            </div>
+        </div>
+
+        <div class="taskBarDivider"></div>
+
+        <div style="overflow: hidden;">
+            <div id="welcome-btn" class="startRest buttom"><span>Bem-vindo</span></div>
+            <div id="about-me-btn" class="startRest buttom"><span>Sobre mim</span></div>
+            <div id="training-btn" class="startRest buttom"><span>Formação</span></div>
+            <div id="skills-btn" class="startRest buttom"><span>Linguagens e Ferramentas</span></div>
+            <div id="music-player-btn" class="startRest buttom"><span>Rádio</span></div>
+            <div id="credits-btn" class="startRest buttom"><span>Créditos</span></div>
+        </div>
+
+        <div id="notifications" class="windowBorder">
+            <a onclick="return false" ondblclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')">
+                <div class="controlButtom volume"></div>
+            </a>
+            <span id="clock" />
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

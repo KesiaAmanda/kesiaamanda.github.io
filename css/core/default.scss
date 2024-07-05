@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Minecraftia-Regular';
+    src: url('fonts/Minecraftia-Regular.ttf') format('truetype');
+}
+
+@media screen and (max-width: 767px) {
+    #notifications span {
+        margin-top: 0px;
+    }
+
+    .buttom {
+        padding: 0px 10px 0px 20px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    #notifications span {
+        margin-top: 7px;
+    }
+
+    .buttom {
+        padding: 5px 10px 0px 20px;
+    }
+}
+
+* {
+    font-size: 12px;
+    text-underline-offset: -0.5rem;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    font-weight: normal;
+    transition: background 1s linear,
+        outline 0.2s linear,
+        color 0.5s linear,
+        box-shadow 0.5s linear;
+}
+
+p,
+h1,
+span {
+    font-weight: normal;
+    color: var(--text-color);
+    font-size: 100%;
+}
+
+
+a:link {
+    text-decoration: none;
+}
+
+.index {
+    z-index: 2;
+}
+
+.resizable {
+    resize: both;
+    min-width: 300px;
+    min-height: 100px;
+}
+
+.divider {
+    height: 1px;
+    border-top: solid 1px var(--frame-shadow-white);
+    border-bottom: solid 1px var(--frame-shadow-black);
+    margin: 2px;
+}
+
+.taskBarDivider {
+    border-left: 1px solid var(--frame-shadow-white);
+    border-right: solid 1px var(--frame-shadow-black);
+    height: 19px;
+    margin: 1px 3px 0px 3px;
+}
+
+.windowDivider {
+    border-left: 1px solid var(--frame-shadow-white);
+    border-right: solid 1px var(--frame-shadow-black);
+    height: 30px;
+}

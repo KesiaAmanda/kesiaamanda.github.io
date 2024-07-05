@@ -1,0 +1,46 @@
+#about-me-btn,
+#about-me-header-title {
+    background: url('../assets/icons/desktop/text_file.png') left center no-repeat;
+    background-size: 15px 15px;
+    background-position-x: 2px;
+}
+
+#about-me-content.maximize #about-me-body {
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 74px);
+}
+
+#about-me-content {
+    max-width: 90%;
+}
+
+#about-me-body {
+    position: relative;
+    background-color: var(--body-background);
+    max-height: 80vh;
+    height: auto;
+    width: 600px;
+    padding: 20px;
+    text-align: justify;
+    resize: both;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow-anchor: none;
+
+    & hr {
+        border-top: 1px dashed var(--dashed-text-divider);
+    }
+}
+
+#about-me-title,
+#about-me-footer {
+    margin: 20px 0px 20px 0px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+}
+
+#about-me-title {
+    white-space: pre;
+    font-size: 7px;
+}

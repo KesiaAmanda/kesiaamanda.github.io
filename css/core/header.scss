@@ -1,0 +1,20 @@
+.header {
+    touch-action: none;
+    background: var(--window-header-background-color);
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    height: 23px;
+    flex: 0 1 auto;
+}
+
+.title {
+    display: inline-block;
+    padding: 7px 10px 0px 22px;
+    max-width: 200px;
+    color: var(--window-header-title-color);
+    align-self: center;
+    overflow: hidden;
+    max-width: 100%;
+}
