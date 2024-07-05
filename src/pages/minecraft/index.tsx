@@ -51,7 +51,7 @@ function Minecraft() {
         <div ref={ref}>
             <Window page={minecraft} description="Minecraft" icon={theme.icon.minecraft}>
                 <Container onClick={() => focus(minecraft)}>
-                    <Content $maxWidth={(window.innerWidth - 30) + "px"} $maxHeight={(window.innerHeight - 62) + "px"} $page={minecraft[0]}>
+                    <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={minecraft[0]}>
                         {!(minecraft[0].isClosed) &&
                             <iframe
                                 title="Minecraft"

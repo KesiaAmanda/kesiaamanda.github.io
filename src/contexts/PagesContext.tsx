@@ -32,10 +32,10 @@ export function PagesContextProvider(props: PagesContextProviderType) {
 
     const welcome = useState<PagesProps>(focusPage)
     const aboutMe = useState<PagesProps>(defaultPage)
-    const training = useState<PagesProps>(defaultPage)
-    const credits = useState<PagesProps>(defaultPage)
-    const musicPlayer = useState<PagesProps>(defaultPage)
-    const skills = useState<PagesProps>(defaultPage)
+    const training = useState<PagesProps>(defaultClosePage)
+    const credits = useState<PagesProps>(defaultClosePage)
+    const musicPlayer = useState<PagesProps>(defaultClosePage)
+    const skills = useState<PagesProps>(defaultClosePage)
     const paint = useState<PagesProps>(defaultClosePage)
     const minecraft = useState<PagesProps>(defaultClosePage)
 
