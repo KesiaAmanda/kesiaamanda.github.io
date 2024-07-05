@@ -62,7 +62,7 @@ function Paint() {
         <div ref={ref}>
             <Window page={paint} description="Paint" icon={theme.icon.paint}>
                 <Container onClick={() => focus(paint)}>
-                    <Content $maxWidth={(window.innerWidth - 30) + "px"} $maxHeight={(window.innerHeight - 62) + "px"} $page={paint[0]}>
+                    <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={paint[0]}>
                         <iframe
                             ref={iframeRef}
                             title="JS Paint"
