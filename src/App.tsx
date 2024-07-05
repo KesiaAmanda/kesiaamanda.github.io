@@ -18,6 +18,7 @@ import { Credits } from "./pages/credits";
 import { Skills } from "./pages/skills";
 import { Paint } from "./pages/paint";
 import { Minecraft } from "./pages/minecraft";
+import { PrairieKing } from "./pages/paint copy";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -53,6 +54,7 @@ function App() {
             <Credits />
             <Paint />
             <Minecraft />
+            <PrairieKing />
 
 
           </Desktop>

@@ -38,6 +38,7 @@ export function PagesContextProvider(props: PagesContextProviderType) {
     const skills = useState<PagesProps>(defaultClosePage)
     const paint = useState<PagesProps>(defaultClosePage)
     const minecraft = useState<PagesProps>(defaultClosePage)
+    const prairieKing = useState<PagesProps>(defaultClosePage)
 
     const open = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
@@ -86,12 +87,13 @@ export function PagesContextProvider(props: PagesContextProviderType) {
         skills[1]({ ...skills[0], ...props })
         paint[1]({ ...paint[0], ...props })
         minecraft[1]({ ...minecraft[0], ...props })
+        prairieKing[1]({ ...prairieKing[0], ...props })
     };
 
     return (
         <PagesContext.Provider value={{
             startMenu, openMenu,
-            welcome, aboutMe, training, credits, musicPlayer, skills, paint, minecraft,
+            welcome, aboutMe, training, credits, musicPlayer, skills, paint, minecraft, prairieKing,
             open, maximize, minimize, close, focus, removeFocus
         }}>
             {props.children}
