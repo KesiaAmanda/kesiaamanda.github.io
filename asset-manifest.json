@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.31d6cfe0.css",
+    "main.js": "/static/js/main.18031779.js",
+    "static/js/453.1c2cb73f.chunk.js": "/static/js/453.1c2cb73f.chunk.js",
+    "static/media/bvn01m71yxxc1.gif": "/static/media/bvn01m71yxxc1.0850c909a9bdf749428a.gif",
+    "static/media/kime-nanami-pastelsky.gif": "/static/media/kime-nanami-pastelsky.d1996793cf46059a695b.gif",
+    "static/media/kime-nanami-pastelsky-nigth.gif": "/static/media/kime-nanami-pastelsky-nigth.ccf796761adfff724f30.gif",
+    "static/media/1456855014belton-5.webp": "/static/media/1456855014belton-5.660140e65f61edb0c49c.webp",
+    "static/media/downlo-1.png": "/static/media/download20230701162715-1.a58cf3f43fa247a3b847.png",
+    "static/media/Minecraftia-Regular.ttf": "/static/media/Minecraftia-Regular.c2908c14b3726c200279.ttf",
+    "static/media/github.png": "/static/media/github.0805f89a09b334bfa9d4.png",
+    "static/media/minimize.svg": "/static/media/minimize.decfdbac7ce5ac88cc072343aa7a94b0.svg",
+    "index.html": "/index.html",
+    "static/media/iconmonstr-audio.svg": "/static/media/iconmonstr-audio.ebdf1d2979068ce12ee78116a3484ae0.svg",
+    "static/media/iconmonstr-x-close.svg": "/static/media/iconmonstr-x-close.8f10de6e6ebd38f1f2e32279d7255301.svg",
+    "static/media/iconmonstr-maximize.svg": "/static/media/iconmonstr-maximize.9924a547b0bf52f057f5fd1f8d72163a.svg",
+    "static/media/iconmonstr-arrow.svg": "/static/media/iconmonstr-arrow.1317d3274f2bc61af29f19c234e4875d.svg",
+    "static/media/iconmonstr-media-previous.svg": "/static/media/iconmonstr-media-previous.12d6e4330f4a5956294102d3ffca5b8f.svg",
+    "static/media/iconmonstr-media-next.svg": "/static/media/iconmonstr-media-next.25b20b151759cecc4baea46e531de98a.svg",
+    "static/media/iconmonstr-plus.svg": "/static/media/iconmonstr-plus.efeed5628563c0f031989d1265bbc7a7.svg",
+    "static/media/iconmonstr-pause.svg": "/static/media/iconmonstr-pause.7dce43e9d0acee93d3d71be1c9e6c7a7.svg",
+    "static/media/iconmonstr-minus.svg": "/static/media/iconmonstr-minus.9a860a6f56edf9917db207e9b37305e8.svg",
+    "static/media/iconmonstr-play.svg": "/static/media/iconmonstr-play.5266160403bea13dcea7abe860e43b77.svg",
+    "static/media/iconmonstr-stop.svg": "/static/media/iconmonstr-stop.169f651f5d31385d4a89c4bf4d4aab09.svg",
+    "main.18031779.js.map": "/static/js/main.18031779.js.map",
+    "453.1c2cb73f.chunk.js.map": "/static/js/453.1c2cb73f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.18031779.js"
+  ]
+}
