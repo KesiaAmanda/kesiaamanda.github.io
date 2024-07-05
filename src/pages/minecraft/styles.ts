@@ -14,7 +14,10 @@ export const Content = styled.div<ContentProps>`
     `}
 
     ${({ $page }) => !$page.isMaximized && css`   
-        min-width: 900px;
-        min-height: 500px;
+        width: 900px;
+        height: 500px;
+
+        max-width: 80vw;
+        max-height: 80vh;
     `}
 `
