@@ -8,6 +8,7 @@ import creditsIcon from '../assets/icons/desktop/text_file_2.png'
 import musicPlayerIcon from '../assets/icons/desktop/music.png'
 import skillsIcon from '../assets/icons/desktop/folder_open.png'
 import paintIcon from '../assets/icons/desktop/Win95PaintLogo.gif'
+import minecraftIcon from '../assets/icons/desktop/minecraft.png'
 
 import playerLightTheme from '../assets/images/1456855014belton-5.webp'
 import playerDarkTheme from '../assets/images/bvn01m71yxxc1.gif'
@@ -123,7 +124,8 @@ export const lightTheme = {
         credits: creditsIcon,
         musicPlayer: musicPlayerIcon,
         skills: skillsIcon,
-        paint: paintIcon
+        paint: paintIcon,
+        minecraft: minecraftIcon
     },
     start: {
         menu: {
@@ -256,7 +258,8 @@ export const darkTheme = {
         credits: creditsIcon,
         musicPlayer: musicPlayerIcon,
         skills: skillsIcon,
-        paint: paintIcon
+        paint: paintIcon,
+        minecraft: minecraftIcon
     },
     start: {
         menu: {

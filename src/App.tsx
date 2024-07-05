@@ -17,6 +17,7 @@ import { MusicPlayer } from "./pages/music-player";
 import { Credits } from "./pages/credits";
 import { Skills } from "./pages/skills";
 import { Paint } from "./pages/paint";
+import { Minecraft } from "./pages/minecraft";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -51,6 +52,7 @@ function App() {
             <Skills />
             <Credits />
             <Paint />
+            <Minecraft />
 
 
           </Desktop>

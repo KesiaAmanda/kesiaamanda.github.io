@@ -4,7 +4,7 @@ import { Shortcut } from "../shortcut";
 
 
 function Shortcuts() {
-    const { welcome, aboutMe, training, skills, musicPlayer, credits, paint } = usePages();
+    const { welcome, aboutMe, training, skills, musicPlayer, credits, paint, minecraft } = usePages();
     const theme = useTheme();
 
     return (
@@ -16,6 +16,7 @@ function Shortcuts() {
             <Shortcut page={musicPlayer} description="Windows Media Player" icon={theme.icon.musicPlayer} />
             <Shortcut page={credits} description="Créditos" icon={theme.icon.credits} />
             <Shortcut page={paint} description="Paint" icon={theme.icon.paint} />
+            <Shortcut page={minecraft} description="Minecraft" icon={theme.icon.minecraft} />
         </>
     )
 

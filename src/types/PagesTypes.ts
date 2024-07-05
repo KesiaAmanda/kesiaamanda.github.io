@@ -10,6 +10,7 @@ type PagesContextType = {
     musicPlayer: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
     skills: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
     paint: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
+    minecraft: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>],
     open: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
     maximize: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
     minimize: ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => void,
