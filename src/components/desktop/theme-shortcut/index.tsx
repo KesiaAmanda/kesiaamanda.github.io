@@ -11,7 +11,7 @@ function ThemeShortcut({ onClick, isDark }: ThemeShortcutProps) {
     }
 
     return (
-        <Shortcut icon={isDark ? dark : light} description={isDark ? "Modo claro" : "Modo escuro"} onClick={themeToggler} />
+        <Shortcut icon={isDark ? dark : light} description={isDark ? "Modo claro.exe" : "Modo escuro.exe"} onClick={themeToggler} />
     )
 
 }

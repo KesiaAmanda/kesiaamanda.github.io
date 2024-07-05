@@ -13,9 +13,9 @@ function TaskbarButtons() {
         <Content>
             <TaskbarButton page={welcome} description="Bem-vindo" icon={theme.icon.welcome} />
             <TaskbarButton page={aboutMe} description="Sobre mim" icon={theme.icon.aboutMe} />
-            <TaskbarButton page={training} description="Formação" icon={theme.icon.training} />
+            <TaskbarButton page={training} description="C:\WINDOWS\system32\cmd.exe" icon={theme.icon.training} />
             <TaskbarButton page={skills} description="Linguagens e Ferramentas" icon={theme.icon.skills} />
-            <TaskbarButton page={musicPlayer} description="Rádio" icon={theme.icon.musicPlayer} />
+            <TaskbarButton page={musicPlayer} description="Windows Media Player" icon={theme.icon.musicPlayer} />
             <TaskbarButton page={credits} description="Créditos" icon={theme.icon.credits} />
             <TaskbarButton page={paint} description="Paint" icon={theme.icon.paint} />
         </Content>

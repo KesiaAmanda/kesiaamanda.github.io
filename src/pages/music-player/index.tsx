@@ -66,7 +66,7 @@ function MusicPlayer() {
 
     return (
         <div ref={ref}>
-            <Window page={musicPlayer} description="Rádio" icon={theme.icon.musicPlayer} notMaximizeable={true}>
+            <Window page={musicPlayer} description="Windows Media Player" icon={theme.icon.musicPlayer} notMaximizeable={true}>
                 <WindowMenu notSearchable={true} />
                 <Container onClick={() => { focus(musicPlayer) }}>
                     <Content >
