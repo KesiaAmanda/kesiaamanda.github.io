@@ -55,7 +55,7 @@ export function PagesContextProvider(props: PagesContextProviderType) {
 
     const close = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {
         updateState({ isInFocus: false })
-        setState({ ...state, isMinimized: true, isInFocus: false, isClosed: true })
+        setState({ ...state, isMinimized: true, isInFocus: false, isClosed: true, isMaximized: false })
     };
 
     const focus = ([state, setState]: [PagesProps, Dispatch<React.SetStateAction<PagesProps>>]) => {

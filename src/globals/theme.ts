@@ -139,7 +139,8 @@ export const lightTheme = {
                 }
             }
         }
-    }
+    },
+    paint: `url('../../images/classic/tools.png')`
 }
 
 export const darkTheme = {
@@ -271,5 +272,6 @@ export const darkTheme = {
                 }
             }
         }
-    }
+    },
+    paint: `url('../../images/dark/tools.png')`
 }
