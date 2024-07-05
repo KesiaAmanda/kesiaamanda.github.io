@@ -18,7 +18,7 @@ import { Credits } from "./pages/credits";
 import { Skills } from "./pages/skills";
 import { Paint } from "./pages/paint";
 import { Minecraft } from "./pages/minecraft";
-import { PrairieKing } from "./pages/paint copy";
+import { PrairieKing } from "./pages/prairie-king";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);

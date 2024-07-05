@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ContentProps } from '../../types/StyleTypes';
 
-import '@christianliebel/paint';
-
 export const Container = styled.div`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
