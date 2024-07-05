@@ -1,0 +1,32 @@
+import styled, { css } from 'styled-components';
+import { ContentProps } from '../../types/StyleTypes';
+
+import '@christianliebel/paint';
+
+export const Container = styled.div`
+    background-color: ${({ theme }) => theme.window.body.background.color};
+    display: flex;
+
+    ::-webkit-resizer {
+        z-index: 1;
+        background: none;
+    }
+`
+
+export const Content = styled.div<ContentProps>`
+    ${({ $page, $maxWidth, $maxHeight }) => $page.isMaximized && css`   
+        min-width: ${$maxWidth};
+        min-height: ${$maxHeight};
+    `}
+
+    ${({ $page }) => !$page.isMaximized && css`   
+        width: 900px;
+        height: 500px;
+
+        max-width: 80vw;
+        max-height: 80vh;
+    `}
+
+    resize: both;
+    overflow: hidden;
+`
