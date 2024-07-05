@@ -13,7 +13,7 @@ export const Content = styled.div<ContentProps>`
         min-height: ${$maxHeight};
     `}
 
-    ${({ $page, $maxWidth, $maxHeight }) => !$page.isMaximized && css`   
+    ${({ $page }) => !$page.isMaximized && css`   
         min-width: 900px;
         min-height: 500px;
     `}
