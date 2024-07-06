@@ -61,7 +61,9 @@ export const Workspace = styled.div`
     display: flex;
     flex-direction: column;
     padding: 3px;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    max-height: 95vh;
 
     & p {
         margin: 0;
