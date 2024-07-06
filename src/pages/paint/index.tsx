@@ -16,22 +16,22 @@ function Paint() {
         removeFocus()
     });
 
-    useEffect(() => {
-        const applyTheme = () => {
-            const iframe = iframeRef.current;
-            if (iframe) {
-                const iframeDocument = iframe.contentDocument;
-                if (iframeDocument) {
-                    const root = iframeDocument.querySelector(':root') as HTMLElement;
-                    if (root) {
-                        updateThemeVariables(root, theme);
-                    }
+    const applyTheme = () => {
+        const iframe = iframeRef.current;
+        if (iframe) {
+            const iframeDocument = iframe.contentDocument;
+            if (iframeDocument) {
+                const root = iframeDocument.querySelector(':root') as HTMLElement;
+                if (root) {
+                    updateThemeVariables(root, theme);
                 }
-            } else {
-                console.log('iframe não encontrado');
             }
-        };
+        } else {
+            console.log('iframe não encontrado');
+        }
+    };
 
+    useEffect(() => {
         applyTheme();
     }, [theme]);
 
@@ -70,6 +70,9 @@ function Paint() {
                             width="100%"
                             height="100%"
                             frameBorder="0"
+                            onLoad={() => {
+                                applyTheme()
+                            }}
                         />
                     </Content>
                 </Container>
