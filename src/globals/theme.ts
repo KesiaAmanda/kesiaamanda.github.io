@@ -14,7 +14,22 @@ import prairieKingIcon from '../assets/icons/desktop/flop_drive.png'
 import playerLightTheme from '../assets/images/1456855014belton-5.webp'
 import playerDarkTheme from '../assets/images/bvn01m71yxxc1.gif'
 
+const images = {
+    icons: {
+        welcome: welcomeIcon,
+        aboutMe: aboutMeIcon,
+        training: trainingIcon,
+        credits: creditsIcon,
+        musicPlayer: musicPlayerIcon,
+        skills: skillsIcon,
+        paint: paintIcon,
+        minecraft: minecraftIcon,
+        prairieKing: prairieKingIcon
+    },
+}
+
 export const lightTheme = {
+    ...images,
     text: {
         color: 'rgb(12, 5, 11)'
     },
@@ -119,15 +134,6 @@ export const lightTheme = {
     },
     icon: {
         color: 'rgb(12, 5, 11)',
-        welcome: welcomeIcon,
-        aboutMe: aboutMeIcon,
-        training: trainingIcon,
-        credits: creditsIcon,
-        musicPlayer: musicPlayerIcon,
-        skills: skillsIcon,
-        paint: paintIcon,
-        minecraft: minecraftIcon,
-        prairieKing: prairieKingIcon
     },
     start: {
         menu: {
@@ -148,6 +154,7 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
+    ...images,
     text: {
         color: 'rgb(247, 242, 248)'
     },
@@ -254,15 +261,6 @@ export const darkTheme = {
     },
     icon: {
         color: 'rgb(247, 242, 248)',
-        welcome: welcomeIcon,
-        aboutMe: aboutMeIcon,
-        training: trainingIcon,
-        credits: creditsIcon,
-        musicPlayer: musicPlayerIcon,
-        skills: skillsIcon,
-        paint: paintIcon,
-        minecraft: minecraftIcon,
-        prairieKing: prairieKingIcon
     },
     start: {
         menu: {
