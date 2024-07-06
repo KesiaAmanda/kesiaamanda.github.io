@@ -2,9 +2,6 @@ import styled, { css } from 'styled-components';
 import { internal } from '../../globals/borders';
 import { ContentProps, FoldersProps, IsSelectedProps } from '../../types/StyleTypes';
 
-import minusIcon from '../../assets/icons/window/iconmonstr-minus.svg'
-import plusIcon from '../../assets/icons/window/iconmonstr-plus.svg'
-
 export const Container = styled.div`
     background-color: ${({ theme }) => theme.window.body.background.color};
 `
@@ -142,12 +139,12 @@ export const ControlIcon = styled.div<IsSelectedProps>`
     width: 12px;
     height: 12px;
     background-color: ${({ theme }) => theme.text.color};
-    -webkit-mask: url(${minusIcon}) no-repeat 50% 50%;
-    mask: url(${minusIcon}) no-repeat 50% 50%;
+    -webkit-mask: url(${({ theme }) => theme.icons.player.minus}) no-repeat 50% 50%;
+    mask: url(${({ theme }) => theme.icons.player.minus}) no-repeat 50% 50%;
 
-    ${({ $isSelected }) => !$isSelected && css`
-        -webkit-mask: url(${plusIcon}) no-repeat 50% 50%;
-        mask: url(${plusIcon}) no-repeat 50% 50%;
+    ${({ $isSelected, theme }) => !$isSelected && css`
+        -webkit-mask: url(${theme.icons.player.plus}) no-repeat 50% 50%;
+        mask: url(${theme.icons.player.plus}) no-repeat 50% 50%;
     `}
 `
 

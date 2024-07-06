@@ -8,13 +8,6 @@ import { MediumButtom } from "../../components/windows/buttons/medium-button";
 import { useState } from "react";
 import YouTube, { YouTubeEvent } from "react-youtube";
 
-import play from '../../assets/icons/player/iconmonstr-play.svg';
-import pause from '../../assets/icons/player/iconmonstr-pause.svg';
-import stop from '../../assets/icons/player/iconmonstr-stop.svg';
-import previous from '../../assets/icons/player/iconmonstr-media-previous.svg';
-import next from '../../assets/icons/player/iconmonstr-media-next.svg';
-import volume from '../../assets/icons/player/iconmonstr-audio.svg';
-
 function MusicPlayer() {
     // const playlistId = 'PLUO8mnyUG2EIpm1PymeZmMT7sH8UJky6c';
     // const playlistId = 'PL91KhE7INCB3pz2F4rriUbOeqVeWLA1cl'; // ID da playlist do YouTube
@@ -66,7 +59,7 @@ function MusicPlayer() {
 
     return (
         <div ref={ref}>
-            <Window page={musicPlayer} description="Windows Media Player" icon={theme.icons.musicPlayer} notMaximizeable={true}>
+            <Window page={musicPlayer} description="Windows Media Player" icon={theme.icons.desktop.musicPlayer} notMaximizeable={true}>
                 <WindowMenu notSearchable={true} />
                 <Container onClick={() => { focus(musicPlayer) }}>
                     <Content >
@@ -91,14 +84,14 @@ function MusicPlayer() {
                         </BoxTitle>
                         <ProgressBarBox><ProgressBar $marginLeft={progress} /></ProgressBarBox>
                         <Buttons>
-                            <MediumButtom onClick={() => player?.playVideo()} icon={<Icon $icon={play} />} />
-                            <MediumButtom onClick={() => player?.pauseVideo()} icon={<Icon $icon={pause} />} />
-                            <MediumButtom onClick={() => player?.stopVideo()} icon={<Icon $icon={stop} />} />
+                            <MediumButtom onClick={() => player?.playVideo()} icon={<Icon $icon={theme.icons.player.play} />} />
+                            <MediumButtom onClick={() => player?.pauseVideo()} icon={<Icon $icon={theme.icons.player.pause} />} />
+                            <MediumButtom onClick={() => player?.stopVideo()} icon={<Icon $icon={theme.icons.player.stop} />} />
                             <Divider />
-                            <MediumButtom onClick={() => player?.previousVideo()} icon={<Icon $icon={previous} />} />
-                            <MediumButtom onClick={() => player?.nextVideo()} icon={<Icon $icon={next} />} />
+                            <MediumButtom onClick={() => player?.previousVideo()} icon={<Icon $icon={theme.icons.player.previous} />} />
+                            <MediumButtom onClick={() => player?.nextVideo()} icon={<Icon $icon={theme.icons.player.next} />} />
                             <Divider />
-                            <MediumButtom isDisabled={true} onClick={() => { }} icon={<Icon $icon={volume} />} />
+                            <MediumButtom isDisabled={true} onClick={() => { }} icon={<Icon $icon={theme.icons.player.volume} />} />
                             <VolumeBox>
                                 <Volume />
                                 <VolumeInput

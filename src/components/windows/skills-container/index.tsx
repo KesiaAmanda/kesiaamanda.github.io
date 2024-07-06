@@ -10,9 +10,7 @@ function SkillsContainer({ name, children }: SkillsProps) {
 
     return (
         <>
-            <Content onClick={() => {
-                setActive(!active)
-            }}>
+            <Content onClick={() => { setActive(!active) }}>
                 <InvisibleButtom active={active}></InvisibleButtom>
                 <span>{name}</span>
                 <div />

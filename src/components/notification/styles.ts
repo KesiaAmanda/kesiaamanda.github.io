@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import icon from '../../assets/icons/player/iconmonstr-audio.svg'
 import { internal } from '../../globals/borders';
 
 export const Content = styled.div`
@@ -34,6 +33,6 @@ export const Volume = styled.button`
     background-position: center;
     cursor: default;
     width: 20px;
-    -webkit-mask: url(${icon}) no-repeat 50% 50%;
-    mask: url(${icon}) no-repeat 50% 50%;
+    -webkit-mask: url(${({ theme }) => theme.icons.player.audio}) no-repeat 50% 50%;
+    mask: url(${({ theme }) => theme.icons.player.audio}) no-repeat 50% 50%;
 `

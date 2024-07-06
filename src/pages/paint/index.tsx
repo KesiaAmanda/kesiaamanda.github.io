@@ -2,7 +2,6 @@ import { Window } from "../../components/windows/window";
 import { Container, Content } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-
 import { useTheme } from "styled-components";
 import { useEffect, useRef } from "react";
 
@@ -60,7 +59,7 @@ function Paint() {
 
     return (
         <div ref={ref}>
-            <Window page={paint} description="Paint" icon={theme.icons.paint}>
+            <Window page={paint} description="Paint" icon={theme.icons.desktop.paint}>
                 <Container onClick={() => focus(paint)}>
                     <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={paint[0]}>
                         <iframe

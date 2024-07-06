@@ -5,8 +5,7 @@ import { Container } from "./styles";
 function MediumButtom({ onClick, isDisabled, icon }: MediumButtomProps) {
 
     return (
-        <Container onClick={() => onClick()} $isDisabled={!!isDisabled}
-        >
+        <Container onClick={() => onClick()} $isDisabled={!!isDisabled}>
             {icon}
         </Container >
     )

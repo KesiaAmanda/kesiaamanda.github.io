@@ -3,16 +3,13 @@ import { usePages } from "../../../hooks/usePages";
 import { WindowProps } from "../../../types/WindowTypes";
 import { SmallButtom } from "../buttons/small-button";
 import { Buttons, Container, Content, Header, Icon, Text } from "./styles";
-
-import minimizeIcon from '../../../assets/icons/window/minimize.svg'
-import maximizeIcon from '../../../assets/icons/window/iconmonstr-maximize.svg'
-import closeIcon from '../../../assets/icons/window/iconmonstr-x-close.svg'
+import { useTheme } from "styled-components";
 
 
 function Window({ children, page, description, icon, notMaximizeable }: WindowProps) {
+    const theme = useTheme();
 
     const { position, onMouseDown } = useDraggable(page[0].isMaximized, () => focus(page));
-
     const { maximize, minimize, close, focus } = usePages();
 
     return (
@@ -30,9 +27,9 @@ function Window({ children, page, description, icon, notMaximizeable }: WindowPr
                     onMouseDown={onMouseDown}>
                     <Text $icon={icon}>{description}</Text>
                     <Buttons>
-                        <SmallButtom icon={<Icon $icon={minimizeIcon} />} onClick={() => minimize(page)} />
-                        {!!!notMaximizeable && <SmallButtom icon={<Icon $icon={maximizeIcon} />} onClick={() => maximize(page)} />}
-                        <SmallButtom icon={<Icon $icon={closeIcon} />} onClick={() => close(page)} />
+                        <SmallButtom icon={<Icon $icon={theme.icons.window.minimize} />} onClick={() => minimize(page)} />
+                        {!!!notMaximizeable && <SmallButtom icon={<Icon $icon={theme.icons.window.maximize} />} onClick={() => maximize(page)} />}
+                        <SmallButtom icon={<Icon $icon={theme.icons.window.close} />} onClick={() => close(page)} />
                     </Buttons>
                 </Header>
                 {children}

@@ -2,7 +2,6 @@ import { Window } from "../../components/windows/window";
 import { Container, Content } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-
 import { useTheme } from "styled-components";
 import { useEffect, useRef } from "react";
 
@@ -49,7 +48,7 @@ function Minecraft() {
 
     return (
         <div ref={ref}>
-            <Window page={minecraft} description="Minecraft" icon={theme.icons.minecraft}>
+            <Window page={minecraft} description="Minecraft" icon={theme.icons.desktop.minecraft}>
                 <Container onClick={() => focus(minecraft)}>
                     <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={minecraft[0]}>
                         {!(minecraft[0].isClosed) &&

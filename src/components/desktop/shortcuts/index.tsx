@@ -9,15 +9,15 @@ function Shortcuts() {
 
     return (
         <>
-            <Shortcut page={welcome} description="Bem-vindo" icon={theme.icons.welcome} />
-            <Shortcut page={aboutMe} description="Sobre mim" icon={theme.icons.aboutMe} />
-            <Shortcut page={training} description="Formação.bat" icon={theme.icons.training} />
-            <Shortcut page={skills} description="Linguagens e Ferramentas" icon={theme.icons.skills} />
-            <Shortcut page={musicPlayer} description="Windows Media Player" icon={theme.icons.musicPlayer} />
-            <Shortcut page={credits} description="Créditos" icon={theme.icons.credits} />
-            <Shortcut page={paint} description="Paint" icon={theme.icons.paint} />
-            <Shortcut page={minecraft} description="Minecraft" icon={theme.icons.minecraft} />
-            <Shortcut page={prairieKing} description="Journey of the Prairie King" icon={theme.icons.prairieKing} />
+            <Shortcut page={welcome} description="Bem-vindo" icon={theme.icons.desktop.welcome} />
+            <Shortcut page={aboutMe} description="Sobre mim" icon={theme.icons.desktop.aboutMe} />
+            <Shortcut page={training} description="Formação.bat" icon={theme.icons.desktop.training} />
+            <Shortcut page={skills} description="Linguagens e Ferramentas" icon={theme.icons.desktop.skills} />
+            <Shortcut page={musicPlayer} description="Windows Media Player" icon={theme.icons.desktop.musicPlayer} />
+            <Shortcut page={credits} description="Créditos" icon={theme.icons.desktop.credits} />
+            <Shortcut page={paint} description="Paint" icon={theme.icons.desktop.paint} />
+            <Shortcut page={minecraft} description="Minecraft" icon={theme.icons.desktop.minecraft} />
+            <Shortcut page={prairieKing} description="Journey of the Prairie King" icon={theme.icons.desktop.prairieKing} />
         </>
     )
 

@@ -5,8 +5,7 @@ import { Container } from "./styles";
 function SmallButtom({ onClick, icon }: SmallButtonProps) {
 
     return (
-        <Container onClick={() => onClick()
-        }>
+        <Container onClick={() => onClick()}>
             {icon}
         </Container >
     )
