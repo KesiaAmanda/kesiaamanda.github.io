@@ -43,6 +43,11 @@ export const Content = styled.div<ContentProps>`
         height: ${$maxHeight};
         width: ${$maxWidth};
     `}
+
+    ${({ $page }) => ($page.isMaximized && $page.isMinimized) && css`
+        transition: visibility 0.3s ease-in-out;
+        visibility: hidden;
+    `}
 `
 
 export const Header = styled.div`
