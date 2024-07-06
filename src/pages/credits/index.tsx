@@ -26,7 +26,7 @@ function Credits() {
 
     return (
         <div ref={ref}>
-            <Window page={credits} description="Créditos - Notepad" icon={theme.icons.credits}>
+            <Window page={credits} description="Créditos - Notepad" icon={theme.icon.credits}>
                 <WindowMenu />
                 <Container onClick={() => { focus(credits) }}>
                     <Content $maxWidth={(window.innerWidth - 47) + "px"} $maxHeight={(window.innerHeight - 119) + "px"} $page={credits[0]} >

@@ -49,7 +49,7 @@ function Minecraft() {
 
     return (
         <div ref={ref}>
-            <Window page={minecraft} description="Minecraft" icon={theme.icons.minecraft}>
+            <Window page={minecraft} description="Minecraft" icon={theme.icon.minecraft}>
                 <Container onClick={() => focus(minecraft)}>
                     <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={minecraft[0]}>
                         {!(minecraft[0].isClosed) &&

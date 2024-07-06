@@ -136,7 +136,7 @@ function Training() {
 
     return (
         <div ref={ref}>
-            <Window page={training} description="C:\WINDOWS\system32\cmd.exe" icon={theme.icons.training}>
+            <Window page={training} description="C:\WINDOWS\system32\cmd.exe" icon={theme.icon.training}>
                 <Container onClick={() => { focus(training) }}>
                     <Content $maxWidth={(window.innerWidth - 30) + "px"}
                         $maxHeight={(window.innerHeight - 82) + "px"}
