@@ -29,7 +29,7 @@ function Credits() {
             <Window page={credits} description="Créditos - Notepad" icon={theme.icon.credits}>
                 <WindowMenu />
                 <Container onClick={() => { focus(credits) }}>
-                    <Content $maxWidth={(window.innerWidth - 30) + "px"} $maxHeight={(window.innerHeight - 100) + "px"} $page={credits[0]} >
+                    <Content $maxWidth={(window.innerWidth - 47) + "px"} $maxHeight={(window.innerHeight - 119) + "px"} $page={credits[0]} >
                         <Title>{text}</Title>
                         <Hr />
                         <Text>

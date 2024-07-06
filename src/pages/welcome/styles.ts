@@ -32,6 +32,8 @@ export const Content = styled.div<ContentProps>`
     ${({ $page, $maxWidth, $maxHeight }) => $page.isMaximized && css`   
         min-width: ${$maxWidth};
         min-height: ${$maxHeight};
+        max-width: ${$maxWidth};
+        max-height: ${$maxHeight};
     `}
 `
 

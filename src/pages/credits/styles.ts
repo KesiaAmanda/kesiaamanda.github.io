@@ -24,6 +24,8 @@ export const Content = styled.div<ContentProps>`
     ${({ $page, $maxWidth, $maxHeight }) => $page.isMaximized && css`
         min-width: ${$maxWidth};
         min-height: ${$maxHeight};
+        max-width: ${$maxWidth};
+        max-height: ${$maxHeight};
         resize: horizontal;
     `}
 
@@ -45,7 +47,16 @@ export const Content = styled.div<ContentProps>`
 
 export const Title = styled.div`
     color: ${({ theme }) => theme.text.color};
-    font-size: 8px;
+
+     @media screen and (max-width: 767px) {
+        font-size: 6px;
+    }
+
+    @media screen and (min-width: 767px) {
+        font-size: 8px;
+    }
+
+    font-size: 6px;
     font-family: monospace;
     margin: 20px 0px 20px 0px;
     font-weight: bold;
