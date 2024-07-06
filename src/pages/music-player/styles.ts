@@ -63,7 +63,7 @@ export const Buttons = styled.div`
 `
 
 export const Icon = styled.img<IconProps>`
-    background-color: ${({ theme }) => theme.icon.color};
+    background-color: ${({ theme }) => theme.icons.color};
     background-position: center;
     padding-bottom: 8px;
     min-width: 15px;

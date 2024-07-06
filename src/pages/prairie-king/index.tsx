@@ -18,7 +18,7 @@ function PrairieKing() {
 
     return (
         <div ref={ref}>
-            <Window notMaximizeable={true} page={prairieKing} description="Journey of the Prairie King" icon={theme.icon.prairieKing}>
+            <Window notMaximizeable={true} page={prairieKing} description="Journey of the Prairie King" icon={theme.icons.prairieKing}>
                 <Container onClick={() => focus(prairieKing)}>
                     <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={prairieKing[0]}>
                         {!prairieKing[0].isClosed &&

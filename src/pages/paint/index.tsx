@@ -60,7 +60,7 @@ function Paint() {
 
     return (
         <div ref={ref}>
-            <Window page={paint} description="Paint" icon={theme.icon.paint}>
+            <Window page={paint} description="Paint" icon={theme.icons.paint}>
                 <Container onClick={() => focus(paint)}>
                     <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={paint[0]}>
                         <iframe
