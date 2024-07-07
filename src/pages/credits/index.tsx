@@ -35,8 +35,8 @@ function Credits() {
                         <Text>
                             <H1>-ˋ Icones ˊ-</H1>
                             <P>Mídias sociais <A rel="noreferrer" href="https://www.iconfinder.com/Eisenhower" target="_blank">Iconfinder</A> .</P>
-                            <P>Desktop <A rel="noreferrer" href="https://aconfuseddragon.itch.io/windows-95-plus-1" target="_blank">AConfusedDragon</A> by <A
-                                rel="noreferrer" href="https://twitter.com/aconfuseddragon" target="_blank">@aconfuseddragon</A> .</P>
+                            <P>Atalhos <A
+                                rel="noreferrer" href="https://twitter.com/aconfuseddragon" target="_blank">@aconfuseddragon</A>, <A rel="noreferrer" href="https://aconfuseddragon.itch.io/windows-95-plus-1" target="_blank">windows-95-plus-1</A> <A rel="noreferrer" href="https://aconfuseddragon.itch.io/windows-95-plus-2" target="_blank">windows-95-plus-2</A>.</P>
                             <P>Emoji <A rel="noreferrer" href="https://www.flaticon.com/free-icons/pixelated" target="_blank">Flaticon</A> .</P>
                             <P>Botões do rádio <A rel="noreferrer" href="https://iconmonstr.com/" target="_blank">iconmonstr</A> .</P>
                             <H1>-ˋ Imagens ˊ-</H1>
