@@ -5,6 +5,7 @@ import playerLightTheme from '../assets/images/1456855014belton-5.webp'
 import playerDarkTheme from '../assets/images/bvn01m71yxxc1.gif'
 
 import startIcon from '../assets/icons/social/icons8-pixel-star-16.png'
+// import startIcon from '../assets/icons/desktop/start.png'
 import welcomeIcon from '../assets/icons/desktop/contact_book.png'
 import aboutMeIcon from '../assets/icons/desktop/text_file.png'
 import trainingIcon from '../assets/icons/desktop/script_file.png'

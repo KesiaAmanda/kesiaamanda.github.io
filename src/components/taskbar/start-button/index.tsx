@@ -1,5 +1,5 @@
 import { Button } from "../button";
-import { Content } from "./styles";
+import { Content, ContentButton } from "./styles";
 import { StartMenu } from "../../../pages/start-menu";
 import { Divider } from "../button/styles";
 import { usePages } from "../../../hooks/usePages";
@@ -23,7 +23,15 @@ function StartButton() {
 
     return (
         <Content ref={ref}>
-            <Button isSelected={startMenu} description="Iniciar" onClick={handleClick} />
+            <ContentButton $isSelected={startMenu}>
+                <button
+                    onMouseDown={handleClick}
+                    onTouchCancel={handleClick}
+                >
+                    <span>Iniciar</span>
+                </button>
+            </ContentButton>
+
             <StartMenu isSelected={startMenu} onClick={() => { removeFocus() }} />
             <Divider />
         </Content>
