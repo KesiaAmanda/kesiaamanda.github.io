@@ -63,6 +63,9 @@ import avatarIcon from '../assets/images/download20230701162715-1.png'
 import linkedinIcon from '../assets/icons/social/linkedin_pixel_logo_icon_181925.png'
 import githubIcon from '../assets/icons/social/github.png'
 
+import starImage from '../assets/images/star.png'
+import loadingImage from '../assets/images/loading.gif'
+
 
 const images = {
     icons: {
@@ -134,6 +137,8 @@ const images = {
         },
 
     },
+    star: starImage,
+    loading: loadingImage
 }
 
 export const lightTheme = {

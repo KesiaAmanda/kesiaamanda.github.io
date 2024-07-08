@@ -19,6 +19,7 @@ import { Skills } from "./pages/skills";
 import { Paint } from "./pages/paint";
 import { Minecraft } from "./pages/minecraft";
 import { PrairieKing } from "./pages/prairie-king";
+import { Loading } from "./pages/loading";
 
 function App() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -33,10 +34,12 @@ function App() {
     }
   }, []);
 
+
   return (
     <PagesContextProvider>
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyle />
+        <Loading />
         <Screen>
           <Desktop>
             <Workspace>

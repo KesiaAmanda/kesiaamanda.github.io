@@ -1,4 +1,3 @@
-import { Button } from "../button";
 import { Content, ContentButton } from "./styles";
 import { StartMenu } from "../../../pages/start-menu";
 import { Divider } from "../button/styles";

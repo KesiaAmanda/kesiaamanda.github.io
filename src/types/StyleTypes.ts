@@ -6,6 +6,12 @@ interface ContentProps {
     $page: PagesProps
 }
 
+interface ContentSizeProps {
+    $maxWidth: string,
+    $maxHeight: string,
+    $isDisabled: boolean
+}
+
 interface IsSelectedProps {
     $isSelected: boolean
 }
@@ -41,4 +47,4 @@ interface PageElementsProps {
     $page: PagesProps
 }
 
-export type { ContentProps, IsSelectedProps, IsShutdownProps, IsDisabledProps, ProgressBarProps, IconProps, TaskBarButtonProps, PageElementsProps, FoldersProps }
+export type { ContentProps, ContentSizeProps, IsSelectedProps, IsShutdownProps, IsDisabledProps, ProgressBarProps, IconProps, TaskBarButtonProps, PageElementsProps, FoldersProps }
