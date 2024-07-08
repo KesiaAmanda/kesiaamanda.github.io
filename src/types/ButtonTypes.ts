@@ -19,7 +19,7 @@ type MenuProps = {
     $focus: boolean
 }
 
-type MediumButtomProps = {
+type MediumButtonProps = {
     onClick: () => void,
     icon: ReactElement<any, any>,
     isDisabled?: boolean
@@ -35,4 +35,4 @@ type DefaultButtonProps = {
     icon: string
 }
 
-export type { ButtonProps, DefaultButtonProps, SmallButtonProps, MenuProps, MediumButtomProps, InvisibleButtonProps, ActiveProps }
+export type { ButtonProps, DefaultButtonProps, SmallButtonProps, MenuProps, MediumButtonProps, InvisibleButtonProps, ActiveProps }
