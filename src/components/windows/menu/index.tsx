@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import { WindowMenuProps } from "../../../types/WindowTypes";
-import { Content, Dropdown, DropdownContent, Span } from "./styles";
+import { Content, Dropdown } from "./styles";
 
 
+let defaultProps = {
+    file: false,
+    edit: false,
+    search: false,
+    help: false,
+};
 
 function WindowMenu({ notSearchable, page }: WindowMenuProps) {
-    let defaultProps = {
-        file: false,
-        edit: false,
-        search: false,
-        help: false,
-    };
-
     const [active, setActive] = useState(false);
 
     const [focus, setFocus] = useState<
@@ -24,10 +23,14 @@ function WindowMenu({ notSearchable, page }: WindowMenuProps) {
     >(defaultProps);
 
     useEffect(() => {
-        if (!page.isInFocus) {
-            setActive(false)
-            setFocus(defaultProps)
+        function handlePageFocusChange() {
+            if (!page.isInFocus) {
+                setActive(false);
+                setFocus(defaultProps);
+            }
         }
+
+        handlePageFocusChange()
     }, [page])
 
     return (

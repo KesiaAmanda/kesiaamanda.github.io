@@ -3,7 +3,7 @@ import { Container, Content } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useTheme } from "styled-components";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 
 function Paint() {
@@ -15,7 +15,7 @@ function Paint() {
         removeFocus()
     });
 
-    const applyTheme = () => {
+    const applyTheme = useCallback(() => {
         const iframe = iframeRef.current;
         if (iframe) {
             const iframeDocument = iframe.contentDocument;
@@ -28,11 +28,11 @@ function Paint() {
         } else {
             console.log('iframe não encontrado');
         }
-    };
+    }, [iframeRef, theme]);
 
     useEffect(() => {
         applyTheme();
-    }, [theme]);
+    }, [theme, applyTheme]);
 
     const updateThemeVariables = (rootElement: HTMLElement, theme: any) => {
         rootElement.style.setProperty('--ButtonFace', theme.window.background.color);
