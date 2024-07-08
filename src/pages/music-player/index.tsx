@@ -63,20 +63,22 @@ function MusicPlayer() {
                 <WindowMenu page={musicPlayer[0]} notSearchable={true} />
                 <Container onClick={() => { focus(musicPlayer) }}>
                     <Content >
-                        <YouTube
-                            videoId={playlistId}
-                            opts={{
-                                height: '0',
-                                width: '0',
-                                playerVars: {
-                                    listType: 'playlist',
-                                    list: playlistId,
-                                    loop: 1,
-                                }
-                            }}
-                            onReady={onReady}
-                            onStateChange={onStateChange}
-                        />
+                        <div style={{ maxHeight: '0px', overflow: 'hidden' }}>
+                            <YouTube
+                                videoId={playlistId}
+                                opts={{
+                                    height: '0',
+                                    width: '0',
+                                    playerVars: {
+                                        listType: 'playlist',
+                                        list: playlistId,
+                                        loop: 1,
+                                    }
+                                }}
+                                onReady={onReady}
+                                onStateChange={onStateChange}
+                            />
+                        </div>
                         <MusicPlayerImage />
                         <BoxTitle>
                             <Title>{title || '...'}</Title>
