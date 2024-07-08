@@ -4,8 +4,15 @@ import { ContentProps } from '../../types/StyleTypes';
 export const Container = styled.div`
     background-color: ${({ theme }) => theme.window.body.background.color};
     display: flex;
-    width: 900px;
-    height: 500px;
+
+    @media screen and (max-width: 767px) {
+        min-width: 80vw;
+    }
+
+    @media screen and (min-width: 767px) {
+        min-width: 900px;
+        min-height: 500px;
+    }
 `
 
 export const Content = styled.div<ContentProps>`

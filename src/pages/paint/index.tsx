@@ -4,10 +4,12 @@ import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useTheme } from "styled-components";
 import { useCallback, useEffect, useRef } from "react";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 
 function Paint() {
-    const theme = useTheme();
+    const theme = useTheme()
+    const size = useWindowSize()
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const { paint, focus, removeFocus } = usePages();
 
@@ -61,7 +63,7 @@ function Paint() {
         <div ref={ref}>
             <Window page={paint} description="Paint" icon={theme.icons.desktop.paint}>
                 <Container onClick={() => focus(paint)}>
-                    <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={paint[0]}>
+                    <Content $maxWidth={(size.width - 5) + "px"} $maxHeight={(size.height - 55) + "px"} $page={paint[0]}>
                         <iframe
                             ref={iframeRef}
                             title="JS Paint"

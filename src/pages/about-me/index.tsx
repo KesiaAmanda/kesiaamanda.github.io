@@ -5,11 +5,13 @@ import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import { WindowMenu } from "../../components/windows/menu";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 
 function AboutMe() {
-    const [cat, setCat] = useState("")
     const theme = useTheme()
+    const size = useWindowSize()
+    const [cat, setCat] = useState("")
 
     const { aboutMe, focus, removeFocus } = usePages();
 
@@ -37,7 +39,7 @@ function AboutMe() {
             <Window page={aboutMe} description="Sobre mim - Notepad" icon={theme.icons.desktop.aboutMe}>
                 <WindowMenu page={aboutMe[0]} />
                 <Container onClick={() => { focus(aboutMe) }}>
-                    <Content $maxWidth={(window.innerWidth - 30) + "px"} $maxHeight={(window.innerHeight - 100) + "px"} $page={aboutMe[0]} >
+                    <Content $maxWidth={(size.width - 30) + "px"} $maxHeight={(size.height - 100) + "px"} $page={aboutMe[0]} >
                         <Hr />
                         <Title>{text}</Title>
                         <Hr />

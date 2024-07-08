@@ -4,10 +4,12 @@ import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useTheme } from "styled-components";
 import { WindowMenu } from "../../components/windows/menu";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 
 function Credits() {
     const theme = useTheme()
+    const size = useWindowSize()
 
     const { credits, focus, removeFocus } = usePages();
 
@@ -29,7 +31,7 @@ function Credits() {
             <Window page={credits} description="Créditos - Notepad" icon={theme.icons.desktop.credits}>
                 <WindowMenu page={credits[0]} />
                 <Container onClick={() => { focus(credits) }}>
-                    <Content $maxWidth={(window.innerWidth - 47) + "px"} $maxHeight={(window.innerHeight - 119) + "px"} $page={credits[0]} >
+                    <Content $maxWidth={(size.width - 47) + "px"} $maxHeight={(size.height - 119) + "px"} $page={credits[0]} >
                         <Title>{text}</Title>
                         <Hr />
                         <Text>

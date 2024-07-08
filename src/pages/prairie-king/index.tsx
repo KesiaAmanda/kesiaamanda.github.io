@@ -15,6 +15,12 @@ function PrairieKing() {
         removeFocus()
     });
 
+    const enterGame = () => {
+        if (iframeRef.current) {
+            iframeRef.current.contentWindow?.focus();
+        }
+    };
+
     return (
         <div ref={ref}>
             <Window notMaximizeable={true} page={prairieKing} description="Journey of the Prairie King" icon={theme.icons.desktop.prairieKing}>
@@ -28,11 +34,7 @@ function PrairieKing() {
                                 width="100%"
                                 height="100%"
                                 frameBorder="0"
-                                onLoad={() => {
-                                    if (iframeRef.current) {
-                                        iframeRef.current.contentWindow?.focus();
-                                    }
-                                }}
+                                onMouseEnter={() => enterGame()}
                             />}
                     </Content>
                 </Container>

@@ -4,10 +4,12 @@ import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useTheme } from "styled-components";
 import { useEffect, useRef } from "react";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 
 function Minecraft() {
-    const theme = useTheme();
+    const theme = useTheme()
+    const size = useWindowSize()
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const { minecraft, focus, removeFocus } = usePages();
 
@@ -49,7 +51,7 @@ function Minecraft() {
         <div ref={ref}>
             <Window page={minecraft} description="Minecraft" icon={theme.icons.desktop.minecraft}>
                 <Container onClick={() => focus(minecraft)}>
-                    <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={minecraft[0]}>
+                    <Content $maxWidth={(size.width - 5) + "px"} $maxHeight={(size.height - 55) + "px"} $page={minecraft[0]}>
                         {!minecraft[0].isInFocus && <div
                             style={{
                                 position: 'absolute',

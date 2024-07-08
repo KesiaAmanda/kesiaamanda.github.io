@@ -4,6 +4,7 @@ import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useCallback, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 const hr = "===============================================================================================";
 const speed = 5;
@@ -11,6 +12,7 @@ const seeMoreText = "Pressione 'Enter' para ver mais... "
 
 function Training() {
     const theme = useTheme()
+    const size = useWindowSize()
     const { training, focus, removeFocus } = usePages();
 
     const [firstParagraph, setFirstParagraph] = useState<string>('');
@@ -138,8 +140,8 @@ function Training() {
         <div ref={ref}>
             <Window page={training} description="C:\WINDOWS\system32\cmd.exe" icon={theme.icons.desktop.training}>
                 <Container onClick={() => { focus(training) }}>
-                    <Content $maxWidth={(window.innerWidth - 30) + "px"}
-                        $maxHeight={(window.innerHeight - 82) + "px"}
+                    <Content $maxWidth={(size.width - 30) + "px"}
+                        $maxHeight={(size.height - 82) + "px"}
                         $page={training[0]} >
                         <Text>{firstParagraph}</Text>
                         <Title>{secondParagraph}</Title>

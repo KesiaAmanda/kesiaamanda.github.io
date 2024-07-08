@@ -3,9 +3,11 @@ import { Container, Content, Avatar, Text, Social, Icon } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useTheme } from "styled-components";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 function Welcome() {
     const theme = useTheme()
+    const size = useWindowSize()
     const { welcome, focus, removeFocus } = usePages();
 
     const ref = useOutsideClick(() => {
@@ -16,7 +18,7 @@ function Welcome() {
         <div ref={ref}>
             <Window page={welcome} description="Bem-vindo" icon={theme.icons.desktop.welcome}>
                 <Container onClick={() => focus(welcome)}>
-                    <Content $maxWidth={(window.innerWidth - 30) + "px"} $maxHeight={(window.innerHeight - 62) + "px"} $page={welcome[0]}>
+                    <Content $maxWidth={(size.width - 30) + "px"} $maxHeight={(size.height - 62) + "px"} $page={welcome[0]}>
                         <Text>
                             <span style={{ fontSize: '25px' }}>Olá, eu sou a</span>
                             <span style={{ fontSize: '43px' }}>&gt;Kesia Amanda!</span>

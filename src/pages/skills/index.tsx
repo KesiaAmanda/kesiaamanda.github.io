@@ -15,7 +15,7 @@ let enabled = { tools: true, backend: true, frontend: true, database: true, baaS
 
 function Skills() {
     const theme = useTheme()
-    const size = useWindowSize();
+    const size = useWindowSize()
 
     const { skills, focus, removeFocus } = usePages();
 
