@@ -36,7 +36,7 @@ export const BoxTitle = styled.div`
     ${internal}
 `
 
-export const Title = styled.p`
+export const Title = styled.div`
     max-width: 100px;
     min-width: 100px;
     color: white;

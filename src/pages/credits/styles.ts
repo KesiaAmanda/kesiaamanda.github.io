@@ -64,11 +64,11 @@ export const Title = styled.div`
     white-space: pre;
 `
 
-export const Text = styled.p`
+export const Text = styled.div`
     padding: 1em 0;
 `
 
-export const P = styled.p`
+export const P = styled.div`
     color: ${({ theme }) => theme.text.color};
     padding-bottom: 1em;
 `
