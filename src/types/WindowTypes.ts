@@ -16,6 +16,7 @@ type Position = {
 
 type WindowMenuProps = {
     notSearchable?: boolean,
+    page: PagesProps,
 }
 
 type WindowAddressProps = {

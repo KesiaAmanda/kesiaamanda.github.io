@@ -60,7 +60,7 @@ function MusicPlayer() {
     return (
         <div ref={ref}>
             <Window page={musicPlayer} description="Windows Media Player" icon={theme.icons.desktop.musicPlayer} notMaximizeable={true}>
-                <WindowMenu notSearchable={true} />
+                <WindowMenu page={musicPlayer[0]} notSearchable={true} />
                 <Container onClick={() => { focus(musicPlayer) }}>
                     <Content >
                         <YouTube

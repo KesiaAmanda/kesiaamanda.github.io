@@ -42,7 +42,7 @@ function Skills() {
     return (
         <div ref={ref}>
             <Window page={skills} description="Linguagens e Ferramentas" icon={theme.icons.desktop.skills}>
-                <WindowMenu />
+                <WindowMenu page={skills[0]} />
                 <Divider />
                 <WindowAddress path="C:\Desktop\Linguagens e Ferramentas\Backend" />
                 <Divider />

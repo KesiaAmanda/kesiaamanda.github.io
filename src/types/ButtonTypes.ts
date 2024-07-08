@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactElement, ReactNode } from "react"
 import { PagesProps } from "./PagesTypes"
 
 type ButtonProps = {
@@ -12,6 +12,11 @@ type ActiveProps = {
 type SmallButtonProps = {
     onClick: () => void,
     icon: ReactElement<any, any>
+}
+
+type MenuProps = {
+    $active: boolean,
+    $focus: boolean
 }
 
 type MediumButtomProps = {
@@ -30,4 +35,4 @@ type DefaultButtonProps = {
     icon: string
 }
 
-export type { ButtonProps, DefaultButtonProps, SmallButtonProps, MediumButtomProps, InvisibleButtonProps, ActiveProps }
+export type { ButtonProps, DefaultButtonProps, SmallButtonProps, MenuProps, MediumButtomProps, InvisibleButtonProps, ActiveProps }
