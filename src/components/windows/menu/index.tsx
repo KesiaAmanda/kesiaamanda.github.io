@@ -24,8 +24,6 @@ function WindowMenu({ notSearchable, page }: WindowMenuProps) {
     >(defaultProps);
 
     useEffect(() => {
-        console.log(page.isInFocus);
-
         if (!page.isInFocus) {
             setActive(false)
             setFocus(defaultProps)
