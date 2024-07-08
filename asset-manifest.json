@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.31d6cfe0.css",
-    "main.js": "/static/js/main.eaf9cb0d.js",
+    "main.js": "/static/js/main.89bc5b50.js",
     "static/js/453.1c2cb73f.chunk.js": "/static/js/453.1c2cb73f.chunk.js",
     "static/media/bvn01m71yxxc1.gif": "/static/media/bvn01m71yxxc1.0850c909a9bdf749428a.gif",
     "static/media/kime-nanami-pastelsky.gif": "/static/media/kime-nanami-pastelsky.d1996793cf46059a695b.gif",
     "static/media/kime-nanami-pastelsky-nigth.gif": "/static/media/kime-nanami-pastelsky-nigth.ccf796761adfff724f30.gif",
     "static/media/1456855014belton-5.webp": "/static/media/1456855014belton-5.660140e65f61edb0c49c.webp",
+    "static/media/loading.gif": "/static/media/loading.e0ee0ec2c58ccd60b472.gif",
     "static/media/downlo-1.png": "/static/media/download20230701162715-1.a58cf3f43fa247a3b847.png",
     "static/media/Minecraftia-Regular.ttf": "/static/media/Minecraftia-Regular.c2908c14b3726c200279.ttf",
     "static/media/github.png": "/static/media/github.0805f89a09b334bfa9d4.png",
@@ -23,11 +24,11 @@
     "static/media/iconmonstr-minus.svg": "/static/media/iconmonstr-minus.9a860a6f56edf9917db207e9b37305e8.svg",
     "static/media/iconmonstr-play.svg": "/static/media/iconmonstr-play.5266160403bea13dcea7abe860e43b77.svg",
     "static/media/iconmonstr-stop.svg": "/static/media/iconmonstr-stop.169f651f5d31385d4a89c4bf4d4aab09.svg",
-    "main.eaf9cb0d.js.map": "/static/js/main.eaf9cb0d.js.map",
+    "main.89bc5b50.js.map": "/static/js/main.89bc5b50.js.map",
     "453.1c2cb73f.chunk.js.map": "/static/js/453.1c2cb73f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.eaf9cb0d.js"
+    "static/js/main.89bc5b50.js"
   ]
 }
