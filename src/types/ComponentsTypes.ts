@@ -5,4 +5,11 @@ type SkillsProps = {
     children: ReactNode
 }
 
-export type { SkillsProps }
+type MenuItemsProps = {
+    file: boolean,
+    edit: boolean,
+    search: boolean,
+    help: boolean,
+}
+
+export type { SkillsProps, MenuItemsProps }

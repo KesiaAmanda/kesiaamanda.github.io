@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { WindowMenuProps } from "../../../types/WindowTypes";
 import { Content, Dropdown } from "./styles";
+import { MenuItemsProps } from "../../../types/ComponentsTypes";
 
 
 let defaultProps = {
@@ -8,19 +9,12 @@ let defaultProps = {
     edit: false,
     search: false,
     help: false,
-};
+} as MenuItemsProps;
 
 function WindowMenu({ notSearchable, page }: WindowMenuProps) {
     const [active, setActive] = useState(false);
 
-    const [focus, setFocus] = useState<
-        {
-            file: boolean,
-            edit: boolean,
-            search: boolean,
-            help: boolean,
-        }
-    >(defaultProps);
+    const [focus, setFocus] = useState<MenuItemsProps>(defaultProps);
 
     useEffect(() => {
         function handlePageFocusChange() {
