@@ -21,9 +21,6 @@ function Minecraft() {
             if (iframe) {
                 const listener = (event: MessageEvent) => {
                     try {
-                        if (event.source === iframeRef.current?.contentWindow) {
-                            console.log(event);
-                        }
                     } catch (error) {
                         console.error('Erro ao processar mensagem do iframe:', error);
                     }
@@ -38,19 +35,31 @@ function Minecraft() {
 
     }, [minecraft]);
 
-    useEffect(() => {
-        if (!minecraft[0].isInFocus) {
-            if (iframeRef.current) {
-                iframeRef.current.contentWindow?.focus();
-            }
+    const enterGame = () => {
+        if (iframeRef.current) {
+            iframeRef.current.contentWindow?.focus();
         }
-    }, [minecraft]);
+    };
+
+    const handleClick = () => {
+        focus(minecraft)
+    };
 
     return (
         <div ref={ref}>
             <Window page={minecraft} description="Minecraft" icon={theme.icons.desktop.minecraft}>
                 <Container onClick={() => focus(minecraft)}>
                     <Content $maxWidth={(window.innerWidth - 5) + "px"} $maxHeight={(window.innerHeight - 55) + "px"} $page={minecraft[0]}>
+                        {!minecraft[0].isInFocus && <div
+                            style={{
+                                position: 'absolute',
+                                width: '100%',
+                                height: '100%',
+                                zIndex: 1,  // Coloca este elemento acima do iframe
+                            }}
+                            onMouseDown={handleClick}
+                        ></div>}
+
                         {!(minecraft[0].isClosed) &&
                             <iframe
                                 title="Minecraft"
@@ -58,14 +67,8 @@ function Minecraft() {
                                 src={'https://labystudio.github.io/js-minecraft/'}
                                 width="100%"
                                 height="100%"
-                                onClick={() => focus(minecraft)}
-                                onMouseDown={() => focus(minecraft)}
                                 frameBorder={0}
-                                onLoad={() => {
-                                    if (iframeRef.current) {
-                                        iframeRef.current.contentWindow?.focus();
-                                    }
-                                }}
+                                onMouseEnter={() => enterGame()}
                             />
                         }
                     </Content>
