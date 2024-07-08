@@ -59,35 +59,35 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-button:vertical:increment {
-    background-image: ${({ theme }) => theme.icons.scroll.vertical.enabled.increment};
+    background-image: ${({ theme }) => theme.images.scroll.vertical.enabled.increment};
   }
 
   ::-webkit-scrollbar-button:vertical:decrement {
-    background-image: ${({ theme }) => theme.icons.scroll.vertical.enabled.decrement};
+    background-image: ${({ theme }) => theme.images.scroll.vertical.enabled.decrement};
   }
 
   ::-webkit-scrollbar-button:vertical:increment:disabled {
-    background-image: ${({ theme }) => theme.icons.scroll.vertical.disabled.increment};
+    background-image: ${({ theme }) => theme.images.scroll.vertical.disabled.increment};
   }
 
   ::-webkit-scrollbar-button:vertical:decrement:disabled {
-    background-image: ${({ theme }) => theme.icons.scroll.vertical.disabled.decrement};
+    background-image: ${({ theme }) => theme.images.scroll.vertical.disabled.decrement};
   }
 
   ::-webkit-scrollbar-button:horizontal:increment {
-    background-image: ${({ theme }) => theme.icons.scroll.horizontal.enabled.increment};
+    background-image: ${({ theme }) => theme.images.scroll.horizontal.enabled.increment};
   }
 
   ::-webkit-scrollbar-button:horizontal:decrement {
-    background-image: ${({ theme }) => theme.icons.scroll.horizontal.enabled.decrement};
+    background-image: ${({ theme }) => theme.images.scroll.horizontal.enabled.decrement};
   }
 
   ::-webkit-scrollbar-button:horizontal:increment:disabled {
-    background-image: ${({ theme }) => theme.icons.scroll.horizontal.disabled.increment};
+    background-image: ${({ theme }) => theme.images.scroll.horizontal.disabled.increment};
   }
 
   ::-webkit-scrollbar-button:horizontal:decrement:disabled {
-    background-image: ${({ theme }) => theme.icons.scroll.horizontal.disabled.decrement};
+    background-image: ${({ theme }) => theme.images.scroll.horizontal.disabled.decrement};
   }
 
   ::-webkit-scrollbar-thumb {

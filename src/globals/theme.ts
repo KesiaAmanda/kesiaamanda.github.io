@@ -132,6 +132,17 @@ const images = {
             github: githubIcon,
         },
 
+    },
+}
+
+export const lightTheme = {
+    ...images,
+    images: {
+        icons: {
+            desktop: {
+                theme: lightIcon
+            }
+        },
         scroll: {
             vertical: {
                 enabled: {
@@ -154,18 +165,6 @@ const images = {
                 }
             }
         },
-
-    },
-}
-
-export const lightTheme = {
-    ...images,
-    images: {
-        icons: {
-            desktop: {
-                theme: lightIcon
-            }
-        }
     },
     text: {
         color: 'rgb(12, 5, 11)'
@@ -281,7 +280,29 @@ export const darkTheme = {
             desktop: {
                 theme: darkIcon
             }
-        }
+        },
+        scroll: {
+            vertical: {
+                enabled: {
+                    increment: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: rgb(226, 213, 224);' d='M12 3l12 18h-24z'/></svg>\")",
+                    decrement: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: rgb(226, 213, 224);' d='M12 3l12 18h-24z'/></svg>\")",
+                },
+                disabled: {
+                    increment: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(1 -1)'><path style='fill: grey;' d='M12 3l12 18h-24z'/></svg>\")",
+                    decrement: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: grey;' d='M12 3l12 18h-24z'/></svg>\")"
+                }
+            },
+            horizontal: {
+                enabled: {
+                    increment: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: rgb(226, 213, 224);' d='M25 12l-18 12v-24z'/></svg>\")",
+                    decrement: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: rgb(226, 213, 224);' d='M25 12l-18 12 v-24z'/></svg>\")",
+                },
+                disabled: {
+                    increment: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>\")",
+                    decrement: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 25 25' transform='scale(-1 1)'><path style='fill: grey;' d='M25 12l-18 12v-24z'/></svg>\")"
+                }
+            }
+        },
     },
     text: {
         color: 'rgb(247, 242, 248)'
