@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+# Portfolio estilo Windows 95
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é um portfolio pessoal com a aparência inspirada no Windows 95.
 
-## Available Scripts
+![Texto alternativo](https://github.com/KesiaAmanda/kesiaamanda.github.io/blob/main/preview.png?raw=true)
 
-In the project directory, you can run:
+## Como Rodar o Projeto
 
-### `yarn start`
+Para rodar este projeto localmente, siga os passos abaixo:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Pré-requisitos
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina.
 
-### `yarn test`
+### Instalação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/KesiaAmanda/kesiaamanda.github.io.git
+    cd kesiaamanda.github.io
+    ```
 
-### `yarn build`
+2. Instale as dependências do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Com npm:
+    ```bash
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Ou com yarn:
+    ```bash
+    yarn install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Rodando o Projeto
+Para iniciar o servidor de desenvolvimento, execute o seguinte comando:
 
-### `yarn eject`
+Com npm:
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Ou com yarn:
+```bash
+yarn start
+``` 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Aguarde até que o servidor inicie e então abra seu navegador e acesse http://localhost:3000 para visualizar o projeto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Build
+Para gerar uma versão otimizada do projeto para produção, execute:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Com npm:
+```bash
+npm run build
+```
 
-## Learn More
+Ou com yarn:
+```bash
+yarn build
+``` 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Isso criará a pasta build com os arquivos prontos para deploy.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Créditos
+Este projeto utiliza algumas funcionalidades de projetos de código aberto. Abaixo estão os créditos e links para os repositórios originais:
+
+- [JS Paint](https://github.com/1j01/jspaint): Uma versão em JavaScript do clássico programa de pintura, Paint.
+- [JS Minecraft](https://github.com/LabyStudio/js-minecraft): Um clone em JavaScript do famoso jogo Minecraft.
+- [JS Prairie King](https://jsprairieking.neocities.org/about): Um jogo inspirado no mini-game "Prairie King" do Stardew Valley, implementado em JavaScript.
