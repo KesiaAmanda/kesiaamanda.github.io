@@ -17,6 +17,8 @@ export const Content = styled.div<ContentProps>`
     overflow-x: scroll;
     overflow-y: scroll;
     position: relative;
+
+    height: 300px;
     
     padding: 20px;
 
@@ -66,11 +68,6 @@ export const Title = styled.div`
 
 export const Text = styled.div`
     padding: 1em 0;
-`
-
-export const P = styled.div`
-    color: ${({ theme }) => theme.text.color};
-    padding-bottom: 1em;
 `
 
 export const A = styled.a`
