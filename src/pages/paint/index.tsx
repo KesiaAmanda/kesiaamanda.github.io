@@ -63,7 +63,7 @@ function Paint() {
         <div ref={ref}>
             <Window page={paint} description="Paint" icon={theme.icons.desktop.paint}>
                 <Container onClick={() => focus(paint)}>
-                    <Content $maxWidth={(size.width - 5) + "px"} $maxHeight={(size.height - 55) + "px"} $page={paint[0]}>
+                    {!paint[0].isClosed && <Content $maxWidth={(size.width - 5) + "px"} $maxHeight={(size.height - 55) + "px"} $page={paint[0]}>
                         <iframe
                             ref={iframeRef}
                             title="JS Paint"
@@ -75,7 +75,7 @@ function Paint() {
                                 applyTheme()
                             }}
                         />
-                    </Content>
+                    </Content>}
                 </Container>
             </Window>
         </div>
