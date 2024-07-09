@@ -1,7 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 import reziseIcon from '../assets/icons/window/resize.png'
+import minecraftia from '../fonts/Minecraftia-Regular.ttf'
+
 
 export const GlobalStyle = createGlobalStyle`
+
+  @font-face {
+      font-family: 'Minecraftia';
+      src: url(${minecraftia}) format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
   * {
     -webkit-touch-callout: none; /* iOS Safari */
