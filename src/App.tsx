@@ -61,16 +61,15 @@ function App() {
               <Minecraft />
               <PrairieKing />
             </Pages>
-
-
           </Desktop>
+
           <Taskbar>
             {/* buttons */}
             <StartButton />
             <TaskbarButtons $loading={isLoading} />
             <Notifications />
-
           </Taskbar>
+
         </Screen>
       </ThemeProvider>
     </PagesContextProvider>

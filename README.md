@@ -2,7 +2,7 @@
 
 Este projeto é um portfolio pessoal com a aparência inspirada no Windows 95.
 
-![Texto alternativo](https://github.com/KesiaAmanda/kesiaamanda.github.io/blob/main/preview.png?raw=true)
+![Texto alternativo](preview.png)
 
 ## Como Rodar o Projeto
 
@@ -68,3 +68,7 @@ Este projeto utiliza algumas funcionalidades de projetos de código aberto. Abai
 - [JS Paint](https://github.com/1j01/jspaint): Uma versão em JavaScript do clássico programa de pintura, Paint.
 - [JS Minecraft](https://github.com/LabyStudio/js-minecraft): Um clone em JavaScript do famoso jogo Minecraft.
 - [JS Prairie King](https://jsprairieking.neocities.org/about): Um jogo inspirado no mini-game "Prairie King" do Stardew Valley, implementado em JavaScript.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
