@@ -7,6 +7,7 @@ type WindowProps = {
     description: string,
     icon: any,
     notMaximizeable?: boolean,
+    onClose?: () => void,
 }
 
 type Position = {

@@ -6,7 +6,7 @@ import { Buttons, Container, Content, Header, Icon, Text } from "./styles";
 import { useTheme } from "styled-components";
 
 
-function Window({ children, page, description, icon, notMaximizeable }: WindowProps) {
+function Window({ children, page, description, icon, notMaximizeable, onClose }: WindowProps) {
     const theme = useTheme();
 
     const { position, onMouseDown } = useDraggable(page[0].isMaximized, () => focus(page));
@@ -29,7 +29,10 @@ function Window({ children, page, description, icon, notMaximizeable }: WindowPr
                     <Buttons>
                         <SmallButtom icon={<Icon $icon={theme.icons.window.minimize} />} onClick={() => minimize(page)} />
                         {!!!notMaximizeable && <SmallButtom icon={<Icon $icon={theme.icons.window.maximize} />} onClick={() => maximize(page)} />}
-                        <SmallButtom icon={<Icon $icon={theme.icons.window.close} />} onClick={() => close(page)} />
+                        <SmallButtom icon={<Icon $icon={theme.icons.window.close} />} onClick={() => {
+                            onClose && onClose()
+                            close(page)
+                        }} />
                     </Buttons>
                 </Header>
                 {children}
