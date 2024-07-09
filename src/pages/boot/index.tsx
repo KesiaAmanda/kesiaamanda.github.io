@@ -1,18 +1,18 @@
-import { Content, AnimatedContainer, Image, LoadingContent, Cookie, Bios, Boot, Logo, BiosContent, Text } from "./styles";
+import { Content, AnimatedContainer, Image, LoadingContent, Cookie, Bios, Loading, Logo, BiosContent, Text } from "./styles";
 import { useCallback, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { BooleanStateProps } from "../../types/PagesTypes";
 
 const speed = 100;
 
-function Loading() {
+function Boot({ state, setState }: BooleanStateProps) {
     const theme = useTheme()
     const size = useWindowSize()
 
     const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     const [isBooting, setIsBooting] = useState(true);
-    const [isLoading, setIsLoading] = useState(true);
     const [loadingText, setLoadingText] = useState('Iniciando o sistema');
     const [items, setItems] = useState<string>();
 
@@ -58,8 +58,7 @@ function Loading() {
             'Press DEL to run Setup',
             'Press F12 for BBS POPUP',
             'Memory Clock: 1600 MHz, Tc1:8 Trcd:6 Trp:6 Tras: 20 Tref:8uS',
-            'Dual Channel Mode',
-            'All information displayed on this screen is fictitious.']
+            'Dual Channel Mode']
 
         const textWriter = async () => {
             await typeWriter(speed, newItems)
@@ -71,17 +70,17 @@ function Loading() {
             setIsBooting(false);
 
             const timeout = setTimeout(() => {
-                setIsLoading(false);
+                setState(false);
             }, 3000);
 
             return () => clearTimeout(timeout);
         }, 2200);
 
         return () => clearTimeout(timeout);
-    }, [typeWriter]);
+    }, [typeWriter, setState]);
 
     return (
-        <Content $maxWidth={(size.width) + "px"} $maxHeight={(size.height) + "px"} $isDisabled={isLoading} >
+        <Content $maxWidth={(size.width) + "px"} $maxHeight={(size.height) + "px"} $isDisabled={state} >
             {isBooting === true ?
                 <Bios>
                     <Logo>
@@ -91,7 +90,7 @@ function Loading() {
                                 onMouseUp={() => setClicked(false)}
                                 $active={clicked}
                                 onClick={handleClick}
-                                alt="Cookie"
+                                alt="Cookie logo"
                             />
                         </AnimatedContainer>
                         <BiosContent>
@@ -101,13 +100,13 @@ function Loading() {
                             <Text>This BIOS is exclusively for Kesia Amanda Portfolio R01-C2</Text>
                         </BiosContent>
                     </Logo>
-
                     <BiosContent>
                         {items}
+                        <Text style={{ position: 'absolute', bottom: '20px' }}>All information displayed on this screen is fictitious.</Text>
                     </BiosContent>
                 </Bios>
                 :
-                <Boot>
+                <Loading>
                     <AnimatedContainer>
                         <Image src={theme.star} alt="Star" />
                     </AnimatedContainer>
@@ -115,11 +114,11 @@ function Loading() {
                         <Text>{loadingText}</Text>
                         <img width={'200px'} src={theme.loading} alt="Loader" />
                     </LoadingContent>
-                </Boot>
+                </Loading>
             }
         </Content>
     )
 
 }
 
-export { Loading }; 
+export { Boot }; 

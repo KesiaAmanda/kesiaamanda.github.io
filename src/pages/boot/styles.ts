@@ -18,6 +18,7 @@ export const Content = styled.div<ContentSizeProps>`
     * {
         font-family: 'Minecraftia Regular' ,'Minecraftia';
         color: ${({ theme }) => theme.text.color};  
+        font-size: 18px;
     }
 
     ${({ $isDisabled }) => !$isDisabled && css`
@@ -50,7 +51,6 @@ export const AnimatedContainer = styled.div`
 
 export const Text = styled.div`
     color: white;
-    font-size: 15px;
 `;
 
 export const LoadingContent = styled.div`
@@ -80,8 +80,9 @@ const PulseAnimation = keyframes`
 `;
 
 export const Cookie = styled.img<ActiveProps>`
-    width: 100px;
+    width: 150px;
     height: auto;
+    padding: 1em;
 
     ${({ $active }) => $active && css`
         transform: scale(0.9);
@@ -92,7 +93,7 @@ export const Cookie = styled.img<ActiveProps>`
     `}
 `;
 
-export const Boot = styled.div`
+export const Loading = styled.div`
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -106,6 +107,7 @@ export const Bios = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    height: 90vh;
 `;
 
 export const BiosContent = styled.div`
@@ -113,8 +115,7 @@ export const BiosContent = styled.div`
     flex-direction: column;
     justify-content: space-around;
     margin-left: 10px; 
-    padding: 5px;
-    gap: 5px;
+    padding: 20px 5px;
     white-space: break-spaces;
 `;
 

@@ -20,6 +20,11 @@ type PagesContextType = {
     removeFocus: () => void,
 }
 
+type BooleanStateProps = {
+    state: boolean,
+    setState: Dispatch<any>
+}
+
 type PagesContextProviderType = {
     children: ReactNode;
 }
@@ -40,4 +45,4 @@ const defaultProps = {
     isClosed: false
 }
 
-export type { PagesContextType, PagesContextProviderType, PagesProps, defaultProps }
+export type { PagesContextType, PagesContextProviderType, PagesProps, BooleanStateProps, defaultProps }
