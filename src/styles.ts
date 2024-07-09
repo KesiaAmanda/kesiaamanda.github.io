@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { LoadingProps } from "./types/ButtonTypes"
 
 export const Desktop = styled.div`
     position: relative;
@@ -57,7 +58,14 @@ export const Taskbar = styled.div`
     border-top: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.white};
 `
 
-export const Workspace = styled.div`
+export const Pages = styled.div<LoadingProps>`
+    opacity: ${({ $loading }) => ($loading ? '0' : '1')};
+    transition-delay: 1s;
+    transition-duration: 0s;
+    transition-property: opacity;
+`
+
+export const Workspace = styled.div<LoadingProps>`
     display: flex;
     flex-direction: column;
     padding: 3px;
@@ -79,4 +87,9 @@ export const Workspace = styled.div`
         color: ${({ theme }) => theme.desktop.title.icon.color};
         overflow: hidden;
     }
+
+    opacity: ${({ $loading }) => ($loading ? '0' : '1')};
+    transition-delay: 1s;
+    transition-duration: 0s;
+    transition-property: opacity;
 `

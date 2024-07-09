@@ -9,6 +9,10 @@ type ActiveProps = {
     $active: boolean
 }
 
+type LoadingProps = {
+    $loading: boolean
+}
+
 type SmallButtonProps = {
     onClick: () => void,
     icon: ReactElement<any, any>
@@ -35,4 +39,4 @@ type DefaultButtonProps = {
     icon: string
 }
 
-export type { ButtonProps, DefaultButtonProps, SmallButtonProps, MenuProps, MediumButtonProps, InvisibleButtonProps, ActiveProps }
+export type { ButtonProps, DefaultButtonProps, SmallButtonProps, MenuProps, MediumButtonProps, InvisibleButtonProps, ActiveProps, LoadingProps }

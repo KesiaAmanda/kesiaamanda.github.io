@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Desktop, Screen, Taskbar, Workspace } from "./styles";
+import { Desktop, Pages, Screen, Taskbar, Workspace } from "./styles";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./globals/theme";
 import GlobalStyle from "./globals/style";
@@ -43,29 +43,31 @@ function App() {
         <Boot state={isLoading} setState={setIsLoading} />
         <Screen>
           <Desktop>
-            <Workspace>
+            <Workspace $loading={isLoading}>
               {/* desktop icons */}
               <ThemeShortcut onClick={setIsDark} isDark={isDark} />
               <Shortcuts />
             </Workspace>
 
             {/* pages */}
-            <Welcome />
-            <AboutMe />
-            <Training />
-            <MusicPlayer />
-            <Skills />
-            <Credits />
-            <Paint />
-            <Minecraft />
-            <PrairieKing />
+            <Pages $loading={isLoading}>
+              <Welcome />
+              <AboutMe />
+              <Training />
+              <MusicPlayer />
+              <Skills />
+              <Credits />
+              <Paint />
+              <Minecraft />
+              <PrairieKing />
+            </Pages>
 
 
           </Desktop>
           <Taskbar>
             {/* buttons */}
             <StartButton />
-            <TaskbarButtons />
+            <TaskbarButtons $loading={isLoading} />
             <Notifications />
 
           </Taskbar>

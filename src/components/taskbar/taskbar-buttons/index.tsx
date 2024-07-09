@@ -2,15 +2,16 @@ import { useTheme } from "styled-components";
 import { usePages } from "../../../hooks/usePages";
 import { Content } from "./styles";
 import { TaskbarButton } from "../taskbar-button";
+import { LoadingProps } from "../../../types/ButtonTypes";
 
 
-function TaskbarButtons() {
+function TaskbarButtons({ $loading }: LoadingProps) {
 
     const { welcome, aboutMe, training, skills, musicPlayer, credits, paint, minecraft, prairieKing } = usePages();
     const theme = useTheme();
 
     return (
-        <Content>
+        <Content $loading={$loading}>
             <TaskbarButton page={welcome} description="Bem-vindo" icon={theme.icons.desktop.welcome} />
             <TaskbarButton page={aboutMe} description="Sobre mim" icon={theme.icons.desktop.aboutMe} />
             <TaskbarButton page={training} description="C:\WINDOWS\system32\cmd.exe" icon={theme.icons.desktop.training} />
