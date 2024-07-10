@@ -1,18 +1,16 @@
 import styled, { css, keyframes } from 'styled-components';
-import { ContentSizeProps } from '../../types/StyleTypes';
+import { IsDisabledProps } from '../../types/StyleTypes';
 import { ActiveProps } from '../../types/ButtonTypes';
 
-export const Content = styled.div<ContentSizeProps>`
+export const Content = styled.div<IsDisabledProps>`
     position: absolute;
     left: 0;
     top: 0;
     background-color: black;
-    ${({ $maxWidth, $maxHeight }) => $maxWidth && $maxHeight && css`
-        min-width: ${$maxWidth};
-        min-height: ${$maxHeight};
-        max-width: ${$maxWidth};
-        max-height: ${$maxHeight};
-    `}
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     z-index: 99;
 
     * {
@@ -26,6 +24,8 @@ export const Content = styled.div<ContentSizeProps>`
         opacity: 0;
         visibility: hidden;
     `}
+
+    overflow: hidden;
 `
 
 const Animation = keyframes`

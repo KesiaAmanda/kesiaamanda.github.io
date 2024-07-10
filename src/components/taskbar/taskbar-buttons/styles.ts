@@ -6,7 +6,7 @@ export const Content = styled.div<LoadingProps>`
     flex-wrap: wrap;
     
     opacity: ${({ $loading }) => ($loading ? '0' : '1')};
-    transition-delay: 1s;
+    transition-delay: 1.5s;
     transition-duration: 0s;
     transition-property: opacity;
 `

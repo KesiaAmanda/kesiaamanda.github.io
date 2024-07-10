@@ -60,7 +60,7 @@ export const Taskbar = styled.div`
 
 export const Pages = styled.div<LoadingProps>`
     opacity: ${({ $loading }) => ($loading ? '0' : '1')};
-    transition-delay: 1s;
+    transition-delay: 1.5s;
     transition-duration: 0s;
     transition-property: opacity;
 `
@@ -71,7 +71,7 @@ export const Workspace = styled.div<LoadingProps>`
     padding: 3px;
     flex-wrap: wrap;
     align-content: flex-start;
-    max-height: 95vh;
+    // max-height: 95vh;
 
     & p {
         margin: 0;

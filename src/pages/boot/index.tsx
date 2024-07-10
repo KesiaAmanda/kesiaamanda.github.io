@@ -1,14 +1,12 @@
 import { Content, AnimatedContainer, Image, LoadingContent, Cookie, Bios, Loading, Logo, BiosContent, Text } from "./styles";
 import { useCallback, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
-import { useWindowSize } from "../../hooks/useWindowSize";
 import { BooleanStateProps } from "../../types/PagesTypes";
 
 const speed = 100;
 
 function Boot({ state, setState }: BooleanStateProps) {
     const theme = useTheme()
-    const size = useWindowSize()
 
     const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -80,7 +78,7 @@ function Boot({ state, setState }: BooleanStateProps) {
     }, [typeWriter, setState]);
 
     return (
-        <Content $maxWidth={(size.width) + "px"} $maxHeight={(size.height) + "px"} $isDisabled={state} >
+        <Content $isDisabled={state} >
             {isBooting === true ?
                 <Bios>
                     <Logo>
