@@ -21,6 +21,7 @@ import folderOpenIcon from '../assets/icons/desktop/folder_open.png'
 import folderClosedIcon from '../assets/icons/desktop/folder_closed.png'
 import lightIcon from '../assets/icons/desktop/this_computer-day.png'
 import darkIcon from '../assets/icons/desktop/this_computer-night.png'
+import workspaceIcon from '../assets/icons/desktop/workspace.png'
 
 import audioIcon from '../assets/icons/player/iconmonstr-audio.svg'
 import minusIcon from '../assets/icons/window/iconmonstr-minus.svg'
@@ -84,6 +85,7 @@ const images = {
             paint: paintIcon,
             minecraft: minecraftIcon,
             prairieKing: prairieKingIcon,
+            workspace: workspaceIcon,
         },
 
         window: {

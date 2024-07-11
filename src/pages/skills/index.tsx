@@ -49,15 +49,15 @@ function Skills() {
                 <Container onClick={() => { focus(skills) }}>
                     <Content $maxWidth={(size.width - 5) + "px"} $maxHeight={(size.height - 115) + "px"} $page={skills[0]} >
                         <Navigator>
-                            <NavigatorItem $icon={theme.icons.desktop.computer} $first={true}>My Computer</NavigatorItem>
+                            <NavigatorItem $icon={theme.icons.desktop.workspace} $first={true}>Desktop</NavigatorItem>
                             <Selector $isSelected={true}>
                                 <SelectorIcon onClick={() => setMyComputer(!myComputer)}><ControlIcon $isSelected={myComputer} /></SelectorIcon>
                                 <div>
-                                    <NavigatorItem $icon={theme.icons.desktop.disk}>[C:]</NavigatorItem>
+                                    <NavigatorItem $icon={theme.icons.desktop.computer}>My Computer</NavigatorItem>
                                     <Selector $isSelected={myComputer}>
                                         <SelectorIcon onClick={() => setDesktop(!desktop)}><ControlIcon $isSelected={desktop} /></SelectorIcon>
                                         <div>
-                                            <NavigatorItem $icon={theme.icons.desktop.computer}>Desktop</NavigatorItem>
+                                            <NavigatorItem $icon={theme.icons.desktop.disk}>[C:]</NavigatorItem>
                                             <Selector $isSelected={desktop}>
                                                 <SelectorIcon onClick={() => setFolder(!folder)}><ControlIcon $isSelected={folder} /></SelectorIcon>
                                                 <div>

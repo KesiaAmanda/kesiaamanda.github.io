@@ -120,6 +120,7 @@ export const Selector = styled.div<IsSelectedProps>`
 export const Folders = styled(Selector)`
     display: grid;
     min-width: 150px;
+    margin-left: -22px; 
 `
 
 export const SelectorIcon = styled.div`
