@@ -18,8 +18,8 @@ export const Content = styled.div<ContentProps>`
     flex-direction: row;
     width: 900px;
     height: 500px;
+    overflow: hidden;
     resize: both;
-    overflow-x: scroll;
 
     ${({ $page, $maxWidth, $maxHeight }) => $page.isMaximized && css`
         min-width: ${$maxWidth};
@@ -56,7 +56,6 @@ export const Content = styled.div<ContentProps>`
 export const Navigator = styled.div`
     padding: 1em;
     overflow-x: hidden;
-    overflow-y: scroll;
 
     @media screen and (min-width: 767px) {
         border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};

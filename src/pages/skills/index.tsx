@@ -23,6 +23,8 @@ function Skills() {
     const [desktop, setDesktop] = useState<boolean>(true);
     const [folder, setFolder] = useState<boolean>(true);
 
+    const [currentFolder, setCurrentFolder] = useState<string>('');
+
     const [folders, setFolders] = useState<{
         tools: boolean, backend: boolean, frontend: boolean, database: boolean, baaS: boolean, software: boolean, oS: boolean
     }>(enabled);
@@ -44,7 +46,7 @@ function Skills() {
             <Window page={skills} description="Linguagens e Ferramentas" icon={theme.icons.desktop.skills}>
                 <WindowMenu page={skills[0]} />
                 <Divider />
-                <WindowAddress path="C:\Desktop\Linguagens e Ferramentas\Backend" />
+                <WindowAddress path={"C:\\Desktop\\Linguagens e Ferramentas\\" + currentFolder.toString()} />
                 <Divider />
                 <Container onClick={() => { focus(skills) }}>
                     <Content $maxWidth={(size.width - 5) + "px"} $maxHeight={(size.height - 115) + "px"} $page={skills[0]} >
@@ -61,28 +63,38 @@ function Skills() {
                                             <Selector $isSelected={desktop}>
                                                 <SelectorIcon onClick={() => setFolder(!folder)}><ControlIcon $isSelected={folder} /></SelectorIcon>
                                                 <div>
-                                                    <NavigatorItem $icon={getIcon(folder)} onClick={() => setFolders(enabled)}>Linguagens e Ferramentas</NavigatorItem>
+                                                    <NavigatorItem $icon={getIcon(folder)} onClick={() => {
+                                                        setFolders(enabled)
+                                                        setCurrentFolder('')
+                                                    }}>Linguagens e Ferramentas</NavigatorItem>
                                                     <Folders $isSelected={folder}>
                                                         <NavigatorItem $icon={getIcon(folders.tools)} $skillsFolder={true} onClick={() => {
                                                             toggleFolder({ tools: true })
+                                                            setCurrentFolder('Ferramentas')
                                                         }}>Ferramentas</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.backend)} $skillsFolder={true} onClick={() => {
                                                             toggleFolder({ backend: true })
+                                                            setCurrentFolder('Backend')
                                                         }}>Backend</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.frontend)} $skillsFolder={true} onClick={() => {
                                                             toggleFolder({ frontend: true })
+                                                            setCurrentFolder('Frontend')
                                                         }}>Frontend</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.database)} $skillsFolder={true} onClick={() => {
                                                             toggleFolder({ database: true })
+                                                            setCurrentFolder('Database')
                                                         }}>Database</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.baaS)} $skillsFolder={true} onClick={() => {
                                                             toggleFolder({ baaS: true })
+                                                            setCurrentFolder('BaaS')
                                                         }}>BaaS</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.software)} $skillsFolder={true} onClick={() => {
                                                             toggleFolder({ software: true })
+                                                            setCurrentFolder('Software')
                                                         }}>Software</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.oS)} $skillsFolder={true} onClick={() => {
                                                             toggleFolder({ oS: true })
+                                                            setCurrentFolder('OS')
                                                         }}>OS</NavigatorItem>
                                                     </Folders>
                                                 </div>
