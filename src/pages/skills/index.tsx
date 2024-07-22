@@ -1,6 +1,6 @@
 import { Window } from "../../components/windows/window";
 import { useState } from "react";
-import { Container, Content, Divider, Navigator, Pages, NavigatorItem, Selector, SelectorIcon, ControlIcon, Folders, IconContainer } from "./styles";
+import { Container, Content, Divider, Navigator, Pages, NavigatorItem, Selector, SelectorIcon, ControlIcon, Folders, IconContainer, Footer, FooterDivision } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useTheme } from "styled-components";
@@ -170,6 +170,10 @@ function Skills() {
                                 } name="OS" />
                             </>}
                         </Pages>
+                        <Footer>
+                            <FooterDivision>4 object(s)</FooterDivision>
+                            <FooterDivision>144KB (Disk free space: 157MB)</FooterDivision>
+                        </Footer>
                     </Content>
                 </Container>
             </Window>

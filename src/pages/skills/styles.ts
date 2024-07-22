@@ -4,6 +4,11 @@ import { ContentProps, FoldersProps, IsSelectedProps } from '../../types/StyleTy
 
 export const Container = styled.div`
     background-color: ${({ theme }) => theme.window.body.background.color};
+
+    ::-webkit-resizer {
+        background: none;
+        // background-image: none;
+    }
 `
 
 export const Divider = styled.div`
@@ -13,9 +18,7 @@ export const Divider = styled.div`
 `
 
 export const Content = styled.div<ContentProps>`
-    ${internal}
-    display: flex;
-    flex-direction: row;
+    display: grid;
     width: 900px;
     height: 500px;
     overflow: hidden;
@@ -44,31 +47,47 @@ export const Content = styled.div<ContentProps>`
     `}
 
     @media screen and (min-width: 767px) {
-        flex-direction: row;
+        grid-template-columns: 350px auto;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            'menu main main'
+            'footer footer footer';
     }
 
     @media screen and (max-width: 767px) {
-        flex-direction: column;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            'menu menu menu'
+            'main main main'
+            'footer footer footer';
     }
 
 `
 
 export const Navigator = styled.div`
+    ${internal}
+    grid-area: menu;
     padding: 1em;
-    overflow-x: hidden;
+    overflow: hidden;
+`
 
-    @media screen and (min-width: 767px) {
-        border-right: inset 2px ${({ theme }) => theme.frame.shadow.white};
-    }
+export const Footer = styled.div`
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: ${({ theme }) => theme.window.background.color};
+`
 
-    @media screen and (max-width: 767px) {
-        border-bottom: inset 2px ${({ theme }) => theme.frame.shadow.white};
-    }
+export const FooterDivision = styled.div`
+    white-space: nowrap;
+    overflow: hidden;
+    ${internal}
 `
 
 export const NavigatorItem = styled.div<FoldersProps>`
     position: relative;
     display: inline-block;
+    white-space: nowrap;
     color: ${({ theme }) => theme.text.color};
     background: url(${({ $icon }) => $icon}) left bottom no-repeat;
     padding: 0px 0px 0px 25px;
@@ -92,18 +111,11 @@ export const NavigatorItem = styled.div<FoldersProps>`
 `
 
 export const Pages = styled.div`
-    flex: 1;
+    ${internal}
+    grid-area: main;
     padding: 1em;
     overflow-x: hidden;
     overflow-y: scroll;
-
-    @media screen and (min-width: 767px) {
-        border-left: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    }
-
-    @media screen and (max-width: 767px) {
-        border-top: ${({ theme }) => theme.frame.border.style} 2px ${({ theme }) => theme.frame.shadow.black};
-    }
 `
 
 export const Selector = styled.div<IsSelectedProps>`
