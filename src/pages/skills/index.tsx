@@ -1,5 +1,5 @@
 import { Window } from "../../components/windows/window";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container, Content, Divider, Navigator, Pages, NavigatorItem, Selector, SelectorIcon, ControlIcon, Folders, IconContainer, Footer, FooterDivision } from "./styles";
 import { usePages } from "../../hooks/usePages";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
@@ -10,12 +10,12 @@ import { SkillsContainer } from "../../components/windows/skills-container";
 import { FolderShortcut } from "../../components/desktop/folder-shortcut";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
-let disable = { tools: false, backend: false, frontend: false, database: false, baaS: false, software: false, oS: false }
-let enabled = { tools: true, backend: true, frontend: true, database: true, baaS: true, software: true, oS: true }
+let disable = { tools: false, backend: false, frontend: false, database: false, software: false }
 
 function Skills() {
     const theme = useTheme()
     const size = useWindowSize()
+    const shortcutsRef = useRef<HTMLDivElement>(null)
 
     const { skills, focus, removeFocus } = usePages();
 
@@ -25,9 +25,11 @@ function Skills() {
 
     const [currentFolder, setCurrentFolder] = useState<string>('');
 
+    const [objects, setObjects] = useState<number>(0);
+
     const [folders, setFolders] = useState<{
-        tools: boolean, backend: boolean, frontend: boolean, database: boolean, baaS: boolean, software: boolean, oS: boolean
-    }>(enabled);
+        tools: boolean, backend: boolean, frontend: boolean, database: boolean, software: boolean
+    }>(disable);
 
     const ref = useOutsideClick(() => {
         removeFocus()
@@ -37,9 +39,20 @@ function Skills() {
         return active ? theme.icons.desktop.folderOpen : theme.icons.desktop.folderClosed;
     }
 
-    const toggleFolder = (target: any) => {
+    const toggleFolder = (target: any, name: string) => {
         setFolders({ ...disable, ...target })
+        setCurrentFolder(name)
     };
+
+    useEffect(() => {
+        const countChildren = () => {
+            if (shortcutsRef.current) {
+                setObjects(shortcutsRef.current.children.length)
+            }
+        };
+
+        countChildren();
+    }, [folders]);
 
     return (
         <div ref={ref}>
@@ -64,38 +77,25 @@ function Skills() {
                                                 <SelectorIcon onClick={() => setFolder(!folder)}><ControlIcon $isSelected={folder} /></SelectorIcon>
                                                 <div>
                                                     <NavigatorItem $icon={getIcon(folder)} onClick={() => {
-                                                        setFolders(enabled)
+                                                        setFolders(disable)
                                                         setCurrentFolder('')
                                                     }}>Linguagens e Ferramentas</NavigatorItem>
                                                     <Folders $isSelected={folder}>
                                                         <NavigatorItem $icon={getIcon(folders.tools)} $skillsFolder={true} onClick={() => {
-                                                            toggleFolder({ tools: true })
-                                                            setCurrentFolder('Ferramentas')
+                                                            toggleFolder({ tools: true }, 'Ferramentas')
                                                         }}>Ferramentas</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.backend)} $skillsFolder={true} onClick={() => {
-                                                            toggleFolder({ backend: true })
-                                                            setCurrentFolder('Backend')
+                                                            toggleFolder({ backend: true }, 'Backend')
                                                         }}>Backend</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.frontend)} $skillsFolder={true} onClick={() => {
-                                                            toggleFolder({ frontend: true })
-                                                            setCurrentFolder('Frontend')
+                                                            toggleFolder({ frontend: true }, 'Frontend')
                                                         }}>Frontend</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.database)} $skillsFolder={true} onClick={() => {
-                                                            toggleFolder({ database: true })
-                                                            setCurrentFolder('Database')
+                                                            toggleFolder({ database: true }, 'Database')
                                                         }}>Database</NavigatorItem>
-                                                        <NavigatorItem $icon={getIcon(folders.baaS)} $skillsFolder={true} onClick={() => {
-                                                            toggleFolder({ baaS: true })
-                                                            setCurrentFolder('BaaS')
-                                                        }}>BaaS</NavigatorItem>
                                                         <NavigatorItem $icon={getIcon(folders.software)} $skillsFolder={true} onClick={() => {
-                                                            toggleFolder({ software: true })
-                                                            setCurrentFolder('Software')
+                                                            toggleFolder({ software: true }, 'Software')
                                                         }}>Software</NavigatorItem>
-                                                        <NavigatorItem $icon={getIcon(folders.oS)} $skillsFolder={true} onClick={() => {
-                                                            toggleFolder({ oS: true })
-                                                            setCurrentFolder('OS')
-                                                        }}>OS</NavigatorItem>
                                                     </Folders>
                                                 </div>
                                             </Selector>
@@ -105,74 +105,59 @@ function Skills() {
                             </Selector>
                         </Navigator>
                         <Pages>
-                            {folders.tools && <>
-                                <SkillsContainer children={
-                                    <IconContainer>
-                                        <FolderShortcut icon={theme.icons.folder.jenkins} description="Jenkins" />
-                                        <FolderShortcut icon={theme.icons.folder.docker} description="Docker" />
-                                        <FolderShortcut icon={theme.icons.folder.compose} description="Docker Compose" />
-                                    </IconContainer>
-                                } name="Ferramentas" />
-                            </>}
-                            {folders.backend && <>
-                                <SkillsContainer children={
-                                    <IconContainer>
-                                        <FolderShortcut icon={theme.icons.folder.java} description="Java" />
-                                        <FolderShortcut icon={theme.icons.folder.go} description="Go" />
-                                        <FolderShortcut icon={theme.icons.folder.python} description="Python" />
-                                        <FolderShortcut icon={theme.icons.folder.spring} description="Spring Framework" />
-                                    </IconContainer>
-                                } name="Backend" />
-                            </>}
-                            {folders.frontend && <>
-                                <SkillsContainer children={
-                                    <IconContainer>
-                                        <FolderShortcut icon={theme.icons.folder.react} description="React" />
-                                        <FolderShortcut icon={theme.icons.folder.angular} description="Angular" />
-                                        <FolderShortcut icon={theme.icons.folder.html} description="HTML" />
-                                        <FolderShortcut icon={theme.icons.folder.javaScript} description="JavaScript" />
-                                        <FolderShortcut icon={theme.icons.folder.css} description="CSS" />
-                                    </IconContainer>
-                                } name="Frontend" />
-                            </>}
-                            {folders.database && <>
-                                <SkillsContainer children={
-                                    <IconContainer>
-                                        <FolderShortcut icon={theme.icons.folder.postgreSql} description="PostgreSQL" />
-                                        <FolderShortcut icon={theme.icons.folder.msSql} description="MSSQL" />
-                                    </IconContainer>
-                                } name="Database" />
-                            </>}
-                            {folders.baaS && <>
-                                <SkillsContainer children={
-                                    <IconContainer>
-                                        <FolderShortcut icon={theme.icons.folder.firebase} description="Firebase" />
-                                        <FolderShortcut icon={theme.icons.folder.heroku} description="Heroku" />
-                                    </IconContainer>
-                                } name="BaaS" />
-                            </>}
-                            {folders.software && <>
-                                <SkillsContainer children={
-                                    <IconContainer>
-                                        <FolderShortcut icon={theme.icons.folder.intellij} description="IntelliJ" />
-                                        <FolderShortcut icon={theme.icons.folder.vsCode} description="Visual Studio Code" />
-                                        <FolderShortcut icon={theme.icons.folder.git} description="Git" />
-                                        <FolderShortcut icon={theme.icons.folder.figma} description="Figma" />
-                                    </IconContainer>
-                                } name="Software" />
-                            </>}
-                            {folders.oS && <>
-                                <SkillsContainer children={
-                                    <IconContainer>
-                                        <FolderShortcut icon={theme.icons.folder.windows} description="Windows" />
-                                        <FolderShortcut icon={theme.icons.folder.linux} description="Linux" />
-                                    </IconContainer>
-                                } name="OS" />
-                            </>}
+                            <IconContainer ref={shortcutsRef}>
+                                {folders === disable ? <>
+                                    <FolderShortcut icon={theme.icons.desktop.folderOpen} description="Ferramentas" onClick={() => {
+                                        toggleFolder({ tools: true }, 'Ferramentas')
+                                    }} />
+                                    <FolderShortcut icon={theme.icons.desktop.folderOpen} description="Backend" onClick={() => {
+                                        toggleFolder({ backend: true }, 'Backend')
+                                    }} />
+                                    <FolderShortcut icon={theme.icons.desktop.folderOpen} description="Frontend" onClick={() => {
+                                        toggleFolder({ frontend: true }, 'Frontend')
+                                    }} />
+                                    <FolderShortcut icon={theme.icons.desktop.folderOpen} description="Database" onClick={() => {
+                                        toggleFolder({ database: true }, 'Database')
+                                    }} />
+                                    <FolderShortcut icon={theme.icons.desktop.folderOpen} description="Software" onClick={() => {
+                                        toggleFolder({ software: true }, 'Software')
+                                    }} />
+                                </> : <></>}
+                                {folders.tools && <>
+                                    <FolderShortcut icon={theme.icons.folder.jenkins} description="Jenkins" />
+                                    <FolderShortcut icon={theme.icons.folder.docker} description="Docker" />
+                                    <FolderShortcut icon={theme.icons.folder.compose} description="Docker Compose" />
+                                    <FolderShortcut icon={theme.icons.folder.firebase} description="Firebase" />
+                                    <FolderShortcut icon={theme.icons.folder.heroku} description="Heroku" />
+                                </>}
+                                {folders.backend && <>
+                                    <FolderShortcut icon={theme.icons.folder.java} description="Java" />
+                                    <FolderShortcut icon={theme.icons.folder.go} description="Go" />
+                                    <FolderShortcut icon={theme.icons.folder.python} description="Python" />
+                                    <FolderShortcut icon={theme.icons.folder.spring} description="Spring Framework" />
+                                </>}
+                                {folders.frontend && <>
+                                    <FolderShortcut icon={theme.icons.folder.react} description="React" />
+                                    <FolderShortcut icon={theme.icons.folder.angular} description="Angular" />
+                                    <FolderShortcut icon={theme.icons.folder.html} description="HTML" />
+                                    <FolderShortcut icon={theme.icons.folder.javaScript} description="JavaScript" />
+                                    <FolderShortcut icon={theme.icons.folder.css} description="CSS" />
+                                </>}
+                                {folders.database && <>
+                                    <FolderShortcut icon={theme.icons.folder.postgreSql} description="PostgreSQL" />
+                                    <FolderShortcut icon={theme.icons.folder.msSql} description="MSSQL" />
+                                </>}
+                                {folders.software && <>
+                                    <FolderShortcut icon={theme.icons.folder.intellij} description="IntelliJ" />
+                                    <FolderShortcut icon={theme.icons.folder.vsCode} description="Visual Studio Code" />
+                                    <FolderShortcut icon={theme.icons.folder.git} description="Git" />
+                                    <FolderShortcut icon={theme.icons.folder.figma} description="Figma" />
+                                </>}
+                            </IconContainer>
                         </Pages>
                         <Footer>
-                            <FooterDivision>4 object(s)</FooterDivision>
-                            <FooterDivision>144KB (Disk free space: 157MB)</FooterDivision>
+                            <FooterDivision>{objects} object(s)</FooterDivision>
+                            <FooterDivision>{folders !== disable ? objects * 16 + `KB (Disk free space: 157MB)` : ''}</FooterDivision>
                         </Footer>
                     </Content>
                 </Container>

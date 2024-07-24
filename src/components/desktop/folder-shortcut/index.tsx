@@ -4,10 +4,11 @@ import { Content } from "./styles";
 
 function FolderShortcut({
     icon,
-    description }: FolderShortcutProps) {
+    description,
+    onClick }: FolderShortcutProps) {
 
     return (
-        <Content>
+        <Content onDoubleClick={() => onClick ? onClick() : () => { }}>
             <img draggable="false" src={icon} alt={description} />
             <p>{description}</p>
         </Content>

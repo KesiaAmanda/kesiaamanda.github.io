@@ -10,6 +10,7 @@ type ShortcutProps = {
 type FolderShortcutProps = {
     icon: string,
     description: string,
+    onClick?: () => void,
 }
 
 type ThemeShortcutProps = {
