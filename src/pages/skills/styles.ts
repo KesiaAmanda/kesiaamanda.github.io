@@ -79,6 +79,7 @@ export const Footer = styled.div`
 `
 
 export const FooterDivision = styled.div`
+    padding-left: 0.5rem;
     white-space: nowrap;
     overflow: hidden;
     ${internal}
