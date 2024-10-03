@@ -41,4 +41,8 @@ interface PageElementsProps {
     $page: PagesProps
 }
 
-export type { ContentProps, IsSelectedProps, IsShutdownProps, IsDisabledProps, ProgressBarProps, IconProps, TaskBarButtonProps, PageElementsProps, FoldersProps }
+interface HeaderProps {
+    $focus: boolean
+}
+
+export type { ContentProps, IsSelectedProps, IsShutdownProps, IsDisabledProps, ProgressBarProps, IconProps, TaskBarButtonProps, PageElementsProps, FoldersProps, HeaderProps }

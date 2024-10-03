@@ -183,7 +183,8 @@ export const lightTheme = {
         },
         header: {
             background: {
-                color: 'linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5))'
+                color: 'linear-gradient(to right, rgb(47, 32, 43, 0.2), rgb(109, 86, 103, 0.1))',
+                focus: 'linear-gradient(to right, rgba(150, 62, 128, 0.7), rgba(209, 130, 189, 0.5))'
             },
             title: {
                 color: 'rgb(255, 251, 245)'
@@ -321,7 +322,8 @@ export const darkTheme = {
         },
         header: {
             background: {
-                color: 'linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))'
+                color: 'linear-gradient(to right, rgb(151, 151, 151, 0.1), rgb(151, 151, 151, 0.1))',
+                focus: 'linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
             },
             title: {
                 color: 'rgb(226, 213, 224)'

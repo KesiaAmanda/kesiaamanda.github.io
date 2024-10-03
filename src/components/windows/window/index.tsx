@@ -23,7 +23,7 @@ function Window({ children, page, description, icon, notMaximizeable, onClose }:
                 'transform': 'none',
             } : {}}>
             <Container $page={page[0]}>
-                <Header
+                <Header $focus={page[0].isInFocus}
                     onMouseDown={onMouseDown}>
                     <Text $icon={icon}>{description}</Text>
                     <Buttons>

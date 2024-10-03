@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { external } from '../../../globals/borders';
-import { ContentProps, IconProps, PageElementsProps } from '../../../types/StyleTypes';
+import { ContentProps, HeaderProps, IconProps, PageElementsProps } from '../../../types/StyleTypes';
 
 
 export const Container = styled.div<PageElementsProps>`
@@ -50,9 +50,9 @@ export const Content = styled.div<ContentProps>`
     `}
 `
 
-export const Header = styled.div`
+export const Header = styled.div<HeaderProps>`
     touch-action: none;
-    background: ${({ theme }) => theme.window.header.background.color};
+    background: ${({ $focus, theme }) => ($focus ? theme.window.header.background.focus : theme.window.header.background.color)};
     max-width: 100%;
     display: flex;
     align-items: center;
