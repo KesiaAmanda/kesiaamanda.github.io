@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Minecraftia Regular";
+    src: url("fonts/Minecraftia-Regular.woff") format("woff");
+    src: url("fonts/Minecraftia-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
