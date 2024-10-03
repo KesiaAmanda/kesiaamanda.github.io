@@ -6,7 +6,6 @@ import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useTheme } from "styled-components";
 import { WindowMenu } from "../../components/windows/menu";
 import { WindowAddress } from "../../components/windows/address";
-import { SkillsContainer } from "../../components/windows/skills-container";
 import { FolderShortcut } from "../../components/desktop/folder-shortcut";
 import { useWindowSize } from "../../hooks/useWindowSize";
 

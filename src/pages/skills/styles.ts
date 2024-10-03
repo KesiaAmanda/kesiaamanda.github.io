@@ -103,8 +103,8 @@ export const NavigatorItem = styled.div<FoldersProps>`
             position: absolute;
             width: 10px; /* Largura do ícone */
             height: 20px; /* Altura do ícone */
-            border-left: 1px ${({ theme }) => theme.text.color} dotted;
-            border-bottom: 1px ${({ theme }) => theme.text.color} dotted;
+            border-left: 1px grey dotted;
+            border-bottom: 1px dotted grey;
             transform: translateY(-50%) translateX(-360%);
         }   
     `}
@@ -141,7 +141,7 @@ export const SelectorIcon = styled.div`
     height: 12px;
     cursor: pointer;
     background-color: ${({ theme }) => theme.window.body.background.color};
-    border: 1px solid ${({ theme }) => theme.text.color};
+    border: 1px solid grey;
 `
 
 export const ControlIcon = styled.div<IsSelectedProps>`
